@@ -1,0 +1,992 @@
+{
+  "compounds": [
+    {
+      "name": "carbon_dioxide",
+      "color": "50, 200, 50",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "cellulose",
+      "color": "121, 186, 88",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 6
+        },
+        {
+          "name": "hydrogen",
+          "count": 10
+        },
+        {
+          "name": "oxygen",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "silicon_dioxide",
+      "color": "165, 138, 45",
+      "components": [
+        {
+          "name": "silicon"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "potassium_nitrate",
+      "color": "54, 102, 69",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "aluminum_oxide",
+      "color": "210, 226, 166",
+      "components": [
+        {
+          "name": "aluminum",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "magnesium_oxide",
+      "color": "225, 164, 182",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "potassium_chloride",
+      "color": "236, 163, 32",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "sodium_chloride",
+      "color": "219, 201, 216",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "water",
+      "color": "17, 94, 192",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "kaolinite",
+      "color": "164, 159, 218",
+      "components": [
+        {
+          "name": "aluminum_oxide"
+        },
+        {
+          "name": "silicon_dioxide",
+          "count": 2
+        },
+        {
+          "name": "water",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "protein",
+      "color": "144, 108, 21",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 7
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "iron_oxide",
+      "color": "186, 49, 14",
+      "components": [
+        {
+          "name": "iron",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "sucrose",
+      "color": "224, 213, 210",
+      "shifted_slots": 3,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 12
+        },
+        {
+          "name": "hydrogen",
+          "count": 22
+        },
+        {
+          "name": "oxygen",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "carbonate",
+      "color": "97, 113, 90",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "calcium_carbonate",
+      "color": "254, 193, 129",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "phosphate",
+      "color": "214, 210, 89",
+      "components": [
+        {
+          "name": "phosphorus"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "hydroxide",
+      "color": "255, 174, 0",
+      "components": [
+        {
+          "name": "oxygen"
+        },
+        {
+          "name": "hydrogen"
+        }
+      ]
+    },
+    {
+      "name": "hydroxylapatite",
+      "color": "255, 255, 255",
+      "components": [
+        {
+          "name": "calcium",
+          "count": 5
+        },
+        {
+          "name": "phosphate",
+          "count": 6
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "strontium_carbonate",
+      "color": "242, 46, 75",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "beryl",
+      "color": "177, 214, 191",
+      "components": [
+        {
+          "name": "beryllium",
+          "count": 3
+        },
+        {
+          "name": "aluminum",
+          "count": 2
+        },
+        {
+          "name": "silicon",
+          "count": 6
+        },
+        {
+          "name": "oxygen",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "name": "starch",
+      "shifted_slots": 6,
+      "color": "252, 239, 166",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 12
+        },
+        {
+          "name": "hydrogen",
+          "count": 20
+        },
+        {
+          "name": "oxygen",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "cucurbitacin",
+      "color": "255, 200, 0",
+      "combiner_recipe": false,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 32
+        },
+        {
+          "name": "hydrogen",
+          "count": 44
+        },
+        {
+          "name": "oxygen",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "name": "psilocybin",
+      "color": "80, 255, 80",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 12
+        },
+        {
+          "name": "hydrogen",
+          "count": 17
+        },
+        {
+          "name": "nitrogen",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        },
+        {
+          "name": "phosphorus"
+        }
+      ]
+    },
+    {
+      "name": "zinc_oxide",
+      "color": "255, 255, 0",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "cobalt_aluminate",
+      "color": "0, 0, 255",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "aluminum",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "triglyceride",
+      "color": "200, 200, 90",
+      "combiner_recipe": false,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 18
+        },
+        {
+          "name": "hydrogen",
+          "count": 32
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "lead_iodide",
+      "color": "255, 255, 0",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "iodine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "ethanol",
+      "color": "210, 250, 150",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 5
+        },
+        {
+          "name": "hydroxide"
+        }
+      ]
+    },
+    {
+      "name": "amide",
+      "color": "210, 250, 250",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "urea",
+      "color": "230, 240, 180",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen"
+        },
+        {
+          "name": "amide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "ammonium",
+      "color": "180, 250, 250",
+      "shifted_slots": 1,
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "diammonium_phosphate",
+      "color": "210, 250, 150",
+      "components": [
+        {
+          "name": "ammonium",
+          "count": 2
+        },
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "phosphate"
+        }
+      ]
+    },
+    {
+      "name": "potassium_carbonate",
+      "color": "40, 210, 90",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "mescaline",
+      "color": "30, 30, 30",
+      "shifted_slots": 1,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 11
+        },
+        {
+          "name": "hydrogen",
+          "count": 17
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "mullite",
+      "color": "110, 110, 150",
+      "components": [
+        {
+          "name": "aluminum_oxide",
+          "count": 2
+        },
+        {
+          "name": "silicon_dioxide"
+        }
+      ]
+    },
+    {
+      "name": "methane",
+      "color": "200, 30, 180",
+      "shifted_slots": 1,
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "ethane",
+      "color": "200, 30, 50",
+      "shifted_slots": 2,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "propane",
+      "color": "100, 30, 50",
+      "shifted_slots": 3,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "name": "butane",
+      "color": "111, 150, 180",
+      "shifted_slots": 4,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 4
+        },
+        {
+          "name": "hydrogen",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "pentane",
+      "color": "111, 150, 85",
+      "shifted_slots": 5,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 5
+        },
+        {
+          "name": "hydrogen",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "name": "hexane",
+      "color": "111, 205, 50",
+      "shifted_slots": 6,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 6
+        },
+        {
+          "name": "hydrogen",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "name": "potassium_dichromate",
+      "color": "255, 150, 0",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "chromium",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "name": "nickel_chloride",
+      "color": "30, 255, 75",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "chlorine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "potassium_permanganate",
+      "color": "120, 0, 100",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "magnesium_sulfate",
+      "color": "200, 250, 200",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "copper_chloride",
+      "color": "100, 250, 200",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "chlorine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "cadmium_sulfide",
+      "color": "250, 250, 94",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "chromium_oxide",
+      "color": "150, 255, 150",
+      "components": [
+        {
+          "name": "chromium",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "antimony_trioxide",
+      "color": "250, 255, 200",
+      "components": [
+        {
+          "name": "antimony",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "titanium_oxide",
+      "color": "50, 30, 50",
+      "components": [
+        {
+          "name": "titanium",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "han_purple",
+      "color": "220, 100, 255",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "copper"
+        },
+        {
+          "name": "silicon",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "arsenic_sulfide",
+      "color": "250, 100, 130",
+      "components": [
+        {
+          "name": "arsenic",
+          "count": 4
+        },
+        {
+          "name": "sulfur",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "barium_sulfate",
+      "color": "220, 220, 255",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "beta_carotene",
+      "color": "255, 140, 40",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 40
+        },
+        {
+          "name": "hydrogen",
+          "count": 56
+        }
+      ]
+    },
+    {
+      "name": "polyvinyl_chloride",
+      "color": "95, 49, 40",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 3
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "potassium_cyanide",
+      "color": "70, 250, 150",
+      "shifted_slots": 1,
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "nitrogen"
+        }
+      ]
+    },
+    {
+      "name": "epinephrine",
+      "color": "230, 160, 120",
+      "shifted_slots": 2,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 9
+        },
+        {
+          "name": "hydrogen",
+          "count": 13
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "cocaine",
+      "color": "210, 210, 255",
+      "shifted_slots": 3,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 17
+        },
+        {
+          "name": "hydrogen",
+          "count": 21
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "acetylsalicylic_acid",
+      "color": "130, 190, 255",
+      "shifted_slots": 5,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 9
+        },
+        {
+          "name": "hydrogen",
+          "count": 8
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "penicillin",
+      "color": "255, 210, 210",
+      "shifted_slots": 1,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 16
+        },
+        {
+          "name": "hydrogen",
+          "count": 18
+        },
+        {
+          "name": "nitrogen",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 5
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "caffeine",
+      "color": "100, 100, 20",
+      "shifted_slots": 4,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 8
+        },
+        {
+          "name": "hydrogen",
+          "count": 10
+        },
+        {
+          "name": "nitrogen",
+          "count": 4
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "mercury_sulfide",
+      "color": "200, 50, 20",
+      "shifted_slots": 4,
+      "components": [
+        {
+          "name": "mercury"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    }
+  ]
+}

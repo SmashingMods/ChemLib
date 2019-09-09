@@ -11,7 +11,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 
-version = '1.14.4-1.1.0'
+version = '1.14.4-1.1.1'
 group = 'al132.chemlib' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'chemlib'
 

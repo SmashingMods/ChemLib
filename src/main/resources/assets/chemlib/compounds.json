@@ -551,6 +551,7 @@
       "name": "methane",
       "color": "200, 30, 180",
       "shifted_slots": 1,
+      "burn_time": 280,
       "components": [
         {
           "name": "carbon"
@@ -565,6 +566,7 @@
       "name": "ethane",
       "color": "200, 30, 50",
       "shifted_slots": 2,
+      "burn_time": 520,
       "components": [
         {
           "name": "carbon",
@@ -580,6 +582,7 @@
       "name": "propane",
       "color": "100, 30, 50",
       "shifted_slots": 3,
+      "burn_time": 760,
       "components": [
         {
           "name": "carbon",
@@ -595,6 +598,7 @@
       "name": "butane",
       "color": "111, 150, 180",
       "shifted_slots": 4,
+      "burn_time": 1000,
       "components": [
         {
           "name": "carbon",
@@ -610,6 +614,7 @@
       "name": "pentane",
       "color": "111, 150, 85",
       "shifted_slots": 5,
+      "burn_time": 1240,
       "components": [
         {
           "name": "carbon",
@@ -625,6 +630,7 @@
       "name": "hexane",
       "color": "111, 205, 50",
       "shifted_slots": 6,
+      "burn_time": 1480,
       "components": [
         {
           "name": "carbon",

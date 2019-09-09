@@ -273,7 +273,13 @@ public class ModItems {
                 if (stack[0] != null) componentStacks.add(stack[0]);
             }
             //TODO
-            output.add(new CompoundItem(name, new Color(color[0], color[1], color[2]), componentStacks));
+            int shiftedSlots = 0;
+            int burnTime = 0;
+            if(obj.has("shifted_slots")) shiftedSlots = obj.get("shifted_slots").getAsInt();
+            if(obj.has("burn_time")) burnTime = obj.get("burn_time").getAsInt();
+            CompoundItem compound = new CompoundItem(name, new Color(color[0], color[1], color[2]), componentStacks,shiftedSlots);
+            compound.burnTime = burnTime;
+            output.add(compound);
         }
         return output;
     }

@@ -26,15 +26,20 @@ public class CompoundItem extends BaseItem implements IChemical, IItemColor {
     private List<ChemicalStack> components;
     private int color;
     public final String internalName;
+    public final int shiftedSlots;
+    public int burnTime = 0;
 
-    public CompoundItem(String name, Color color, List<ChemicalStack> components) {
+    /*public CompoundItem(String name, Color color, List<ChemicalStack> components) {
+        this(name, color, components, 0);
+    }*/
+
+    public CompoundItem(String name, Color color, List<ChemicalStack> components, int shiftedSlots) {
         super("compound_" + name, new Item.Properties());
         this.components = components;
         this.color = color.getRGB();
         this.internalName = name;
         CompoundRegistry.compounds.add(this);
-        //setRegistryName(new ResourceLocation(ChemLib.MODID, "compound_" + name));
-        //ModItems.items.add(this);
+        this.shiftedSlots = shiftedSlots;
     }
 
 
@@ -123,5 +128,10 @@ public class CompoundItem extends BaseItem implements IChemical, IItemColor {
     @Override
     public Item getItem() {
         return this;
+    }
+
+    @Override
+    public int getBurnTime(ItemStack itemStack) {
+        return burnTime;
     }
 }

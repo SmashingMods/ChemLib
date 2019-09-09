@@ -47,4 +47,16 @@ public class ElementItem extends BaseItem implements IChemical {
     public Item getItem() {
         return this;
     }
+
+    @Override
+    public int getBurnTime(ItemStack itemStack) {
+        switch (this.atomicNumber) {
+            case 1:
+                return 20;
+            case 6:
+                return 200;
+            default:
+                return 0;
+        }
+    }
 }

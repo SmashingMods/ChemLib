@@ -40,7 +40,6 @@ public class ChemLib {
 
     public ChemLib() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -48,6 +47,7 @@ public class ChemLib {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
+       // FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
     }
 
     @SubscribeEvent
@@ -73,7 +73,6 @@ public class ChemLib {
                 e.getRegistry().register(item);
             }
             ModItems.parseCompounds().stream().forEachOrdered(e.getRegistry()::register);
-            //System.out.println(items.items);
             ModBlocks.blocks.stream().forEachOrdered(block ->
                     e.getRegistry().register(new BlockItem(block, new Item.Properties().group(ITEM_GROUP))
                             .setRegistryName(block.getRegistryName())));

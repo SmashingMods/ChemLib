@@ -2,7 +2,6 @@ package al132.chemlib.items;
 
 import al132.chemlib.chemistry.ChemicalStack;
 import al132.chemlib.chemistry.CompoundRegistry;
-import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
@@ -22,9 +21,9 @@ import java.awt.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CompoundItem extends BaseItem implements IChemical, IItemColor {
+public class CompoundItem extends BaseItem implements IChemical {
     private List<ChemicalStack> components;
-    private int color;
+    public int color;
     public final String internalName;
     public final int shiftedSlots;
     public int burnTime = 0;
@@ -77,11 +76,6 @@ public class CompoundItem extends BaseItem implements IChemical, IItemColor {
     @Override
     public String getChemicalName() {
         return this.internalName;
-    }
-
-    @Override
-    public int getColor(ItemStack stack, int color) {
-        return this.color;
     }
 
     public List<ChemicalStack> getComponents() {

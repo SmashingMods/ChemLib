@@ -56,7 +56,7 @@ public class DankMolecule {
                         Lists.newArrayList(Effects.NIGHT_VISION, Effects.GLOWING, Effects.SLOWNESS),
                         (player) -> {
                             player.getCapability(CapabilityDrugInfo.DRUG_INFO).ifPresent(data -> data.psilocybinTicks = 1100);
-                        })));
+                        }))); // todo: shaders?
         Utils.getChemItem("compound_penicillin").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 0, 0, Lists.newArrayList(),
                         (player) -> {
@@ -64,8 +64,8 @@ public class DankMolecule {
                             player.heal(2.0f);
                         })));
         Utils.getChemItem("compound_epinephrine").ifPresent(item ->
-                dankMolecules.put(item, new DankMolecule(item, 400, 0,
-                        Lists.newArrayList(Effects.NIGHT_VISION, Effects.HASTE, Effects.SPEED), (p) -> {
+                dankMolecules.put(item, new DankMolecule(item, 200, 0,
+                        Lists.newArrayList(Effects.JUMP_BOOST, Effects.HASTE, Effects.SPEED), (p) -> {
                 })));
         Utils.getChemItem("compound_cocaine").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 400, 2,
@@ -75,7 +75,7 @@ public class DankMolecule {
                 dankMolecules.put(item, new DankMolecule(item, 0, 0, Lists.newArrayList(),
                         (player) -> player.heal(5.0f))));
 
-        Utils.getChemItem("compound_compound").ifPresent(item ->
+        Utils.getChemItem("compound_caffeine").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 400, 0,
                         Lists.newArrayList(Effects.NIGHT_VISION, Effects.HASTE, Effects.SPEED), (p) -> {
                 })));

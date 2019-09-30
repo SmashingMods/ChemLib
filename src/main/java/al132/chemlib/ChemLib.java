@@ -13,6 +13,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -47,7 +48,7 @@ public class ChemLib {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-       // FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        // FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
     }
 
     @SubscribeEvent
@@ -69,7 +70,7 @@ public class ChemLib {
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> e) {
-            for (BaseItem item : ModItems.items){
+            for (BaseItem item : ModItems.items) {
                 e.getRegistry().register(item);
             }
             ModItems.parseCompounds().stream().forEachOrdered(e.getRegistry()::register);
@@ -78,6 +79,11 @@ public class ChemLib {
                             .setRegistryName(block.getRegistryName())));
 
             DankMolecule.init();
+        }
+
+        @SubscribeEvent
+        public static void onRecipeRegistry(final RegistryEvent.Register<IRecipeSerializer<?>> e) {
+           // e.getRegistry().register();
         }
     }
 }

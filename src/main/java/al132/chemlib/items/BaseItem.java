@@ -9,7 +9,6 @@ public class BaseItem extends Item {
 
     public BaseItem(String name, Properties properties) {
         super(properties.group(ChemLib.ITEM_GROUP));
-        //System.out.println("added [" + name + "] to ITEM_GROUP");
         setRegistryName(new ResourceLocation(ChemLib.MODID, name));
         ModItems.items.add(this);
     }

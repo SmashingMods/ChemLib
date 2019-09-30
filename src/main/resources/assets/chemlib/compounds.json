@@ -426,6 +426,7 @@
     {
       "name": "ethanol",
       "color": "210, 250, 150",
+      "burn_time": 520,
       "components": [
         {
           "name": "carbon",
@@ -991,6 +992,155 @@
         },
         {
           "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "sodium_hydroxide",
+      "color": "200, 200, 255",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ]
+    },
+    {
+      "name": "calcium_oxide",
+      "color": "255, 180, 255",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "calcium_hydroxide",
+      "color": "180, 255, 255",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "calcium_chloride",
+      "color": "230, 230, 150",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "chlorine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "sodium_carbonate",
+      "color": "255, 150, 200",
+      "components": [
+        {
+          "name": "sodium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "hydrochloric_acid",
+      "color": "200, 230, 30",
+      "components": [
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "magnesium_carbonate",
+      "color": "150, 150, 255",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "lead_oxide",
+      "color": "50, 50, 155",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "sulfur_dioxide",
+      "color": "155, 155, 50",
+      "components": [
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "lead_sulfide",
+      "color": "145, 30, 150",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "zinc_sulfide",
+      "color": "128, 128, 10",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "iron_disulfide",
+      "color": "128, 10, 10",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "sulfur",
+          "count": 2
         }
       ]
     }

@@ -15,6 +15,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -31,6 +32,8 @@ import org.apache.logging.log4j.Logger;
 public class ChemLib {
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "chemlib";
+
+    public static final TextFormatting CHEM_TOOLTIP_COLOR = TextFormatting.DARK_AQUA;
 
     public static final ItemGroup ITEM_GROUP = new ItemGroup(MODID) {
         @Override

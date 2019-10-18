@@ -1,3 +1,19 @@
+1.14.4-10
+===
+-Added ~40 new compounds (sulfates & nitrates mostly)
+-Compounds now have colored formulas in their tooltips
+-Stuff
+
+1.14.4-8
+===
+-Added ~45 new compounds (for upcoming project Techemistry)
+-Many compounds have been re-colored to match their metal component (iron oxide is now same color as iron, lithium hydroxide same color as lithium, etc)
+
+1.14.4-6
+===
+-Added 8 new compounds (for use by my upcoming project Techemistry)
+-Some internal refactoring
+
 1.14.4-5
 ===
 -Added 12 new compounds (for use by my upcoming project Techemistry)

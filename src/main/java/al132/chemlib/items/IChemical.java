@@ -1,12 +1,10 @@
 package al132.chemlib.items;
 
-import net.minecraft.item.Item;
+import net.minecraft.util.IItemProvider;
 
-public interface IChemical {
+public interface IChemical extends IItemProvider {
 
     String getAbbreviation();
 
     String getChemicalName();
-
-    Item getItem();
 }

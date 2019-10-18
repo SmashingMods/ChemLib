@@ -1,5 +1,7 @@
 package al132.chemlib.items;
 
+import al132.chemlib.ChemLib;
+import al132.chemlib.Utils;
 import al132.chemlib.chemistry.ChemicalStack;
 import al132.chemlib.chemistry.CompoundRegistry;
 import net.minecraft.client.resources.I18n;
@@ -27,6 +29,7 @@ public class CompoundItem extends BaseItem implements IChemical {
     public final String internalName;
     public final int shiftedSlots;
     public int burnTime = 0;
+    private String abbreviation;
 
     /*public CompoundItem(String name, Color color, List<ChemicalStack> components) {
         this(name, color, components, 0);
@@ -39,38 +42,29 @@ public class CompoundItem extends BaseItem implements IChemical {
         this.internalName = name;
         CompoundRegistry.compounds.add(this);
         this.shiftedSlots = shiftedSlots;
+        this.abbreviation = Utils.getAbbreviation(components);
     }
 
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(getAbbreviation()));
+        tooltip.add(new StringTextComponent(getAbbreviation()).applyTextStyle(ChemLib.CHEM_TOOLTIP_COLOR));
         if (DankMolecule.hasDankMolecule(stack)) {
             tooltip.add(new StringTextComponent(I18n.format("tooltip.chemlib.generic_potion_compound")));
         }
     }
 
     public String getAbbreviation() {
-        StringBuilder builder = new StringBuilder();
-        for (ChemicalStack component : components) {
-            String abbreviation = ((IChemical) component.chemical).getAbbreviation();
-            if (component.chemical instanceof CompoundItem) {
-                builder.append("(" + abbreviation + ")");
-            } else {
-                builder.append(abbreviation);
-            }
-            if (component.quantity > 1) {
-                //subscriptZeroCodepoint is subscript 0 unicode char, adding 1-9 gives the subscript for that num
-                //i.e. ₀ + 3 = ₃
-                int subscriptZeroCodepoint = 0x2080;//Character.codePointAt("₀",0) + Character.codePointAt("₀",1);//Character.codePointAt("₀", 0);
+        return abbreviation;
+    }
 
-                for (char c : Integer.toString(component.quantity).toCharArray()) {
-                    builder.append(Character.toChars(subscriptZeroCodepoint + Character.getNumericValue(c)));
-                }
-
-            }
-        }
-        return builder.toString();
+    public String getASCIIAbbreviation() {
+        return this.abbreviation.chars()
+                .map(x -> (x >= 0x2080) ? x - 0x2080 + 0x0030 : x)
+                .filter(x -> x != 0x0028 && x != 0x0029)
+                .collect(StringBuilder::new,
+                        StringBuilder::appendCodePoint,
+                        StringBuilder::append).toString();
     }
 
     @Override
@@ -120,12 +114,11 @@ public class CompoundItem extends BaseItem implements IChemical {
     }
 
     @Override
-    public Item getItem() {
-        return this;
-    }
-
-    @Override
     public int getBurnTime(ItemStack itemStack) {
         return burnTime;
+    }
+
+    public int getColor(ItemStack stack, int tintIndex) {
+        return tintIndex > 0 ? -1 : color;
     }
 }

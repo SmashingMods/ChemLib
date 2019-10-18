@@ -45,18 +45,27 @@
       ]
     },
     {
-      "name": "potassium_nitrate",
-      "color": "54, 102, 69",
+      "name": "nitrate",
+      "color": "198, 152, 95",
       "components": [
-        {
-          "name": "potassium"
-        },
         {
           "name": "nitrogen"
         },
         {
           "name": "oxygen",
           "count": 3
+        }
+      ]
+    },
+    {
+      "name": "potassium_nitrate",
+      "color": "198, 152, 95",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "nitrate"
         }
       ]
     },
@@ -76,7 +85,7 @@
     },
     {
       "name": "magnesium_oxide",
-      "color": "225, 164, 182",
+      "color": "237, 178, 173",
       "components": [
         {
           "name": "magnesium"
@@ -88,7 +97,7 @@
     },
     {
       "name": "potassium_chloride",
-      "color": "236, 163, 32",
+      "color": "198, 152, 95",
       "components": [
         {
           "name": "potassium"
@@ -100,7 +109,7 @@
     },
     {
       "name": "sodium_chloride",
-      "color": "219, 201, 216",
+      "color": "211, 198, 131",
       "components": [
         {
           "name": "sodium"
@@ -166,7 +175,7 @@
     },
     {
       "name": "iron_oxide",
-      "color": "186, 49, 14",
+      "color": "128, 128, 128",
       "components": [
         {
           "name": "iron",
@@ -212,7 +221,7 @@
     },
     {
       "name": "calcium_carbonate",
-      "color": "254, 193, 129",
+      "color": "219, 210, 199",
       "components": [
         {
           "name": "calcium"
@@ -267,7 +276,7 @@
     },
     {
       "name": "strontium_carbonate",
-      "color": "242, 46, 75",
+      "color": "206, 88, 24",
       "components": [
         {
           "name": "strontium"
@@ -364,7 +373,7 @@
     },
     {
       "name": "zinc_oxide",
-      "color": "255, 255, 0",
+      "color": "189, 196, 141",
       "components": [
         {
           "name": "zinc"
@@ -376,7 +385,7 @@
     },
     {
       "name": "cobalt_aluminate",
-      "color": "0, 0, 255",
+      "color": "17, 114, 198",
       "components": [
         {
           "name": "cobalt"
@@ -412,7 +421,7 @@
     },
     {
       "name": "lead_iodide",
-      "color": "255, 255, 0",
+      "color": "186, 135, 193",
       "components": [
         {
           "name": "lead"
@@ -502,7 +511,7 @@
     },
     {
       "name": "potassium_carbonate",
-      "color": "40, 210, 90",
+      "color": "198, 152, 95",
       "components": [
         {
           "name": "potassium",
@@ -645,7 +654,7 @@
     },
     {
       "name": "potassium_dichromate",
-      "color": "255, 150, 0",
+      "color": "198, 152, 95",
       "components": [
         {
           "name": "potassium",
@@ -663,7 +672,7 @@
     },
     {
       "name": "nickel_chloride",
-      "color": "30, 255, 75",
+      "color": "198, 157, 162",
       "components": [
         {
           "name": "nickel"
@@ -676,7 +685,7 @@
     },
     {
       "name": "potassium_permanganate",
-      "color": "120, 0, 100",
+      "color": "198, 152, 95",
       "components": [
         {
           "name": "potassium"
@@ -692,7 +701,7 @@
     },
     {
       "name": "magnesium_sulfate",
-      "color": "200, 250, 200",
+      "color": "237, 178, 173",
       "components": [
         {
           "name": "magnesium"
@@ -708,7 +717,7 @@
     },
     {
       "name": "copper_chloride",
-      "color": "100, 250, 200",
+      "color": "255, 154, 30",
       "components": [
         {
           "name": "copper"
@@ -721,7 +730,7 @@
     },
     {
       "name": "cadmium_sulfide",
-      "color": "250, 250, 94",
+      "color": "160, 147, 115",
       "components": [
         {
           "name": "cadmium"
@@ -733,7 +742,7 @@
     },
     {
       "name": "chromium_oxide",
-      "color": "150, 255, 150",
+      "color": "236, 237, 218",
       "components": [
         {
           "name": "chromium",
@@ -809,7 +818,7 @@
     },
     {
       "name": "barium_sulfate",
-      "color": "220, 220, 255",
+      "color": "0, 219, 179",
       "components": [
         {
           "name": "barium"
@@ -856,7 +865,7 @@
     },
     {
       "name": "potassium_cyanide",
-      "color": "70, 250, 150",
+      "color": "198, 152, 95",
       "shifted_slots": 1,
       "components": [
         {
@@ -984,7 +993,7 @@
     },
     {
       "name": "mercury_sulfide",
-      "color": "200, 50, 20",
+      "color": "160, 159, 157",
       "shifted_slots": 4,
       "components": [
         {
@@ -997,7 +1006,7 @@
     },
     {
       "name": "sodium_hydroxide",
-      "color": "200, 200, 255",
+      "color": "211, 198, 131",
       "components": [
         {
           "name": "sodium"
@@ -1009,7 +1018,7 @@
     },
     {
       "name": "calcium_oxide",
-      "color": "255, 180, 255",
+      "color": "219, 210, 199",
       "components": [
         {
           "name": "calcium"
@@ -1021,7 +1030,7 @@
     },
     {
       "name": "calcium_hydroxide",
-      "color": "180, 255, 255",
+      "color": "219, 210, 199",
       "components": [
         {
           "name": "calcium"
@@ -1034,7 +1043,7 @@
     },
     {
       "name": "calcium_chloride",
-      "color": "230, 230, 150",
+      "color": "219, 210, 199",
       "components": [
         {
           "name": "calcium"
@@ -1047,7 +1056,7 @@
     },
     {
       "name": "sodium_carbonate",
-      "color": "255, 150, 200",
+      "color": "211, 198, 131",
       "components": [
         {
           "name": "sodium",
@@ -1060,7 +1069,7 @@
     },
     {
       "name": "hydrochloric_acid",
-      "color": "200, 230, 30",
+      "color": "0, 0, 255",
       "components": [
         {
           "name": "hydrogen"
@@ -1072,7 +1081,7 @@
     },
     {
       "name": "magnesium_carbonate",
-      "color": "150, 150, 255",
+      "color": "237, 178, 173",
       "components": [
         {
           "name": "magnesium"
@@ -1084,7 +1093,7 @@
     },
     {
       "name": "lead_oxide",
-      "color": "50, 50, 155",
+      "color": "186, 135, 193",
       "components": [
         {
           "name": "lead"
@@ -1109,7 +1118,7 @@
     },
     {
       "name": "lead_sulfide",
-      "color": "145, 30, 150",
+      "color": "186, 135, 193",
       "components": [
         {
           "name": "lead"
@@ -1121,7 +1130,7 @@
     },
     {
       "name": "zinc_sulfide",
-      "color": "128, 128, 10",
+      "color": "189, 196, 141",
       "components": [
         {
           "name": "zinc"
@@ -1133,10 +1142,1337 @@
     },
     {
       "name": "iron_disulfide",
-      "color": "128, 10, 10",
+      "color": "128, 128, 128",
       "components": [
         {
           "name": "iron"
+        },
+        {
+          "name": "sulfur",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "tin_oxide",
+      "color": "132, 161, 206",
+      "components": [
+        {
+          "name": "tin"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "manganese_oxide",
+      "color": "225, 186, 242",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "strontium_oxide",
+      "color": "206, 88, 24",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "iron_ii_oxide",
+      "color": "128, 128, 128",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "sulfuric_acid",
+      "color": "150, 160, 10",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "nitric_acid",
+      "color": "66, 123, 214",
+      "components": [
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "nitrogen_dioxide",
+      "color": "65, 120, 200",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "sodium_bisulfate",
+      "color": "211, 198, 131",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "ammonia",
+      "color": "60, 120, 250",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": "3"
+        }
+      ]
+    },
+    {
+      "name": "ammonium_chloride",
+      "color": "60, 120, 220",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": "4"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "phosphoric_acid",
+      "color": "225, 100, 135",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 3
+        },
+        {
+          "name": "phosphorus"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "calcium_sulfate",
+      "color": "219, 210, 199",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "copper_i_oxide",
+      "color": "255, 154, 30",
+      "components": [
+        {
+          "name": "copper",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "copper_i_sulfide",
+      "color": "255, 154, 30",
+      "components": [
+        {
+          "name": "copper",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "hydrogen_sulfide",
+      "color": "240, 220, 30",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "acetylene",
+      "color": "150, 230, 30",
+      "burn_time": 440,
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "acetic_acid",
+      "color": "200, 240, 100",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "nickel_sulfide",
+      "color": "198, 157, 162",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "antimony_trisulfide",
+      "color": "193, 150, 58",
+      "components": [
+        {
+          "name": "antimony",
+          "count": 2
+        },
+        {
+          "name": "sulfur",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "nickel_oxide",
+      "color": "198, 157, 162",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "carbon_monoxide",
+      "color": "69, 70, 83",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "lithium_hydroxide",
+      "color": "40, 158, 86",
+      "components": [
+        {
+          "name": "lithium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ]
+    },
+    {
+      "name": "potassium_hydroxide",
+      "color": "198, 152, 95",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_hydroxide",
+      "color": "15, 61, 40",
+      "components": [
+        {
+          "name": "rubidium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ]
+    },
+    {
+      "name": "cesium_hydroxide",
+      "color": "255, 148, 0",
+      "components": [
+        {
+          "name": "cesium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_hydroxide",
+      "color": "184, 199, 224",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "magnesium_hydroxide",
+      "color": "237, 178, 173",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "strontium_hydroxide",
+      "color": "206, 88, 24",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "barium_hydroxide",
+      "color": "0, 219, 179",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "aluminum_hydroxide",
+      "color": "237, 100, 59",
+      "components": [
+        {
+          "name": "aluminum"
+        },
+        {
+          "name": "hydroxide",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "zinc_hydroxide",
+      "color": "189, 196, 141",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "manganese_hydroxide",
+      "color": "225, 186, 242",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "cadmium_hydroxide",
+      "color": "160, 147, 115",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "copper_ii_hydroxide",
+      "color": "255, 154, 30",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "lithium_chloride",
+      "color": "40, 158, 86",
+      "components": [
+        {
+          "name": "lithium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_chloride",
+      "color": "15, 61, 40",
+      "components": [
+        {
+          "name": "rubidium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "cesium_chloride",
+      "color": "255, 148, 0",
+      "components": [
+        {
+          "name": "cesium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_chloride",
+      "color": "184, 199, 224",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "magnesium_chloride",
+      "color": "237, 178, 173",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "strontium_chloride",
+      "color": "206, 88, 24",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "barium_chloride",
+      "color": "0, 219, 179",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "lithium_oxide",
+      "color": "40, 158, 86",
+      "components": [
+        {
+          "name": "lithium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "sodium_oxide",
+      "color": "211, 198, 131",
+      "components": [
+        {
+          "name": "sodium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "potassium_oxide",
+      "color": "198, 152, 95",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_oxide",
+      "color": "15, 61, 40",
+      "components": [
+        {
+          "name": "rubidium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_oxide",
+      "color": "184, 199, 224",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "barium_oxide",
+      "color": "0, 219, 179",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "lithium_carbonate",
+      "color": "40, 158, 86",
+      "components": [
+        {
+          "name": "lithium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_carbonate",
+      "color": "15, 61, 40",
+      "components": [
+        {
+          "name": "rubidium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "cesium_carbonate",
+      "color": "255, 148, 0",
+      "components": [
+        {
+          "name": "cesium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_carbonate",
+      "color": "184, 199, 224",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "barium_carbonate",
+      "color": "0, 219, 179",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "manganese_carbonate",
+      "color": "225, 186, 242",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "iron_carbonate",
+      "color": "128, 128, 128",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "cobalt_carbonate",
+      "color": "17, 114, 198",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "nickel_carbonate",
+      "color": "198, 157, 162",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "copper_carbonate",
+      "color": "255, 154, 30",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "zinc_carbonate",
+      "color": "189, 196, 141",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "cadmium_carbonate",
+      "color": "160, 147, 115",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "lead_carbonate",
+      "color": "186, 135, 193",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "lithium_sulfate",
+      "color": "40, 158, 86",
+      "components": [
+        {
+          "name": "lithium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "sodium_sulfate",
+      "color": "211, 198, 131",
+      "components": [
+        {
+          "name": "sodium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "potassium_sulfate",
+      "color": "198, 152, 95",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "rubidium_sulfate",
+      "color": "15, 61, 40",
+      "components": [
+        {
+          "name": "rubidium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "cesium_sulfate",
+      "color": "255, 148, 0",
+      "components": [
+        {
+          "name": "cesium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "beryllium_sulfate",
+      "color": "184, 199, 224",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "strontium_sulfate",
+      "color": "206, 88, 24",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "manganese_sulfate",
+      "color": "225, 186, 242",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "cobalt_sulfate",
+      "color": "17, 114, 198",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "nickel_sulfate",
+      "color": "198, 157, 162",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "iron_ii_sulfate",
+      "color": "128, 128, 128",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "copper_ii_sulfate",
+      "color": "255, 154, 30",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "zinc_sulfate",
+      "color": "189, 196, 141",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "cadmium_sulfate",
+      "color": "160, 147, 115",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "lead_sulfate",
+      "color": "186, 135, 193",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "tin_sulfate",
+      "color": "132, 161, 206",
+      "components": [
+        {
+          "name": "tin"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "lithium_nitrate",
+      "color": "40, 158, 86",
+      "components": [
+        {
+          "name": "lithium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "sodium_nitrate",
+      "color": "211, 198, 131",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_nitrate",
+      "color": "15, 61, 40",
+      "components": [
+        {
+          "name": "rubidium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "cesium_nitrate",
+      "color": "255, 148, 0",
+      "components": [
+        {
+          "name": "cesium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_nitrate",
+      "color": "184, 199, 224",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "magnesium_nitrate",
+      "color": "237, 178, 173",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "calcium_nitrate",
+      "color": "219, 210, 199",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "strontium_nitrate",
+      "color": "206, 88, 24",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "barium_nitrate",
+      "color": "0, 219, 179",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "manganese_nitrate",
+      "color": "255, 186, 242",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "iron_iii_nitrate",
+      "color": "128, 128, 128",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "nitrate",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "cobalt_nitrate",
+      "color": "17, 114, 198",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "nickel_nitrate",
+      "color": "198, 157, 162",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "copper_nitrate",
+      "color": "255, 154, 30",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "zinc_nitrate",
+      "color": "189, 196, 141",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "lead_nitrate",
+      "color": "186, 135, 193",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "cadmium_nitrate",
+      "color": "160, 147, 115",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "aluminum_nitrate",
+      "color": "247, 110, 69",
+      "components": [
+        {
+          "name": "aluminum"
+        },
+        {
+          "name": "nitrate",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "nitric_oxide",
+      "color": "65, 120, 200",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "carbon_disulfide",
+      "color": "200, 120, 200",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "sulfur",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "potassium_ethyl_xanthate",
+      "color": "200, 120, 200",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 5
+        },
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "oxygen"
         },
         {
           "name": "sulfur",

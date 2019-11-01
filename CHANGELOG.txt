@@ -1,3 +1,7 @@
+1.14.4-11
+===
+-Added a few new compounds (for Techemistry)
+
 1.14.4-10
 ===
 -Added ~40 new compounds (sulfates & nitrates mostly)

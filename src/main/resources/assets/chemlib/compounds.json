@@ -2479,6 +2479,31 @@
           "count": 2
         }
       ]
+    },
+    {
+      "name": "sulfur_trioxide",
+      "color": "130, 160, 50",
+      "components": [
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "barium_sulfide",
+      "color": "0, 219, 179",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
     }
   ]
 }

@@ -17,10 +17,9 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void colorStuff(final ColorHandlerEvent.Item e) {
         ItemColors colors = e.getItemColors();
-        //         return p_210238_1_ > 0 ? -1 : PotionUtils.getColor(p_210238_0_);
         ModItems.items.stream()
                 .filter(item -> item instanceof CompoundItem)
-                .forEach(item -> colors.register((stack, tintIndex) -> ((CompoundItem) item).getColor(stack,tintIndex), item));
+                .forEach(item -> colors.register((stack, tintIndex) -> ((CompoundItem) item).getColor(stack, tintIndex), item));
         ModItems.items.stream()
                 .filter(item -> item instanceof IngotItem)
                 .forEach(item -> colors.register((stack, tintIndex) -> ((IngotItem) item).color, item));

@@ -1,5 +1,6 @@
 package al132.chemlib.items;
 
+import al132.chemlib.ChemLib;
 import al132.chemlib.chemistry.ElementRegistry;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
@@ -19,8 +20,6 @@ public class ElementItem extends BaseItem implements IChemical {
 
     public ElementItem(String name, int atomicNumber, String abbreviation) {
         super("element_" + name, new Item.Properties());
-        //setRegistryName(new ResourceLocation(ChemLib.MODID, "element_" + name));
-        // ModItems.items.add(this);
         this.internalName = name;
         this.atomicNumber = atomicNumber;
         this.abbreviation = abbreviation;
@@ -30,7 +29,8 @@ public class ElementItem extends BaseItem implements IChemical {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(abbreviation + " - " + atomicNumber));
+        tooltip.add(new StringTextComponent(getAbbreviation()).applyTextStyle(ChemLib.CHEM_TOOLTIP_COLOR));
+        tooltip.add(new StringTextComponent("(" + atomicNumber + ")"));
     }
 
     @Override

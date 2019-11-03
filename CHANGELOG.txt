@@ -1,3 +1,8 @@
+1.14.4-12
+===
+-Improved error handling/reporting
+-Elements will now also have cyan tooltips (like compounds do)
+
 1.14.4-11
 ===
 -Added a few new compounds (for Techemistry)

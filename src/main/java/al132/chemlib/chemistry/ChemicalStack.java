@@ -18,16 +18,17 @@ public class ChemicalStack implements IChemical {
         this.quantity = quantity;
     }
 
+    public ChemicalStack(String name, int quantity) {
+        this.chemical = lookup(name).orElseThrow(() -> new RuntimeException("Unable to find chemical [" + name + "]"));
+        this.quantity = quantity;
+    }
+
     public ChemicalStack(IChemical chemical) {
         this(chemical, 1);
     }
 
     public ChemicalStack(String name) {
         this(name, 1);
-    }
-
-    public ChemicalStack(String name, int quantity) {
-        this(lookup(name).get(), quantity);
     }
 
     public static Optional<IChemical> lookup(String name) {
@@ -48,7 +49,7 @@ public class ChemicalStack implements IChemical {
 
     @Override
     public String getChemicalName() {
-        return null;
+        return "error";
     }
 
     @Override

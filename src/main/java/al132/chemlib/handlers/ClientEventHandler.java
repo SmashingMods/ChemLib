@@ -19,10 +19,9 @@ public class ClientEventHandler {
         ItemColors colors = e.getItemColors();
         ModItems.items.stream()
                 .filter(item -> item instanceof CompoundItem)
-                .forEach(item -> colors.register((stack, tintIndex) -> ((CompoundItem) item).getColor(stack, tintIndex), item));
+                .forEach(item -> colors.register(((CompoundItem) item)::getColor, item));
         ModItems.items.stream()
                 .filter(item -> item instanceof IngotItem)
                 .forEach(item -> colors.register((stack, tintIndex) -> ((IngotItem) item).color, item));
-        //final IItemColor handler = ((stack, tintIndex)-> colors.getColor(stack,tintIndex));
     }
 }

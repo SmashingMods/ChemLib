@@ -1,3 +1,7 @@
+1.14.4-13
+===
+-Startup crashes with lots of other mods should be fixed
+
 1.14.4-12
 ===
 -Improved error handling/reporting

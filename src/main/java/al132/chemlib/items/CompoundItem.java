@@ -29,7 +29,7 @@ public class CompoundItem extends BaseItem implements IChemical {
     public final String internalName;
     public final int shiftedSlots;
     public int burnTime = 0;
-    private String abbreviation;
+    private String abbreviation = "";
 
     /*public CompoundItem(String name, Color color, List<ChemicalStack> components) {
         this(name, color, components, 0);
@@ -42,7 +42,6 @@ public class CompoundItem extends BaseItem implements IChemical {
         this.internalName = name;
         CompoundRegistry.compounds.add(this);
         this.shiftedSlots = shiftedSlots;
-        this.abbreviation = Utils.getAbbreviation(components);
     }
 
 
@@ -55,6 +54,7 @@ public class CompoundItem extends BaseItem implements IChemical {
     }
 
     public String getAbbreviation() {
+        if(abbreviation.isEmpty()) abbreviation = Utils.getAbbreviation(components);
         return abbreviation;
     }
 

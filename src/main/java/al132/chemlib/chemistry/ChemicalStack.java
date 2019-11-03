@@ -10,7 +10,8 @@ import java.util.Optional;
 
 public class ChemicalStack implements IChemical {
 
-    public IChemical chemical;
+    private String name = "";
+    private IChemical chemical;
     public int quantity;
 
     public ChemicalStack(IChemical chemical, int quantity) {
@@ -19,7 +20,7 @@ public class ChemicalStack implements IChemical {
     }
 
     public ChemicalStack(String name, int quantity) {
-        this.chemical = lookup(name).orElseThrow(() -> new RuntimeException("Unable to find chemical [" + name + "]"));
+        this.name = name;// = lookup(name).orElseThrow(() -> new RuntimeException("Unable to find chemical [" + name + "]"));
         this.quantity = quantity;
     }
 
@@ -39,7 +40,7 @@ public class ChemicalStack implements IChemical {
     }
 
     public ItemStack toItemStack() {
-        return new ItemStack(chemical.asItem(), quantity);
+        return new ItemStack(this.asItem(), quantity);
     }
 
     @Override
@@ -52,8 +53,13 @@ public class ChemicalStack implements IChemical {
         return "error";
     }
 
+    public IChemical getChemical(){
+        if (chemical != null) return chemical;
+        else return lookup(name).orElseThrow(() -> new RuntimeException("Unable to find chemical [" + name + "]"));
+    }
+
     @Override
     public Item asItem() {
-        return chemical.asItem();
+        return getChemical().asItem();
     }
 }

@@ -11,14 +11,10 @@ public class IngotItem extends BaseItem {
 
     public IngotItem(String name, Color color) {
         super("ingot_" + name, new Item.Properties());
-        //setRegistryName(new ResourceLocation(ChemLib.MODID,"ingot_" + name));
-        //ModItems.items.add(this);
         this.color = color.getRGB();
-        //setCreativeTab(Reference.creativeTab);
     }
 
     public int getColor(ItemStack stack, int tintIndex) {
-        System.out.println(tintIndex);
         return color;
     }
 }

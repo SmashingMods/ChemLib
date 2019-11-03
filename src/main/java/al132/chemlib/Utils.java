@@ -2,7 +2,6 @@ package al132.chemlib;
 
 import al132.chemlib.chemistry.ChemicalStack;
 import al132.chemlib.items.CompoundItem;
-import al132.chemlib.items.IChemical;
 import com.google.common.collect.Lists;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -43,20 +42,13 @@ public class Utils {
     public static String getAbbreviation(List<ChemicalStack> components) {
         StringBuilder builder = new StringBuilder();
         for (ChemicalStack component : components) {
-            String abbreviation = ((IChemical) component.chemical).getAbbreviation();
-            if (component.chemical instanceof CompoundItem) {
+            String abbreviation = component.getChemical().getAbbreviation();
+            if (component.getChemical() instanceof CompoundItem) {
                 builder.append("(" + abbreviation + ")");
             } else {
                 builder.append(abbreviation);
             }
             if (component.quantity > 1) {
-                //subscriptZeroCodepoint is subscript 0 unicode char, adding 1-9 gives the subscript for that num
-                //i.e. ₀ + 3 = ₃
-                /*int subscriptZeroCodepoint = 0x2080;//Character.codePointAt("₀",0) + Character.codePointAt("₀",1);//Character.codePointAt("₀", 0);
-
-                for (char c : Integer.toString(component.quantity).toCharArray()) {
-                    builder.append(Character.toChars(subscriptZeroCodepoint + Character.getNumericValue(c)));
-                }*/
                 builder.append(getSubscript(component.quantity));
             }
         }

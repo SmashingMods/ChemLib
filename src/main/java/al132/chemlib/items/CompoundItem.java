@@ -59,7 +59,7 @@ public class CompoundItem extends BaseItem implements IChemical {
     }
 
     public String getASCIIAbbreviation() {
-        return this.abbreviation.chars()
+        return this.getAbbreviation().chars()
                 .map(x -> (x >= 0x2080) ? x - 0x2080 + 0x0030 : x)
                 .filter(x -> x != 0x0028 && x != 0x0029)
                 .collect(StringBuilder::new,

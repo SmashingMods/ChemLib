@@ -14,7 +14,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -45,10 +44,6 @@ public class ChemLib {
     private void setup(final FMLCommonSetupEvent e) {
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
-    }
-
-
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
@@ -63,11 +58,17 @@ public class ChemLib {
             for (BaseItem item : ModItems.items) {
                 e.getRegistry().register(item);
             }
-            ModItems.parseCompounds().stream().forEachOrdered(e.getRegistry()::register);
-            ModBlocks.blocks.stream().forEachOrdered(block ->
-                    e.getRegistry().register(new BlockItem(block, new Item.Properties().group(ITEM_GROUP))
-                            .setRegistryName(block.getRegistryName())));
-
+            for(Item item: ModItems.parseCompounds()){
+                e.getRegistry().register(item);
+            }
+            for(Block block: ModBlocks.blocks){
+                e.getRegistry().register(new BlockItem(block, new Item.Properties().group(ITEM_GROUP))
+                        .setRegistryName(block.getRegistryName()));
+            }
+            //ModItems.parseCompounds().stream().forEachOrdered(e.getRegistry()::register);
+            //ModBlocks.blocks.stream().forEachOrdered(block ->
+            //        e.getRegistry().register(new BlockItem(block, new Item.Properties().group(ITEM_GROUP))
+            //                .setRegistryName(block.getRegistryName())));
             DankMolecule.init();
         }
     }

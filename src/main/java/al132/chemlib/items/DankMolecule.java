@@ -46,9 +46,9 @@ public class DankMolecule {
                 dankMolecules.put(item, new DankMolecule(item, 500, 2,
                         Lists.newArrayList(Effects.WITHER, Effects.POISON, Effects.NAUSEA, Effects.SLOWNESS, Effects.HUNGER),
                         (player) -> {
-                            player.getFoodStats().setFoodSaturationLevel(0.0f);
+                            //player.getFoodStats().setFoodSaturationLevel(0.0f); oops- clientside only
                             player.getFoodStats().setFoodLevel(0);
-                            player.attackEntityFrom(DamageSource.STARVE, 12.0f);
+                            player.attackEntityFrom(DamageSource.STARVE, 16.0f);
                         })));
 
         Utils.getChemItem("compound_psilocybin").ifPresent(item ->

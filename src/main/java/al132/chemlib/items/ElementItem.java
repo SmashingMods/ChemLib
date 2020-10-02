@@ -29,7 +29,7 @@ public class ElementItem extends BaseItem implements IChemical {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(getAbbreviation()).applyTextStyle(ChemLib.CHEM_TOOLTIP_COLOR));
+        tooltip.add(new StringTextComponent(getAbbreviation()).mergeStyle(ChemLib.CHEM_TOOLTIP_COLOR));
         tooltip.add(new StringTextComponent("(" + atomicNumber + ")"));
     }
 

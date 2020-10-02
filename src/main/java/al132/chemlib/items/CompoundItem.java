@@ -47,7 +47,7 @@ public class CompoundItem extends BaseItem implements IChemical {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(getAbbreviation()).applyTextStyle(ChemLib.CHEM_TOOLTIP_COLOR));
+        tooltip.add(new StringTextComponent(getAbbreviation()).mergeStyle(ChemLib.CHEM_TOOLTIP_COLOR));
         if (DankMolecule.hasDankMolecule(stack)) {
             tooltip.add(new StringTextComponent(I18n.format("tooltip.chemlib.generic_potion_compound")));
         }

@@ -1,45 +1,12 @@
-1.14.4-14
+1.16.2-1
 ===
--Updated to Forge 28.1.90
--Potassium Cyanide should no longer error on servers
-
-1.14.4-13
-===
--Startup crashes with lots of other mods should be fixed
-
-1.14.4-12
-===
--Improved error handling/reporting
--Elements will now also have cyan tooltips (like compounds do)
-
-1.14.4-11
-===
--Added a few new compounds (for Techemistry)
-
-1.14.4-10
-===
--Added ~40 new compounds (sulfates & nitrates mostly)
--Compounds now have colored formulas in their tooltips
--Stuff
-
-1.14.4-8
-===
--Added ~45 new compounds (for upcoming project Techemistry)
--Many compounds have been re-colored to match their metal component (iron oxide is now same color as iron, lithium hydroxide same color as lithium, etc)
-
-1.14.4-6
-===
--Added 8 new compounds (for use by my upcoming project Techemistry)
--Some internal refactoring
-
-1.14.4-5
-===
--Added 12 new compounds (for use by my upcoming project Techemistry)
--Added zn_cn.lang
--Added burn time to ethanol
+-Initial 1.16.2 version
+-Changed license to MIT
+-Changed lamp step sound to glass
+-Added new textures for *everything* (Thanks to Draco Nocte)
+-Added french translation (Thanks to Draco Nocte)
 
 
-1.14.4-4
+1.16.1-1
 ===
--Updated to Forge 1.14.4-28.1.10
--Reduced duration of epinephrine
+-Initial 1.16.1 port

@@ -251,7 +251,7 @@ public class ModItems {
         List<CompoundItem> output = new ArrayList<>();
         InputStream is = ChemLib.class.getResourceAsStream("/assets/chemlib/compounds.json");
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        JsonObject json = JSONUtils.fromJson(reader);
+        JsonObject json = JSONUtils.parse(reader);
         for (JsonElement el : (JsonArray) json.get("compounds")) {
             JsonObject obj = el.getAsJsonObject();
             String name = obj.get("name").getAsString();

@@ -7,10 +7,11 @@ import net.minecraft.block.material.Material;
 public class BlockLamp extends Block {
     public BlockLamp(String name) {
         super(Block.Properties
-                .create(Material.EARTH)
-                .hardnessAndResistance(2.0f)
+                .of(Material.DIRT)
+                .strength(2.0f)
+                //.hardnessAndResistance(2.0f)
                 .sound(SoundType.GLASS)
-                .setLightLevel((x) -> 15)); //light level
+                .lightLevel((x) -> 15)); //light level
         setRegistryName("lamp_" + name);
         ModBlocks.blocks.add(this);
     }

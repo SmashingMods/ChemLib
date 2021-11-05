@@ -10,17 +10,17 @@ import javax.annotation.Nullable;
 
 public class DankSerializer implements IRecipeSerializer {
     @Override
-    public IRecipe<?> read(ResourceLocation recipeId, JsonObject json) {
+    public IRecipe<?> fromJson(ResourceLocation recipeId, JsonObject json) {
         return null;
     }
 
     @Override
-    public IRecipe<?> read(ResourceLocation recipeId, PacketBuffer buffer) {
+    public IRecipe<?> fromNetwork(ResourceLocation recipeId, PacketBuffer buffer) {
         return null;
     }
 
     @Override
-    public void write(PacketBuffer buffer, IRecipe recipe) {
+    public void toNetwork(PacketBuffer buffer, IRecipe recipe) {
 
     }
 

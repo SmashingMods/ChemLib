@@ -29,7 +29,7 @@ public class ChemLib {
 
     public static final ItemGroup ITEM_GROUP = new ItemGroup(MODID) {
         @Override
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             return new ItemStack(ModItems.hydrogen);
         }
     };
@@ -62,7 +62,7 @@ public class ChemLib {
                 e.getRegistry().register(item);
             }
             for(Block block: ModBlocks.blocks){
-                e.getRegistry().register(new BlockItem(block, new Item.Properties().group(ITEM_GROUP))
+                e.getRegistry().register(new BlockItem(block, new Item.Properties().tab(ITEM_GROUP))
                         .setRegistryName(block.getRegistryName()));
             }
             //ModItems.parseCompounds().stream().forEachOrdered(e.getRegistry()::register);

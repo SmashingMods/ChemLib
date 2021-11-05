@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -27,10 +29,10 @@ public class ElementItem extends BaseItem implements IChemical {
     }
 
 
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(getAbbreviation()).mergeStyle(ChemLib.CHEM_TOOLTIP_COLOR));
-        tooltip.add(new StringTextComponent("(" + atomicNumber + ")"));
+    @OnlyIn(Dist.CLIENT)
+    public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltips, ITooltipFlag flag) {
+        tooltips.add(new StringTextComponent(getAbbreviation()).withStyle(ChemLib.CHEM_TOOLTIP_COLOR));
+        tooltips.add(new StringTextComponent("(" + atomicNumber + ")"));
     }
 
     @Override

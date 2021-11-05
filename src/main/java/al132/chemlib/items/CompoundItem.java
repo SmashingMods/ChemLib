@@ -10,13 +10,14 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.UseAction;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.awt.*;
@@ -45,16 +46,16 @@ public class CompoundItem extends BaseItem implements IChemical {
     }
 
 
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(getAbbreviation()).mergeStyle(ChemLib.CHEM_TOOLTIP_COLOR));
+    @OnlyIn(Dist.CLIENT)
+    public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltips, ITooltipFlag flag) {
+        tooltips.add(new StringTextComponent(getAbbreviation()).withStyle(ChemLib.CHEM_TOOLTIP_COLOR));
         if (DankMolecule.hasDankMolecule(stack)) {
-            tooltip.add(new StringTextComponent(I18n.format("tooltip.chemlib.generic_potion_compound")));
+            tooltips.add(new StringTextComponent(I18n.get("tooltip.chemlib.generic_potion_compound")));
         }
     }
 
     public String getAbbreviation() {
-        if(abbreviation.isEmpty()) abbreviation = Utils.getAbbreviation(components);
+        if (abbreviation.isEmpty()) abbreviation = Utils.getAbbreviation(components);
         return abbreviation;
     }
 
@@ -81,7 +82,7 @@ public class CompoundItem extends BaseItem implements IChemical {
     }
 
     @Override
-    public ItemStack onItemUseFinish(ItemStack stack, World world, LivingEntity entity) {
+    public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity entity) {
         if (entity instanceof PlayerEntity) {
             DankMolecule.getDankMolecule(stack)
                     .ifPresent(molecule -> {
@@ -93,24 +94,29 @@ public class CompoundItem extends BaseItem implements IChemical {
     }
 
     @Override
+    public boolean isEdible() {
+        if (DankMolecule.hasDankMolecule(new ItemStack(this))) return true;
+        else return super.isEdible();
+    }
+
+    @Override
     public int getUseDuration(ItemStack stack) {
-        if (DankMolecule.hasDankMolecule(stack)) return 36;
+        if (DankMolecule.hasDankMolecule(stack)) return 32;
         else return super.getUseDuration(stack);
     }
 
     @Override
-    public UseAction getUseAction(ItemStack stack) {
+    public UseAction getUseAnimation(ItemStack stack) {
         if (DankMolecule.hasDankMolecule(stack)) return UseAction.DRINK;
-        else return super.getUseAction(stack);
+        else return super.getUseAnimation(stack);
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity playerIn, Hand handIn) {
-        playerIn.setActiveHand(handIn);
-        ItemStack stack = playerIn.getHeldItem(handIn);
+    public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+        ItemStack stack = player.getItemInHand(hand);
         if (DankMolecule.hasDankMolecule(stack)) {
-            return new ActionResult<>(ActionResultType.SUCCESS, playerIn.getHeldItem(handIn));
-        } else return new ActionResult<>(ActionResultType.PASS, stack);
+            return DrinkHelper.useDrink(world, player, hand);
+        } else return super.use(world, player, hand);
     }
 
     @Override

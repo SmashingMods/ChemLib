@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 public class BaseItem extends Item {
 
     public BaseItem(String name, Properties properties) {
-        super(properties.group(ChemLib.ITEM_GROUP));
+        super(properties.tab(ChemLib.ITEM_GROUP));
         setRegistryName(new ResourceLocation(ChemLib.MODID, name));
         ModItems.items.add(this);
     }

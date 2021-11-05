@@ -36,7 +36,7 @@ public class DankMolecule {
 
     public void activateForPlayer(PlayerEntity player) {
         for (Effect effect : this.effects) {
-            effects.forEach(x -> player.addPotionEffect(new EffectInstance(effect, duration, amplifier)));
+            effects.forEach(x -> player.addEffect(new EffectInstance(effect, duration, amplifier)));
         }
         if (entityEffects != null) entityEffects.accept(player);
     }
@@ -44,32 +44,32 @@ public class DankMolecule {
     public static void init() {
         Utils.getChemItem("compound_potassium_cyanide").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 500, 2,
-                        Lists.newArrayList(Effects.WITHER, Effects.POISON, Effects.NAUSEA, Effects.SLOWNESS, Effects.HUNGER),
+                        Lists.newArrayList(Effects.WITHER, Effects.POISON, Effects.CONFUSION, Effects.MOVEMENT_SLOWDOWN, Effects.HUNGER),
                         (player) -> {
                             //player.getFoodStats().setFoodSaturationLevel(0.0f); oops- clientside only
-                            player.getFoodStats().setFoodLevel(0);
-                            player.attackEntityFrom(DamageSource.STARVE, 16.0f);
+                            player.getFoodData().setFoodLevel(0);
+                            player.hurt(DamageSource.STARVE, 16.0f);
                         })));
 
         Utils.getChemItem("compound_psilocybin").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 600, 2,
-                        Lists.newArrayList(Effects.NIGHT_VISION, Effects.GLOWING, Effects.SLOWNESS),
+                        Lists.newArrayList(Effects.NIGHT_VISION, Effects.GLOWING, Effects.MOVEMENT_SLOWDOWN),
                         (player) -> {
                             player.getCapability(CapabilityDrugInfo.DRUG_INFO).ifPresent(data -> data.psilocybinTicks = 1100);
                         }))); // todo: shaders?
         Utils.getChemItem("compound_penicillin").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 0, 0, Lists.newArrayList(),
                         (player) -> {
-                            player.clearActivePotions();
+                            player.removeAllEffects();
                             player.heal(2.0f);
                         })));
         Utils.getChemItem("compound_epinephrine").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 200, 0,
-                        Lists.newArrayList(Effects.JUMP_BOOST, Effects.HASTE, Effects.SPEED), (p) -> {
+                        Lists.newArrayList(Effects.JUMP, Effects.MOVEMENT_SPEED, Effects.DIG_SPEED), (p) -> {
                 })));
         Utils.getChemItem("compound_cocaine").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 400, 2,
-                        Lists.newArrayList(Effects.NIGHT_VISION, Effects.HASTE, Effects.SPEED, Effects.JUMP_BOOST), (p) -> {
+                        Lists.newArrayList(Effects.NIGHT_VISION, Effects.MOVEMENT_SPEED, Effects.DIG_SPEED, Effects.JUMP), (p) -> {
                 })));
         Utils.getChemItem("compound_acetylsalicylic_acid").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 0, 0, Lists.newArrayList(),
@@ -77,7 +77,7 @@ public class DankMolecule {
 
         Utils.getChemItem("compound_caffeine").ifPresent(item ->
                 dankMolecules.put(item, new DankMolecule(item, 400, 0,
-                        Lists.newArrayList(Effects.NIGHT_VISION, Effects.HASTE, Effects.SPEED), (p) -> {
+                        Lists.newArrayList(Effects.NIGHT_VISION, Effects.MOVEMENT_SPEED, Effects.DIG_SPEED), (p) -> {
                 })));
     }
 

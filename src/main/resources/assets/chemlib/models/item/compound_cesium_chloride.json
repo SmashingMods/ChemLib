@@ -1,8 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "chemlib:items/compound",
-    "layer1": "chemlib:items/compound_overlay_vial",
-    "layer2": "chemlib:items/compound_overlay_chloride"
-  }
-}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:helium_lamp"
+    ]
+  },
+  "criteria": {
+    "has_helium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:helium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:helium_lamp"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_helium",
+      "has_the_recipe"
+    ]
+  ]
+}

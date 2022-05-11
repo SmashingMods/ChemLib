@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:xenon_lamp"
+    ]
+  },
+  "criteria": {
+    "has_xenon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:xenon"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:xenon_lamp"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_xenon",
+      "has_the_recipe"
+    ]
+  ]
+}

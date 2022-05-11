@@ -55,9 +55,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'chemlib', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'chemlib', '--all', '--output', file('src/generated/resources'), '--existing', file('src/main/resources')
 
             mods {
                 chemlib {
@@ -80,7 +78,6 @@ dependencies {
     implementation fg.deobf("mezz.jei:jei-${jei_version}")
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
 jar {
     manifest {
         attributes([

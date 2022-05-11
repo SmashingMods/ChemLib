@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chemlib:block/helium_lamp"
+    }
+  }
+}

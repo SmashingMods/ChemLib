@@ -9,9 +9,14 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 public class DataGenerators {
 
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent e) {
-        DataGenerator gen = e.getGenerator();
-       // gen.addProvider();
-        //gen.addProvider(new Recipes(gen));
+    public static void gatherData(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        generator.addProvider(new ItemModelGenerator(generator, event.getExistingFileHelper()));
+        generator.addProvider(new BlockStateGenerator(generator, event.getExistingFileHelper()));
+        generator.addProvider(new ItemTagGenerator(generator, event.getExistingFileHelper()));
+        generator.addProvider(new BlockTagGenerator(generator, event.getExistingFileHelper()));
+        generator.addProvider(new RecipeGenerator(generator));
+        generator.addProvider(new LootTableGenerator(generator));
+        generator.addProvider(new LocalizationGenerator(generator, "en_us"));
     }
 }

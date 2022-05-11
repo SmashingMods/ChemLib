@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "chemlib:neon_lamp",
+    "chemlib:helium_lamp",
+    "chemlib:argon_lamp",
+    "chemlib:krypton_lamp",
+    "chemlib:xenon_lamp"
+  ]
+}

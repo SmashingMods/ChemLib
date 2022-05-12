@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chemlib:block/xenon_lamp"
-  }
+  "parent": "chemlib:block/xenon_lamp"
 }

@@ -11,8 +11,8 @@ public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
-        generator.addProvider(new ItemModelGenerator(generator, event.getExistingFileHelper()));
         generator.addProvider(new BlockStateGenerator(generator, event.getExistingFileHelper()));
+        generator.addProvider(new ItemModelGenerator(generator, event.getExistingFileHelper()));
         generator.addProvider(new ItemTagGenerator(generator, event.getExistingFileHelper()));
         generator.addProvider(new BlockTagGenerator(generator, event.getExistingFileHelper()));
         generator.addProvider(new RecipeGenerator(generator));

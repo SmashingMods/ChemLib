@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chemlib:block/argon_lamp"
-  }
+  "parent": "chemlib:block/argon_lamp"
 }

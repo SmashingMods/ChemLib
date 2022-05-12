@@ -7,6 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import java.util.Objects;
+
 public class ItemModelGenerator extends ItemModelProvider {
 
     public ItemModelGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -18,13 +20,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         ItemRegistry.ELEMENTS.stream().forEach(elementItem -> registerElement(elementItem.getName()));
         ItemRegistry.COMPOUNDS.stream().forEach(compoundItem -> registerCompound(compoundItem.getName()));
         ItemRegistry.INGOTS.stream().forEach(ingotItem -> registerIngot(ingotItem.getName()));
-        //noinspection ConstantConditions
-        ItemRegistry.BLOCK_ITEMS.stream().forEach(blockItem ->
-                withExistingParent(blockItem.getRegistryName().getPath(),
-                        new ResourceLocation("item/generated")).texture("layer0",
-                        new ResourceLocation(ChemLib.MODID, String.format("block/%s", blockItem.getRegistryName().getPath()))
-                )
-        );
+        ItemRegistry.BLOCK_ITEMS.stream().forEach(blockItem -> {
+            Objects.requireNonNull(blockItem.getRegistryName());
+            String name = blockItem.getRegistryName().getPath();
+            withExistingParent(name, new ResourceLocation(ChemLib.MODID, String.format("block/%s", blockItem.getRegistryName().getPath())));
+        });
     }
 
     public void registerElement(String pElementName) {

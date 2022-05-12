@@ -55,7 +55,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            args '--mod', 'chemlib', '--all', '--output', file('src/generated/resources'), '--existing', file('src/main/resources')
+            args '--mod', "$archivesBaseName", '--all', '--output', file('src/generated/resources'), '--existing', file('src/main/resources')
 
             mods {
                 chemlib {
@@ -70,18 +70,23 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven { url  "https://dvs1.progwml6.com/files/maven/" }
-    maven { url "https://www.cursemaven.com" }
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation fg.deobf("mezz.jei:jei-${jei_version}")
+    implementation fg.deobf("mezz.jei:jei-${jei_version}:api")
 }
 
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "chemlib",
+                "Specification-Title"     : "$archivesBaseName",
                 "Specification-Vendor"    : "SmashingMods",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,

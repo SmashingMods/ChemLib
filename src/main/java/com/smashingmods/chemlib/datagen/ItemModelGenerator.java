@@ -15,12 +15,13 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        ItemRegistry.ELEMENTS.values().forEach(elementItem -> registerElement(elementItem.getName()));
+        ItemRegistry.ELEMENTS.stream().forEach(elementItem -> registerElement(elementItem.getName()));
         ItemRegistry.COMPOUNDS.stream().forEach(compoundItem -> registerCompound(compoundItem.getName()));
         ItemRegistry.INGOTS.stream().forEach(ingotItem -> registerIngot(ingotItem.getName()));
+        //noinspection ConstantConditions
         ItemRegistry.BLOCK_ITEMS.stream().forEach(blockItem ->
-                singleTexture(blockItem.getRegistryName().getPath(),
-                        new ResourceLocation("item/generated"),
+                withExistingParent(blockItem.getRegistryName().getPath(),
+                        new ResourceLocation("item/generated")).texture("layer0",
                         new ResourceLocation(ChemLib.MODID, String.format("block/%s", blockItem.getRegistryName().getPath()))
                 )
         );

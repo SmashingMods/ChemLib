@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "texture": "chemlib:block/krypton_lamp"
+    "layer0": "chemlib:block/krypton_lamp"
   }
 }

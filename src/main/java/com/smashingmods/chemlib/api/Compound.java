@@ -1,10 +1,7 @@
 package com.smashingmods.chemlib.api;
-
-import net.minecraft.world.item.ItemStack;
-
-import java.util.List;
+import java.util.Map;
 
 public interface Compound extends Chemical {
 
-    List<ItemStack> getComponents();
+    Map<String, Integer> getComponents();
 }

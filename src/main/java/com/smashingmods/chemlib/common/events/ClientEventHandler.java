@@ -12,7 +12,7 @@ public class ClientEventHandler {
 
     @SubscribeEvent
     public static void onColorHandlerEvent(final ColorHandlerEvent.Item colorHandlerEvent) {
-        ItemRegistry.ELEMENTS.values().stream().forEach(elementItem -> colorHandlerEvent.getItemColors().register(elementItem::getColor, elementItem));
+        ItemRegistry.ELEMENTS.stream().forEach(elementItem -> colorHandlerEvent.getItemColors().register(elementItem::getColor, elementItem));
         ItemRegistry.COMPOUNDS.stream().forEach(compoundItem -> colorHandlerEvent.getItemColors().register(compoundItem::getColor, compoundItem));
         ItemRegistry.INGOTS.stream().forEach(ingotItem -> colorHandlerEvent.getItemColors().register(ingotItem::getColor, ingotItem));
     }

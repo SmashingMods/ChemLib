@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "texture": "chemlib:block/helium_lamp"
+    "layer0": "chemlib:block/helium_lamp"
   }
 }

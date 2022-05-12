@@ -36,7 +36,7 @@ public class ElementItem extends Item implements Element {
         this.matterState = pMatterState;
         this.color = (int) Long.parseLong(pColor, 16);
 
-        ItemRegistry.ELEMENTS.put(pAtomicNumber, this);
+        ItemRegistry.ELEMENTS.add(this);
     }
 
     @OnlyIn(Dist.CLIENT)

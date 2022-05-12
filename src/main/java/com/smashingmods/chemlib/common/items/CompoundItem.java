@@ -15,21 +15,21 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
+import java.util.Map;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class CompoundItem extends Item implements Compound {
 
     private final String compoundName;
-    private final String abbreviation;
+    private String abbreviation = "";
     private final MatterState matterState;
-    private final List<ItemStack> components;
+    private final Map<String, Integer> components;
     private final int color;
 
-    public CompoundItem(String pCompoundName, MatterState pMatterState, List<ItemStack> pComponents, String pColor) {
+    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pColor) {
         super(new Item.Properties().tab(ItemRegistry.CHEMISTRY_TAB));
         this.compoundName = pCompoundName;
-        this.abbreviation = buildAbbreviation(pComponents);
         this.matterState = pMatterState;
         this.components = pComponents;
         this.color = (int) Long.parseLong(pColor, 16);
@@ -48,6 +48,9 @@ public class CompoundItem extends Item implements Compound {
     }
 
     public String getAbbreviation() {
+        if (abbreviation.isEmpty()) {
+            abbreviation = buildAbbreviation();
+        }
         return abbreviation;
     }
 
@@ -61,7 +64,8 @@ public class CompoundItem extends Item implements Compound {
         return this.color;
     }
 
-    public List<ItemStack> getComponents() {
+    @Override
+    public Map<String, Integer> getComponents() {
         return this.components;
     }
 
@@ -81,19 +85,16 @@ public class CompoundItem extends Item implements Compound {
         return builder.toString();
     }
 
-    public static String buildAbbreviation(List<ItemStack> components) {
+    public String buildAbbreviation() {
         StringBuilder builder = new StringBuilder();
 
-        for (ItemStack component : components) {
+        for (String name : components.keySet()) {
+            ItemRegistry.getElementByName(name).ifPresent(elementItem -> builder.append(elementItem.getAbbreviation()));
+            ItemRegistry.getCompoundByName(name).ifPresent(compoundItem -> builder.append(String.format("(%s)", compoundItem.getAbbreviation())));
 
-            if (component.getItem() instanceof ElementItem elementItem) {
-                builder.append(elementItem.getAbbreviation());
-            } else if (component.getItem() instanceof CompoundItem compoundItem) {
-                builder.append(String.format("(%s)", compoundItem.getAbbreviation()));
-            }
-
-            if (component.getCount() > 1) {
-                builder.append(getSubscript(Integer.toString(component.getCount())));
+            Integer count = components.get(name);
+            if (count > 1) {
+                builder.append(getSubscript(Integer.toString(count)));
             }
         }
         return builder.toString();

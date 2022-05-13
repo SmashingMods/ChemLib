@@ -3,6 +3,7 @@
     {
       "name": "carbon_dioxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "32c832",
       "components": [
         {
@@ -17,6 +18,7 @@
     {
       "name": "cellulose",
       "matter_state": "solid",
+      "has_item": false,
       "color": "79ba58",
       "components": [
         {
@@ -36,6 +38,7 @@
     {
       "name": "silicon_dioxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a58a2d",
       "components": [
         {
@@ -50,6 +53,7 @@
     {
       "name": "nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -64,6 +68,7 @@
     {
       "name": "potassium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -77,6 +82,7 @@
     {
       "name": "aluminum_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d2e2a6",
       "components": [
         {
@@ -92,6 +98,7 @@
     {
       "name": "magnesium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "edb2ad",
       "components": [
         {
@@ -105,6 +112,7 @@
     {
       "name": "potassium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -118,6 +126,7 @@
     {
       "name": "sodium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d3c683",
       "components": [
         {
@@ -131,6 +140,7 @@
     {
       "name": "water",
       "matter_state": "solid",
+      "has_item": false,
       "color": "115ec0",
       "components": [
         {
@@ -145,6 +155,7 @@
     {
       "name": "kaolinite",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a49fda",
       "components": [
         {
@@ -163,6 +174,7 @@
     {
       "name": "protein",
       "matter_state": "solid",
+      "has_item": false,
       "color": "906c15",
       "components": [
         {
@@ -188,6 +200,7 @@
     {
       "name": "iron_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "808080",
       "components": [
         {
@@ -203,6 +216,7 @@
     {
       "name": "sucrose",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e0d5d2",
       "components": [
         {
@@ -222,6 +236,7 @@
     {
       "name": "carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "61715a",
       "components": [
         {
@@ -236,6 +251,7 @@
     {
       "name": "calcium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "2dbd2c",
       "components": [
         {
@@ -249,6 +265,7 @@
     {
       "name": "phosphate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d6d259",
       "components": [
         {
@@ -263,6 +280,7 @@
     {
       "name": "hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ffae00",
       "components": [
         {
@@ -276,6 +294,7 @@
     {
       "name": "hydroxylapatite",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ffffff",
       "components": [
         {
@@ -295,6 +314,7 @@
     {
       "name": "strontium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ce5818",
       "components": [
         {
@@ -308,6 +328,7 @@
     {
       "name": "beryl",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b1d6bf",
       "components": [
         {
@@ -331,6 +352,7 @@
     {
       "name": "starch",
       "matter_state": "solid",
+      "has_item": false,
       "color": "fcefa6",
       "components": [
         {
@@ -350,6 +372,7 @@
     {
       "name": "cucurbitacin",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ffc800",
       "components": [
         {
@@ -369,6 +392,7 @@
     {
       "name": "psilocybin",
       "matter_state": "solid",
+      "has_item": false,
       "color": "50ff50",
       "components": [
         {
@@ -395,6 +419,7 @@
     {
       "name": "zinc_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "bdc48d",
       "components": [
         {
@@ -408,6 +433,7 @@
     {
       "name": "cobalt_aluminate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "1172c6",
       "components": [
         {
@@ -426,6 +452,7 @@
     {
       "name": "triglyceride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c8c85a",
       "components": [
         {
@@ -445,6 +472,7 @@
     {
       "name": "lead_iodide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ba87c1",
       "components": [
         {
@@ -459,6 +487,7 @@
     {
       "name": "ethanol",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d2fa96",
       "components": [
         {
@@ -477,6 +506,7 @@
     {
       "name": "amide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d2fafa",
       "components": [
         {
@@ -491,6 +521,7 @@
     {
       "name": "urea",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e6f0b4",
       "components": [
         {
@@ -508,6 +539,7 @@
     {
       "name": "ammonium",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b4fafa",
       "components": [
         {
@@ -522,6 +554,7 @@
     {
       "name": "diammonium_phosphate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d2fa96",
       "components": [
         {
@@ -539,6 +572,7 @@
     {
       "name": "potassium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -553,6 +587,7 @@
     {
       "name": "mescaline",
       "matter_state": "solid",
+      "has_item": false,
       "color": "1e1e1e",
       "components": [
         {
@@ -575,6 +610,7 @@
     {
       "name": "mullite",
       "matter_state": "solid",
+      "has_item": false,
       "color": "6e6e96",
       "components": [
         {
@@ -589,6 +625,7 @@
     {
       "name": "methane",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c81eb4",
       "components": [
         {
@@ -603,6 +640,7 @@
     {
       "name": "ethane",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c81e32",
       "components": [
         {
@@ -618,6 +656,7 @@
     {
       "name": "propane",
       "matter_state": "solid",
+      "has_item": false,
       "color": "641e32",
       "components": [
         {
@@ -633,6 +672,7 @@
     {
       "name": "butane",
       "matter_state": "solid",
+      "has_item": false,
       "color": "6f96b4",
       "components": [
         {
@@ -648,6 +688,7 @@
     {
       "name": "pentane",
       "matter_state": "solid",
+      "has_item": false,
       "color": "6f9655",
       "components": [
         {
@@ -663,6 +704,7 @@
     {
       "name": "hexane",
       "matter_state": "solid",
+      "has_item": false,
       "color": "6fcd32",
       "components": [
         {
@@ -678,6 +720,7 @@
     {
       "name": "potassium_dichromate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -697,6 +740,7 @@
     {
       "name": "nickel_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c69da2",
       "components": [
         {
@@ -711,6 +755,7 @@
     {
       "name": "potassium_permanganate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -728,6 +773,7 @@
     {
       "name": "magnesium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "edb2ad",
       "components": [
         {
@@ -745,6 +791,7 @@
     {
       "name": "copper_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9a1e",
       "components": [
         {
@@ -759,6 +806,7 @@
     {
       "name": "cadmium_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a09373",
       "components": [
         {
@@ -772,6 +820,7 @@
     {
       "name": "chromium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ecedda",
       "components": [
         {
@@ -787,6 +836,7 @@
     {
       "name": "antimony_trioxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "faffc8",
       "components": [
         {
@@ -802,6 +852,7 @@
     {
       "name": "titanium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "321e32",
       "components": [
         {
@@ -817,6 +868,7 @@
     {
       "name": "han_purple",
       "matter_state": "solid",
+      "has_item": false,
       "color": "dc64ff",
       "components": [
         {
@@ -838,6 +890,7 @@
     {
       "name": "arsenic_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "fa6482",
       "components": [
         {
@@ -853,6 +906,7 @@
     {
       "name": "barium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "00dbb3",
       "components": [
         {
@@ -870,6 +924,7 @@
     {
       "name": "beta_carotene",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff8c28",
       "components": [
         {
@@ -885,6 +940,7 @@
     {
       "name": "polyvinyl_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "5f3128",
       "components": [
         {
@@ -903,6 +959,7 @@
     {
       "name": "potassium_cyanide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -919,6 +976,7 @@
     {
       "name": "epinephrine",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e6a078",
       "components": [
         {
@@ -941,6 +999,7 @@
     {
       "name": "acetylsalicylic_acid",
       "matter_state": "solid",
+      "has_item": false,
       "color": "82beff",
       "components": [
         {
@@ -960,6 +1019,7 @@
     {
       "name": "penicillin",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ffd2d2",
       "components": [
         {
@@ -986,6 +1046,7 @@
     {
       "name": "caffeine",
       "matter_state": "solid",
+      "has_item": false,
       "color": "646414",
       "components": [
         {
@@ -1009,6 +1070,7 @@
     {
       "name": "mercury_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a09f9d",
       "components": [
         {
@@ -1022,6 +1084,7 @@
     {
       "name": "sodium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d3c683",
       "components": [
         {
@@ -1035,6 +1098,7 @@
     {
       "name": "calcium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "dbd2c7",
       "components": [
         {
@@ -1048,6 +1112,7 @@
     {
       "name": "calcium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "dbd2c7",
       "components": [
         {
@@ -1062,6 +1127,7 @@
     {
       "name": "calcium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "dbd2c7",
       "components": [
         {
@@ -1076,6 +1142,7 @@
     {
       "name": "sodium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d3c683",
       "components": [
         {
@@ -1090,6 +1157,7 @@
     {
       "name": "hydrochloric_acid",
       "matter_state": "solid",
+      "has_item": false,
       "color": "0000ff",
       "components": [
         {
@@ -1103,6 +1171,7 @@
     {
       "name": "magnesium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "edb2ad",
       "components": [
         {
@@ -1116,6 +1185,7 @@
     {
       "name": "lead_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ba87c1",
       "components": [
         {
@@ -1129,6 +1199,7 @@
     {
       "name": "sulfur_dioxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "9b9b32",
       "components": [
         {
@@ -1143,6 +1214,7 @@
     {
       "name": "lead_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ba87c1",
       "components": [
         {
@@ -1156,6 +1228,7 @@
     {
       "name": "zinc_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "bdc48d",
       "components": [
         {
@@ -1169,6 +1242,7 @@
     {
       "name": "iron_disulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "808080",
       "components": [
         {
@@ -1183,6 +1257,7 @@
     {
       "name": "tin_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "84a1ce",
       "components": [
         {
@@ -1197,6 +1272,7 @@
     {
       "name": "manganese_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e1baf2",
       "components": [
         {
@@ -1211,6 +1287,7 @@
     {
       "name": "strontium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ce5818",
       "components": [
         {
@@ -1224,6 +1301,7 @@
     {
       "name": "iron_ii_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "808080",
       "components": [
         {
@@ -1237,6 +1315,7 @@
     {
       "name": "sulfuric_acid",
       "matter_state": "solid",
+      "has_item": false,
       "color": "96a00a",
       "components": [
         {
@@ -1255,6 +1334,7 @@
     {
       "name": "nitric_acid",
       "matter_state": "solid",
+      "has_item": false,
       "color": "427bd6",
       "components": [
         {
@@ -1272,6 +1352,7 @@
     {
       "name": "nitrogen_dioxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "4178c8",
       "components": [
         {
@@ -1286,6 +1367,7 @@
     {
       "name": "sodium_bisulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d3c683",
       "components": [
         {
@@ -1306,6 +1388,7 @@
     {
       "name": "ammonia",
       "matter_state": "solid",
+      "has_item": false,
       "color": "3c78fa",
       "components": [
         {
@@ -1320,6 +1403,7 @@
     {
       "name": "ammonium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "3c78dc",
       "components": [
         {
@@ -1337,6 +1421,7 @@
     {
       "name": "phosphoric_acid",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e16487",
       "components": [
         {
@@ -1355,6 +1440,7 @@
     {
       "name": "calcium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "dbd2c7",
       "components": [
         {
@@ -1372,6 +1458,7 @@
     {
       "name": "copper_i_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9a1e",
       "components": [
         {
@@ -1386,6 +1473,7 @@
     {
       "name": "copper_i_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9a1e",
       "components": [
         {
@@ -1400,6 +1488,7 @@
     {
       "name": "hydrogen_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "f0dc1e",
       "components": [
         {
@@ -1414,6 +1503,7 @@
     {
       "name": "acetylene",
       "matter_state": "solid",
+      "has_item": false,
       "color": "96e61e",
       "components": [
         {
@@ -1429,6 +1519,7 @@
     {
       "name": "acetic_acid",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c8f064",
       "components": [
         {
@@ -1448,6 +1539,7 @@
     {
       "name": "nickel_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c69da2",
       "components": [
         {
@@ -1461,6 +1553,7 @@
     {
       "name": "antimony_trisulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c1963a",
       "components": [
         {
@@ -1476,6 +1569,7 @@
     {
       "name": "nickel_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c69da2",
       "components": [
         {
@@ -1489,6 +1583,7 @@
     {
       "name": "carbon_monoxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "454653",
       "components": [
         {
@@ -1502,6 +1597,7 @@
     {
       "name": "lithium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "289e56",
       "components": [
         {
@@ -1515,6 +1611,7 @@
     {
       "name": "potassium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -1528,6 +1625,7 @@
     {
       "name": "rubidium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "0f3d28",
       "components": [
         {
@@ -1541,6 +1639,7 @@
     {
       "name": "cesium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9400",
       "components": [
         {
@@ -1554,6 +1653,7 @@
     {
       "name": "beryllium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b8c7e0",
       "components": [
         {
@@ -1568,6 +1668,7 @@
     {
       "name": "magnesium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "edb2ad",
       "components": [
         {
@@ -1582,6 +1683,7 @@
     {
       "name": "strontium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ce5818",
       "components": [
         {
@@ -1596,6 +1698,7 @@
     {
       "name": "barium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "00dbb3",
       "components": [
         {
@@ -1610,6 +1713,7 @@
     {
       "name": "aluminum_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ed643b",
       "components": [
         {
@@ -1624,6 +1728,7 @@
     {
       "name": "zinc_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "bdc48d",
       "components": [
         {
@@ -1638,6 +1743,7 @@
     {
       "name": "manganese_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e1baf2",
       "components": [
         {
@@ -1652,6 +1758,7 @@
     {
       "name": "cadmium_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a09373",
       "components": [
         {
@@ -1666,6 +1773,7 @@
     {
       "name": "copper_ii_hydroxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9a1e",
       "components": [
         {
@@ -1680,6 +1788,7 @@
     {
       "name": "lithium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "289e56",
       "components": [
         {
@@ -1693,6 +1802,7 @@
     {
       "name": "rubidium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "0f3d28",
       "components": [
         {
@@ -1706,6 +1816,7 @@
     {
       "name": "cesium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9400",
       "components": [
         {
@@ -1719,6 +1830,7 @@
     {
       "name": "beryllium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b8c7e0",
       "components": [
         {
@@ -1733,6 +1845,7 @@
     {
       "name": "magnesium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "edb2ad",
       "components": [
         {
@@ -1747,6 +1860,7 @@
     {
       "name": "strontium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ce5818",
       "components": [
         {
@@ -1761,6 +1875,7 @@
     {
       "name": "barium_chloride",
       "matter_state": "solid",
+      "has_item": false,
       "color": "00dbb3",
       "components": [
         {
@@ -1775,6 +1890,7 @@
     {
       "name": "lithium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "289e56",
       "components": [
         {
@@ -1789,6 +1905,7 @@
     {
       "name": "sodium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d3c683",
       "components": [
         {
@@ -1803,6 +1920,7 @@
     {
       "name": "potassium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -1817,6 +1935,7 @@
     {
       "name": "rubidium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "0f3d28",
       "components": [
         {
@@ -1831,6 +1950,7 @@
     {
       "name": "beryllium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b8c7e0",
       "components": [
         {
@@ -1844,6 +1964,7 @@
     {
       "name": "barium_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "00dbb3",
       "components": [
         {
@@ -1857,6 +1978,7 @@
     {
       "name": "lithium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "289e56",
       "components": [
         {
@@ -1871,6 +1993,7 @@
     {
       "name": "rubidium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "0f3d28",
       "components": [
         {
@@ -1885,6 +2008,7 @@
     {
       "name": "cesium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9400",
       "components": [
         {
@@ -1899,6 +2023,7 @@
     {
       "name": "beryllium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b8c7e0",
       "components": [
         {
@@ -1912,6 +2037,7 @@
     {
       "name": "barium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "00dbb3",
       "components": [
         {
@@ -1925,6 +2051,7 @@
     {
       "name": "manganese_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e1baf2",
       "components": [
         {
@@ -1938,6 +2065,7 @@
     {
       "name": "iron_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "808080",
       "components": [
         {
@@ -1951,6 +2079,7 @@
     {
       "name": "cobalt_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "1172c6",
       "components": [
         {
@@ -1964,6 +2093,7 @@
     {
       "name": "nickel_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c69da2",
       "components": [
         {
@@ -1977,6 +2107,7 @@
     {
       "name": "copper_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9a1e",
       "components": [
         {
@@ -1990,6 +2121,7 @@
     {
       "name": "zinc_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "bdc48d",
       "components": [
         {
@@ -2003,6 +2135,7 @@
     {
       "name": "cadmium_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a09373",
       "components": [
         {
@@ -2016,6 +2149,7 @@
     {
       "name": "lead_carbonate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ba87c1",
       "components": [
         {
@@ -2029,6 +2163,7 @@
     {
       "name": "lithium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "289e56",
       "components": [
         {
@@ -2047,6 +2182,7 @@
     {
       "name": "sodium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d3c683",
       "components": [
         {
@@ -2065,6 +2201,7 @@
     {
       "name": "potassium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c6985f",
       "components": [
         {
@@ -2083,6 +2220,7 @@
     {
       "name": "rubidium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "0f3d28",
       "components": [
         {
@@ -2101,6 +2239,7 @@
     {
       "name": "cesium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9400",
       "components": [
         {
@@ -2119,6 +2258,7 @@
     {
       "name": "beryllium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b8c7e0",
       "components": [
         {
@@ -2136,6 +2276,7 @@
     {
       "name": "strontium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ce5818",
       "components": [
         {
@@ -2153,6 +2294,7 @@
     {
       "name": "manganese_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "e1baf2",
       "components": [
         {
@@ -2170,6 +2312,7 @@
     {
       "name": "cobalt_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "1172c6",
       "components": [
         {
@@ -2187,6 +2330,7 @@
     {
       "name": "nickel_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c69da2",
       "components": [
         {
@@ -2204,6 +2348,7 @@
     {
       "name": "iron_ii_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "808080",
       "components": [
         {
@@ -2221,6 +2366,7 @@
     {
       "name": "copper_ii_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9a1e",
       "components": [
         {
@@ -2238,6 +2384,7 @@
     {
       "name": "zinc_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "bdc48d",
       "components": [
         {
@@ -2255,6 +2402,7 @@
     {
       "name": "cadmium_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a09373",
       "components": [
         {
@@ -2272,6 +2420,7 @@
     {
       "name": "lead_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ba87c1",
       "components": [
         {
@@ -2289,6 +2438,7 @@
     {
       "name": "tin_sulfate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "84a1ce",
       "components": [
         {
@@ -2306,6 +2456,7 @@
     {
       "name": "lithium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "289e56",
       "components": [
         {
@@ -2319,6 +2470,7 @@
     {
       "name": "sodium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "d3c683",
       "components": [
         {
@@ -2332,6 +2484,7 @@
     {
       "name": "rubidium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "0f3d28",
       "components": [
         {
@@ -2345,6 +2498,7 @@
     {
       "name": "cesium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9400",
       "components": [
         {
@@ -2358,6 +2512,7 @@
     {
       "name": "beryllium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "b8c7e0",
       "components": [
         {
@@ -2372,6 +2527,7 @@
     {
       "name": "magnesium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "edb2ad",
       "components": [
         {
@@ -2386,6 +2542,7 @@
     {
       "name": "calcium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "dbd2c7",
       "components": [
         {
@@ -2400,6 +2557,7 @@
     {
       "name": "strontium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ce5818",
       "components": [
         {
@@ -2414,6 +2572,7 @@
     {
       "name": "barium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "00dbb3",
       "components": [
         {
@@ -2428,6 +2587,7 @@
     {
       "name": "manganese_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ffbaf2",
       "components": [
         {
@@ -2442,6 +2602,7 @@
     {
       "name": "iron_iii_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "808080",
       "components": [
         {
@@ -2456,6 +2617,7 @@
     {
       "name": "cobalt_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "1172c6",
       "components": [
         {
@@ -2470,6 +2632,7 @@
     {
       "name": "nickel_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c69da2",
       "components": [
         {
@@ -2484,6 +2647,7 @@
     {
       "name": "copper_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ff9a1e",
       "components": [
         {
@@ -2498,6 +2662,7 @@
     {
       "name": "zinc_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "bdc48d",
       "components": [
         {
@@ -2512,6 +2677,7 @@
     {
       "name": "lead_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "ba87c1",
       "components": [
         {
@@ -2526,6 +2692,7 @@
     {
       "name": "cadmium_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "a09373",
       "components": [
         {
@@ -2540,6 +2707,7 @@
     {
       "name": "aluminum_nitrate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "f76e45",
       "components": [
         {
@@ -2554,6 +2722,7 @@
     {
       "name": "nitric_oxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "4178c8",
       "components": [
         {
@@ -2567,6 +2736,7 @@
     {
       "name": "carbon_disulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c878c8",
       "components": [
         {
@@ -2581,6 +2751,7 @@
     {
       "name": "potassium_ethyl_xanthate",
       "matter_state": "solid",
+      "has_item": false,
       "color": "c878c8",
       "components": [
         {
@@ -2606,6 +2777,7 @@
     {
       "name": "sulfur_trioxide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "82a032",
       "components": [
         {
@@ -2620,6 +2792,7 @@
     {
       "name": "barium_sulfide",
       "matter_state": "solid",
+      "has_item": false,
       "color": "00dbb3",
       "components": [
         {

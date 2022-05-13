@@ -5,6 +5,7 @@
       "atomic_number": 1,
       "abbreviation": "H",
       "matter_state": "gas",
+      "description": "",
       "color": "B3DFFF"
     },
     {
@@ -12,6 +13,7 @@
       "atomic_number": 2,
       "abbreviation": "He",
       "matter_state": "gas",
+      "description": "",
       "color": "FFFDCC"
     },
     {
@@ -19,6 +21,7 @@
       "atomic_number": 3,
       "abbreviation": "Li",
       "matter_state": "solid",
+      "description": "",
       "color": "8F243E"
     },
     {
@@ -26,6 +29,7 @@
       "atomic_number": 4,
       "abbreviation": "Be",
       "matter_state": "solid",
+      "description": "",
       "color": "21A17E"
     },
     {
@@ -33,6 +37,7 @@
       "atomic_number": 5,
       "abbreviation": "B",
       "matter_state": "solid",
+      "description": "",
       "color": "3E4A60"
     },
     {
@@ -40,6 +45,7 @@
       "atomic_number": 6,
       "abbreviation": "C",
       "matter_state": "solid",
+      "description": "",
       "color": "282828"
     },
     {
@@ -47,6 +53,7 @@
       "atomic_number": 7,
       "abbreviation": "N",
       "matter_state": "gas",
+      "description": "",
       "color": "E1B4B8"
     },
     {
@@ -54,6 +61,7 @@
       "atomic_number": 8,
       "abbreviation": "O",
       "matter_state": "gas",
+      "description": "",
       "color": "84CFFE"
     },
     {
@@ -61,6 +69,7 @@
       "atomic_number": 9,
       "abbreviation": "F",
       "matter_state": "gas",
+      "description": "",
       "color": "B4D14B"
     },
     {
@@ -68,6 +77,7 @@
       "atomic_number": 10,
       "abbreviation": "Ne",
       "matter_state": "gas",
+      "description": "",
       "color": "F4BC27"
     },
     {
@@ -75,6 +85,7 @@
       "atomic_number": 11,
       "abbreviation": "Na",
       "matter_state": "solid",
+      "description": "",
       "color": "d3c683"
     },
     {
@@ -82,6 +93,7 @@
       "atomic_number": 12,
       "abbreviation": "Mg",
       "matter_state": "solid",
+      "description": "",
       "color": "EDADEC"
     },
     {
@@ -89,6 +101,7 @@
       "atomic_number": 13,
       "abbreviation": "Al",
       "matter_state": "solid",
+      "description": "",
       "color": "D9D9D9"
     },
     {
@@ -96,6 +109,7 @@
       "atomic_number": 14,
       "abbreviation": "Si",
       "matter_state": "solid",
+      "description": "",
       "color": "adb279"
     },
     {
@@ -103,6 +117,7 @@
       "atomic_number": 15,
       "abbreviation": "P",
       "matter_state": "solid",
+      "description": "",
       "color": "d7c38a"
     },
     {
@@ -110,6 +125,7 @@
       "atomic_number": 16,
       "abbreviation": "S",
       "matter_state": "solide",
+      "description": "",
       "color": "b5a510"
     },
     {
@@ -117,6 +133,7 @@
       "atomic_number": 17,
       "abbreviation": "Cl",
       "matter_state": "gas",
+      "description": "",
       "color": "8dd41c"
     },
     {
@@ -124,6 +141,7 @@
       "atomic_number": 18,
       "abbreviation": "Ar",
       "matter_state": "gas",
+      "description": "",
       "color": "6711A3"
     },
     {
@@ -131,6 +149,7 @@
       "atomic_number": 19,
       "abbreviation": "K",
       "matter_state": "solid",
+      "description": "",
       "color": "c6985f"
     },
     {
@@ -138,6 +157,7 @@
       "atomic_number": 20,
       "abbreviation": "Ca",
       "matter_state": "solid",
+      "description": "",
       "color": "dbd2c7"
     },
     {
@@ -145,6 +165,7 @@
       "atomic_number": 21,
       "abbreviation": "Sc",
       "matter_state": "solid",
+      "description": "",
       "color": "fcff63"
     },
     {
@@ -152,6 +173,7 @@
       "atomic_number": 22,
       "abbreviation": "Ti",
       "matter_state": "solid",
+      "description": "",
       "color": "6375ff"
     },
     {
@@ -159,6 +181,7 @@
       "atomic_number": 23,
       "abbreviation": "V",
       "matter_state": "solid",
+      "description": "",
       "color": "647689"
     },
     {
@@ -166,6 +189,7 @@
       "atomic_number": 24,
       "abbreviation": "Cr",
       "matter_state": "solid",
+      "description": "",
       "color": "481a5d"
     },
     {
@@ -173,6 +197,7 @@
       "atomic_number": 25,
       "abbreviation": "Mn",
       "matter_state": "solid",
+      "description": "",
       "color": "c7a385"
     },
     {
@@ -180,6 +205,7 @@
       "atomic_number": 26,
       "abbreviation": "Fe",
       "matter_state": "solid",
+      "description": "",
       "color": "34302e"
     },
     {
@@ -187,6 +213,7 @@
       "atomic_number": 27,
       "abbreviation": "Co",
       "matter_state": "solid",
+      "description": "",
       "color": "6666FF"
     },
     {
@@ -194,6 +221,7 @@
       "atomic_number": 28,
       "abbreviation": "Ni",
       "matter_state": "solid",
+      "description": "",
       "color": "62764c"
     },
     {
@@ -201,6 +229,7 @@
       "atomic_number": 29,
       "abbreviation": "Cu",
       "matter_state": "solid",
+      "description": "",
       "color": "956853"
     },
     {
@@ -208,6 +237,7 @@
       "atomic_number": 30,
       "abbreviation": "Zn",
       "matter_state": "solid",
+      "description": "",
       "color": "a0997d"
     },
     {
@@ -215,6 +245,7 @@
       "atomic_number": 31,
       "abbreviation": "Ga",
       "matter_state": "solid",
+      "description": "",
       "color": "a1a8c1"
     },
     {
@@ -222,6 +253,7 @@
       "atomic_number": 32,
       "abbreviation": "Ge",
       "matter_state": "solid",
+      "description": "",
       "color": "ccd4c0"
     },
     {
@@ -229,6 +261,7 @@
       "atomic_number": 33,
       "abbreviation": "As",
       "matter_state": "solid",
+      "description": "",
       "color": "8c3f31"
     },
     {
@@ -236,6 +269,7 @@
       "atomic_number": 34,
       "abbreviation": "Se",
       "matter_state": "solid",
+      "description": "",
       "color": "077c81"
     },
     {
@@ -243,6 +277,7 @@
       "atomic_number": 35,
       "abbreviation": "Br",
       "matter_state": "liquid",
+      "description": "",
       "color": "a61601"
     },
     {
@@ -250,6 +285,7 @@
       "atomic_number": 36,
       "abbreviation": "Kr",
       "matter_state": "gas",
+      "description": "",
       "color": "bce2ef"
     },
     {
@@ -257,6 +293,7 @@
       "atomic_number": 37,
       "abbreviation": "Rb",
       "matter_state": "solid",
+      "description": "",
       "color": "ee88fd"
     },
     {
@@ -264,6 +301,7 @@
       "atomic_number": 38,
       "abbreviation": "Sr",
       "matter_state": "solid",
+      "description": "",
       "color": "536998"
     },
     {
@@ -271,6 +309,7 @@
       "atomic_number": 39,
       "abbreviation": "Y",
       "matter_state": "solid",
+      "description": "",
       "color": "b366c4"
     },
     {
@@ -278,6 +317,7 @@
       "atomic_number": 40,
       "abbreviation": "Zr",
       "matter_state": "solid",
+      "description": "",
       "color": "d3bb8f"
     },
     {
@@ -285,6 +325,7 @@
       "atomic_number": 41,
       "abbreviation": "Nb",
       "matter_state": "solid",
+      "description": "",
       "color": "734d54"
     },
     {
@@ -292,6 +333,7 @@
       "atomic_number": 42,
       "abbreviation": "Mo",
       "matter_state": "solid",
+      "description": "",
       "color": "6d7e9a"
     },
     {
@@ -299,6 +341,7 @@
       "atomic_number": 43,
       "abbreviation": "Tc",
       "matter_state": "solid",
+      "description": "",
       "color": "758489"
     },
     {
@@ -306,6 +349,7 @@
       "atomic_number": 44,
       "abbreviation": "Ru",
       "matter_state": "solid",
+      "description": "",
       "color": "715f63"
     },
     {
@@ -313,6 +357,7 @@
       "atomic_number": 45,
       "abbreviation": "Rh",
       "matter_state": "solid",
+      "description": "",
       "color": "827569"
     },
     {
@@ -320,6 +365,7 @@
       "atomic_number": 46,
       "abbreviation": "Pd",
       "matter_state": "solid",
+      "description": "",
       "color": "704158"
     },
     {
@@ -327,6 +373,7 @@
       "atomic_number": 47,
       "abbreviation": "Ag",
       "matter_state": "solid",
+      "description": "",
       "color": "c1c7c7"
     },
     {
@@ -334,6 +381,7 @@
       "atomic_number": 48,
       "abbreviation": "Cd",
       "matter_state": "solid",
+      "description": "",
       "color": "9a2b34"
     },
     {
@@ -341,6 +389,7 @@
       "atomic_number": 49,
       "abbreviation": "In",
       "matter_state": "solid",
+      "description": "",
       "color": "86847f"
     },
     {
@@ -348,6 +397,7 @@
       "atomic_number": 50,
       "abbreviation": "Sn",
       "matter_state": "solid",
+      "description": "",
       "color": "46311a"
     },
     {
@@ -355,6 +405,7 @@
       "atomic_number": 51,
       "abbreviation": "Sb",
       "matter_state": "solid",
+      "description": "",
       "color": "855770"
     },
     {
@@ -362,6 +413,7 @@
       "atomic_number": 52,
       "abbreviation": "Te",
       "matter_state": "solid",
+      "description": "",
       "color": "275b1a"
     },
     {
@@ -369,6 +421,7 @@
       "atomic_number": 53,
       "abbreviation": "I",
       "matter_state": "solid",
+      "description": "",
       "color": "571162"
     },
     {
@@ -376,6 +429,7 @@
       "atomic_number": 54,
       "abbreviation": "Xe",
       "matter_state": "gas",
+      "description": "",
       "color": "2861a7"
     },
     {
@@ -383,6 +437,7 @@
       "atomic_number": 55,
       "abbreviation": "Cs",
       "matter_state": "solid",
+      "description": "",
       "color": "cbac2a"
     },
     {
@@ -390,6 +445,7 @@
       "atomic_number": 56,
       "abbreviation": "Ba",
       "matter_state": "solid",
+      "description": "",
       "color": "c7bca8"
     },
     {
@@ -397,6 +453,7 @@
       "atomic_number": 57,
       "abbreviation": "La",
       "matter_state": "solid",
+      "description": "",
       "color": "ba9160"
     },
     {
@@ -404,6 +461,7 @@
       "atomic_number": 58,
       "abbreviation": "Ce",
       "matter_state": "solid",
+      "description": "",
       "color": "662c5e"
     },
     {
@@ -411,6 +469,7 @@
       "atomic_number": 59,
       "abbreviation": "Pr",
       "matter_state": "solid",
+      "description": "",
       "color": "73b93d"
     },
     {
@@ -418,6 +477,7 @@
       "atomic_number": 60,
       "abbreviation": "Nd",
       "matter_state": "solid",
+      "description": "",
       "color": "8c696b"
     },
     {
@@ -425,6 +485,7 @@
       "atomic_number": 61,
       "abbreviation": "Pm",
       "matter_state": "solid",
+      "description": "",
       "color": "62af0a7"
     },
     {
@@ -432,6 +493,7 @@
       "atomic_number": 62,
       "abbreviation": "Sm",
       "matter_state": "solid",
+      "description": "",
       "color": "b7b05c"
     },
     {
@@ -439,6 +501,7 @@
       "atomic_number": 63,
       "abbreviation": "Eu",
       "matter_state": "solid",
+      "description": "",
       "color": "ce81b3"
     },
     {
@@ -446,6 +509,7 @@
       "atomic_number": 64,
       "abbreviation": "Gd",
       "matter_state": "solid",
+      "description": "",
       "color": "915536"
     },
     {
@@ -453,6 +517,7 @@
       "atomic_number": 65,
       "abbreviation": "Tb",
       "matter_state": "solid",
+      "description": "",
       "color": "8ba754"
     },
     {
@@ -460,6 +525,7 @@
       "atomic_number": 66,
       "abbreviation": "Dy",
       "matter_state": "solid",
+      "description": "",
       "color": "653f0e"
     },
     {
@@ -467,6 +533,7 @@
       "atomic_number": 67,
       "abbreviation": "Ho",
       "matter_state": "solid",
+      "description": "",
       "color": "4d6352"
     },
     {
@@ -474,6 +541,7 @@
       "atomic_number": 68,
       "abbreviation": "Er",
       "matter_state": "solid",
+      "description": "",
       "color": "a05768"
     },
     {
@@ -481,6 +549,7 @@
       "atomic_number": 69,
       "abbreviation": "Tm",
       "matter_state": "solid",
+      "description": "",
       "color": "179e43"
     },
     {
@@ -488,6 +557,7 @@
       "atomic_number": 70,
       "abbreviation": "Yb",
       "matter_state": "solid",
+      "description": "",
       "color": "e7e39f"
     },
     {
@@ -495,6 +565,7 @@
       "atomic_number": 71,
       "abbreviation": "Lu",
       "matter_state": "solid",
+      "description": "",
       "color": "954d41"
     },
     {
@@ -502,6 +573,7 @@
       "atomic_number": 72,
       "abbreviation": "Hf",
       "matter_state": "solid",
+      "description": "",
       "color": "243267"
     },
     {
@@ -509,6 +581,7 @@
       "atomic_number": 73,
       "abbreviation": "Ta",
       "matter_state": "solid",
+      "description": "",
       "color": "a81e20"
     },
     {
@@ -516,6 +589,7 @@
       "atomic_number": 74,
       "abbreviation": "W",
       "matter_state": "solid",
+      "description": "",
       "color": "2b313e"
     },
     {
@@ -523,6 +597,7 @@
       "atomic_number": 75,
       "abbreviation": "Re",
       "matter_state": "solid",
+      "description": "",
       "color": "1b1d1b"
     },
     {
@@ -530,6 +605,7 @@
       "atomic_number": 76,
       "abbreviation": "Os",
       "matter_state": "solid",
+      "description": "",
       "color": "7599c1"
     },
     {
@@ -537,6 +613,7 @@
       "atomic_number": 77,
       "abbreviation": "Ir",
       "matter_state": "solid",
+      "description": "",
       "color": "2f5eef"
     },
     {
@@ -544,6 +621,7 @@
       "atomic_number": 78,
       "abbreviation": "Pt",
       "matter_state": "solid",
+      "description": "",
       "color": "d2d3d3"
     },
     {
@@ -551,6 +629,7 @@
       "atomic_number": 79,
       "abbreviation": "Au",
       "matter_state": "solid",
+      "description": "",
       "color": "cfac38"
     },
     {
@@ -558,6 +637,7 @@
       "atomic_number": 80,
       "abbreviation": "Hg",
       "matter_state": "liquid",
+      "description": "",
       "color": "9d9f9f"
     },
     {
@@ -565,6 +645,7 @@
       "atomic_number": 81,
       "abbreviation": "Tl",
       "matter_state": "solid",
+      "description": "",
       "color": "785445"
     },
     {
@@ -572,6 +653,7 @@
       "atomic_number": 82,
       "abbreviation": "Pb",
       "matter_state": "solid",
+      "description": "",
       "color": "34465a"
     },
     {
@@ -579,6 +661,7 @@
       "atomic_number": 83,
       "abbreviation": "Bi",
       "matter_state": "solid",
+      "description": "",
       "color": "3d9185"
     },
     {
@@ -586,6 +669,7 @@
       "atomic_number": 84,
       "abbreviation": "Po",
       "matter_state": "solid",
+      "description": "",
       "color": "29443f"
     },
     {
@@ -593,6 +677,7 @@
       "atomic_number": 85,
       "abbreviation": "At",
       "matter_state": "solid",
+      "description": "",
       "color": "9fc413"
     },
     {
@@ -600,6 +685,7 @@
       "atomic_number": 86,
       "abbreviation": "Rn",
       "matter_state": "gas",
+      "description": "",
       "color": "5fd16a"
     },
     {
@@ -607,6 +693,7 @@
       "atomic_number": 87,
       "abbreviation": "Fr",
       "matter_state": "solid",
+      "description": "",
       "color": "9a410c"
     },
     {
@@ -614,6 +701,7 @@
       "atomic_number": 88,
       "abbreviation": "Ra",
       "matter_state": "solid",
+      "description": "",
       "color": "3c9c6f"
     },
     {
@@ -621,6 +709,7 @@
       "atomic_number": 89,
       "abbreviation": "Ac",
       "matter_state": "solid",
+      "description": "",
       "color": "7781f9"
     },
     {
@@ -628,6 +717,7 @@
       "atomic_number": 90,
       "abbreviation": "Th",
       "matter_state": "solid",
+      "description": "",
       "color": "5f4533"
     },
     {
@@ -635,6 +725,7 @@
       "atomic_number": 91,
       "abbreviation": "Pa",
       "matter_state": "solid",
+      "description": "",
       "color": "3e8863"
     },
     {
@@ -642,6 +733,7 @@
       "atomic_number": 92,
       "abbreviation": "U",
       "matter_state": "solid",
+      "description": "",
       "color": "d1c33e"
     },
     {
@@ -649,6 +741,7 @@
       "atomic_number": 93,
       "abbreviation": "Np",
       "matter_state": "solid",
+      "description": "",
       "color": "657065"
     },
     {
@@ -656,6 +749,7 @@
       "atomic_number": 94,
       "abbreviation": "Pu",
       "matter_state": "solid",
+      "description": "",
       "color": "db6e22"
     },
     {
@@ -663,6 +757,7 @@
       "atomic_number": 95,
       "abbreviation": "Am",
       "matter_state": "solid",
+      "description": "",
       "color": "ab8040"
     },
     {
@@ -670,6 +765,7 @@
       "atomic_number": 96,
       "abbreviation": "Cm",
       "matter_state": "solid",
+      "description": "",
       "color": "920133"
     },
     {
@@ -677,6 +773,7 @@
       "atomic_number": 97,
       "abbreviation": "Bk",
       "matter_state": "solid",
+      "description": "",
       "color": "b48b41"
     },
     {
@@ -684,6 +781,7 @@
       "atomic_number": 98,
       "abbreviation": "Cf",
       "matter_state": "solid",
+      "description": "",
       "color": "b47148"
     },
     {
@@ -691,6 +789,7 @@
       "atomic_number": 99,
       "abbreviation": "Es",
       "matter_state": "solid",
+      "description": "",
       "color": "1f79ae"
     },
     {
@@ -698,6 +797,7 @@
       "atomic_number": 100,
       "abbreviation": "Fm",
       "matter_state": "solid",
+      "description": "",
       "color": "e3cda1"
     },
     {
@@ -705,6 +805,7 @@
       "atomic_number": 101,
       "abbreviation": "Md",
       "matter_state": "solid",
+      "description": "",
       "color": "1512b4"
     },
     {
@@ -712,6 +813,7 @@
       "atomic_number": 102,
       "abbreviation": "No",
       "matter_state": "solid",
+      "description": "",
       "color": "7e41e8"
     },
     {
@@ -719,6 +821,7 @@
       "atomic_number": 103,
       "abbreviation": "Lr",
       "matter_state": "solid",
+      "description": "",
       "color": "898a8c"
     },
     {
@@ -726,6 +829,7 @@
       "atomic_number": 104,
       "abbreviation": "Rf",
       "matter_state": "solid",
+      "description": "",
       "color": "333236"
     },
     {
@@ -733,6 +837,7 @@
       "atomic_number": 105,
       "abbreviation": "Db",
       "matter_state": "solid",
+      "description": "",
       "color": "ab7a5f"
     },
     {
@@ -740,6 +845,7 @@
       "atomic_number": 106,
       "abbreviation": "Sg",
       "matter_state": "solid",
+      "description": "",
       "color": "f75320"
     },
     {
@@ -747,6 +853,7 @@
       "atomic_number": 107,
       "abbreviation": "Bh",
       "matter_state": "solid",
+      "description": "",
       "color": "54b889"
     },
     {
@@ -754,6 +861,7 @@
       "atomic_number": 108,
       "abbreviation": "Hs",
       "matter_state": "solid",
+      "description": "",
       "color": "8a8951"
     },
     {
@@ -761,6 +869,7 @@
       "atomic_number": 109,
       "abbreviation": "Mt",
       "matter_state": "solid",
+      "description": "",
       "color": "6f5d3a"
     },
     {
@@ -768,6 +877,7 @@
       "atomic_number": 110,
       "abbreviation": "Ds",
       "matter_state": "solid",
+      "description": "",
       "color": "325aa6"
     },
     {
@@ -775,6 +885,7 @@
       "atomic_number": 111,
       "abbreviation": "Rg",
       "matter_state": "solid",
+      "description": "",
       "color": "80b848"
     },
     {
@@ -782,6 +893,7 @@
       "atomic_number": 112,
       "abbreviation": "Cn",
       "matter_state": "solid",
+      "description": "",
       "color": "e39349"
     },
     {
@@ -789,6 +901,7 @@
       "atomic_number": 113,
       "abbreviation": "Nh",
       "matter_state": "solid",
+      "description": "",
       "color": "5e0009"
     },
     {
@@ -796,6 +909,7 @@
       "atomic_number": 114,
       "abbreviation": "Fl",
       "matter_state": "solid",
+      "description": "",
       "color": "654685"
     },
     {
@@ -803,6 +917,7 @@
       "atomic_number": 115,
       "abbreviation": "Mc",
       "matter_state": "solid",
+      "description": "",
       "color": "18f2ad"
     },
     {
@@ -810,6 +925,7 @@
       "atomic_number": 116,
       "abbreviation": "Lv",
       "matter_state": "solid",
+      "description": "",
       "color": "487d3b"
     },
     {
@@ -817,6 +933,7 @@
       "atomic_number": 117,
       "abbreviation": "Ts",
       "matter_state": "solid",
+      "description": "",
       "color": "b0963f"
     },
     {
@@ -824,6 +941,7 @@
       "atomic_number": 118,
       "abbreviation": "Og",
       "matter_state": "solid",
+      "description": "",
       "color": "723ec7"
     }
   ]

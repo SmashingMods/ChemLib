@@ -2,6 +2,7 @@ package com.smashingmods.chemlib.common.items;
 
 import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
+import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -26,14 +27,18 @@ public class ElementItem extends Item implements Element {
     private final int atomicNumber;
     private final String abbreviation;
     private final MatterState matterState;
+    private final MetalType metalType;
+    private final String description;
     private final int color;
 
-    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, MatterState pMatterState, String pColor) {
-        super(new Item.Properties().tab(ItemRegistry.CHEMISTRY_TAB));
+    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, MatterState pMatterState, MetalType pMetalType, String pDescription, String pColor) {
+        super(new Item.Properties().tab(ItemRegistry.ELEMENT_TAB));
         this.elementName = pChemicalName;
         this.atomicNumber = pAtomicNumber;
         this.abbreviation = pAbbreviation;
         this.matterState = pMatterState;
+        this.metalType = pMetalType;
+        this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
 
         ItemRegistry.ELEMENTS.add(this);
@@ -63,6 +68,16 @@ public class ElementItem extends Item implements Element {
     @Override
     public MatterState getMatterState() {
         return matterState;
+    }
+
+    @Override
+    public MetalType getMetalType() {
+        return metalType;
+    }
+
+    @Override
+    public String getChemicalDescription() {
+        return description;
     }
 
     @Override

@@ -148,7 +148,7 @@
     },
     {
       "name": "water",
-      "matter_state": "solid",
+      "matter_state": "liquid",
       "has_item": false,
       "description": "",
       "color": "115ec0",
@@ -165,7 +165,7 @@
     {
       "name": "kaolinite",
       "matter_state": "solid",
-      "has_item": false,
+      "has_item": true,
       "description": "",
       "color": "a49fda",
       "components": [

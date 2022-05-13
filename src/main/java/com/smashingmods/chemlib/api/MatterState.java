@@ -18,6 +18,6 @@ public enum MatterState implements StringRepresentable {
     @Override
     @Nonnull
     public String getSerializedName() {
-        return this.state;
+        return state;
     }
 }

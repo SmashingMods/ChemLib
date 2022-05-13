@@ -10,6 +10,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeRegistryTagsProvider;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import javax.annotation.Nonnull;
 import java.util.Objects;
 
 public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
@@ -20,15 +21,27 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
 
     @Override
     protected void addTags() {
-        ItemRegistry.INGOTS.stream().forEach(ingotItem -> {
-            Objects.requireNonNull(ForgeRegistries.ITEMS.tags());
-            TagKey<Item> tagKey = ForgeRegistries.ITEMS.tags().createTagKey(new ResourceLocation("forge", String.format("ingots/%s",ingotItem.getName())));
-            tag(tagKey).add(ingotItem);
+        ItemRegistry.DUSTS.stream().forEach(dust -> {
+            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("dusts/%s", dust.getName())));
+            tag(ingotKey).add(dust);
+        });
+        ItemRegistry.INGOTS.stream().forEach(nugget -> {
+            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("nuggets/%s", nugget.getName())));
+            tag(ingotKey).add(nugget);
+        });
+        ItemRegistry.INGOTS.stream().forEach(ingot -> {
+            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("ingots/%s", ingot.getName())));
+            tag(ingotKey).add(ingot);
+        });
+        ItemRegistry.INGOTS.stream().forEach(plate -> {
+            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("plates/%s", plate.getName())));
+            tag(ingotKey).add(plate);
         });
     }
 
     @Override
+    @Nonnull
     public String getName() {
-        return null;
+        return ChemLib.MODID + ":tags";
     }
 }

@@ -11,6 +11,8 @@ public interface Chemical extends ItemLike {
 
     MatterState getMatterState();
 
+    String getChemicalDescription();
+
     int getColor();
 
     int getColor(ItemStack pItemStack, int pTintIndex);

@@ -1,6 +1,6 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.smashingmods.chemlib.api.Compound;
+import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
@@ -19,19 +19,21 @@ import java.util.Map;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class CompoundItem extends Item implements Compound {
+public class CompoundItem extends Item implements Chemical {
 
     private final String compoundName;
     private String abbreviation = "";
     private final MatterState matterState;
     private final Map<String, Integer> components;
+    private final String description;
     private final int color;
 
-    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pColor) {
-        super(new Item.Properties().tab(ItemRegistry.CHEMISTRY_TAB));
+    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor) {
+        super(new Item.Properties().tab(ItemRegistry.COMPOUND_TAB));
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;
+        this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
 
         ItemRegistry.COMPOUNDS.add(this);
@@ -60,11 +62,15 @@ public class CompoundItem extends Item implements Compound {
     }
 
     @Override
+    public String getChemicalDescription() {
+        return description;
+    }
+
+    @Override
     public int getColor() {
         return this.color;
     }
 
-    @Override
     public Map<String, Integer> getComponents() {
         return this.components;
     }

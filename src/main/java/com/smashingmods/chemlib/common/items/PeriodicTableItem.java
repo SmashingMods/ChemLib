@@ -13,7 +13,7 @@ import javax.annotation.Nonnull;
 public class PeriodicTableItem extends Item {
 
     public PeriodicTableItem() {
-        super(new Item.Properties().tab(ItemRegistry.CHEMISTRY_TAB));
+        super(new Item.Properties().tab(ItemRegistry.ITEMS_TAB));
         setRegistryName("periodic_table");
     }
 

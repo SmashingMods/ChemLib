@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:beryllium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:beryllium_metal_block"
+  }
+}

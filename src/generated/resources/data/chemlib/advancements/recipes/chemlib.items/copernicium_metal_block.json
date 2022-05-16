@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:copernicium_metal_block"
+    ]
+  },
+  "criteria": {
+    "has_copernicium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:copernicium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:copernicium_metal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_copernicium",
+      "has_the_recipe"
+    ]
+  ]
+}

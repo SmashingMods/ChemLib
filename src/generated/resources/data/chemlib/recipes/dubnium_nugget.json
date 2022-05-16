@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:dubnium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:dubnium_nugget",
+    "count": 9
+  }
+}

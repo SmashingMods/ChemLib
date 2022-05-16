@@ -1,6 +1,8 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.api.ChemicalBlockType;
+import com.smashingmods.chemlib.common.registry.BlockRegistry;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -17,14 +19,36 @@ public class LocalizationGenerator extends LanguageProvider {
     @SuppressWarnings("deprecation")
     protected void addTranslations() {
 
-        ItemRegistry.ELEMENTS.stream().forEach(element -> add(String.format("item.chemlib.%s", element.getName()), StringUtils.capitalize(element.getName())));
-        ItemRegistry.DUSTS.stream().forEach(dust -> add(String.format("item.chemlib.%s_dust", dust.getName()), WordUtils.capitalize(String.format("%s dust", dust.getName().replace("_", " ")))));
-        ItemRegistry.NUGGETS.stream().forEach(nugget -> add(String.format("item.chemlib.%s_nugget", nugget.getName()), WordUtils.capitalize(String.format("%s nugget", nugget.getName()))));
-        ItemRegistry.INGOTS.stream().forEach(ingot -> add(String.format("item.chemlib.%s_ingot", ingot.getName()), WordUtils.capitalize(String.format("%s ingot", ingot.getName()))));
-        ItemRegistry.PLATES.stream().forEach(plate -> add(String.format("item.chemlib.%s_plate", plate.getName()), WordUtils.capitalize(String.format("%s plate", plate.getName()))));
-        ItemRegistry.COMPOUNDS.stream().forEach(compound -> add(String.format("item.chemlib.%s", compound.getName()), WordUtils.capitalize(compound.getName().replace("_", " "))));
-        ItemRegistry.BLOCK_ITEMS.stream().forEach(blockItem -> add(String.format("block.chemlib.%s", blockItem.getRegistryName().getPath()), WordUtils.capitalize(blockItem.getRegistryName().getPath().replace("_", " "))));
+        ItemRegistry.getElements().forEach(element -> {
+            add(String.format("item.chemlib.%s", element.getChemicalName()), StringUtils.capitalize(element.getChemicalName()));
+            if (!element.getChemicalDescription().isEmpty()) {
+                add(String.format("%s.jei.element.%s.description", ChemLib.MODID, element.getChemicalName()), element.getChemicalDescription());
+            }
+        });
+
+        ItemRegistry.getCompounds().forEach(compound -> {
+            add(String.format("item.chemlib.%s", compound.getChemicalName()), WordUtils.capitalize(compound.getChemicalName().replace("_", " ")));
+            if (!compound.getChemicalDescription().isEmpty()) {
+                add(String.format("%s.jei.compound.%s.description", ChemLib.MODID, compound.getChemicalName()), compound.getChemicalDescription());
+            }
+        });
+
+        ItemRegistry.getChemicalItems().forEach(item -> {
+            String name = item.getChemicalName();
+            String itemType = item.getItemType().getSerializedName();
+            add(String.format("item.chemlib.%s_%s", name, itemType), WordUtils.capitalize(String.format("%s %s", name.replace("_", " "), itemType)));
+        });
+
+        for (ChemicalBlockType type : ChemicalBlockType.values()) {
+            BlockRegistry.getChemicalBlocksStreamByType(type).forEach(block -> {
+                String name = block.getChemicalName();
+                String displayType = type.equals(ChemicalBlockType.METAL) ? "block" : "lamp";
+                add(String.format("block.chemlib.%s_%s_block", name, type.getSerializedName()), WordUtils.capitalize(String.format("%s %s", name, displayType)));
+            });
+        }
         
-        add("itemGroup.chemlib", "Chemistry");
+        add("itemGroup.chemlib.elements", "Elements");
+        add("itemGroup.chemlib.compounds", "Compounds");
+        add("itemGroup.chemlib.items", "Chemistry Items");
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:gallium_metal_block"
+    }
+  ],
+  "result": {
+    "item": "chemlib:gallium_ingot",
+    "count": 9
+  }
+}

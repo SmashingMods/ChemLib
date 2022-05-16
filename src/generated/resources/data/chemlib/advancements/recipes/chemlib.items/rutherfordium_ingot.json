@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:rutherfordium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_rutherfordium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:rutherfordium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:rutherfordium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rutherfordium",
+      "has_the_recipe"
+    ]
+  ]
+}

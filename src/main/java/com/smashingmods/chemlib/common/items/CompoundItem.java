@@ -35,7 +35,6 @@ public class CompoundItem extends Item implements Chemical {
         this.components = pComponents;
         this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
-
         ItemRegistry.COMPOUNDS.add(this);
     }
 
@@ -45,7 +44,7 @@ public class CompoundItem extends Item implements Chemical {
     }
 
     @Override
-    public String getName() {
+    public String getChemicalName() {
         return this.compoundName;
     }
 
@@ -75,7 +74,6 @@ public class CompoundItem extends Item implements Chemical {
         return this.components;
     }
 
-    @Override
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex > 0 ? -1 : color;
     }

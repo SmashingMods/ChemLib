@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:niobium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:niobium_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:rhenium_nugget"
+    ]
+  },
+  "criteria": {
+    "has_rhenium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:rhenium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:rhenium_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rhenium",
+      "has_the_recipe"
+    ]
+  ]
+}

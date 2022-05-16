@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:yttrium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_yttrium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:yttrium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:yttrium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_yttrium",
+      "has_the_recipe"
+    ]
+  ]
+}

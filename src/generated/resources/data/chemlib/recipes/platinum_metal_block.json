@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:platinum_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:platinum_metal_block"
+  }
+}

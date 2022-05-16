@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:dubnium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_dubnium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:dubnium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:dubnium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dubnium",
+      "has_the_recipe"
+    ]
+  ]
+}

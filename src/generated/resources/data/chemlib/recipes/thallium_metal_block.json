@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:thallium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:thallium_metal_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:europium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:europium_metal_block"
+  }
+}

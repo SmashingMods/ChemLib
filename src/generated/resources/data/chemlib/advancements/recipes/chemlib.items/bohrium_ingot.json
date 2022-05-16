@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:bohrium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_bohrium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:bohrium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:bohrium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bohrium",
+      "has_the_recipe"
+    ]
+  ]
+}

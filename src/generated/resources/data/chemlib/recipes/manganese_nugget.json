@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:manganese_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:manganese_nugget",
+    "count": 9
+  }
+}

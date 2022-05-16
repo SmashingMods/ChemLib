@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:hassium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_hassium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:hassium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:hassium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hassium",
+      "has_the_recipe"
+    ]
+  ]
+}

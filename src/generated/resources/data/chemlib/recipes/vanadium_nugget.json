@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:vanadium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:vanadium_nugget",
+    "count": 9
+  }
+}

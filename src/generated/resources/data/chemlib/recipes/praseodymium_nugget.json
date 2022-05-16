@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:praseodymium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:praseodymium_nugget",
+    "count": 9
+  }
+}

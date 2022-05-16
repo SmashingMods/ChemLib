@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:fermium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:fermium_metal_block"
+  }
+}

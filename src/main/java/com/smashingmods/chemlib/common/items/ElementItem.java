@@ -6,6 +6,7 @@ import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.item.Item;
@@ -40,7 +41,6 @@ public class ElementItem extends Item implements Element {
         this.metalType = pMetalType;
         this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
-
         ItemRegistry.ELEMENTS.add(this);
     }
 
@@ -51,7 +51,7 @@ public class ElementItem extends Item implements Element {
     }
 
     @Override
-    public String getName() {
+    public String getChemicalName() {
         return this.elementName;
     }
 

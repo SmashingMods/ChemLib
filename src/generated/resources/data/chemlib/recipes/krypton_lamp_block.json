@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GEG",
+    "EEE",
+    "GEG"
+  ],
+  "key": {
+    "G": {
+      "tag": "forge:glass"
+    },
+    "E": {
+      "item": "chemlib:krypton"
+    }
+  },
+  "result": {
+    "item": "chemlib:krypton_lamp_block"
+  }
+}

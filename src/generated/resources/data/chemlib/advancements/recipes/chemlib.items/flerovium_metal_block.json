@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:flerovium_metal_block"
+    ]
+  },
+  "criteria": {
+    "has_flerovium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:flerovium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:flerovium_metal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_flerovium",
+      "has_the_recipe"
+    ]
+  ]
+}

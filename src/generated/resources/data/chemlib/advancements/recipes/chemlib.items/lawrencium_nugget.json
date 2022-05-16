@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:lawrencium_nugget"
+    ]
+  },
+  "criteria": {
+    "has_lawrencium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:lawrencium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:lawrencium_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lawrencium",
+      "has_the_recipe"
+    ]
+  ]
+}

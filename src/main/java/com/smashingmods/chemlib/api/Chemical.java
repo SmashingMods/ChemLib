@@ -1,11 +1,12 @@
 package com.smashingmods.chemlib.api;
 
+import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 
 public interface Chemical extends ItemLike {
 
-    String getName();
+    String getChemicalName();
 
     String getAbbreviation();
 
@@ -14,6 +15,4 @@ public interface Chemical extends ItemLike {
     String getChemicalDescription();
 
     int getColor();
-
-    int getColor(ItemStack pItemStack, int pTintIndex);
 }

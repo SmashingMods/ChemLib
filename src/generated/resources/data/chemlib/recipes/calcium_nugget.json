@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:calcium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:calcium_nugget",
+    "count": 9
+  }
+}

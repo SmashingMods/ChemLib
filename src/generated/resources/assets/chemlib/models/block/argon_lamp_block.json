@@ -1,0 +1,6 @@
+{
+  "parent": "chemlib:block/lamp_block",
+  "textures": {
+    "all": "chemlib:block/lamp_block"
+  }
+}

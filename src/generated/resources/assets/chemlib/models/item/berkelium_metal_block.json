@@ -1,0 +1,6 @@
+{
+  "parent": "chemlib:block/berkelium_metal_block",
+  "textures": {
+    "block": "chemlib:block/metal_block"
+  }
+}

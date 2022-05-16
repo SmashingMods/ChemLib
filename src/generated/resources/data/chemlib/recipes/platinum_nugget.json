@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:platinum_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:platinum_nugget",
+    "count": 9
+  }
+}

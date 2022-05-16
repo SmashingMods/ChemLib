@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:fermium_nugget"
+    ]
+  },
+  "criteria": {
+    "has_fermium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:fermium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:fermium_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fermium",
+      "has_the_recipe"
+    ]
+  ]
+}

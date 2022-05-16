@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:copernicium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:copernicium_metal_block"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:einsteinium_metal_block"
+    }
+  ],
+  "result": {
+    "item": "chemlib:einsteinium_ingot",
+    "count": 9
+  }
+}

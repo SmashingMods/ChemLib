@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:iridium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:iridium_metal_block"
+  }
+}

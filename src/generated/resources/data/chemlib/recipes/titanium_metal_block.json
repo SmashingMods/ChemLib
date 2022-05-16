@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:titanium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:titanium_metal_block"
+  }
+}

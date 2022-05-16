@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:seaborgium_metal_block"
+    ]
+  },
+  "criteria": {
+    "has_seaborgium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:seaborgium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:seaborgium_metal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_seaborgium",
+      "has_the_recipe"
+    ]
+  ]
+}

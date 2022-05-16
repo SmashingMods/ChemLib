@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:americium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_americium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:americium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:americium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_americium",
+      "has_the_recipe"
+    ]
+  ]
+}

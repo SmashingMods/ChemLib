@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:tungsten_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:tungsten_metal_block"
+  }
+}

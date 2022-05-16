@@ -7,7 +7,8 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.client.resources.language.I18n;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,8 +27,8 @@ public class JEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration pRegistration) {
-        ItemRegistry.ELEMENTS.forEach(element -> {
-            pRegistration.addIngredientInfo(new ItemStack(element), VanillaTypes.ITEM_STACK, new TranslatableComponent("%s.jei.elements.%s.description", ChemLib.MODID, element.getName()));
+        ItemRegistry.getElements().forEach(element -> {
+            pRegistration.addIngredientInfo(new ItemStack(element), VanillaTypes.ITEM_STACK, new TextComponent(I18n.get(String.format("%s.jei.element.%s.description", ChemLib.MODID, element.getChemicalName()))));
         });
     }
 }

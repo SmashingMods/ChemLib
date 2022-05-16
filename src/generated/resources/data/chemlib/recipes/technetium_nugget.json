@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:technetium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:technetium_nugget",
+    "count": 9
+  }
+}

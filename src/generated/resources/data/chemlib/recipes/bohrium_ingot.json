@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:bohrium_metal_block"
+    }
+  ],
+  "result": {
+    "item": "chemlib:bohrium_ingot",
+    "count": 9
+  }
+}

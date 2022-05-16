@@ -1,0 +1,6 @@
+{
+  "parent": "chemlib:block/neon_lamp_block",
+  "textures": {
+    "block": "chemlib:block/lamp_block"
+  }
+}

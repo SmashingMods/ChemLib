@@ -1,25 +1,41 @@
 package com.smashingmods.chemlib.common.items;
 
 import com.smashingmods.chemlib.api.Chemical;
+import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
+import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-
-import java.util.List;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ChemicalItem extends Item implements Chemical {
 
     private final Chemical chemical;
+    private final ChemicalItemType itemType;
 
-    public ChemicalItem(Chemical pChemical, Item.Properties pProperties, List<ChemicalItem> pList) {
+    public ChemicalItem(Chemical pChemical, ChemicalItemType pChemicalItemType, Item.Properties pProperties) {
         super(pProperties);
         this.chemical = pChemical;
-        pList.add(this);
+        this.itemType = pChemicalItemType;
+        ItemRegistry.CHEMICAL_ITEMS.add(this);
+    }
+
+    public ChemicalItem(ResourceLocation pResourceLocation, ChemicalItemType pChemicalItemType, Item.Properties pProperties) {
+        this((Chemical) ForgeRegistries.ITEMS.getValue(pResourceLocation), pChemicalItemType, pProperties);
+    }
+
+    public Chemical getChemical() {
+        return chemical;
+    }
+
+    public ChemicalItemType getItemType() {
+        return itemType;
     }
 
     @Override
-    public String getName() {
-        return chemical.getName();
+    public String getChemicalName() {
+        return chemical.getChemicalName();
     }
 
     @Override
@@ -42,7 +58,7 @@ public class ChemicalItem extends Item implements Chemical {
         return chemical.getColor();
     }
 
-    @Override
+    @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return getColor();
     }

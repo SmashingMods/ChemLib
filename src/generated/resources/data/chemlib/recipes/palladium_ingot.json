@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:palladium_metal_block"
+    }
+  ],
+  "result": {
+    "item": "chemlib:palladium_ingot",
+    "count": 9
+  }
+}

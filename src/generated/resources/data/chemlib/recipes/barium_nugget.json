@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:barium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:barium_nugget",
+    "count": 9
+  }
+}

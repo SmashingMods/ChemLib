@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:molybdenum_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:molybdenum_metal_block"
+  }
+}

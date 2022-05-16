@@ -1,0 +1,6 @@
+{
+  "parent": "chemlib:block/metal_block",
+  "textures": {
+    "all": "chemlib:block/metal_block"
+  }
+}

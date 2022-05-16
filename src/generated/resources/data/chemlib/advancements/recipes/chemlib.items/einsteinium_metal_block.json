@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:einsteinium_metal_block"
+    ]
+  },
+  "criteria": {
+    "has_einsteinium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:einsteinium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:einsteinium_metal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_einsteinium",
+      "has_the_recipe"
+    ]
+  ]
+}

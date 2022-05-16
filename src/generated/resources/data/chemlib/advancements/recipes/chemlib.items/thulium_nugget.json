@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:thulium_nugget"
+    ]
+  },
+  "criteria": {
+    "has_thulium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:thulium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:thulium_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_thulium",
+      "has_the_recipe"
+    ]
+  ]
+}

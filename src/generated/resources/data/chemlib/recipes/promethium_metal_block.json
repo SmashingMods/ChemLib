@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:promethium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:promethium_metal_block"
+  }
+}

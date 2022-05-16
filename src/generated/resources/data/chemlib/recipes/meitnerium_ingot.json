@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:meitnerium_metal_block"
+    }
+  ],
+  "result": {
+    "item": "chemlib:meitnerium_ingot",
+    "count": 9
+  }
+}

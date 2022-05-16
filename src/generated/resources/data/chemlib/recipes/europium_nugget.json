@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:europium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:europium_nugget",
+    "count": 9
+  }
+}

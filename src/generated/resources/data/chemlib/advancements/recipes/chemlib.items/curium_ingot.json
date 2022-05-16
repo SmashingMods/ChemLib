@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:curium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_curium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:curium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:curium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_curium",
+      "has_the_recipe"
+    ]
+  ]
+}

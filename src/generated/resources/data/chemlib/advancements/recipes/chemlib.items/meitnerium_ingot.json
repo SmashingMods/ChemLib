@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:meitnerium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_meitnerium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:meitnerium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:meitnerium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_meitnerium",
+      "has_the_recipe"
+    ]
+  ]
+}

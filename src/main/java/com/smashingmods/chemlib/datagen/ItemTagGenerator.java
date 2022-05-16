@@ -21,21 +21,11 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
 
     @Override
     protected void addTags() {
-        ItemRegistry.DUSTS.stream().forEach(dust -> {
-            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("dusts/%s", dust.getName())));
-            tag(ingotKey).add(dust);
-        });
-        ItemRegistry.INGOTS.stream().forEach(nugget -> {
-            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("nuggets/%s", nugget.getName())));
-            tag(ingotKey).add(nugget);
-        });
-        ItemRegistry.INGOTS.stream().forEach(ingot -> {
-            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("ingots/%s", ingot.getName())));
-            tag(ingotKey).add(ingot);
-        });
-        ItemRegistry.INGOTS.stream().forEach(plate -> {
-            TagKey<Item> ingotKey = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("plates/%s", plate.getName())));
-            tag(ingotKey).add(plate);
+        ItemRegistry.getChemicalItems().forEach(item -> {
+            String type = item.getItemType().getSerializedName();
+            String name = item.getChemicalName();
+            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
+            tag(key).add(item);
         });
     }
 

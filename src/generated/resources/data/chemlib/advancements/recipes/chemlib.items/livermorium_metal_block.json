@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:livermorium_metal_block"
+    ]
+  },
+  "criteria": {
+    "has_livermorium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:livermorium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:livermorium_metal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_livermorium",
+      "has_the_recipe"
+    ]
+  ]
+}

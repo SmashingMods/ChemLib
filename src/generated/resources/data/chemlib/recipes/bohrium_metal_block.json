@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:bohrium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:bohrium_metal_block"
+  }
+}

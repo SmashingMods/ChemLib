@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:flerovium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:flerovium_metal_block"
+  }
+}

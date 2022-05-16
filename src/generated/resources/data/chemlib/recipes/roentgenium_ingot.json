@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:roentgenium_metal_block"
+    }
+  ],
+  "result": {
+    "item": "chemlib:roentgenium_ingot",
+    "count": 9
+  }
+}

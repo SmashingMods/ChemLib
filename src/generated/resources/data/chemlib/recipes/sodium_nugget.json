@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:sodium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:sodium_nugget",
+    "count": 9
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:terbium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:terbium_metal_block"
+  }
+}

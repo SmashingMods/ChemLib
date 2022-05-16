@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:indium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:indium_nugget",
+    "count": 9
+  }
+}

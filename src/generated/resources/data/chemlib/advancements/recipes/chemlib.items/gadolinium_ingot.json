@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:gadolinium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_gadolinium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:gadolinium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:gadolinium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gadolinium",
+      "has_the_recipe"
+    ]
+  ]
+}

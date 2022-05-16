@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:neptunium_ingot"
+    ]
+  },
+  "criteria": {
+    "has_neptunium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:neptunium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:neptunium_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_neptunium",
+      "has_the_recipe"
+    ]
+  ]
+}

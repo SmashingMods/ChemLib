@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:neptunium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:neptunium_nugget",
+    "count": 9
+  }
+}

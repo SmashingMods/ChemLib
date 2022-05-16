@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:darmstadtium_metal_block"
+    ]
+  },
+  "criteria": {
+    "has_darmstadtium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:darmstadtium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:darmstadtium_metal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_darmstadtium",
+      "has_the_recipe"
+    ]
+  ]
+}

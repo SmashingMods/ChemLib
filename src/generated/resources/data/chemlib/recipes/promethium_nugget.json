@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:promethium_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:promethium_nugget",
+    "count": 9
+  }
+}

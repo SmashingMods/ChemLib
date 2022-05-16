@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:nihonium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:nihonium_metal_block"
+  }
+}

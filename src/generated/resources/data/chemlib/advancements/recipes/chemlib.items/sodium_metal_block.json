@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:sodium_metal_block"
+    ]
+  },
+  "criteria": {
+    "has_sodium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:sodium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:sodium_metal_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sodium",
+      "has_the_recipe"
+    ]
+  ]
+}

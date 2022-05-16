@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:berkelium_nugget"
+    ]
+  },
+  "criteria": {
+    "has_berkelium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:berkelium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:berkelium_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_berkelium",
+      "has_the_recipe"
+    ]
+  ]
+}

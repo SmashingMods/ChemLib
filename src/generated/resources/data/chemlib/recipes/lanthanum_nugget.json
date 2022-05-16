@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chemlib:lanthanum_ingot"
+    }
+  ],
+  "result": {
+    "item": "chemlib:lanthanum_nugget",
+    "count": 9
+  }
+}

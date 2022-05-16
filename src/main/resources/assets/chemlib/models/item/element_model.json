@@ -1,5 +1,5 @@
 {
-  "parent": "chemlib:item/element",
+  "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "chemlib:items/element",
     "layer1": "chemlib:items/element_overlay_vial"

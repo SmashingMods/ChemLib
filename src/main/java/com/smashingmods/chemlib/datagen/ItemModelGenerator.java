@@ -6,6 +6,7 @@ import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -29,7 +30,7 @@ public class ItemModelGenerator extends ItemModelProvider {
     }
 
     public void registerElement(String pName) {
-        withExistingParent(String.format("item/%s", pName), mcLoc("item/generated"))
+        withExistingParent(String.format("item/%s", pName), new ResourceLocation(ChemLib.MODID, "item/element"))
                 .texture("layer0", modLoc("items/element"))
                 .texture("layer1", modLoc("items/element_overlay_vial"));
     }

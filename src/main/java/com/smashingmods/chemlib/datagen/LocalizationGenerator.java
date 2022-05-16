@@ -49,6 +49,6 @@ public class LocalizationGenerator extends LanguageProvider {
         
         add("itemGroup.chemlib.elements", "Elements");
         add("itemGroup.chemlib.compounds", "Compounds");
-        add("itemGroup.chemlib.items", "Chemistry Items");
+        add("itemGroup.chemlib.metals", "Metals");
     }
 }

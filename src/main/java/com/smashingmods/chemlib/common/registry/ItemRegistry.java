@@ -7,6 +7,7 @@ import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.*;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.items.*;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +18,7 @@ import net.minecraftforge.registries.RegistryObject;
 import javax.annotation.Nonnull;
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @SuppressWarnings("unused")
@@ -36,19 +38,47 @@ public class ItemRegistry {
         @Override
         @Nonnull
         public ItemStack makeIcon() {
-            return getCompoundByName("water")
+            return getCompoundByName("cellulose")
                     .map(ItemStack::new)
                     .orElseGet(() -> new ItemStack(Items.AIR));
         }
+
+        @Override
+        public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
+            super.fillItemList(pItems);
+            pItems.clear();
+            List<ItemStack> compoundStacks = COMPOUNDS.stream().map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> dustStacks = getChemicalItemsByType(ChemicalItemType.DUST).map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> compoundDustStacks = getChemicalItemsByType(ChemicalItemType.COMPOUND).map(ItemStack::new).collect(Collectors.toList());
+            pItems.addAll(compoundStacks);
+            pItems.addAll(dustStacks);
+            pItems.addAll(compoundDustStacks);
+        }
     };
 
-    public static final CreativeModeTab ITEMS_TAB = new CreativeModeTab(String.format("%s.items", ChemLib.MODID)) {
+    public static final CreativeModeTab METALS_TAB = new CreativeModeTab(String.format("%s.metals", ChemLib.MODID)) {
         @Override
         @Nonnull
         public ItemStack makeIcon() {
-            return getItemByNameAndType("titanium", ChemicalItemType.INGOT)
+            return getItemByNameAndType("technetium", ChemicalItemType.INGOT)
                     .map(ItemStack::new)
-                    .orElseGet(() -> new ItemStack(Items.IRON_INGOT));
+                    .orElseGet(() -> new ItemStack(Items.AIR));
+        }
+
+        @Override
+        public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
+            super.fillItemList(pItems);
+            pItems.clear();
+
+            List<ItemStack> nuggetStacks = getChemicalItemsByType(ChemicalItemType.NUGGET).map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> ingotStacks = getChemicalItemsByType(ChemicalItemType.INGOT).map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> plateStacks = getChemicalItemsByType(ChemicalItemType.PLATE).map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> blockItemStacks = BLOCK_ITEMS.stream().filter(item -> ((ChemicalBlock) item.getBlock()).getBlockType().getSerializedName().equals("metal")).map(ItemStack::new).collect(Collectors.toList());
+
+            pItems.addAll(nuggetStacks);
+            pItems.addAll(ingotStacks);
+            pItems.addAll(plateStacks);
+            pItems.addAll(blockItemStacks);
         }
     };
 
@@ -78,11 +108,11 @@ public class ItemRegistry {
                 case SOLID -> {
                     if (!hasItem) {
                         if (metalType == MetalType.NONMETAL || metalType == MetalType.METALLOID) {
-                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.DUST);
+                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.DUST, COMPOUND_TAB);
                         } else {
-                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.NUGGET);
-                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.INGOT);
-                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.PLATE);
+                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.NUGGET, METALS_TAB);
+                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.INGOT, METALS_TAB);
+                            registerItemByType(filterAndReturn(elementName), ChemicalItemType.PLATE, METALS_TAB);
                         }
                     }
                 }
@@ -115,7 +145,7 @@ public class ItemRegistry {
             switch (matterState) {
                 case SOLID -> {
                     if (!hasItem) {
-                        registerItemByType(filterAndReturn(compoundName), ChemicalItemType.DUST);
+                        registerItemByType(filterAndReturn(compoundName), ChemicalItemType.COMPOUND, COMPOUND_TAB);
                     }
                 }
                 case LIQUID, GAS -> {}
@@ -163,6 +193,10 @@ public class ItemRegistry {
         return getChemicalItems().stream().filter(item -> item.getItemType().equals(pChemicalItemType));
     }
 
+    public static Optional<ChemicalBlockItem> getChemicalBlockItemByName(String pName) {
+        return BLOCK_ITEMS.stream().filter(item -> item.getChemicalName().equals(pName)).findFirst();
+    }
+
     public static Optional<ChemicalItem> getItemByNameAndType(String pName, ChemicalItemType pChemicalItemType) {
         return getChemicalItems().stream()
                 .filter(item -> item.getItemType().equals(pChemicalItemType))
@@ -170,8 +204,8 @@ public class ItemRegistry {
                 .findFirst();
     }
 
-    public static void registerItemByType(RegistryObject<?> pRegistryObject, ChemicalItemType pChemicalItemType) {
-        ITEMS.register(String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName()), () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties().tab(ITEMS_TAB)));
+    public static void registerItemByType(RegistryObject<?> pRegistryObject, ChemicalItemType pChemicalItemType, CreativeModeTab pTab) {
+        ITEMS.register(String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName()), () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties().tab(pTab)));
     }
 
     private static RegistryObject<?> filterAndReturn(String pName) {

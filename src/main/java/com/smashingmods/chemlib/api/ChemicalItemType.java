@@ -5,6 +5,7 @@ import net.minecraft.util.StringRepresentable;
 import javax.annotation.Nonnull;
 
 public enum ChemicalItemType implements StringRepresentable {
+    COMPOUND("dust"),
     DUST("dust"),
     NUGGET("nugget"),
     INGOT("ingot"),

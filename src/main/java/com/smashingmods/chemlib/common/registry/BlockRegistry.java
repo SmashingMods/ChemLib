@@ -8,6 +8,7 @@ import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -20,8 +21,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.*;
 import java.util.stream.Stream;
-
-import static com.smashingmods.chemlib.common.registry.ItemRegistry.ITEMS_TAB;
 
 public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ChemLib.MODID);
@@ -46,7 +45,7 @@ public class BlockRegistry {
                         if (!vanillaBlocks.contains(elementName)) {
                             String registryName = String.format("%s_metal_block", elementName);
                             BLOCKS.register(registryName, () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, METAL_BLOCKS, METAL_PROPERTIES));
-                            ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(ITEMS_TAB));
+                            ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(ItemRegistry.METALS_TAB));
                         }
                     }
                 }
@@ -55,7 +54,7 @@ public class BlockRegistry {
                     if (nobleGasses.contains(elementName)) {
                         String registryName = String.format("%s_lamp_block", elementName);
                         BLOCKS.register(registryName, () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, LAMP_BLOCKS, LAMP_PROPERTIES));
-                        ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(ITEMS_TAB));
+                        ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC));
                     }
                 }
             }

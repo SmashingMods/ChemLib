@@ -20,6 +20,7 @@ public class ItemModelGenerator extends ItemModelProvider {
     protected void registerModels() {
         ItemRegistry.getElements().stream().map(Chemical::getChemicalName).forEach(this::registerElement);
         ItemRegistry.getCompounds().stream().map(Chemical::getChemicalName).forEach(this::registerCompound);
+        ItemRegistry.getChemicalItemsByType(ChemicalItemType.COMPOUND).forEach(dust -> registerItem(dust.getChemicalName(), "dust"));
         ItemRegistry.getChemicalItemsByType(ChemicalItemType.DUST).forEach(dust -> registerItem(dust.getChemicalName(), "dust"));
         ItemRegistry.getChemicalItemsByType(ChemicalItemType.NUGGET).forEach(nugget -> registerItem(nugget.getChemicalName(), "nugget"));
         ItemRegistry.getChemicalItemsByType(ChemicalItemType.INGOT).forEach(ingot -> registerItem(ingot.getChemicalName(), "ingot"));

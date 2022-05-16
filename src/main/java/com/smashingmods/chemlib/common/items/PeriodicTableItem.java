@@ -1,9 +1,9 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -13,7 +13,7 @@ import javax.annotation.Nonnull;
 public class PeriodicTableItem extends Item {
 
     public PeriodicTableItem() {
-        super(new Item.Properties().tab(ItemRegistry.ITEMS_TAB));
+        super(new Item.Properties().tab(CreativeModeTab.TAB_MISC));
         setRegistryName("periodic_table");
     }
 

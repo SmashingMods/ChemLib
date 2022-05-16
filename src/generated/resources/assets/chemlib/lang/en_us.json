@@ -831,5 +831,5 @@
   "item.chemlib.zirconium_plate": "Zirconium Plate",
   "itemGroup.chemlib.compounds": "Compounds",
   "itemGroup.chemlib.elements": "Elements",
-  "itemGroup.chemlib.items": "Chemistry Items"
+  "itemGroup.chemlib.metals": "Metals"
 }

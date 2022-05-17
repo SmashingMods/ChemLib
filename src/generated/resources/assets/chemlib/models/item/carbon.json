@@ -1,7 +1,3 @@
 {
-  "parent": "chemlib:item/element",
-  "textures": {
-    "layer0": "chemlib:items/element",
-    "layer1": "chemlib:items/element_overlay_vial"
-  }
+  "parent": "chemlib:item/element_solid_model"
 }

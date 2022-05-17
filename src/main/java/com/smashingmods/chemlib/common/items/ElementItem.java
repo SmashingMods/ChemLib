@@ -106,9 +106,9 @@ public class ElementItem extends Item implements Element {
         return pTintIndex > 0 ? -1 : color;
     }
 
-	@Override
-	public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
-		super.initializeClient(consumer);
-		consumer.accept(ElementRenderer.RENDERER);
-	}
+//	@Override
+//	public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
+//		super.initializeClient(consumer);
+////		consumer.accept(ElementRenderer.RENDERER);
+//	}
 }

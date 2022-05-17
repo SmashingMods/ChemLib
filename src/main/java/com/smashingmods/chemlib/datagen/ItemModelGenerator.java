@@ -4,6 +4,7 @@ import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
+import com.smashingmods.chemlib.common.blocks.LampBlock;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -48,7 +49,17 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     public void registerBlockItem(BlockItem pBlockItem) {
         ChemicalBlock block = (ChemicalBlock) pBlockItem.getBlock();
-        withExistingParent(String.format("item/%s_%s_block", block.getChemicalName(), block.getBlockType().getSerializedName()), modLoc(String.format("block/%s_%s_block", block.getChemicalName(), block.getBlockType().getSerializedName())))
-                .texture("block", modLoc(String.format("block/%s_block", block.getBlockType().getSerializedName())));
+        String type = block.getBlockType().getSerializedName();
+        String name = String.format("item/%s_%s_block", block.getChemicalName(), type);
+        ResourceLocation parent = modLoc(String.format("block/%s_%s_block", block.getChemicalName(), type));
+
+        if (pBlockItem.getBlock() instanceof LampBlock lampBlock) {
+            ResourceLocation texture = modLoc(String.format("block/%s_block", type));
+            withExistingParent(name, parent).texture("block", texture);
+        } else {
+            ResourceLocation texture = modLoc(String.format("block/%s_block", type));
+            withExistingParent(name, parent).texture("block", texture);
+        }
+
     }
 }

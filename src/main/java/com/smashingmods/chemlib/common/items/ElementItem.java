@@ -30,16 +30,20 @@ public class ElementItem extends Item implements Element {
     private final String elementName;
     private final int atomicNumber;
     private final String abbreviation;
+    private final int group;
+    private final int period;
     private final MatterState matterState;
     private final MetalType metalType;
     private final String description;
     private final int color;
 
-    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, MatterState pMatterState, MetalType pMetalType, String pDescription, String pColor) {
+    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, String pDescription, String pColor) {
         super(new Item.Properties().tab(ItemRegistry.ELEMENT_TAB));
         this.elementName = pChemicalName;
         this.atomicNumber = pAtomicNumber;
         this.abbreviation = pAbbreviation;
+        this.group = pGroup;
+        this.period = pPeriod;
         this.matterState = pMatterState;
         this.metalType = pMetalType;
         this.description = pDescription;
@@ -66,6 +70,16 @@ public class ElementItem extends Item implements Element {
     @Override
     public String getAbbreviation() {
         return this.abbreviation;
+    }
+
+    @Override
+    public int getPeriod() {
+        return period;
+    }
+
+    @Override
+    public int getGroup() {
+        return group;
     }
 
     @Override

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:oganesson_lamp_block"
+    ]
+  },
+  "criteria": {
+    "has_oganesson": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:oganesson"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:oganesson_lamp_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_oganesson",
+      "has_the_recipe"
+    ]
+  ]
+}

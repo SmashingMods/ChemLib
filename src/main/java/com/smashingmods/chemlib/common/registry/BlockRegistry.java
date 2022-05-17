@@ -7,12 +7,14 @@ import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
+import com.smashingmods.chemlib.common.blocks.LampBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,7 +30,7 @@ public class BlockRegistry {
     public static final List<ChemicalBlock> LAMP_BLOCKS = new ArrayList<>();
 
     private static final BlockBehaviour.Properties METAL_PROPERTIES = BlockBehaviour.Properties.of(Material.METAL).strength(5.0f, 12.0f).sound(SoundType.METAL);
-    private static final BlockBehaviour.Properties LAMP_PROPERTIES = BlockBehaviour.Properties.of(Material.GLASS).strength(2.0f, 2.0f).sound(SoundType.GLASS).lightLevel(state -> 15);
+    private static final BlockBehaviour.Properties LAMP_PROPERTIES = BlockBehaviour.Properties.of(Material.GLASS).strength(2.0f, 2.0f).sound(SoundType.GLASS).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0);
 
     private static void registerBlocks() {
 
@@ -53,7 +55,7 @@ public class BlockRegistry {
                     List<String> nobleGasses = Arrays.asList("helium", "neon", "argon", "krypton", "xenon", "oganesson");
                     if (nobleGasses.contains(elementName)) {
                         String registryName = String.format("%s_lamp_block", elementName);
-                        BLOCKS.register(registryName, () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, LAMP_BLOCKS, LAMP_PROPERTIES));
+                        BLOCKS.register(registryName, () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, LAMP_BLOCKS, LAMP_PROPERTIES));
                         ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC));
                     }
                 }

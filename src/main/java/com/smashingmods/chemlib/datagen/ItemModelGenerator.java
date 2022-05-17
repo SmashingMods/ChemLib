@@ -31,7 +31,7 @@ public class ItemModelGenerator extends ItemModelProvider {
     }
 
     public void registerElement(String pName) {
-        withExistingParent(String.format("item/%s", pName), mcLoc("item/generated"))
+        withExistingParent(String.format("item/%s", pName), new ResourceLocation(ChemLib.MODID, "item/element"))
                 .texture("layer0", modLoc("items/element"))
                 .texture("layer1", modLoc("items/element_overlay_vial"));
     }

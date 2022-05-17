@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "chemlib:block/metal_block"
+      "model": "chemlib:block/metal_model"
     }
   }
 }

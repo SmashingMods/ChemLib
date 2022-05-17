@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "chemlib:block/lamp_block"
+    "lit=false": {
+      "model": "chemlib:block/lamp_off_model"
+    },
+    "lit=true": {
+      "model": "chemlib:block/lamp_on_model"
     }
   }
 }

@@ -92,6 +92,7 @@
     "chemlib:nihonium_metal_block",
     "chemlib:flerovium_metal_block",
     "chemlib:moscovium_metal_block",
-    "chemlib:livermorium_metal_block"
+    "chemlib:livermorium_metal_block",
+    "chemlib:oganesson_lamp_block"
   ]
 }

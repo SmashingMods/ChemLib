@@ -96,13 +96,16 @@ public class ItemRegistry {
             String elementName = object.get("name").getAsString();
             int atomicNumber = object.get("atomic_number").getAsInt();
             String abbreviation = object.get("abbreviation").getAsString();
+            int group = object.get("group").getAsInt();
+            int period = object.get("period").getAsInt();
             MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
             MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase());
-            boolean hasItem = object.get("has_item").getAsBoolean();
+            boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
+            boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
             String description = object.get("description").getAsString();
             String color = object.get("color").getAsString();
 
-            ITEMS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, matterState, metalType, description, color));
+            ITEMS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, description, color));
 
             switch (matterState) {
                 case SOLID -> {

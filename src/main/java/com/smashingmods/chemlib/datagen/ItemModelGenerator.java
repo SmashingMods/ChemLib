@@ -7,12 +7,15 @@ import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.blocks.LampBlock;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
+import com.smashingmods.chemlib.common.items.CompoundItem;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+
+import java.util.Arrays;
 
 public class ItemModelGenerator extends ItemModelProvider {
 
@@ -23,30 +26,34 @@ public class ItemModelGenerator extends ItemModelProvider {
     @Override
     protected void registerModels() {
         generateElementModels();
+        generateCompoundModels();
+
         ItemRegistry.getElements().stream().forEach(this::registerElement);
-        ItemRegistry.getCompounds().stream().map(Chemical::getChemicalName).forEach(this::registerCompound);
+        ItemRegistry.getCompounds().stream().forEach(this::registerCompound);
 
-        ItemRegistry.getChemicalItemsByType(ChemicalItemType.COMPOUND).forEach(this::registerDust);
-        ItemRegistry.getChemicalItemsByType(ChemicalItemType.DUST).forEach(this::registerDust);
-        ItemRegistry.getChemicalItemsByType(ChemicalItemType.NUGGET).forEach(nugget -> registerItem(nugget.getChemicalName(), "nugget"));
-        ItemRegistry.getChemicalItemsByType(ChemicalItemType.INGOT).forEach(ingot -> registerItem(ingot.getChemicalName(), "ingot"));
-        ItemRegistry.getChemicalItemsByType(ChemicalItemType.PLATE).forEach(plate -> registerItem(plate.getChemicalName(), "plate"));
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.COMPOUND).forEach(this::registerCompoundDust);
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.DUST).forEach(dust -> registerItem(dust.getChemicalName(), "dust"));
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.NUGGET).forEach(nugget -> registerItem(nugget.getChemicalName(), "nugget"));
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> registerItem(ingot.getChemicalName(), "ingot"));
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.PLATE).forEach(plate -> registerItem(plate.getChemicalName(), "plate"));
 
-        ItemRegistry.BLOCK_ITEMS.stream().forEach(this::registerBlockItem);
+        ItemRegistry.getChemicalBlockItems().stream().forEach(this::registerBlockItem);
     }
 
     public void generateElementModels() {
-        withExistingParent("item/element_solid_model", mcLoc("item/generated"))
-                .texture("layer0", modLoc("items/element_solid_layer_0"))
-                .texture("layer1", modLoc("items/element_solid_layer_1"));
+        for (String type : Arrays.asList("solid", "liquid", "gas")) {
+            withExistingParent(String.format("item/element_%s_model", type), mcLoc("item/generated"))
+                    .texture("layer0", modLoc(String.format("items/element_%s_layer_0", type)))
+                    .texture("layer1", modLoc(String.format("items/element_%s_layer_1", type)));
+        }
+    }
 
-        withExistingParent("item/element_liquid_model", mcLoc("item/generated"))
-                .texture("layer0", modLoc("items/element_liquid_layer_0"))
-                .texture("layer1", modLoc("items/element_liquid_layer_1"));
-
-        withExistingParent("item/element_gas_model", mcLoc("item/generated"))
-                .texture("layer0", modLoc("items/element_gas_layer_0"))
-                .texture("layer1", modLoc("items/element_gas_layer_1"));
+    public void generateCompoundModels() {
+        for (String type : Arrays.asList("solid", "liquid", "gas","dust")) {
+            withExistingParent(String.format("item/compound_%s_model", type), mcLoc("item/generated"))
+                    .texture("layer0", modLoc(String.format("items/compound_%s_layer_0", type)))
+                    .texture("layer1", modLoc(String.format("items/compound_%s_layer_1", type)));
+        }
     }
 
     public void registerElement(Element pElement) {
@@ -57,16 +64,16 @@ public class ItemModelGenerator extends ItemModelProvider {
         }
     }
 
-    public void registerCompound(String pName) {
-        withExistingParent(String.format("item/%s", pName), mcLoc("item/generated"))
-                .texture("layer0", modLoc("items/compound"))
-                .texture("layer1", modLoc("items/compound_overlay_vial"));
+    public void registerCompound(CompoundItem pCompound) {
+        switch (pCompound.getMatterState()) {
+            case SOLID -> withExistingParent(String.format("item/%s", pCompound.getChemicalName()), modLoc("item/compound_solid_model"));
+            case LIQUID -> withExistingParent(String.format("item/%s", pCompound.getChemicalName()), modLoc("item/compound_liquid_model"));
+            case GAS -> withExistingParent(String.format("item/%s", pCompound.getChemicalName()), modLoc("item/compound_gas_model"));
+        }
     }
 
-    public void registerDust(ChemicalItem pItem) {
-        withExistingParent(String.format("item/%s_dust", pItem.getChemicalName()), mcLoc("item/generated"))
-                .texture("layer0", modLoc("items/dust_layer_0"))
-                .texture("layer1", modLoc("items/dust_layer_1"));
+    public void registerCompoundDust(ChemicalItem pItem) {
+        withExistingParent(String.format("item/%s_dust", pItem.getChemicalName()), modLoc("item/compound_dust_model"));
     }
 
     public void registerItem(String pName, String pSuffix) {

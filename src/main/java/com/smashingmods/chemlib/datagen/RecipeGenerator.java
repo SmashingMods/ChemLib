@@ -41,7 +41,7 @@ public class RecipeGenerator extends RecipeProvider {
         // register ingot -> block recipes
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.METAL).forEach(block -> {
             Chemical chemical = block.getChemical();
-            ChemicalItem item = ItemRegistry.getItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.INGOT).get();
+            ChemicalItem item = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.INGOT).get();
             ShapedRecipeBuilder.shaped(block)
                     .define('I', item)
                     .pattern("III")
@@ -52,7 +52,7 @@ public class RecipeGenerator extends RecipeProvider {
         });
 
         // register block -> ingot recipes
-        ItemRegistry.getChemicalItemsByType(ChemicalItemType.INGOT).forEach(item -> {
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(item -> {
             Chemical chemical = item.getChemical();
             ChemicalBlock block = BlockRegistry.getChemicalBlockByNameAndType(chemical.getChemicalName(), ChemicalBlockType.METAL).get();
             ShapelessRecipeBuilder.shapeless(item, 9)
@@ -62,9 +62,9 @@ public class RecipeGenerator extends RecipeProvider {
         });
 
         // register ingot -> nugget
-        ItemRegistry.getChemicalItemsByType(ChemicalItemType.INGOT).forEach(ingot -> {
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> {
             Chemical chemical = ingot.getChemical();
-            ChemicalItem nugget = ItemRegistry.getItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).get();
+            ChemicalItem nugget = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).get();
             ShapelessRecipeBuilder.shapeless(nugget, 9)
                     .requires(ingot)
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))

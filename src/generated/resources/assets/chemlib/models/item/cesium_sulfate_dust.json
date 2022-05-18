@@ -1,7 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chemlib:items/dust_layer_0",
-    "layer1": "chemlib:items/dust_layer_1"
-  }
+  "parent": "chemlib:item/compound_dust_model"
 }

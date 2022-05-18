@@ -1,7 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chemlib:items/compound",
-    "layer1": "chemlib:items/compound_overlay_vial"
-  }
+  "parent": "chemlib:item/compound_liquid_model"
 }

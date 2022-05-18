@@ -35,7 +35,6 @@ public class CompoundItem extends Item implements Chemical {
         this.components = pComponents;
         this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
-        ItemRegistry.COMPOUNDS.add(this);
     }
 
     @OnlyIn(Dist.CLIENT)

@@ -10,10 +10,10 @@
       "tag": "forge:glass"
     },
     "E": {
-      "item": "chemlib:oganesson"
+      "item": "chemlib:radon"
     }
   },
   "result": {
-    "item": "chemlib:oganesson_lamp_block"
+    "item": "chemlib:radon_lamp_block"
   }
 }

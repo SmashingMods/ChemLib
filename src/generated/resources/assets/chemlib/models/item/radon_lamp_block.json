@@ -1,5 +1,5 @@
 {
-  "parent": "chemlib:block/oganesson_lamp_block",
+  "parent": "chemlib:block/radon_lamp_block",
   "textures": {
     "block": "chemlib:block/lamp_block"
   }

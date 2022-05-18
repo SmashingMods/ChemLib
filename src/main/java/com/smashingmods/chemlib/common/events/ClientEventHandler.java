@@ -18,10 +18,10 @@ public class ClientEventHandler {
 
     @SubscribeEvent
     public static void onColorHandlerEvent(final ColorHandlerEvent.Item colorHandlerEvent) {
-        ItemRegistry.getElements().forEach(elementItem -> colorHandlerEvent.getItemColors().register(elementItem::getColor, elementItem));
-        ItemRegistry.getCompounds().forEach(compoundItem -> colorHandlerEvent.getItemColors().register(compoundItem::getColor, compoundItem));
+        ItemRegistry.getElements().forEach(element -> colorHandlerEvent.getItemColors().register(element::getColor, element));
+        ItemRegistry.getCompounds().forEach(compound -> colorHandlerEvent.getItemColors().register(compound::getColor, compound));
         ItemRegistry.getChemicalItems().forEach(item -> colorHandlerEvent.getItemColors().register(item::getColor, item));
-        ItemRegistry.BLOCK_ITEMS.forEach(item -> colorHandlerEvent.getItemColors().register(item::getColor, item));
+        ItemRegistry.getChemicalBlockItems().forEach(item -> colorHandlerEvent.getItemColors().register(item::getColor, item));
         BlockRegistry.getAllChemicalBlocks().forEach(block -> colorHandlerEvent.getBlockColors().register(block.getBlockColor(new ItemStack(block.asItem()), 0), block));
     }
 

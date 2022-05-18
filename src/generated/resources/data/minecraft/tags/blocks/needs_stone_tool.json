@@ -63,6 +63,7 @@
     "chemlib:thallium_metal_block",
     "chemlib:lead_metal_block",
     "chemlib:bismuth_metal_block",
+    "chemlib:radon_lamp_block",
     "chemlib:francium_metal_block",
     "chemlib:radium_metal_block",
     "chemlib:actinium_metal_block",
@@ -92,7 +93,6 @@
     "chemlib:nihonium_metal_block",
     "chemlib:flerovium_metal_block",
     "chemlib:moscovium_metal_block",
-    "chemlib:livermorium_metal_block",
-    "chemlib:oganesson_lamp_block"
+    "chemlib:livermorium_metal_block"
   ]
 }

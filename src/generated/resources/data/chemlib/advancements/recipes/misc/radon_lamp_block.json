@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "chemlib:oganesson_lamp_block"
+      "chemlib:radon_lamp_block"
     ]
   },
   "criteria": {
-    "has_oganesson": {
+    "has_radon": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "chemlib:oganesson"
+              "chemlib:radon"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:oganesson_lamp_block"
+        "recipe": "chemlib:radon_lamp_block"
       }
     }
   },
   "requirements": [
     [
-      "has_oganesson",
+      "has_radon",
       "has_the_recipe"
     ]
   ]

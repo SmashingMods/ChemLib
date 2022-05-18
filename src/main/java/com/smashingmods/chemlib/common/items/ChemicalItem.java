@@ -3,7 +3,6 @@ package com.smashingmods.chemlib.common.items;
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
@@ -33,7 +32,6 @@ public class ChemicalItem extends Item implements Chemical {
         super(pProperties);
         this.chemical = pChemical;
         this.itemType = pChemicalItemType;
-        ItemRegistry.CHEMICAL_ITEMS.add(this);
     }
 
     public ChemicalItem(ResourceLocation pResourceLocation, ChemicalItemType pChemicalItemType, Item.Properties pProperties) {

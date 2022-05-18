@@ -39,12 +39,14 @@ public class BlockRegistry {
             String elementName = object.get("name").getAsString();
             MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
             MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase());
+            int group = object.get("group").getAsInt();
+            boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
+            boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
 
             switch (matterState) {
                 case SOLID -> {
                     if (metalType.equals(MetalType.METAL)) {
-                        List<String> vanillaBlocks = Arrays.asList("copper", "iron", "gold");
-                        if (!vanillaBlocks.contains(elementName)) {
+                        if (!hasItem) {
                             String registryName = String.format("%s_metal_block", elementName);
                             BLOCKS.register(registryName, () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, METAL_BLOCKS, METAL_PROPERTIES));
                             ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(ItemRegistry.METALS_TAB));
@@ -52,8 +54,7 @@ public class BlockRegistry {
                     }
                 }
                 case GAS -> {
-                    List<String> nobleGasses = Arrays.asList("helium", "neon", "argon", "krypton", "xenon", "oganesson");
-                    if (nobleGasses.contains(elementName)) {
+                    if (group == 18 && !artificial) {
                         String registryName = String.format("%s_lamp_block", elementName);
                         BLOCKS.register(registryName, () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, LAMP_BLOCKS, LAMP_PROPERTIES));
                         ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC));

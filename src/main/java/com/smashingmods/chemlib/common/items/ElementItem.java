@@ -48,7 +48,6 @@ public class ElementItem extends Item implements Element {
         this.metalType = pMetalType;
         this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
-        ItemRegistry.ELEMENTS.add(this);
     }
 
     @OnlyIn(Dist.CLIENT)

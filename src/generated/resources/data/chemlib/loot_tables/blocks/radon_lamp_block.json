@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "chemlib:oganesson_lamp_block"
+          "name": "chemlib:radon_lamp_block"
         }
       ],
       "conditions": [

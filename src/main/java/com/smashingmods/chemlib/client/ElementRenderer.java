@@ -34,7 +34,9 @@ public class ElementRenderer extends BlockEntityWithoutLevelRenderer {
 			return INSTANCE.get();
 		}
 	};
-	private static final ModelResourceLocation MODEL_RESOURCE_LOCATION = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_model"), "inventory");
+	private static final ModelResourceLocation SOLID_MODEL_LOCATION = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory");
+	private static final ModelResourceLocation LIQUID_MODEL_LOCATION = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory");
+	private static final ModelResourceLocation GAS_MODEL_LOCATION = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory");
 
 	public ElementRenderer(BlockEntityRenderDispatcher pBlockEntityRenderDispatcher, EntityModelSet pEntityModelSet) {
 		super(pBlockEntityRenderDispatcher, pEntityModelSet);
@@ -45,7 +47,16 @@ public class ElementRenderer extends BlockEntityWithoutLevelRenderer {
 
 		boolean gui = pTransformType == ItemTransforms.TransformType.GUI;
 		boolean frame = pTransformType == ItemTransforms.TransformType.FIXED;
-		BakedModel model = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getModelManager().getModel(MODEL_RESOURCE_LOCATION);
+
+		ModelResourceLocation elementModel;
+
+		switch(((ElementItem) pStack.getItem()).getMatterState()) {
+			case LIQUID -> elementModel = LIQUID_MODEL_LOCATION;
+			case GAS -> elementModel = GAS_MODEL_LOCATION;
+			default -> elementModel = SOLID_MODEL_LOCATION;
+		}
+
+		BakedModel model = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getModelManager().getModel(elementModel);
 
 		pPoseStack.pushPose();
 		pPoseStack.translate(0.5D, 0.5D, 0D);

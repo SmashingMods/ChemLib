@@ -27,6 +27,8 @@ public class ClientEventHandler {
 
 	@SubscribeEvent
 	public static void onModelRegister(ModelRegistryEvent event) {
-//		ForgeModelBakery.addSpecialModel(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_model"), "inventory"));
+        ForgeModelBakery.addSpecialModel(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory"));
+        ForgeModelBakery.addSpecialModel(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory"));
+		ForgeModelBakery.addSpecialModel(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory"));
 	}
 }

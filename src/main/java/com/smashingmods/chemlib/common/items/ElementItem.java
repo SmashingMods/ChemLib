@@ -51,9 +51,11 @@ public class ElementItem extends Item implements Element {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltips, TooltipFlag flag) {
-        tooltips.add(new TextComponent(getAbbreviation()).withStyle(ChatFormatting.DARK_AQUA));
-        tooltips.add(new TextComponent(String.format("(%d)", atomicNumber)));
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(new TextComponent(String.format("%s (%d)", getAbbreviation(), atomicNumber)).withStyle(ChatFormatting.DARK_AQUA));
+        if (!getGroupName().isEmpty()) {
+            pTooltipComponents.add(new TextComponent(getGroupName()).withStyle(ChatFormatting.GRAY));
+        }
     }
 
     @Override
@@ -81,6 +83,25 @@ public class ElementItem extends Item implements Element {
         return group;
     }
 
+    public String getGroupName() {
+        return switch(group) {
+            case 1 -> atomicNumber != 1 ? "Alkali Metal" : "";
+            case 2 -> "Aklaline Earth Metal";
+            case 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 -> switch(period) {
+                case 6 -> "Lanthanide";
+                case 7 -> "Actinide";
+                default -> "Transition Metal";
+            };
+            case 13 -> "Boron Group";
+            case 14 -> "Carbon Group";
+            case 15 -> "Nitrogen Group";
+            case 16 -> "Chalcogen";
+            case 17 -> "Halogen";
+            case 18 -> "Noble Gas";
+            default -> "";
+        };
+    }
+
     @Override
     public MatterState getMatterState() {
         return matterState;
@@ -105,9 +126,9 @@ public class ElementItem extends Item implements Element {
         return pTintIndex > 0 ? -1 : color;
     }
 
-//	@Override
-//	public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
-//		super.initializeClient(consumer);
-////		consumer.accept(ElementRenderer.RENDERER);
-//	}
+	@Override
+	public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
+		super.initializeClient(consumer);
+		consumer.accept(ElementRenderer.RENDERER);
+	}
 }

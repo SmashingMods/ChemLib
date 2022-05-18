@@ -57,11 +57,7 @@ public class ItemModelGenerator extends ItemModelProvider {
     }
 
     public void registerElement(Element pElement) {
-        switch (pElement.getMatterState()) {
-            case SOLID -> withExistingParent(String.format("item/%s", pElement.getChemicalName()), modLoc("item/element_solid_model"));
-            case LIQUID -> withExistingParent(String.format("item/%s", pElement.getChemicalName()), modLoc("item/element_liquid_model"));
-            case GAS -> withExistingParent(String.format("item/%s", pElement.getChemicalName()), modLoc("item/element_gas_model"));
-        }
+        withExistingParent(String.format("item/%s", pElement.getChemicalName()), modLoc("item/element"));
     }
 
     public void registerCompound(CompoundItem pCompound) {

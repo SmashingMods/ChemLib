@@ -1,8 +1,6 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.smashingmods.chemlib.api.Chemical;
-import com.smashingmods.chemlib.api.ChemicalItemType;
-import com.smashingmods.chemlib.api.MatterState;
+import com.smashingmods.chemlib.api.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
@@ -40,7 +38,13 @@ public class ChemicalItem extends Item implements Chemical {
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(new TextComponent(getAbbreviation()).withStyle(ChatFormatting.DARK_AQUA));
+
+        if (getChemical() instanceof Element element) {
+            pTooltipComponents.add(new TextComponent(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber())).withStyle(ChatFormatting.DARK_AQUA));
+            pTooltipComponents.add(new TextComponent(element.getGroupName()).withStyle(ChatFormatting.GRAY));
+        } else {
+            pTooltipComponents.add(new TextComponent(getAbbreviation()).withStyle(ChatFormatting.DARK_AQUA));
+        }
     }
 
     public Chemical getChemical() {
@@ -76,7 +80,6 @@ public class ChemicalItem extends Item implements Chemical {
         return chemical.getColor();
     }
 
-    @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return getColor();
     }

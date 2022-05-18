@@ -6,4 +6,5 @@ public interface Element extends Chemical {
     int getGroup();
     int getPeriod();
     MetalType getMetalType();
+    String getGroupName();
 }

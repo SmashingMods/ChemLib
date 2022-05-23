@@ -2,9 +2,9 @@
   "compounds": [
     {
       "name": "carbon_dioxide",
-      "matter_state": "solid",
+      "matter_state": "gas",
       "has_item": false,
-      "description": "",
+      "description": "An acidic, trace gas found in the atmosphere, and a common bi-product of combustion, and a major greenhouse gas. Also useful as a refrigerant and supercritical solvent.",
       "color": "32c832",
       "components": [
         {
@@ -20,8 +20,8 @@
       "name": "cellulose",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "79ba58",
+      "description": "An important structural component of green plants, cellulose is the most abundant organic polymer on Earth. It is used to make paper, and can be chemically treated to make cellophane plastics.",
+      "color": "bdab8e",
       "components": [
         {
           "name": "carbon",
@@ -40,9 +40,9 @@
     {
       "name": "silicon_dioxide",
       "matter_state": "solid",
-      "has_item": false,
-      "description": "",
-      "color": "a58a2d",
+      "has_item": true,
+      "description": "Also known as silica, this abundant mineral is a major constituent of sand, and is a key component in almost every mineral. Crystalline forms include clear quartz and opal.",
+      "color": "807461",
       "components": [
         {
           "name": "silicon"
@@ -57,8 +57,8 @@
       "name": "nitrate",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "c6985f",
+      "description": "A polyatomic anion, salts formed from nitrate are called 'nitrates'. Nitrates are largely water-soluble, and are common components in fertilizers and explosives.",
+      "color": "5fb5c6",
       "components": [
         {
           "name": "nitrogen"
@@ -73,7 +73,7 @@
       "name": "potassium_nitrate",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
+      "description": "Also known as niter or saltpeter, this chemical is commonly used to synthesize fertilizers and gunpowder. It can also be used as a salt to cure meats.",
       "color": "c6985f",
       "components": [
         {
@@ -88,8 +88,8 @@
       "name": "aluminum_oxide",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "d2e2a6",
+      "description": "Also known as corundum, this mineral is a key component in many precious stones. Metallic impurites in corundum can create vibrant colors, becoming ruby or sapphire.",
+      "color": "a0a2de",
       "components": [
         {
           "name": "aluminum",
@@ -105,7 +105,7 @@
       "name": "magnesium_oxide",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
+      "description": "Also known as periclase, this mineral is highly resistant to heat and pressure. It's a common component in contact metamorphic rocks.",
       "color": "edb2ad",
       "components": [
         {
@@ -120,8 +120,8 @@
       "name": "potassium_chloride",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "c6985f",
+      "description": "A metal halide salt, potassium chloride is also known as sylvite, and can be used as an food additive as a low-sodium salt substitute.",
+      "color": "a33007",
       "components": [
         {
           "name": "potassium"
@@ -135,8 +135,8 @@
       "name": "sodium_chloride",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "d3c683",
+      "description": "Common table salt, sodium chloride is the salt most responsible for the salinity of seawater. It has numerous uses in manufacturing and electrolysis.",
+      "color": "c7c1a1",
       "components": [
         {
           "name": "sodium"
@@ -150,7 +150,7 @@
       "name": "water",
       "matter_state": "liquid",
       "has_item": false,
-      "description": "",
+      "description": "Also known as dihydrogen monoxide, and a vital component for all organic life. Not only is it vital for life and farming, but most long-distance trade goods are transported over water.",
       "color": "115ec0",
       "components": [
         {
@@ -166,7 +166,7 @@
       "name": "kaolinite",
       "matter_state": "solid",
       "has_item": true,
-      "description": "",
+      "description": "Rocks made from kaolinite are known as kaolin clay. It's a popular material for use in ceramics. It's also sometimes eaten as a snack, or as a health food, though it has little to no dietary benefit.",
       "color": "a49fda",
       "components": [
         {
@@ -185,8 +185,8 @@
     {
       "name": "protein",
       "matter_state": "solid",
-      "has_item": false,
-      "description": "",
+      "has_item": true,
+      "description": "Proteins are large, complicated molecules made from chains of amino acids, that make up all living things. This protein is one of the most simple, known as cysteine.",
       "color": "906c15",
       "components": [
         {
@@ -213,8 +213,8 @@
       "name": "iron_oxide",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "808080",
+      "description": "Also known as hematite, iron(III) oxide is a common ore used in the making of steel. It can also be used as a polishing abrasive, or as a pigment.",
+      "color": "782020",
       "components": [
         {
           "name": "iron",
@@ -230,7 +230,7 @@
       "name": "sucrose",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
+      "description": "Simple white sugar or table sugar, sucrose is usually extracted from sugar cane or sugar beets. It's a common food additive, but can be particularly bad for your teeth.",
       "color": "e0d5d2",
       "components": [
         {
@@ -251,7 +251,7 @@
       "name": "carbonate",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
+      "description": "An anion of carbonic acid can be combined with metals to form carbonate salts of many varieties. It's the simplest oxocarbon anion.",
       "color": "61715a",
       "components": [
         {
@@ -267,8 +267,8 @@
       "name": "calcium_carbonate",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "2dbd2c",
+      "description": "A major component in limestone, this compound is also found in shellfish, pearls, and eggshells. It's also often sold as antacid tablets.",
+      "color": "97a15c",
       "components": [
         {
           "name": "calcium"
@@ -282,8 +282,8 @@
       "name": "phosphate",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
-      "color": "d6d259",
+      "description": "An anion of phosphoric acid, phosphates play a key role in biochemistry - they add hardness to bones and teeth, and are vital to the growth of some plants.",
+      "color": "cf9953",
       "components": [
         {
           "name": "phosphorus"
@@ -298,7 +298,7 @@
       "name": "hydroxide",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
+      "description": "A diatomic anion, hydroxide occurs as a natural constituent of water",
       "color": "ffae00",
       "components": [
         {

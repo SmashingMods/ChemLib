@@ -4,10 +4,14 @@ import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.registry.BlockRegistry;
+import com.smashingmods.chemlib.common.registry.FluidRegistry;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BlockStateGenerator extends BlockStateProvider {
 
@@ -26,6 +30,7 @@ public class BlockStateGenerator extends BlockStateProvider {
 
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.METAL).forEach(this::registerMetalBlock);
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.LAMP).forEach(this::registerLampBlock);
+        FluidRegistry.getLiquidBlocks().forEach(this::registerLiquidBlock);
     }
 
     private void generateBlockModel(String pName, String pTexture) {
@@ -64,5 +69,10 @@ public class BlockStateGenerator extends BlockStateProvider {
                     .modelFile(modelFile)
                     .build();
         });
+    }
+
+    private void registerLiquidBlock(Block pBlock) {
+        ModelFile modelFile = new ModelFile.ExistingModelFile(mcLoc("block/water"), existingFileHelper);
+        getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
     }
 }

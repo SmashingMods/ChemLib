@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "chemlib:block/metal_model"
+    }
+  }
+}

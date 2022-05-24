@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "chemlib:polonium_ingot"
+    }
+  },
+  "result": {
+    "item": "chemlib:polonium_metal_block"
+  }
+}

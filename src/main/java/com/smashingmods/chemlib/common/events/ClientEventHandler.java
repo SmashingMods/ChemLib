@@ -2,6 +2,7 @@ package com.smashingmods.chemlib.common.events;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.common.registry.BlockRegistry;
+import com.smashingmods.chemlib.common.registry.FluidRegistry;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,7 @@ public class ClientEventHandler {
         ItemRegistry.getCompounds().forEach(compound -> colorHandlerEvent.getItemColors().register(compound::getColor, compound));
         ItemRegistry.getChemicalItems().forEach(item -> colorHandlerEvent.getItemColors().register(item::getColor, item));
         ItemRegistry.getChemicalBlockItems().forEach(item -> colorHandlerEvent.getItemColors().register(item::getColor, item));
+        FluidRegistry.getBuckets().forEach(bucket -> colorHandlerEvent.getItemColors().register((pStack, pTintIndex) -> bucket.getFluid().getAttributes().getColor(), bucket.asItem()));
         BlockRegistry.getAllChemicalBlocks().forEach(block -> colorHandlerEvent.getBlockColors().register(block.getBlockColor(new ItemStack(block.asItem()), 0), block));
     }
 

@@ -83,6 +83,14 @@ public class ItemRegistry {
         }
     };
 
+    public static final CreativeModeTab MISC_TAB = new CreativeModeTab(String.format("%s.misc", ChemLib.MODID)) {
+        @Override
+        @Nonnull
+        public ItemStack makeIcon() {
+            return getChemicalBlockItemByName("radon_lamp_block").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR));
+        }
+    };
+
     public static final DeferredRegister<Item> REGISTRY_ELEMENTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
     public static final DeferredRegister<Item> REGISTRY_COMPOUNDS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
     public static final DeferredRegister<Item> REGISTRY_COMPOUND_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
@@ -91,9 +99,9 @@ public class ItemRegistry {
     public static final DeferredRegister<Item> REGISTRY_INGOTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
     public static final DeferredRegister<Item> REGISTRY_PLATES = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
     public static final DeferredRegister<Item> REGISTRY_BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_MISC_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
 
     private static void registerElements() {
-
         for (JsonElement jsonElement : Registry.ELEMENTS_JSON.getAsJsonArray("elements")) {
             JsonObject object = jsonElement.getAsJsonObject();
             String elementName = object.get("name").getAsString();
@@ -229,14 +237,14 @@ public class ItemRegistry {
                 .findFirst();
     }
 
-    public static Optional<ChemicalBlockItem> getChemicalBlockItemByName(String pName) {
-        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).map(item -> (ChemicalBlockItem) item).filter(item -> item.getChemicalName().equals(pName)).findFirst();
+    public static Optional<Item> getChemicalBlockItemByName(String pName) {
+        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> Objects.equals(Objects.requireNonNull(item.getRegistryName()).getPath(), pName)).findFirst();
     }
 
     public static void registerItemByType(RegistryObject<Item> pRegistryObject, ChemicalItemType pChemicalItemType, CreativeModeTab pTab) {
 
         String registryName = String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName());
-        Supplier supplier = () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties().tab(pTab));
+        Supplier<ChemicalItem> supplier = () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties().tab(pTab));
 
         switch(pChemicalItemType) {
             case COMPOUND -> REGISTRY_COMPOUND_DUSTS.register(registryName, supplier);
@@ -247,6 +255,7 @@ public class ItemRegistry {
         }
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     private static RegistryObject<Item> getRegistryObject(DeferredRegister<Item> pRegister, String pName) {
         return pRegister.getEntries().stream().filter(item -> item.getId().getPath().equals(pName)).findFirst().get();
     }
@@ -255,9 +264,15 @@ public class ItemRegistry {
         REGISTRY_BLOCK_ITEMS.register(block.getId().getPath(), () -> new ChemicalBlockItem((ChemicalBlock) block.get(), pProperties));
     }
 
+    private static void registerMisc() {
+        REGISTRY_MISC_ITEMS.register("periodic_table", PeriodicTableItem::new);
+    }
+
     public static void register(IEventBus eventBus) {
         registerElements();
         registerCompounds();
+        registerMisc();
+
         REGISTRY_ELEMENTS.register(eventBus);
         REGISTRY_COMPOUNDS.register(eventBus);
         REGISTRY_COMPOUND_DUSTS.register(eventBus);
@@ -266,5 +281,6 @@ public class ItemRegistry {
         REGISTRY_INGOTS.register(eventBus);
         REGISTRY_PLATES.register(eventBus);
         REGISTRY_BLOCK_ITEMS.register(eventBus);
+        REGISTRY_MISC_ITEMS.register(eventBus);
     }
 }

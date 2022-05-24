@@ -57,7 +57,7 @@ public class BlockRegistry {
                     if (group == 18 && !artificial) {
                         String registryName = String.format("%s_lamp_block", elementName);
                         BLOCKS.register(registryName, () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, LAMP_BLOCKS, LAMP_PROPERTIES));
-                        ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC));
+                        ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(ItemRegistry.MISC_TAB));
                     }
                 }
             }

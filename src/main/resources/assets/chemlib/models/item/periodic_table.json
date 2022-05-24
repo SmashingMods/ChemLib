@@ -1,0 +1,68 @@
+{
+  "texture_size": [1024, 536],
+  "textures": {
+    "0": "chemlib:gui/periodic_table"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [32, 17, 0],
+      "faces": {
+        "north": {
+          "uv": [0, 0, 16, 16],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [0, 0, 0, 0],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [0, 0, 16, 16],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [0, 0, 0, 0],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [0, 0, 0, 0],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [0, 0, 0, 0],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [-10, 4, 5],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "thirdperson_lefthand": {
+      "translation": [-2, 4, 5],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "firstperson_righthand": {
+      "translation": [-3, 3, -0.5],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "firstperson_lefthand": {
+      "translation": [6, 3, -0.5],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "ground": {
+      "rotation": [90, 0, 0],
+      "scale": [0.25, 0.25, 0.25]
+    },
+    "gui": {
+      "translation": [-3.5, 0, 4.5],
+      "scale": [0.45, 0.45, 0.45]
+    },
+    "fixed": {
+      "translation": [-4.5, 0, 4.5],
+      "scale": [0.58, 0.58, 0.58]
+    }
+  }
+}

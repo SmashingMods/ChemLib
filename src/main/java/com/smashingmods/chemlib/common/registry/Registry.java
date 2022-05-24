@@ -17,7 +17,9 @@ public class Registry {
     public static void register() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         BlockRegistry.register(modEventBus);
+        FluidRegistry.register(modEventBus);
         ItemRegistry.register(modEventBus);
+        PaintingsRegistry.register(modEventBus);
     }
 
     public static JsonObject getStreamAsJsonObject(String pPath) {

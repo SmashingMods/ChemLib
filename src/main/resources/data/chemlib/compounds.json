@@ -3,6 +3,11 @@
     {
       "name": "carbon_dioxide",
       "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "An acidic, trace gas found in the atmosphere, and a common bi-product of combustion, and a major greenhouse gas. Also useful as a refrigerant and supercritical solvent.",
       "color": "32c832",
@@ -149,6 +154,11 @@
     {
       "name": "water",
       "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "Also known as dihydrogen monoxide, and a vital component for all organic life. Not only is it vital for life and farming, but most long-distance trade goods are transported over water.",
       "color": "115ec0",
@@ -477,7 +487,12 @@
     },
     {
       "name": "triglyceride",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "c8c85a",
@@ -514,7 +529,12 @@
     },
     {
       "name": "ethanol",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "d2fa96",
@@ -569,7 +589,12 @@
     },
     {
       "name": "ammonium",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "b4fafa",
@@ -619,30 +644,6 @@
       ]
     },
     {
-      "name": "mescaline",
-      "matter_state": "solid",
-      "has_item": false,
-      "description": "",
-      "color": "1e1e1e",
-      "components": [
-        {
-          "name": "carbon",
-          "count": 11
-        },
-        {
-          "name": "hydrogen",
-          "count": 17
-        },
-        {
-          "name": "nitrogen"
-        },
-        {
-          "name": "oxygen",
-          "count": 3
-        }
-      ]
-    },
-    {
       "name": "mullite",
       "matter_state": "solid",
       "has_item": false,
@@ -660,7 +661,12 @@
     },
     {
       "name": "methane",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "c81eb4",
@@ -676,7 +682,12 @@
     },
     {
       "name": "ethane",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "c81e32",
@@ -693,7 +704,12 @@
     },
     {
       "name": "propane",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "641e32",
@@ -710,7 +726,12 @@
     },
     {
       "name": "butane",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "6f96b4",
@@ -727,7 +748,12 @@
     },
     {
       "name": "pentane",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "6f9655",
@@ -744,7 +770,12 @@
     },
     {
       "name": "hexane",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "6fcd32",
@@ -1032,7 +1063,12 @@
     },
     {
       "name": "epinephrine",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "e6a078",
@@ -1223,7 +1259,12 @@
     },
     {
       "name": "hydrochloric_acid",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "0000ff",
@@ -1392,7 +1433,12 @@
     },
     {
       "name": "sulfuric_acid",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "96a00a",
@@ -1412,7 +1458,12 @@
     },
     {
       "name": "nitric_acid",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "427bd6",
@@ -1431,7 +1482,12 @@
     },
     {
       "name": "nitrogen_dioxide",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "4178c8",
@@ -1469,7 +1525,12 @@
     },
     {
       "name": "ammonia",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "3c78fa",
@@ -1575,7 +1636,12 @@
     },
     {
       "name": "hydrogen_sulfide",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "f0dc1e",
@@ -1591,7 +1657,12 @@
     },
     {
       "name": "acetylene",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "96e61e",
@@ -1608,7 +1679,12 @@
     },
     {
       "name": "acetic_acid",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "c8f064",
@@ -1676,7 +1752,12 @@
     },
     {
       "name": "carbon_monoxide",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "454653",
@@ -2889,7 +2970,12 @@
     },
     {
       "name": "nitric_oxide",
-      "matter_state": "solid",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "4178c8",
@@ -2904,7 +2990,12 @@
     },
     {
       "name": "carbon_disulfide",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "c878c8",
@@ -2947,7 +3038,12 @@
     },
     {
       "name": "sulfur_trioxide",
-      "matter_state": "solid",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
       "has_item": false,
       "description": "",
       "color": "82a032",

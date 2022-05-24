@@ -3,11 +3,15 @@ package com.smashingmods.chemlib.datagen;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.common.registry.BlockRegistry;
+import com.smashingmods.chemlib.common.registry.FluidRegistry;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.item.BucketItem;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
+
+import java.util.stream.Collectors;
 
 public class LocalizationGenerator extends LanguageProvider {
 
@@ -46,9 +50,19 @@ public class LocalizationGenerator extends LanguageProvider {
                 add(String.format("block.chemlib.%s_%s_block", name, type.getSerializedName()), WordUtils.capitalize(String.format("%s %s", name, displayType)));
             });
         }
+
+        FluidRegistry.getBuckets().forEach(bucket -> {
+            String name = bucket.getRegistryName().getPath();
+            add(String.format("item.chemlib.%s", name), WordUtils.capitalize(name.replace("_", " ")));
+        });
+
+        add("item.chemlib.periodic_table", "Periodic Table of the Elements");
         
         add("itemGroup.chemlib.elements", "Elements");
         add("itemGroup.chemlib.compounds", "Compounds");
         add("itemGroup.chemlib.metals", "Metals");
+        add("itemGroup.chemlib.misc", "Misc Items");
+
+        add("chemlib.screen.periodic_table", "Periodic Table of the Elements");
     }
 }

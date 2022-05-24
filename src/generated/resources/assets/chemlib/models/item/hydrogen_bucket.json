@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chemlib:items/bucket_layer_0",
+    "layer1": "chemlib:items/bucket_layer_1"
+  }
+}

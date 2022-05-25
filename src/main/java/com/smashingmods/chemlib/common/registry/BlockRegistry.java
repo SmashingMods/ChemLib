@@ -1,16 +1,8 @@
 package com.smashingmods.chemlib.common.registry;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
-import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
-import com.smashingmods.chemlib.common.blocks.LampBlock;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -29,40 +21,8 @@ public class BlockRegistry {
     public static final List<ChemicalBlock> METAL_BLOCKS = new ArrayList<>();
     public static final List<ChemicalBlock> LAMP_BLOCKS = new ArrayList<>();
 
-    private static final BlockBehaviour.Properties METAL_PROPERTIES = BlockBehaviour.Properties.of(Material.METAL).strength(5.0f, 12.0f).sound(SoundType.METAL);
-    private static final BlockBehaviour.Properties LAMP_PROPERTIES = BlockBehaviour.Properties.of(Material.GLASS).strength(2.0f, 2.0f).sound(SoundType.GLASS).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0);
-
-    private static void registerBlocks() {
-
-        for (JsonElement jsonElement : Registry.ELEMENTS_JSON.getAsJsonArray("elements")) {
-            JsonObject object = jsonElement.getAsJsonObject();
-            String elementName = object.get("name").getAsString();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
-            MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase());
-            int group = object.get("group").getAsInt();
-            boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
-            boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
-
-            switch (matterState) {
-                case SOLID -> {
-                    if (metalType.equals(MetalType.METAL)) {
-                        if (!hasItem) {
-                            String registryName = String.format("%s_metal_block", elementName);
-                            BLOCKS.register(registryName, () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, METAL_BLOCKS, METAL_PROPERTIES));
-                            ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(ItemRegistry.METALS_TAB));
-                        }
-                    }
-                }
-                case GAS -> {
-                    if (group == 18 && !artificial) {
-                        String registryName = String.format("%s_lamp_block", elementName);
-                        BLOCKS.register(registryName, () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, LAMP_BLOCKS, LAMP_PROPERTIES));
-                        ItemRegistry.fromBlock(getRegistryObjectByName(registryName).get(), new Item.Properties().tab(ItemRegistry.MISC_TAB));
-                    }
-                }
-            }
-        }
-    }
+    public static final BlockBehaviour.Properties METAL_PROPERTIES = BlockBehaviour.Properties.of(Material.METAL).strength(5.0f, 12.0f).sound(SoundType.METAL);
+    public static final BlockBehaviour.Properties LAMP_PROPERTIES = BlockBehaviour.Properties.of(Material.GLASS).strength(2.0f, 2.0f).sound(SoundType.GLASS).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0);
 
     public static Optional<RegistryObject<Block>> getRegistryObjectByName(String pName) {
         return BLOCKS.getEntries().stream().filter(blockRegistryObject -> blockRegistryObject.getId().getPath().equals(pName)).findFirst();
@@ -94,7 +54,6 @@ public class BlockRegistry {
     }
 
     public static void register(IEventBus eventBus) {
-        registerBlocks();
         BLOCKS.register(eventBus);
     }
 }

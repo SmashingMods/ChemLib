@@ -23,7 +23,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class PeriodicTableItem extends Item {
 
     public PeriodicTableItem() {
-        super(new Item.Properties().tab(ItemRegistry.MISC_TAB));
+        super(new Item.Properties().tab(ItemRegistry.MISC_TAB).stacksTo(1));
     }
 
     @Override

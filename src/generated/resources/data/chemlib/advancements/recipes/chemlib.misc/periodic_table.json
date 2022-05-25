@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:periodic_table"
+    ]
+  },
+  "criteria": {
+    "has_hydrogen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:hydrogen"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:periodic_table"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hydrogen",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:polonium_block_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_polonium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:polonium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:polonium_block_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polonium",
+      "has_the_recipe"
+    ]
+  ]
+}

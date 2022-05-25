@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:vanadium_ingot_to_block"
+    ]
+  },
+  "criteria": {
+    "has_vanadium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:vanadium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:vanadium_ingot_to_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_vanadium",
+      "has_the_recipe"
+    ]
+  ]
+}

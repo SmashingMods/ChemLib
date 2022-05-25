@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:holmium_ingot_to_block"
+    ]
+  },
+  "criteria": {
+    "has_holmium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:holmium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:holmium_ingot_to_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_holmium",
+      "has_the_recipe"
+    ]
+  ]
+}

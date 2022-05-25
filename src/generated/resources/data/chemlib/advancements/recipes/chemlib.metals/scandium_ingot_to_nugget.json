@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:scandium_ingot_to_nugget"
+    ]
+  },
+  "criteria": {
+    "has_scandium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:scandium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:scandium_ingot_to_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_scandium",
+      "has_the_recipe"
+    ]
+  ]
+}

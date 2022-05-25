@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlib:niobium_nugget"
+    }
+  },
+  "result": {
+    "item": "chemlib:niobium_ingot"
+  }
+}

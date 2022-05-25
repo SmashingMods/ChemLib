@@ -1,5 +1,6 @@
 package com.smashingmods.chemlib.datagen;
 
+import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.ChemicalItemType;
@@ -13,11 +14,14 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nonnull;
 import java.util.function.Consumer;
 
+@SuppressWarnings("OptionalGetWithoutIsPresent")
 public class RecipeGenerator extends RecipeProvider {
     public RecipeGenerator(DataGenerator pGenerator) {
         super(pGenerator);
@@ -41,24 +45,37 @@ public class RecipeGenerator extends RecipeProvider {
         // register ingot -> block recipes
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.METAL).forEach(block -> {
             Chemical chemical = block.getChemical();
-            ChemicalItem item = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.INGOT).get();
+            ChemicalItem ingot = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.INGOT).get();
             ShapedRecipeBuilder.shaped(block)
-                    .define('I', item)
+                    .define('I', ingot)
                     .pattern("III")
                     .pattern("III")
                     .pattern("III")
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pFinishedRecipeConsumer);
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_to_block", ChemLib.MODID, chemical.getChemicalName()));
+        });
+
+        // register nugget -> ingot
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> {
+            Chemical chemical = ingot.getChemical();
+            ChemicalItem nugget = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).get();
+            ShapedRecipeBuilder.shaped(ingot)
+                    .define('N', nugget)
+                    .pattern("NNN")
+                    .pattern("NNN")
+                    .pattern("NNN")
+                    .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_nugget_to_ingot", ChemLib.MODID, chemical.getChemicalName()));
         });
 
         // register block -> ingot recipes
-        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(item -> {
-            Chemical chemical = item.getChemical();
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> {
+            Chemical chemical = ingot.getChemical();
             ChemicalBlock block = BlockRegistry.getChemicalBlockByNameAndType(chemical.getChemicalName(), ChemicalBlockType.METAL).get();
-            ShapelessRecipeBuilder.shapeless(item, 9)
+            ShapelessRecipeBuilder.shapeless(ingot, 9)
                     .requires(block)
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pFinishedRecipeConsumer);
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_block_to_ingot", ChemLib.MODID, chemical.getChemicalName()));
         });
 
         // register ingot -> nugget
@@ -68,7 +85,20 @@ public class RecipeGenerator extends RecipeProvider {
             ShapelessRecipeBuilder.shapeless(nugget, 9)
                     .requires(ingot)
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pFinishedRecipeConsumer);
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_to_nugget", ChemLib.MODID, chemical.getChemicalName()));
         });
+
+        // periodic table
+        Item periodicTable = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_MISC_ITEMS, "periodic_table").get();
+        Item hydrogen = ItemRegistry.getElementByName("hydrogen").get();
+        Item paper = Items.PAPER;
+        ShapedRecipeBuilder.shaped(periodicTable)
+                .define('H', hydrogen)
+                .define('P', paper)
+                .pattern("HHH")
+                .pattern("HPH")
+                .pattern("HHH")
+                .unlockedBy("has_hydrogen", inventoryTrigger(ItemPredicate.Builder.item().of(hydrogen).build()))
+                .save(pFinishedRecipeConsumer);
     }
 }

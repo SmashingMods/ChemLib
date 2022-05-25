@@ -11,10 +11,9 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class Registry {
-    public static final JsonObject ELEMENTS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/elements.json");
-    public static final JsonObject COMPOUNDS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/compounds.json");
 
     public static void register() {
+        ChemicalRegistry.register();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         BlockRegistry.register(modEventBus);
         FluidRegistry.register(modEventBus);

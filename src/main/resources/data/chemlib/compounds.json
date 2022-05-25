@@ -155,7 +155,7 @@
       "name": "water",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -487,12 +487,7 @@
     },
     {
       "name": "triglyceride",
-      "matter_state": "liquid",
-      "fluid_attributes": {
-        "density": 0,
-        "luminosity": 0,
-        "viscosity": 0
-      },
+      "matter_state": "solid",
       "has_item": false,
       "description": "",
       "color": "c8c85a",
@@ -531,7 +526,7 @@
       "name": "ethanol",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -750,9 +745,9 @@
       "name": "pentane",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 5
       },
       "has_item": false,
       "description": "",
@@ -772,7 +767,7 @@
       "name": "hexane",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -1065,7 +1060,7 @@
       "name": "epinephrine",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -1261,7 +1256,7 @@
       "name": "hydrochloric_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -1435,7 +1430,7 @@
       "name": "sulfuric_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -1460,7 +1455,7 @@
       "name": "nitric_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -1681,7 +1676,7 @@
       "name": "acetic_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -2992,7 +2987,7 @@
       "name": "carbon_disulfide",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },
@@ -3040,7 +3035,7 @@
       "name": "sulfur_trioxide",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 5,
         "luminosity": 0,
         "viscosity": 0
       },

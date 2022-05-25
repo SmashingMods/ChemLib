@@ -6,11 +6,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -41,7 +42,7 @@ public class PeriodicTableScreen extends Screen {
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, new ResourceLocation(ChemLib.MODID, "textures/gui/periodic_table.png"));
         blit(pPoseStack, leftPos, topPos, displayWidth, displayHeight, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TextComponent(I18n.get(String.format("%s.screen.periodic_table", ChemLib.MODID))), width / 2, 24, 0xFFFFFF);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("chemlib.screen.periodic_table").withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
 
         double boxWidth = 27.75f;
         double boxHeight = 26.9f;
@@ -61,16 +62,16 @@ public class PeriodicTableScreen extends Screen {
                         if (col == group) {
                             if (!((period == 6 || period == 7) && group == 3)) {
                                 if (pMouseX >= x && pMouseX < x + boxWidth && pMouseY >= y && pMouseY < y + boxHeight) {
-                                    drawElementTip(pPoseStack, (int) (x + boxWidth + (boxWidth / 2)), (int) (y), element);
+                                    drawElementTip(pPoseStack, element);
                                 }
                             } else {
-                                int resetX = (int) x;
-                                int resetY = (int) y;
+                                double resetX = x;
+                                double resetY = y;
                                 if (period == 6) {
                                     y = (boxHeight * 7.45f) + startY;
                                     x = (boxWidth * count) + startX + boxWidth * 2;
                                     if (pMouseX >= x && pMouseX < x + boxWidth && pMouseY >= y && pMouseY < y + boxHeight) {
-                                        drawElementTip(pPoseStack, (int) (x + boxWidth + (boxWidth / 2)), (int) (y), element);
+                                        drawElementTip(pPoseStack, element);
                                     }
                                     count++;
                                 }
@@ -78,7 +79,7 @@ public class PeriodicTableScreen extends Screen {
                                     y = (boxHeight * 8.45f) + startY;
                                     x = (boxWidth * (count - 15)) + startX + boxWidth * 2;
                                     if (pMouseX >= x && pMouseX < x + boxWidth && pMouseY >= y && pMouseY < y + boxHeight) {
-                                        drawElementTip(pPoseStack, (int) (x + boxWidth + (boxWidth / 2)), (int) (y), element);
+                                        drawElementTip(pPoseStack, element);
                                     }
                                     count++;
                                 }
@@ -96,10 +97,15 @@ public class PeriodicTableScreen extends Screen {
         super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
     }
 
-    private void drawElementTip(PoseStack pPoseStack, int pX, int pY, Element pElement) {
+    private void drawElementTip(PoseStack pPoseStack, Element pElement) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, new ResourceLocation(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())));
         blit(pPoseStack, ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 274, 80, 0, 0, 40, 40, 40, 40);
+    }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
     }
 }

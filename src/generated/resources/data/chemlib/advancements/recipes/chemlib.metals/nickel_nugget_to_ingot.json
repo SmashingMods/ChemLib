@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:nickel_nugget_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_nickel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:nickel"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:nickel_nugget_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nickel",
+      "has_the_recipe"
+    ]
+  ]
+}

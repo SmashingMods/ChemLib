@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:bismuth_ingot_to_nugget"
+    ]
+  },
+  "criteria": {
+    "has_bismuth": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:bismuth"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:bismuth_ingot_to_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bismuth",
+      "has_the_recipe"
+    ]
+  ]
+}

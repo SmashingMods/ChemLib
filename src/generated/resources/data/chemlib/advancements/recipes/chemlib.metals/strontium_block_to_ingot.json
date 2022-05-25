@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:strontium_block_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_strontium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:strontium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:strontium_block_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_strontium",
+      "has_the_recipe"
+    ]
+  ]
+}

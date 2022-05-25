@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:tin_ingot_to_nugget"
+    ]
+  },
+  "criteria": {
+    "has_tin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:tin"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:tin_ingot_to_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tin",
+      "has_the_recipe"
+    ]
+  ]
+}

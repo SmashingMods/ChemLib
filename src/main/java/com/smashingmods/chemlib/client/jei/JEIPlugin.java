@@ -30,5 +30,8 @@ public class JEIPlugin implements IModPlugin {
         ItemRegistry.getElements().forEach(element -> {
             pRegistration.addIngredientInfo(new ItemStack(element), VanillaTypes.ITEM_STACK, new TextComponent(I18n.get(String.format("%s.jei.element.%s.description", ChemLib.MODID, element.getChemicalName()))));
         });
+        ItemRegistry.getCompounds().forEach(compound -> {
+            pRegistration.addIngredientInfo(new ItemStack(compound), VanillaTypes.ITEM_STACK, new TextComponent(I18n.get(String.format("%s.jei.compound.%s.description", ChemLib.MODID, compound.getChemicalName()))));
+        });
     }
 }

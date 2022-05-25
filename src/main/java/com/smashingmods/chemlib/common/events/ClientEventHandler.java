@@ -18,12 +18,16 @@ import net.minecraftforge.fml.common.Mod;
 public class ClientEventHandler {
 
     @SubscribeEvent
-    public static void onColorHandlerEvent(final ColorHandlerEvent.Item colorHandlerEvent) {
+    public static void onItemColorHandlerEvent(final ColorHandlerEvent.Item colorHandlerEvent) {
         ItemRegistry.getElements().forEach(element -> colorHandlerEvent.getItemColors().register(element::getColor, element));
         ItemRegistry.getCompounds().forEach(compound -> colorHandlerEvent.getItemColors().register(compound::getColor, compound));
         ItemRegistry.getChemicalItems().forEach(item -> colorHandlerEvent.getItemColors().register(item::getColor, item));
         ItemRegistry.getChemicalBlockItems().forEach(item -> colorHandlerEvent.getItemColors().register(item::getColor, item));
-        FluidRegistry.getBuckets().forEach(bucket -> colorHandlerEvent.getItemColors().register((pStack, pTintIndex) -> bucket.getFluid().getAttributes().getColor(), bucket.asItem()));
+        FluidRegistry.getBuckets().forEach(bucket -> colorHandlerEvent.getItemColors().register((pStack, pTintIndex) -> pTintIndex == 0 ? bucket.getFluid().getAttributes().getColor() : -1, bucket.asItem()));
+    }
+
+    @SubscribeEvent
+    public static void onBlockColorHandlerEvent(final ColorHandlerEvent.Block colorHandlerEvent) {
         BlockRegistry.getAllChemicalBlocks().forEach(block -> colorHandlerEvent.getBlockColors().register(block.getBlockColor(new ItemStack(block.asItem()), 0), block));
     }
 

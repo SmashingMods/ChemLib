@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:protactinium_nugget_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_protactinium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:protactinium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:protactinium_nugget_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_protactinium",
+      "has_the_recipe"
+    ]
+  ]
+}

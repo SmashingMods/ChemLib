@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:francium_ingot_to_nugget"
+    ]
+  },
+  "criteria": {
+    "has_francium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:francium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:francium_ingot_to_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_francium",
+      "has_the_recipe"
+    ]
+  ]
+}

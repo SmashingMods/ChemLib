@@ -1,8 +1,5 @@
 package com.smashingmods.chemlib.common.registry;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.*;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
@@ -23,6 +20,24 @@ import java.util.stream.Stream;
 
 @SuppressWarnings("unused")
 public class ItemRegistry {
+
+    /*
+        Each item type has a separate registry to make understanding and organizing them simpler.
+     */
+
+    public static final DeferredRegister<Item> REGISTRY_ELEMENTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_COMPOUNDS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_COMPOUND_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_METAL_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_NUGGETS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_INGOTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_PLATES = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_MISC_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+
+    /*
+        Registry objects are sorted into creative mode tabs depending on their type.
+     */
 
     public static final CreativeModeTab ELEMENT_TAB = new CreativeModeTab(String.format("%s.elements", ChemLib.MODID)) {
         @Override
@@ -58,7 +73,7 @@ public class ItemRegistry {
         @Override
         @Nonnull
         public ItemStack makeIcon() {
-            return getChemicalItemByNameAndType("technetium", ChemicalItemType.INGOT)
+            return getChemicalItemByNameAndType("barium", ChemicalItemType.INGOT)
                     .map(ItemStack::new)
                     .orElseGet(() -> new ItemStack(Items.AIR));
         }
@@ -91,82 +106,9 @@ public class ItemRegistry {
         }
     };
 
-    public static final DeferredRegister<Item> REGISTRY_ELEMENTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_COMPOUNDS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_COMPOUND_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_METAL_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_NUGGETS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_INGOTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_PLATES = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_MISC_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-
-    private static void registerElements() {
-        for (JsonElement jsonElement : Registry.ELEMENTS_JSON.getAsJsonArray("elements")) {
-            JsonObject object = jsonElement.getAsJsonObject();
-            String elementName = object.get("name").getAsString();
-            int atomicNumber = object.get("atomic_number").getAsInt();
-            String abbreviation = object.get("abbreviation").getAsString();
-            int group = object.get("group").getAsInt();
-            int period = object.get("period").getAsInt();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
-            MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase());
-            boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
-            boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
-            String description = object.get("description").getAsString();
-            String color = object.get("color").getAsString();
-
-            REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, description, color));
-            RegistryObject<Item> registryObject = getRegistryObject(REGISTRY_ELEMENTS, elementName);
-
-            switch (matterState) {
-                case SOLID -> {
-                    if (!hasItem) {
-                        if (metalType == MetalType.NONMETAL || metalType == MetalType.METALLOID) {
-                            registerItemByType(registryObject, ChemicalItemType.DUST, METALS_TAB);
-                        } else {
-                            registerItemByType(registryObject, ChemicalItemType.NUGGET, METALS_TAB);
-                            registerItemByType(registryObject, ChemicalItemType.INGOT, METALS_TAB);
-                            registerItemByType(registryObject, ChemicalItemType.PLATE, METALS_TAB);
-                        }
-                    }
-                }
-                case LIQUID, GAS -> {}
-            }
-        }
-    }
-
-    private static void registerCompounds() {
-
-        for (JsonElement jsonElement : Registry.COMPOUNDS_JSON.getAsJsonArray("compounds")) {
-            JsonObject object = jsonElement.getAsJsonObject();
-            String compoundName = object.get("name").getAsString();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
-            boolean hasItem = object.get("has_item").getAsBoolean();
-            // TODO: add description
-            String color = object.get("color").getAsString();
-
-            JsonArray components = object.getAsJsonArray("components");
-            HashMap<String, Integer> componentMap = new LinkedHashMap<>();
-            for (JsonElement component : components) {
-                JsonObject componentObject = component.getAsJsonObject();
-                String componentName = componentObject.get("name").getAsString();
-                int count = componentObject.has("count") ? componentObject.get("count").getAsInt() : 1;
-                componentMap.put(componentName, count);
-            }
-
-            REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, /* TODO: fill in chemical descriptions */"", color));
-
-            switch (matterState) {
-                case SOLID -> {
-                    if (!hasItem) {
-                        registerItemByType(getRegistryObject(REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.COMPOUND, COMPOUND_TAB);
-                    }
-                }
-                case LIQUID, GAS -> {}
-            }
-        }
-    }
+    /*
+        This section defines helper methods for getting specific objects out of the registry.
+     */
 
     public static Stream<RegistryObject<Item>> getRegistryItems() {
         return ItemRegistry.REGISTRY_ELEMENTS.getEntries().stream();
@@ -241,6 +183,10 @@ public class ItemRegistry {
         return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> Objects.equals(Objects.requireNonNull(item.getRegistryName()).getPath(), pName)).findFirst();
     }
 
+    /*
+        Helper methods for registering items.
+     */
+
     public static void registerItemByType(RegistryObject<Item> pRegistryObject, ChemicalItemType pChemicalItemType, CreativeModeTab pTab) {
 
         String registryName = String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName());
@@ -256,7 +202,7 @@ public class ItemRegistry {
     }
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    private static RegistryObject<Item> getRegistryObject(DeferredRegister<Item> pRegister, String pName) {
+    public static RegistryObject<Item> getRegistryObject(DeferredRegister<Item> pRegister, String pName) {
         return pRegister.getEntries().stream().filter(item -> item.getId().getPath().equals(pName)).findFirst().get();
     }
 
@@ -264,14 +210,8 @@ public class ItemRegistry {
         REGISTRY_BLOCK_ITEMS.register(block.getId().getPath(), () -> new ChemicalBlockItem((ChemicalBlock) block.get(), pProperties));
     }
 
-    private static void registerMisc() {
-        REGISTRY_MISC_ITEMS.register("periodic_table", PeriodicTableItem::new);
-    }
-
     public static void register(IEventBus eventBus) {
-        registerElements();
-        registerCompounds();
-        registerMisc();
+        REGISTRY_MISC_ITEMS.register("periodic_table", PeriodicTableItem::new);
 
         REGISTRY_ELEMENTS.register(eventBus);
         REGISTRY_COMPOUNDS.register(eventBus);

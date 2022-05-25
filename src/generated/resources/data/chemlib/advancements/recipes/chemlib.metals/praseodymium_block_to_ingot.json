@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:praseodymium_block_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_praseodymium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:praseodymium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:praseodymium_block_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_praseodymium",
+      "has_the_recipe"
+    ]
+  ]
+}

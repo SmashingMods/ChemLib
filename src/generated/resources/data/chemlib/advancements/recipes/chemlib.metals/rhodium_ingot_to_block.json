@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:rhodium_ingot_to_block"
+    ]
+  },
+  "criteria": {
+    "has_rhodium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:rhodium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:rhodium_ingot_to_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rhodium",
+      "has_the_recipe"
+    ]
+  ]
+}

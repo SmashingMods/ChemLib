@@ -81,6 +81,6 @@ public class ChemicalItem extends Item implements Chemical {
     }
 
     public int getColor(ItemStack pItemStack, int pTintIndex) {
-        return getColor();
+        return pTintIndex == 0 ? getColor() : -1;
     }
 }

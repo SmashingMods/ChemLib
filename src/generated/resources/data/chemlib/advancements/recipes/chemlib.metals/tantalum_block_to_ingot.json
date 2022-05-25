@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:tantalum_block_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_tantalum": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:tantalum"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:tantalum_block_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tantalum",
+      "has_the_recipe"
+    ]
+  ]
+}

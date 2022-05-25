@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:osmium_ingot_to_block"
+    ]
+  },
+  "criteria": {
+    "has_osmium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:osmium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:osmium_ingot_to_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_osmium",
+      "has_the_recipe"
+    ]
+  ]
+}

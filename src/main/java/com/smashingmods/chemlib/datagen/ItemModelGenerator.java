@@ -1,23 +1,24 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.api.ChemicalItemType;
-import com.smashingmods.chemlib.api.Element;
+import com.smashingmods.chemlib.api.*;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.blocks.LampBlock;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
+import com.smashingmods.chemlib.common.items.ElementItem;
 import com.smashingmods.chemlib.common.registry.FluidRegistry;
 import com.smashingmods.chemlib.common.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BucketItem;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Optional;
 
 public class ItemModelGenerator extends ItemModelProvider {
 
@@ -94,9 +95,34 @@ public class ItemModelGenerator extends ItemModelProvider {
         }
     }
 
-    public void registerBucket(Item pBucket) {
-        withExistingParent(String.format("item/%s", Objects.requireNonNull(pBucket.getRegistryName()).getPath()), mcLoc("item/generated"))
-                .texture("layer0", modLoc("items/bucket_layer_0"))
-                .texture("layer1", modLoc("items/bucket_layer_1"));
+    public void registerBucket(BucketItem pBucket) {
+        String path = pBucket.getRegistryName().getPath();
+        int pieces = path.split("_").length;
+        String chemicalName = "";
+
+        for (int i = 0; i < pieces - 1; i++) {
+            chemicalName = String.format("%s%s%s", chemicalName, chemicalName.isEmpty() ? "" : "_", path.split("_")[i]);
+        }
+
+        Chemical chemical = null;
+        Optional<ElementItem> element = ItemRegistry.getElementByName(chemicalName);
+        Optional<CompoundItem> compound = ItemRegistry.getCompoundByName(chemicalName);
+
+        if (element.isPresent()) {
+            chemical = element.get();
+        } else if (compound.isPresent()) {
+            chemical = compound.get();
+        }
+
+        MatterState matterState = chemical.getMatterState();
+
+        switch (matterState) {
+            case LIQUID -> withExistingParent(String.format("item/%s", Objects.requireNonNull(pBucket.getRegistryName()).getPath()), mcLoc("item/generated"))
+                    .texture("layer0", modLoc("items/bucket_layer_0"))
+                    .texture("layer1", modLoc("items/bucket_layer_1"));
+            case GAS -> withExistingParent(String.format("item/%s", Objects.requireNonNull(pBucket.getRegistryName()).getPath()), mcLoc("item/generated"))
+                    .texture("layer0", modLoc("items/gas_bucket_layer_0"))
+                    .texture("layer1", modLoc("items/gas_bucket_layer_1"));
+        }
     }
 }

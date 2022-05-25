@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:europium_nugget_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_europium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:europium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:europium_nugget_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_europium",
+      "has_the_recipe"
+    ]
+  ]
+}

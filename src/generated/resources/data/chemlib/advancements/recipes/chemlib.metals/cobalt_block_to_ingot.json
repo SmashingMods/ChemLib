@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:cobalt_block_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_cobalt": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:cobalt"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:cobalt_block_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cobalt",
+      "has_the_recipe"
+    ]
+  ]
+}

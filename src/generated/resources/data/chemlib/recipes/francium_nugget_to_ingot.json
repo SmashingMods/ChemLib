@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "item": "chemlib:francium_nugget"
+    }
+  },
+  "result": {
+    "item": "chemlib:francium_ingot"
+  }
+}

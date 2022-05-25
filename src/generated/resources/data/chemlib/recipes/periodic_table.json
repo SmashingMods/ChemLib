@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HHH",
+    "HPH",
+    "HHH"
+  ],
+  "key": {
+    "H": {
+      "item": "chemlib:hydrogen"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "chemlib:periodic_table"
+  }
+}

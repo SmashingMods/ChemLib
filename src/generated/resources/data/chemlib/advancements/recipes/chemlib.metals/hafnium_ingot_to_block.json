@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:hafnium_ingot_to_block"
+    ]
+  },
+  "criteria": {
+    "has_hafnium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:hafnium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:hafnium_ingot_to_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hafnium",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,3 +1,3 @@
 {
-  "parent": "chemlib:item/element"
+  "parent": "chemlib:item/builtin_entity"
 }

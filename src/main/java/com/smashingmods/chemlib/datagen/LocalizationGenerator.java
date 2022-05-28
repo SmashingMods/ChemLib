@@ -1,6 +1,7 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.common.registry.BlockRegistry;
 import com.smashingmods.chemlib.common.registry.FluidRegistry;
@@ -51,12 +52,19 @@ public class LocalizationGenerator extends LanguageProvider {
             });
         }
 
+        FluidRegistry.getLiquidBlocks().forEach(liquidBlock -> {
+            String name = liquidBlock.getFluid().getRegistryName().getPath().replace("_source", "").replace("_", " ");
+            int density = liquidBlock.getFluid().getAttributes().getDensity();
+            add(String.format("fluid.chemlib.%s_source", name), WordUtils.capitalize(String.format("%s%s", name, density < 0 ? " gas" : "")));
+        });
+
         FluidRegistry.getBuckets().forEach(bucket -> {
             String name = bucket.getRegistryName().getPath();
             add(String.format("item.chemlib.%s", name), WordUtils.capitalize(name.replace("_", " ")));
         });
 
         add("item.chemlib.periodic_table", "Periodic Table of the Elements");
+        add("item.chemlib.periodic_table.tooltip", "Use this to see a full periodic table.");
         
         add("itemGroup.chemlib.elements", "Elements");
         add("itemGroup.chemlib.compounds", "Compounds");

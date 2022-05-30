@@ -937,9 +937,9 @@
       "period": "6",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 0,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "metal_type": "metal",
       "description": "",
@@ -1008,9 +1008,9 @@
       "period": "6",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "metal_type": "nonmetal",
       "description": "",
@@ -1388,12 +1388,7 @@
       "abbreviation": "Og",
       "group": "18",
       "period": "7",
-      "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
-      },
+      "matter_state": "solid",
       "artificial": true,
       "metal_type": "nonmetal",
       "description": "",

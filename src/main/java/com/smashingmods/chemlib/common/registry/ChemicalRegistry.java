@@ -64,32 +64,35 @@ public class ChemicalRegistry {
                         }
                     }
                     case LIQUID, GAS -> {
-                        JsonObject fluidAttributes = object.get("fluid_attributes").getAsJsonObject();
-                        int density = fluidAttributes.get("density").getAsInt();
-                        int luminosity = fluidAttributes.get("luminosity").getAsInt();
-                        int viscosity = fluidAttributes.get("viscosity").getAsInt();
-                        int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
-                        int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
+                        boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
+                        if (!hasFluid) {
+                            JsonObject fluidAttributes = object.get("fluid_attributes").getAsJsonObject();
+                            int density = fluidAttributes.get("density").getAsInt();
+                            int luminosity = fluidAttributes.get("luminosity").getAsInt();
+                            int viscosity = fluidAttributes.get("viscosity").getAsInt();
+                            int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
+                            int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
 
-                        FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
-                                .density(density)
-                                .luminosity(luminosity)
-                                .viscosity(viscosity)
-                                .sound(SoundEvents.BUCKET_FILL)
-                                .overlay(FluidRegistry.OVERLAY)
-                                .color((int) Long.parseLong(color, 16));
+                            FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
+                                    .density(density)
+                                    .luminosity(luminosity)
+                                    .viscosity(viscosity)
+                                    .sound(SoundEvents.BUCKET_FILL)
+                                    .overlay(FluidRegistry.OVERLAY)
+                                    .color((int) Long.parseLong(color, 16));
 
-                        switch (matterState) {
-                            case LIQUID -> FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
-                            case GAS -> {
-
-                                if (group == 18 && !artificial) {
-                                    BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
-                                    ItemRegistry.fromBlock(BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).get(), new Item.Properties().tab(ItemRegistry.MISC_TAB));
+                            switch (matterState) {
+                                case LIQUID -> {
+                                    FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
                                 }
-
-                                attributes.gaseous();
-                                FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
+                                case GAS -> {
+                                    if (group == 18) {
+                                        BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
+                                        ItemRegistry.fromBlock(BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).get(), new Item.Properties().tab(ItemRegistry.MISC_TAB));
+                                    }
+                                    attributes.gaseous();
+                                    FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
+                                }
                             }
                         }
                     }
@@ -130,26 +133,29 @@ public class ChemicalRegistry {
                     }
                 }
                 case LIQUID, GAS -> {
-                    JsonObject fluidAttributes = object.get("fluid_attributes").getAsJsonObject();
-                    int density = fluidAttributes.get("density").getAsInt();
-                    int luminosity = fluidAttributes.get("luminosity").getAsInt();
-                    int viscosity = fluidAttributes.get("viscosity").getAsInt();
-                    int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
-                    int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
+                    boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
+                    if (!hasFluid) {
+                        JsonObject fluidAttributes = object.get("fluid_attributes").getAsJsonObject();
+                        int density = fluidAttributes.get("density").getAsInt();
+                        int luminosity = fluidAttributes.get("luminosity").getAsInt();
+                        int viscosity = fluidAttributes.get("viscosity").getAsInt();
+                        int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
+                        int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
 
-                    FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
-                            .density(density)
-                            .luminosity(luminosity)
-                            .viscosity(viscosity)
-                            .sound(SoundEvents.BUCKET_FILL)
-                            .overlay(FluidRegistry.OVERLAY)
-                            .color((int) Long.parseLong(color, 16));
+                        FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
+                                .density(density)
+                                .luminosity(luminosity)
+                                .viscosity(viscosity)
+                                .sound(SoundEvents.BUCKET_FILL)
+                                .overlay(FluidRegistry.OVERLAY)
+                                .color((int) Long.parseLong(color, 16));
 
-                    switch(matterState) {
-                        case LIQUID -> FluidRegistry.registerFluid(compoundName, attributes, slopeFindDistance, decreasePerBlock);
-                        case GAS -> {
-                            attributes.gaseous();
-                            FluidRegistry.registerFluid(compoundName, attributes, slopeFindDistance, decreasePerBlock);
+                        switch (matterState) {
+                            case LIQUID -> FluidRegistry.registerFluid(compoundName, attributes, slopeFindDistance, decreasePerBlock);
+                            case GAS -> {
+                                attributes.gaseous();
+                                FluidRegistry.registerFluid(compoundName, attributes, slopeFindDistance, decreasePerBlock);
+                            }
                         }
                     }
                 }

@@ -4,9 +4,9 @@
       "name": "carbon_dioxide",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "An acidic, trace gas found in the atmosphere, and a common bi-product of combustion, and a major greenhouse gas. Also useful as a refrigerant and supercritical solvent.",
@@ -154,12 +154,8 @@
     {
       "name": "water",
       "matter_state": "liquid",
-      "fluid_attributes": {
-        "density": 5,
-        "luminosity": 0,
-        "viscosity": 0
-      },
       "has_item": false,
+      "has_fluid": true,
       "description": "Also known as dihydrogen monoxide, and a vital component for all organic life. Not only is it vital for life and farming, but most long-distance trade goods are transported over water.",
       "color": "115ec0",
       "components": [
@@ -526,9 +522,9 @@
       "name": "ethanol",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -586,9 +582,9 @@
       "name": "ammonium",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -658,9 +654,9 @@
       "name": "methane",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -679,9 +675,9 @@
       "name": "ethane",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -701,9 +697,9 @@
       "name": "propane",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -723,9 +719,9 @@
       "name": "butane",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -745,9 +741,9 @@
       "name": "pentane",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 5
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -767,9 +763,9 @@
       "name": "hexane",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1060,9 +1056,9 @@
       "name": "epinephrine",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1256,9 +1252,9 @@
       "name": "hydrochloric_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1430,9 +1426,9 @@
       "name": "sulfuric_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1455,9 +1451,9 @@
       "name": "nitric_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1479,9 +1475,9 @@
       "name": "nitrogen_dioxide",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1522,9 +1518,9 @@
       "name": "ammonia",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1633,9 +1629,9 @@
       "name": "hydrogen_sulfide",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1654,9 +1650,9 @@
       "name": "acetylene",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1676,9 +1672,9 @@
       "name": "acetic_acid",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -1749,9 +1745,9 @@
       "name": "carbon_monoxide",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -2967,9 +2963,9 @@
       "name": "nitric_oxide",
       "matter_state": "gas",
       "fluid_attributes": {
-        "density": -10,
+        "density": -1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -2987,9 +2983,9 @@
       "name": "carbon_disulfide",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",
@@ -3035,9 +3031,9 @@
       "name": "sulfur_trioxide",
       "matter_state": "liquid",
       "fluid_attributes": {
-        "density": 5,
+        "density": 1000,
         "luminosity": 0,
-        "viscosity": 0
+        "viscosity": 1000
       },
       "has_item": false,
       "description": "",

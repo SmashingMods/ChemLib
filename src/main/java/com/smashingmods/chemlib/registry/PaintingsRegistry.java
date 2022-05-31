@@ -1,4 +1,4 @@
-package com.smashingmods.chemlib.common.registry;
+package com.smashingmods.chemlib.registry;
 
 import com.smashingmods.chemlib.ChemLib;
 import net.minecraft.world.entity.decoration.Motive;

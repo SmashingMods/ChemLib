@@ -2,7 +2,7 @@ package com.smashingmods.chemlib.common.items;
 
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;

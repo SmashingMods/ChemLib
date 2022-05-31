@@ -1,9 +1,9 @@
-package com.smashingmods.chemlib.common.events;
+package com.smashingmods.chemlib.client.events;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.common.registry.BlockRegistry;
-import com.smashingmods.chemlib.common.registry.FluidRegistry;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import com.smashingmods.chemlib.registry.BlockRegistry;
+import com.smashingmods.chemlib.registry.FluidRegistry;
+import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;

@@ -1,6 +1,6 @@
 package com.smashingmods.chemlib;
 
-import com.smashingmods.chemlib.common.registry.Registry;
+import com.smashingmods.chemlib.registry.Registry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;

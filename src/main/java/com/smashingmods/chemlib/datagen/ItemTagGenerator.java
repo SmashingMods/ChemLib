@@ -1,7 +1,7 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;

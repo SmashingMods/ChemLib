@@ -1,18 +1,14 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
-import com.smashingmods.chemlib.common.registry.BlockRegistry;
-import com.smashingmods.chemlib.common.registry.FluidRegistry;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import com.smashingmods.chemlib.registry.BlockRegistry;
+import com.smashingmods.chemlib.registry.FluidRegistry;
+import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.item.BucketItem;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
-
-import java.util.stream.Collectors;
 
 public class LocalizationGenerator extends LanguageProvider {
 

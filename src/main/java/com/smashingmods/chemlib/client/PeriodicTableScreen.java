@@ -5,7 +5,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.Element;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;

@@ -1,4 +1,4 @@
-package com.smashingmods.chemlib.common.registry;
+package com.smashingmods.chemlib.registry;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

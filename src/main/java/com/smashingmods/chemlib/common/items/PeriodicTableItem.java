@@ -2,7 +2,7 @@ package com.smashingmods.chemlib.common.items;
 
 import com.mojang.blaze3d.MethodsReturnNonnullByDefault;
 import com.smashingmods.chemlib.client.PeriodicTableScreen;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;

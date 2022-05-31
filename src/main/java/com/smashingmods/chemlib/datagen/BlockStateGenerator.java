@@ -3,15 +3,13 @@ package com.smashingmods.chemlib.datagen;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
-import com.smashingmods.chemlib.common.registry.BlockRegistry;
-import com.smashingmods.chemlib.common.registry.FluidRegistry;
+import com.smashingmods.chemlib.registry.BlockRegistry;
+import com.smashingmods.chemlib.registry.FluidRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
 
 public class BlockStateGenerator extends BlockStateProvider {
 

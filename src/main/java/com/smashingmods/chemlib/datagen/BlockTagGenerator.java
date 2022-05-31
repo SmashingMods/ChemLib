@@ -1,7 +1,7 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.common.registry.BlockRegistry;
+import com.smashingmods.chemlib.registry.BlockRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;

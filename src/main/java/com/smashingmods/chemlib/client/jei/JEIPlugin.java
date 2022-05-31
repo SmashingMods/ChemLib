@@ -1,7 +1,7 @@
 package com.smashingmods.chemlib.client.jei;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.common.registry.ItemRegistry;
+import com.smashingmods.chemlib.registry.ItemRegistry;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;

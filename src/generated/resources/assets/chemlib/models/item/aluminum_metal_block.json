@@ -1,6 +1,6 @@
 {
   "parent": "chemlib:block/aluminum_metal_block",
   "textures": {
-    "block": "chemlib:block/metal_block"
+    "layer0": "chemlib:block/metal_block"
   }
 }

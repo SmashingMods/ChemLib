@@ -39,6 +39,7 @@ public class FluidRegistry {
         RegistryObject<FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", pName), () -> new ForgeFlowingFluid.Flowing(ref.properties));
         RegistryObject<LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(String.format("%s_liquid_block", pName), () -> new LiquidBlock(fluidSource::get, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100f).noDrops()));
         RegistryObject<Item> bucket = BUCKETS.register(String.format("%s_bucket", pName), () -> new BucketItem(fluidSource, new Item.Properties().tab(ItemRegistry.MISC_TAB).stacksTo(1)));
+        ItemRegistry.fromBlock(liquidBlock, new Item.Properties().tab(ItemRegistry.MISC_TAB));
 
         ref.properties = new ForgeFlowingFluid.Properties(fluidSource, fluidFlowing, pFluidBuilder)
                 .slopeFindDistance(pSlopeFindDistance)

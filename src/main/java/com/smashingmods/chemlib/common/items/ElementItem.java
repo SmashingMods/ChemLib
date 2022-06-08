@@ -34,10 +34,11 @@ public class ElementItem extends Item implements Element {
     private final int period;
     private final MatterState matterState;
     private final MetalType metalType;
+    private final boolean artificial;
     private final String description;
     private final int color;
 
-    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, String pDescription, String pColor) {
+    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pDescription, String pColor) {
         super(new Item.Properties().tab(ItemRegistry.ELEMENT_TAB));
         this.elementName = pChemicalName;
         this.atomicNumber = pAtomicNumber;
@@ -46,6 +47,7 @@ public class ElementItem extends Item implements Element {
         this.period = pPeriod;
         this.matterState = pMatterState;
         this.metalType = pMetalType;
+        this.artificial = pArtificial;
         this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
     }
@@ -110,6 +112,11 @@ public class ElementItem extends Item implements Element {
     @Override
     public MetalType getMetalType() {
         return metalType;
+    }
+
+    @Override
+    public boolean isArtificial() {
+        return artificial;
     }
 
     @Override

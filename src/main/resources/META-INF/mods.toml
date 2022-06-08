@@ -10,6 +10,9 @@ logoFile=""
 authors="DarkArcana"
 description='''
 ChemLib provides all of the elements of the periodic table and many compounds of those elements. It also includes some items based on the elements and compounds such as ingots and lamps.
+
+Credits:
+- Andrea Hazard, creator of 'Enhanced Bohr Model' images. Their work is shared under the Creative Commons Attribution-Share Alike 4.0 International license. Read more about the license here: https://creativecommons.org/licenses/by-sa/4.0/deed.en
 '''
 [[dependencies.chemlib]]
     modId="forge"

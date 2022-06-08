@@ -7,6 +7,7 @@ import com.smashingmods.chemlib.common.items.*;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -131,7 +132,11 @@ public class ItemRegistry {
     }
 
     public static List<ChemicalBlockItem> getChemicalBlockItems() {
-        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).map(item -> (ChemicalBlockItem) item).collect(Collectors.toList());
+        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> item instanceof ChemicalBlockItem).map(item -> (ChemicalBlockItem) item).collect(Collectors.toList());
+    }
+
+    public static List<BlockItem> getLiquidBlockItems() {
+        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> item instanceof BlockItem).map(item -> (BlockItem) item).filter(blockItem -> blockItem.getBlock() instanceof LiquidBlock).collect(Collectors.toList());
     }
 
     public static DeferredRegister<Item> getChemicalItemRegistryByType(ChemicalItemType pChemicalItemType) {
@@ -206,8 +211,12 @@ public class ItemRegistry {
         return pRegister.getEntries().stream().filter(item -> item.getId().getPath().equals(pName)).findFirst().get();
     }
 
-    public static <B extends Block> void fromBlock(RegistryObject<B> block, Item.Properties pProperties) {
-        REGISTRY_BLOCK_ITEMS.register(block.getId().getPath(), () -> new ChemicalBlockItem((ChemicalBlock) block.get(), pProperties));
+    public static <B extends Block> void fromChemicalBlock(RegistryObject<B> pBlock, Item.Properties pProperties) {
+        REGISTRY_BLOCK_ITEMS.register(pBlock.getId().getPath(), () -> new ChemicalBlockItem((ChemicalBlock) pBlock.get(), pProperties));
+    }
+
+    public static <B extends Block> void fromBlock(RegistryObject<B> pBlock, Item.Properties pProperties) {
+        REGISTRY_BLOCK_ITEMS.register(pBlock.getId().getPath(), () -> new BlockItem(pBlock.get(), pProperties));
     }
 
     public static void register(IEventBus eventBus) {

@@ -3,7 +3,7 @@ package com.smashingmods.chemlib.datagen;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.*;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
-import com.smashingmods.chemlib.common.blocks.LampBlock;
+import com.smashingmods.chemlib.common.items.ChemicalBlockItem;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import com.smashingmods.chemlib.common.items.ElementItem;
@@ -40,7 +40,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> registerItem(ingot.getChemicalName(), "ingot"));
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.PLATE).forEach(plate -> registerItem(plate.getChemicalName(), "plate"));
         FluidRegistry.getBuckets().forEach(this::registerBucket);
-        ItemRegistry.getChemicalBlockItems().stream().forEach(this::registerBlockItem);
+        ItemRegistry.getChemicalBlockItems().stream().forEach(this::registerChemicalBlockItems);
+        ItemRegistry.getLiquidBlockItems().stream().forEach(this::registerLiquidBlockItems);
     }
 
     private void generateElementModels() {
@@ -80,19 +81,19 @@ public class ItemModelGenerator extends ItemModelProvider {
                 .texture("layer0", modLoc(String.format("items/%s", pSuffix)));
     }
 
-    private void registerBlockItem(BlockItem pBlockItem) {
+    private void registerChemicalBlockItems(ChemicalBlockItem pBlockItem) {
         ChemicalBlock block = (ChemicalBlock) pBlockItem.getBlock();
         String type = block.getBlockType().getSerializedName();
         String name = String.format("item/%s_%s_block", block.getChemicalName(), type);
         ResourceLocation parent = modLoc(String.format("block/%s_%s_block", block.getChemicalName(), type));
+        ResourceLocation texture = modLoc(String.format("block/%s_block", type));
+        withExistingParent(name, parent).texture("layer0", texture);
+    }
 
-        if (pBlockItem.getBlock() instanceof LampBlock) {
-            ResourceLocation texture = modLoc(String.format("block/%s_block", type));
-            withExistingParent(name, parent).texture("block", texture);
-        } else {
-            ResourceLocation texture = modLoc(String.format("block/%s_block", type));
-            withExistingParent(name, parent).texture("block", texture);
-        }
+    private void registerLiquidBlockItems(BlockItem pBlockItem) {
+        String name = pBlockItem.getRegistryName().getPath().replace("_liquid_block", "");
+        withExistingParent(String.format("item/%s_liquid_block", name), mcLoc("item/generated"))
+                .texture("layer0", mcLoc("block/water_still"));
     }
 
     private void registerBucket(BucketItem pBucket) {
@@ -105,13 +106,13 @@ public class ItemModelGenerator extends ItemModelProvider {
         }
 
         Chemical chemical = null;
-        Optional<ElementItem> element = ItemRegistry.getElementByName(chemicalName);
-        Optional<CompoundItem> compound = ItemRegistry.getCompoundByName(chemicalName);
+        Optional<ElementItem> optionalElement = ItemRegistry.getElementByName(chemicalName);
+        Optional<CompoundItem> optionalCompound = ItemRegistry.getCompoundByName(chemicalName);
 
-        if (element.isPresent()) {
-            chemical = element.get();
-        } else if (compound.isPresent()) {
-            chemical = compound.get();
+        if (optionalElement.isPresent()) {
+            chemical = optionalElement.get();
+        } else if (optionalCompound.isPresent()) {
+            chemical = optionalCompound.get();
         }
 
         MatterState matterState = chemical.getMatterState();

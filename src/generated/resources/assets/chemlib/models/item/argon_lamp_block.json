@@ -1,6 +1,6 @@
 {
   "parent": "chemlib:block/argon_lamp_block",
   "textures": {
-    "block": "chemlib:block/lamp_block"
+    "layer0": "chemlib:block/lamp_block"
   }
 }

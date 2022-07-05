@@ -29,9 +29,6 @@ public class LocalizationGenerator extends LanguageProvider {
 
         ItemRegistry.getElements().forEach(element -> {
             add(String.format("item.chemlib.%s", element.getChemicalName()), StringUtils.capitalize(element.getChemicalName()));
-            if (!element.getChemicalDescription().isEmpty()) {
-                add(String.format("%s.jei.element.%s.description", ChemLib.MODID, element.getChemicalName()), element.getChemicalDescription());
-            }
         });
 
         ItemRegistry.getCompounds().forEach(compound -> {
@@ -92,5 +89,7 @@ public class LocalizationGenerator extends LanguageProvider {
         add("itemGroup.chemlib.misc", "Misc Items");
 
         add("chemlib.screen.periodic_table", "Periodic Table of the Elements");
+
+        add("chemlib.jei.element.description", "Use the Periodic Table of the Elements to learn more about this element.");
     }
 }

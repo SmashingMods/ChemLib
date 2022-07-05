@@ -120,6 +120,7 @@
   "chemlib.jei.compound.sodium_chloride.description": "Common table salt, sodium chloride is the salt most responsible for the salinity of seawater. It has numerous uses in manufacturing and electrolysis.",
   "chemlib.jei.compound.sucrose.description": "Simple white sugar or table sugar, sucrose is usually extracted from sugar cane or sugar beets. It's a common food additive, but can be particularly bad for your teeth.",
   "chemlib.jei.compound.water.description": "Also known as dihydrogen monoxide, and a vital component for all organic life. Not only is it vital for life and farming, but most long-distance trade goods are transported over water.",
+  "chemlib.jei.element.description": "Use the Periodic Table of the Elements to learn more about this element.",
   "chemlib.screen.periodic_table": "Periodic Table of the Elements",
   "fluid.chemlib.acetic acid_source": "Acetic Acid",
   "fluid.chemlib.acetylene_source": "Acetylene Gas",

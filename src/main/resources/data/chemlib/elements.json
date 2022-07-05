@@ -13,7 +13,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "B3DFFF"
     },
     {
@@ -29,7 +28,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "FFFDCC"
     },
     {
@@ -40,7 +38,6 @@
       "period": "2",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "8F243E"
     },
     {
@@ -51,7 +48,6 @@
       "period": "2",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "21A17E"
     },
     {
@@ -62,7 +58,6 @@
       "period": "2",
       "matter_state": "solid",
       "metal_type": "metalloid",
-      "description": "",
       "color": "3E4A60"
     },
     {
@@ -73,7 +68,6 @@
       "period": "2",
       "matter_state": "solid",
       "metal_type": "nonmetal",
-      "description": "",
       "color": "282828"
     },
     {
@@ -89,7 +83,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "E1B4B8"
     },
     {
@@ -105,7 +98,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "84CFFE"
     },
     {
@@ -121,7 +113,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "B4D14B"
     },
     {
@@ -137,7 +128,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "F4BC27"
     },
     {
@@ -148,7 +138,6 @@
       "period": "3",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "d3c683"
     },
     {
@@ -159,7 +148,6 @@
       "period": "3",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "EDADEC"
     },
     {
@@ -170,7 +158,6 @@
       "period": "3",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "D9D9D9"
     },
     {
@@ -181,7 +168,6 @@
       "period": "3",
       "matter_state": "solid",
       "metal_type": "metalloid",
-      "description": "",
       "color": "adb279"
     },
     {
@@ -192,7 +178,6 @@
       "period": "3",
       "matter_state": "solid",
       "metal_type": "nonmetal",
-      "description": "",
       "color": "d7c38a"
     },
     {
@@ -203,7 +188,6 @@
       "period": "3",
       "matter_state": "solid",
       "metal_type": "nonmetal",
-      "description": "",
       "color": "b5a510"
     },
     {
@@ -219,7 +203,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "8dd41c"
     },
     {
@@ -235,7 +218,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "6711A3"
     },
     {
@@ -246,7 +228,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "c6985f"
     },
     {
@@ -257,7 +238,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "dbd2c7"
     },
     {
@@ -268,7 +248,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "fcff63"
     },
     {
@@ -279,7 +258,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "6375ff"
     },
     {
@@ -290,7 +268,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "647689"
     },
     {
@@ -301,7 +278,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "481a5d"
     },
     {
@@ -312,7 +288,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "c7a385"
     },
     {
@@ -324,7 +299,6 @@
       "matter_state": "solid",
       "metal_type": "metal",
       "has_item": true,
-      "description": "",
       "color": "34302e"
     },
     {
@@ -335,7 +309,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "6666FF"
     },
     {
@@ -346,7 +319,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "62764c"
     },
     {
@@ -358,7 +330,6 @@
       "matter_state": "solid",
       "metal_type": "metal",
       "has_item": true,
-      "description": "",
       "color": "956853"
     },
     {
@@ -369,7 +340,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "a0997d"
     },
     {
@@ -380,7 +350,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "a1a8c1"
     },
     {
@@ -391,7 +360,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metalloid",
-      "description": "",
       "color": "ccd4c0"
     },
     {
@@ -402,7 +370,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metalloid",
-      "description": "",
       "color": "8c3f31"
     },
     {
@@ -413,7 +380,6 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "nonmetal",
-      "description": "",
       "color": "077c81"
     },
     {
@@ -429,7 +395,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "a61601"
     },
     {
@@ -445,7 +410,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "bce2ef"
     },
     {
@@ -456,7 +420,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "ee88fd"
     },
     {
@@ -467,7 +430,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "536998"
     },
     {
@@ -478,7 +440,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "b366c4"
     },
     {
@@ -489,7 +450,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "d3bb8f"
     },
     {
@@ -500,7 +460,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "734d54"
     },
     {
@@ -511,7 +470,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "6d7e9a"
     },
     {
@@ -523,7 +481,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "758489"
     },
     {
@@ -534,7 +491,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "715f63"
     },
     {
@@ -545,7 +501,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "827569"
     },
     {
@@ -556,7 +511,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "704158"
     },
     {
@@ -567,7 +521,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "c1c7c7"
     },
     {
@@ -578,7 +531,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "9a2b34"
     },
     {
@@ -589,7 +541,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "86847f"
     },
     {
@@ -600,7 +551,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "46311a"
     },
     {
@@ -611,7 +561,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metalloid",
-      "description": "",
       "color": "855770"
     },
     {
@@ -622,7 +571,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "metalloid",
-      "description": "",
       "color": "275b1a"
     },
     {
@@ -633,7 +581,6 @@
       "period": "5",
       "matter_state": "solid",
       "metal_type": "nonmetal",
-      "description": "",
       "color": "571162"
     },
     {
@@ -649,7 +596,6 @@
         "viscosity": 0
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "2861a7"
     },
     {
@@ -660,7 +606,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "cbac2a"
     },
     {
@@ -671,7 +616,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "c7bca8"
     },
     {
@@ -682,7 +626,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "ba9160"
     },
     {
@@ -693,7 +636,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "662c5e"
     },
     {
@@ -704,7 +646,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "73b93d"
     },
     {
@@ -715,7 +656,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "8c696b"
     },
     {
@@ -727,7 +667,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "62af0a7"
     },
     {
@@ -738,7 +677,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "b7b05c"
     },
     {
@@ -749,7 +687,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "ce81b3"
     },
     {
@@ -760,7 +697,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "915536"
     },
     {
@@ -771,7 +707,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "8ba754"
     },
     {
@@ -782,7 +717,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "653f0e"
     },
     {
@@ -793,7 +727,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "4d6352"
     },
     {
@@ -804,7 +737,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "a05768"
     },
     {
@@ -815,7 +747,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "179e43"
     },
     {
@@ -826,7 +757,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "e7e39f"
     },
     {
@@ -837,7 +767,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "954d41"
     },
     {
@@ -848,7 +777,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "243267"
     },
     {
@@ -859,7 +787,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "a81e20"
     },
     {
@@ -870,7 +797,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "2b313e"
     },
     {
@@ -881,7 +807,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "1b1d1b"
     },
     {
@@ -892,7 +817,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "7599c1"
     },
     {
@@ -903,7 +827,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "2f5eef"
     },
     {
@@ -914,7 +837,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "d2d3d3"
     },
     {
@@ -926,7 +848,6 @@
       "matter_state": "solid",
       "metal_type": "metal",
       "has_item": true,
-      "description": "",
       "color": "cfac38"
     },
     {
@@ -942,7 +863,6 @@
         "viscosity": 1000
       },
       "metal_type": "metal",
-      "description": "",
       "color": "9d9f9f"
     },
     {
@@ -953,7 +873,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "785445"
     },
     {
@@ -964,7 +883,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "34465a"
     },
     {
@@ -975,7 +893,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "3d9185"
     },
     {
@@ -986,7 +903,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "29443f"
     },
     {
@@ -997,7 +913,6 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "nonmetal",
-      "description": "",
       "color": "9fc413"
     },
     {
@@ -1013,7 +928,6 @@
         "viscosity": 1000
       },
       "metal_type": "nonmetal",
-      "description": "",
       "color": "5fd16a"
     },
     {
@@ -1024,7 +938,6 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "9a410c"
     },
     {
@@ -1035,7 +948,6 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "3c9c6f"
     },
     {
@@ -1046,7 +958,6 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "7781f9"
     },
     {
@@ -1057,7 +968,6 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "5f4533"
     },
     {
@@ -1068,7 +978,6 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "3e8863"
     },
     {
@@ -1079,7 +988,6 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "description": "",
       "color": "d1c33e"
     },
     {
@@ -1091,7 +999,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "657065"
     },
     {
@@ -1103,7 +1010,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "db6e22"
     },
     {
@@ -1115,7 +1021,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "ab8040"
     },
     {
@@ -1127,7 +1032,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "920133"
     },
     {
@@ -1139,7 +1043,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "b48b41"
     },
     {
@@ -1151,7 +1054,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "b47148"
     },
     {
@@ -1163,7 +1065,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "1f79ae"
     },
     {
@@ -1175,7 +1076,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "e3cda1"
     },
     {
@@ -1187,7 +1087,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "1512b4"
     },
     {
@@ -1199,7 +1098,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "7e41e8"
     },
     {
@@ -1211,7 +1109,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "898a8c"
     },
     {
@@ -1223,7 +1120,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "333236"
     },
     {
@@ -1235,7 +1131,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "ab7a5f"
     },
     {
@@ -1247,7 +1142,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "f75320"
     },
     {
@@ -1259,7 +1153,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "54b889"
     },
     {
@@ -1271,7 +1164,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "8a8951"
     },
     {
@@ -1283,7 +1175,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "6f5d3a"
     },
     {
@@ -1295,7 +1186,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "325aa6"
     },
     {
@@ -1307,7 +1197,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "80b848"
     },
     {
@@ -1319,7 +1208,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "e39349"
     },
     {
@@ -1331,7 +1219,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "5e0009"
     },
     {
@@ -1343,7 +1230,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "654685"
     },
     {
@@ -1355,7 +1241,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "18f2ad"
     },
     {
@@ -1367,7 +1252,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "description": "",
       "color": "487d3b"
     },
     {
@@ -1379,7 +1263,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "nonmetal",
-      "description": "",
       "color": "b0963f"
     },
     {
@@ -1391,7 +1274,6 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "nonmetal",
-      "description": "",
       "color": "723ec7"
     }
   ]

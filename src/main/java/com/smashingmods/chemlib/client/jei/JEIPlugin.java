@@ -28,10 +28,10 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration pRegistration) {
         ItemRegistry.getElements().forEach(element -> {
-            pRegistration.addIngredientInfo(new ItemStack(element), VanillaTypes.ITEM_STACK, new TextComponent(I18n.get(String.format("%s.jei.element.description", ChemLib.MODID))));
+            pRegistration.addIngredientInfo(new ItemStack(element), VanillaTypes.ITEM_STACK, new TextComponent(I18n.get("chemlib.jei.element.description")));
         });
         ItemRegistry.getCompounds().forEach(compound -> {
-            pRegistration.addIngredientInfo(new ItemStack(compound), VanillaTypes.ITEM_STACK, new TextComponent(I18n.get(String.format("%s.jei.compound.%s.description", ChemLib.MODID, compound.getChemicalName()))));
+            pRegistration.addIngredientInfo(new ItemStack(compound), VanillaTypes.ITEM_STACK, new TextComponent(I18n.get(String.format("chemlib.jei.compound.%s.description", compound.getChemicalName()))));
         });
     }
 }

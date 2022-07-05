@@ -41,10 +41,9 @@ public class ChemicalRegistry {
             MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
             MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase());
             boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
-            String description = object.has("description") ? object.get("description").getAsString() : "";
             String color = object.get("color").getAsString();
 
-            ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, description, color));
+            ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color));
             RegistryObject<Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
             if (!artificial) {

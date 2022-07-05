@@ -80,7 +80,7 @@ public class CompoundItem extends Item implements Chemical {
     public static String getSubscript(String pString) {
         //subscriptZeroCodepoint is subscript 0 unicode char, adding 1-9 gives the subscript for that num
         //i.e. ₀ + 3 = ₃
-        final int subscriptZeroCodepoint = 0x2080;//Character.codePointAt("₀",0) + Character.codePointAt("₀",1);//Character.codePointAt("₀", 0);
+        final int subscriptZeroCodepoint = 0x2080;
         StringBuilder builder = new StringBuilder();
         for (char character : pString.toCharArray()) {
             builder.append(Character.toChars(subscriptZeroCodepoint + Character.getNumericValue(character)));

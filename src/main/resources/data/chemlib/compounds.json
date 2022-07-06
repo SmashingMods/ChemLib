@@ -754,6 +754,19 @@
       ]
     },
     {
+      "name": "graphite",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "",
+      "color": "1f1f1f",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 4
+        }
+      ]
+    },
+    {
       "name": "potassium_dichromate",
       "matter_state": "solid",
       "has_item": true,

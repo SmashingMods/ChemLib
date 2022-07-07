@@ -22,6 +22,29 @@
       ]
     },
     {
+      "name": "ethylene",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -1000,
+        "luminosity": 0,
+        "viscosity": 1000
+      },
+      "has_item": false,
+      "description": "This chemical is widely used in industrial chemistry, particularly in the synthesis of polyethylene plastics.",
+      "color": "c6c79f",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+
+        }
+      ]
+    },
+    {
       "name": "cellulose",
       "matter_state": "solid",
       "has_item": false,
@@ -39,6 +62,30 @@
         {
           "name": "oxygen",
           "count": 5
+        }
+      ]
+    },
+    {
+      "name": "chitin",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "An organic polymer, the primary component of the cells of fungi, and the exoskeletons of arthropods. Structurally similar to cellulose, but functionally a protein.",
+      "color": "30160d",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 8
+        },
+        {
+          "name": "hydrogen",
+          "count": 13
+        },
+        {
+          "name": "oxygen",
+          "count": 5
+        },
+        {
+          "name": "nitrogen"
         }
       ]
     },
@@ -196,19 +243,13 @@
       "color": "906c15",
       "components": [
         {
-          "name": "carbon",
-          "count": 3
+          "name": "ammonia"
         },
         {
-          "name": "hydrogen",
-          "count": 7
+          "name": "carbon_dioxide"
         },
         {
-          "name": "nitrogen"
-        },
-        {
-          "name": "oxygen",
-          "count": 2
+          "name": "ethylene"
         },
         {
           "name": "sulfur"
@@ -1084,34 +1125,6 @@
         {
           "name": "oxygen",
           "count": 4
-        }
-      ]
-    },
-    {
-      "name": "penicillin",
-      "matter_state": "solid",
-      "has_item": false,
-      "description": "A natural antibiotic found in mold, in pure form it's very effective against a broad spectrum of bacteria.",
-      "color": "ffd2d2",
-      "components": [
-        {
-          "name": "carbon",
-          "count": 16
-        },
-        {
-          "name": "hydrogen",
-          "count": 18
-        },
-        {
-          "name": "nitrogen",
-          "count": 2
-        },
-        {
-          "name": "oxygen",
-          "count": 5
-        },
-        {
-          "name": "sulfur"
         }
       ]
     },
@@ -2998,22 +3011,16 @@
       "color": "c878c8",
       "components": [
         {
-          "name": "carbon",
-          "count": 3
-        },
-        {
-          "name": "hydrogen",
-          "count": 5
-        },
-        {
           "name": "potassium"
         },
         {
-          "name": "oxygen"
+          "name": "polyvinyl_chloride"
         },
         {
-          "name": "sulfur",
-          "count": 2
+          "name": "water"
+        },
+        {
+          "name": "carbon_disulfide"
         }
       ]
     },

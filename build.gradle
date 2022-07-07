@@ -109,10 +109,8 @@ publishing {
 }
 
 def secrets = new Properties()
-if (file('secret.properties').exists()) {
-    file('secrets.properties').withInputStream {
-        stream -> secrets.load(stream)
-    }
+file('secrets.properties').withInputStream {
+    stream -> secrets.load(stream)
 }
 
 fileTree("secrets").matching {
@@ -125,7 +123,7 @@ fileTree("secrets").matching {
 }
 
 curseforge {
-    apiKey = secrets.hasProperty("apiKey") ? secrets.getProperty("apiKey") : ""
+    apiKey = secrets.getProperty("apiKey")
     project {
         id = '340666'
         releaseType = 'release'

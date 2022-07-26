@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "chemlib:thorium_dust"
+  },
+  "result": "chemlib:thorium_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:chromium_ingot_from_smelting_chromium_dust"
+    ]
+  },
+  "criteria": {
+    "has_chromium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:chromium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:chromium_ingot_from_smelting_chromium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chromium",
+      "has_the_recipe"
+    ]
+  ]
+}

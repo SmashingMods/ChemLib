@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:rubidium_ingot_from_smelting_rubidium_dust"
+    ]
+  },
+  "criteria": {
+    "has_rubidium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:rubidium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:rubidium_ingot_from_smelting_rubidium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rubidium",
+      "has_the_recipe"
+    ]
+  ]
+}

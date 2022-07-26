@@ -84,20 +84,18 @@ public class ElementItem extends Item implements Element {
     }
 
     public String getGroupName() {
-        return switch(group) {
-            case 1 -> atomicNumber != 1 ? "Alkali Metal" : "";
-            case 2 -> "Aklaline Earth Metal";
-            case 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 -> switch(period) {
-                case 6 -> "Lanthanide";
-                case 7 -> "Actinide";
-                default -> "Transition Metal";
-            };
-            case 13 -> "Boron Group";
-            case 14 -> "Carbon Group";
-            case 15 -> "Nitrogen Group";
-            case 16 -> "Chalcogen";
-            case 17 -> "Halogen";
-            case 18 -> "Noble Gas";
+        return switch(atomicNumber) {
+            case 1, 6, 7, 8, 15, 16, 34 -> "Reactive Non-Metals";
+            case 3, 11, 19, 37, 55, 87 -> "Alkali Metals";
+            case 4, 12, 20, 38, 56, 88 -> "Alkaline Earth Metals";
+            case 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 72, 73, 74, 75, 76, 77, 78, 79, 80, 104, 105, 106, 107, 108 -> "Transition Metals";
+            case 13, 31, 49, 50, 81, 82, 83, 84 -> "Post-Transition Metals";
+            case 109, 110, 111, 112, 113, 114, 115, 116, 117, 118 -> "Unknown Properties";
+            case 5, 14, 32, 33, 51, 52 -> "Metalloids";
+            case 9, 17, 35, 53, 85 -> "Halogens";
+            case 2, 10, 18, 36, 54, 86 -> "Noble Gasses";
+            case 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71 -> "Lanthanides";
+            case 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103 -> "Actinides";
             default -> "";
         };
     }
@@ -127,7 +125,7 @@ public class ElementItem extends Item implements Element {
         return this.color;
     }
 
-    public int getColor(ItemStack pItemStack, int pTintIndex) {
+    public int getColor(@SuppressWarnings("unused") ItemStack pItemStack, int pTintIndex) {
         return pTintIndex > 0 ? -1 : color;
     }
 

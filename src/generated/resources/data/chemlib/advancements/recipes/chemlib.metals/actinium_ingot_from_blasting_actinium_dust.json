@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:actinium_ingot_from_blasting_actinium_dust"
+    ]
+  },
+  "criteria": {
+    "has_actinium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:actinium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:actinium_ingot_from_blasting_actinium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_actinium",
+      "has_the_recipe"
+    ]
+  ]
+}

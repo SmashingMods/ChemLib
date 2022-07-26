@@ -82,6 +82,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("mezz.jei:jei-${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
+    runtimeOnly fg.deobf("curse.maven:mekanism-268560:3743835")
 }
 
 jar {

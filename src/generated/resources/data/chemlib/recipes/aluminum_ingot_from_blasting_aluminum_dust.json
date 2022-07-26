@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "chemlib:aluminum_dust"
+  },
+  "result": "chemlib:aluminum_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

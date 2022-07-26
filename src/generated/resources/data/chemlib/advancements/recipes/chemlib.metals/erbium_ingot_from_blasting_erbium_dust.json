@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:erbium_ingot_from_blasting_erbium_dust"
+    ]
+  },
+  "criteria": {
+    "has_erbium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:erbium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:erbium_ingot_from_blasting_erbium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_erbium",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "chemlib:bismuth_dust"
+  },
+  "result": "chemlib:bismuth_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

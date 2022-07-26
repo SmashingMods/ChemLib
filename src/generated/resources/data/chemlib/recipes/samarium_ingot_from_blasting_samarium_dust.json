@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "chemlib:samarium_dust"
+  },
+  "result": "chemlib:samarium_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

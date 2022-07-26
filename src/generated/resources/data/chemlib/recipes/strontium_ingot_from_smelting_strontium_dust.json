@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "chemlib:strontium_dust"
+  },
+  "result": "chemlib:strontium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

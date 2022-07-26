@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:lead_ingot_from_blasting_lead_dust"
+    ]
+  },
+  "criteria": {
+    "has_lead": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:lead"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:lead_ingot_from_blasting_lead_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lead",
+      "has_the_recipe"
+    ]
+  ]
+}

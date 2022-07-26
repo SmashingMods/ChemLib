@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "chemlib:terbium_dust"
+  },
+  "result": "chemlib:terbium_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

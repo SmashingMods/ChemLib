@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:hafnium_ingot_from_blasting_hafnium_dust"
+    ]
+  },
+  "criteria": {
+    "has_hafnium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:hafnium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:hafnium_ingot_from_blasting_hafnium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hafnium",
+      "has_the_recipe"
+    ]
+  ]
+}

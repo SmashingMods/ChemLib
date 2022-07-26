@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "chemlib:praseodymium_dust"
+  },
+  "result": "chemlib:praseodymium_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

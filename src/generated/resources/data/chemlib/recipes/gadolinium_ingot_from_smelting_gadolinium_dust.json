@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "chemlib:gadolinium_dust"
+  },
+  "result": "chemlib:gadolinium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "chemlib:palladium_dust"
+  },
+  "result": "chemlib:palladium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "chemlib:francium_dust"
+  },
+  "result": "chemlib:francium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

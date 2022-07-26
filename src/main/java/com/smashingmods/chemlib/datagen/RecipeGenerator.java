@@ -10,12 +10,10 @@ import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nonnull;
@@ -87,6 +85,20 @@ public class RecipeGenerator extends RecipeProvider {
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
                     .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_to_nugget", ChemLib.MODID, chemical.getChemicalName()));
         });
+
+        // register dust -> ingot
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.DUST)
+                .forEach(dust -> ItemRegistry.getElementByName(dust.getChemicalName())
+                .flatMap(elementItem -> ItemRegistry.getChemicalItemByNameAndType(elementItem.getChemicalName(), ChemicalItemType.INGOT))
+                .ifPresent(chemicalItem -> {
+                    String chemicalName = chemicalItem.getChemicalName();
+                    SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), chemicalItem, 0.7f, 200)
+                            .unlockedBy(String.format("has_%s", chemicalItem.getChemical()), inventoryTrigger(ItemPredicate.Builder.item().of(chemicalItem.getChemical()).build()))
+                            .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_from_smelting_%s_dust", ChemLib.MODID, chemicalName, chemicalName));
+                    SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), chemicalItem, 0.7f, 100)
+                            .unlockedBy(String.format("has_%s", chemicalItem.getChemical()), inventoryTrigger(ItemPredicate.Builder.item().of(chemicalItem.getChemical()).build()))
+                            .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_from_blasting_%s_dust", ChemLib.MODID, chemicalName, chemicalName));
+                }));
 
         // periodic table
         Item periodicTable = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_MISC_ITEMS, "periodic_table").get();

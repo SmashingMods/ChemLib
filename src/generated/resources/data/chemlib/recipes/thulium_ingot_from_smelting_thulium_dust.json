@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "chemlib:thulium_dust"
+  },
+  "result": "chemlib:thulium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

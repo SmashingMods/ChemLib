@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "chemlib:barium_dust"
+  },
+  "result": "chemlib:barium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:calcium_ingot_from_blasting_calcium_dust"
+    ]
+  },
+  "criteria": {
+    "has_calcium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:calcium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:calcium_ingot_from_blasting_calcium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_calcium",
+      "has_the_recipe"
+    ]
+  ]
+}

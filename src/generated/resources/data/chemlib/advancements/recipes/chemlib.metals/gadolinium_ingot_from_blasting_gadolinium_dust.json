@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:gadolinium_ingot_from_blasting_gadolinium_dust"
+    ]
+  },
+  "criteria": {
+    "has_gadolinium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:gadolinium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:gadolinium_ingot_from_blasting_gadolinium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gadolinium",
+      "has_the_recipe"
+    ]
+  ]
+}

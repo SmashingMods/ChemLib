@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:thallium_ingot_from_blasting_thallium_dust"
+    ]
+  },
+  "criteria": {
+    "has_thallium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:thallium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:thallium_ingot_from_blasting_thallium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_thallium",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -52,32 +52,18 @@ public class LocalizationGenerator extends LanguageProvider {
             });
         }
 
-        FluidRegistry.getLiquidBlocks().forEach(liquidBlock -> {
-            Objects.requireNonNull(liquidBlock.getFluid().getRegistryName());
-            String name = liquidBlock.getFluid().getRegistryName().getPath().replace("_source", "").replace("_", " ");
-            int density = liquidBlock.getFluid().getAttributes().getDensity();
-            add(String.format("fluid.chemlib.%s_source", name), WordUtils.capitalize(String.format("%s%s", name, density < 0 ? " gas" : "")));
+        FluidRegistry.getFluids().forEach(fluid -> {
+            Objects.requireNonNull(fluid.getRegistryName());
+            int density = fluid.getAttributes().getDensity();
+            String key = fluid.getRegistryName().getPath();
+            String value = WordUtils.capitalize(String.format("%s%s", fluid.getRegistryName().getPath().replace("_fluid", "").replace("_flowing", "").replace("_", " "), density < 0 ? " gas" : ""));
+            add(String.format("fluid.chemlib.%s", key), value);
         });
 
         FluidRegistry.getBuckets().forEach(bucket -> {
             Objects.requireNonNull(bucket.getRegistryName());
             String name = bucket.getRegistryName().getPath();
             add(String.format("item.chemlib.%s", name), WordUtils.capitalize(name.replace("_", " ")));
-        });
-
-        ItemRegistry.getLiquidBlockItems().forEach(item -> {
-            Objects.requireNonNull(item.getRegistryName());
-            String name = item.getRegistryName().getPath().replace("_liquid_block", "");
-            Optional<ElementItem> optionalElement = ItemRegistry.getElementByName(name);
-            Optional<CompoundItem> optionalCompound = ItemRegistry.getCompoundByName(name);
-            AtomicReference<MatterState> matterState = new AtomicReference<>();
-            optionalElement.ifPresent(element -> matterState.set(element.getMatterState()));
-            optionalCompound.ifPresent(compound -> matterState.set(compound.getMatterState()));
-            if (matterState.get() != null) {
-                add(String.format("block.chemlib.%s", item.getRegistryName().getPath()), WordUtils.capitalize(String.format("%s %s", name.replace("_", " "), matterState.get().getSerializedName())));
-            } else {
-                add(String.format("block.chemlib.%s", item.getRegistryName().getPath()), WordUtils.capitalize(name.replace("_", " ")));
-            }
         });
 
         add("item.chemlib.periodic_table", "Periodic Table of the Elements");

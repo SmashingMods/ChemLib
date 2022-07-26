@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "chemlib:lutetium_dust"
+  },
+  "result": "chemlib:lutetium_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

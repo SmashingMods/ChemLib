@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:manganese_ingot_from_blasting_manganese_dust"
+    ]
+  },
+  "criteria": {
+    "has_manganese": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:manganese"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:manganese_ingot_from_blasting_manganese_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_manganese",
+      "has_the_recipe"
+    ]
+  ]
+}

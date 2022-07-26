@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:beryllium_ingot_from_blasting_beryllium_dust"
+    ]
+  },
+  "criteria": {
+    "has_beryllium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:beryllium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:beryllium_ingot_from_blasting_beryllium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_beryllium",
+      "has_the_recipe"
+    ]
+  ]
+}

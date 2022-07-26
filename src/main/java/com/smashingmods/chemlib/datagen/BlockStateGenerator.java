@@ -6,7 +6,7 @@ import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.FluidRegistry;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -69,8 +69,9 @@ public class BlockStateGenerator extends BlockStateProvider {
         });
     }
 
-    private void registerLiquidBlock(Block pBlock) {
+    private void registerLiquidBlock(LiquidBlock pBlock) {
         ModelFile modelFile = new ModelFile.ExistingModelFile(mcLoc("block/water"), existingFileHelper);
         getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
+        itemModels().withExistingParent(pBlock.getFluid().getRegistryName().getPath(), mcLoc("block/water"));
     }
 }

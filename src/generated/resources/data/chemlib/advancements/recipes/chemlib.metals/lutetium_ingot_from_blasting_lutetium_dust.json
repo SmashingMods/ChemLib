@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "chemlib:lutetium_ingot_from_blasting_lutetium_dust"
+    ]
+  },
+  "criteria": {
+    "has_lutetium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "chemlib:lutetium"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chemlib:lutetium_ingot_from_blasting_lutetium_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lutetium",
+      "has_the_recipe"
+    ]
+  ]
+}

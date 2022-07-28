@@ -43,47 +43,43 @@ public class RecipeGenerator extends RecipeProvider {
         // register ingot -> block recipes
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.METAL).forEach(block -> {
             Chemical chemical = block.getChemical();
-            ChemicalItem ingot = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.INGOT).get();
-            ShapedRecipeBuilder.shaped(block)
+            ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.INGOT).ifPresent(ingot -> ShapedRecipeBuilder.shaped(block)
                     .define('I', ingot)
                     .pattern("III")
                     .pattern("III")
                     .pattern("III")
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_to_block", ChemLib.MODID, chemical.getChemicalName()));
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_to_block", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register nugget -> ingot
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> {
             Chemical chemical = ingot.getChemical();
-            ChemicalItem nugget = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).get();
-            ShapedRecipeBuilder.shaped(ingot)
+            ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).ifPresent(nugget -> ShapedRecipeBuilder.shaped(ingot)
                     .define('N', nugget)
                     .pattern("NNN")
                     .pattern("NNN")
                     .pattern("NNN")
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pFinishedRecipeConsumer, String.format("%s:%s_nugget_to_ingot", ChemLib.MODID, chemical.getChemicalName()));
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_nugget_to_ingot", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register block -> ingot recipes
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> {
             Chemical chemical = ingot.getChemical();
-            ChemicalBlock block = BlockRegistry.getChemicalBlockByNameAndType(chemical.getChemicalName(), ChemicalBlockType.METAL).get();
-            ShapelessRecipeBuilder.shapeless(ingot, 9)
+            BlockRegistry.getChemicalBlockByNameAndType(chemical.getChemicalName(), ChemicalBlockType.METAL).ifPresent(block -> ShapelessRecipeBuilder.shapeless(ingot, 9)
                     .requires(block)
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pFinishedRecipeConsumer, String.format("%s:%s_block_to_ingot", ChemLib.MODID, chemical.getChemicalName()));
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_block_to_ingot", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register ingot -> nugget
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> {
             Chemical chemical = ingot.getChemical();
-            ChemicalItem nugget = ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).get();
-            ShapelessRecipeBuilder.shapeless(nugget, 9)
+            ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).ifPresent(nugget -> ShapelessRecipeBuilder.shapeless(nugget, 9)
                     .requires(ingot)
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_to_nugget", ChemLib.MODID, chemical.getChemicalName()));
+                    .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_to_nugget", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register dust -> ingot

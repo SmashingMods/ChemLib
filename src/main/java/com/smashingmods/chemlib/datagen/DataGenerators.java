@@ -15,6 +15,7 @@ public class DataGenerators {
         generator.addProvider(new ItemModelGenerator(generator, event.getExistingFileHelper()));
         generator.addProvider(new ItemTagGenerator(generator, event.getExistingFileHelper()));
         generator.addProvider(new BlockTagGenerator(generator, event.getExistingFileHelper()));
+        generator.addProvider(new FluidTagGenerator(generator, event.getExistingFileHelper()));
         generator.addProvider(new RecipeGenerator(generator));
         generator.addProvider(new LootTableGenerator(generator));
         generator.addProvider(new LocalizationGenerator(generator, "en_us"));

@@ -72,6 +72,5 @@ public class BlockStateGenerator extends BlockStateProvider {
     private void registerLiquidBlock(LiquidBlock pBlock) {
         ModelFile modelFile = new ModelFile.ExistingModelFile(mcLoc("block/water"), existingFileHelper);
         getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
-        itemModels().withExistingParent(pBlock.getFluid().getRegistryName().getPath(), mcLoc("block/water"));
     }
 }

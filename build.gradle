@@ -69,7 +69,7 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven { url  "https://dvs1.progwml6.com/files/maven/" }
+    maven { url "https://dvs1.progwml6.com/files/maven/" }
     maven {
         url "https://www.cursemaven.com"
         content {

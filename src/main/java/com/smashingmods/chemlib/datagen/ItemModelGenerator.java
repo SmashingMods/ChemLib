@@ -11,7 +11,6 @@ import com.smashingmods.chemlib.registry.FluidRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -41,7 +40,6 @@ public class ItemModelGenerator extends ItemModelProvider {
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.PLATE).forEach(plate -> registerItem(plate.getChemicalName(), "plate"));
         FluidRegistry.getBuckets().forEach(this::registerBucket);
         ItemRegistry.getChemicalBlockItems().stream().forEach(this::registerChemicalBlockItems);
-        ItemRegistry.getLiquidBlockItems().stream().forEach(this::registerLiquidBlockItems);
     }
 
     private void generateElementModels() {
@@ -90,14 +88,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent(name, parent).texture("layer0", texture);
     }
 
-    private void registerLiquidBlockItems(BlockItem pBlockItem) {
-        String name = pBlockItem.getRegistryName().getPath().replace("_liquid_block", "");
-        withExistingParent(String.format("item/%s_liquid_block", name), mcLoc("item/generated"))
-                .texture("layer0", mcLoc("block/water_still"));
-    }
-
     private void registerBucket(BucketItem pBucket) {
-        String path = pBucket.getRegistryName().getPath();
+        String path = Objects.requireNonNull(pBucket.getRegistryName()).getPath();
         int pieces = path.split("_").length;
         String chemicalName = "";
 
@@ -115,7 +107,7 @@ public class ItemModelGenerator extends ItemModelProvider {
             chemical = optionalCompound.get();
         }
 
-        MatterState matterState = chemical.getMatterState();
+        MatterState matterState = Objects.requireNonNull(chemical).getMatterState();
 
         switch (matterState) {
             case LIQUID -> withExistingParent(String.format("item/%s", Objects.requireNonNull(pBucket.getRegistryName()).getPath()), mcLoc("item/generated"))

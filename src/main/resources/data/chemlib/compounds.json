@@ -829,6 +829,23 @@
       ]
     },
     {
+      "name": "calcium_sulfide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "",
+      "color": "1f1f1f",
+      "components": [
+        {
+          "name": "calcium",
+          "count": 1
+        },
+        {
+          "name": "sulfur",
+          "count": 1
+        }
+      ]
+    },
+    {
       "name": "potassium_dichromate",
       "matter_state": "solid",
       "has_item": true,

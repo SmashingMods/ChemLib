@@ -96,6 +96,32 @@ public class RecipeGenerator extends RecipeProvider {
                             .save(pFinishedRecipeConsumer, String.format("%s:%s_ingot_from_blasting_%s_dust", ChemLib.MODID, chemicalName, chemicalName));
                 }));
 
+        // hard-code vanilla dust to ingot smelting/blasting recipes
+        ItemRegistry.getChemicalItemByNameAndType("copper", ChemicalItemType.DUST).ifPresent(dust -> {
+            SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), Items.COPPER_INGOT, 0.7f, 200)
+                    .unlockedBy("has_copper", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
+                    .save(pFinishedRecipeConsumer, "alchemistry:copper_ingot_from_smelting_copper_dust");
+            SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), Items.COPPER_INGOT, 0.7f, 100)
+                    .unlockedBy("has_copper", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
+                    .save(pFinishedRecipeConsumer, "alchemistry:copper_ingot_from_blasting_copper_dust");
+        });
+        ItemRegistry.getChemicalItemByNameAndType("iron", ChemicalItemType.DUST).ifPresent(dust -> {
+            SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), Items.IRON_INGOT, 0.7f, 200)
+                    .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
+                    .save(pFinishedRecipeConsumer, "alchemistry:iron_ingot_from_smelting_iron_dust");
+            SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), Items.IRON_INGOT, 0.7f, 100)
+                    .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
+                    .save(pFinishedRecipeConsumer, "alchemistry:iron_ingot_from_blasting_iron_dust");
+        });
+        ItemRegistry.getChemicalItemByNameAndType("gold", ChemicalItemType.DUST).ifPresent(dust -> {
+            SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), Items.GOLD_INGOT, 0.7f, 200)
+                    .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
+                    .save(pFinishedRecipeConsumer, "alchemistry:gold_ingot_from_smelting_gold_dust");
+            SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), Items.GOLD_INGOT, 0.7f, 100)
+                    .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
+                    .save(pFinishedRecipeConsumer, "alchemistry:gold_ingot_from_blasting_gold_dust");
+        });
+
         // periodic table
         Item periodicTable = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_MISC_ITEMS, "periodic_table").get();
         Item hydrogen = ItemRegistry.getElementByName("hydrogen").get();

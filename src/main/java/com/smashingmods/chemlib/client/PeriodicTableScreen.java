@@ -10,8 +10,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -24,7 +24,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class PeriodicTableScreen extends Screen {
 
     public PeriodicTableScreen() {
-        super(new TextComponent("Periodic Table"));
+        super(MutableComponent.create(new TranslatableContents("item.chemlib.periodic_table")));
     }
 
     @Override
@@ -42,7 +42,7 @@ public class PeriodicTableScreen extends Screen {
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, new ResourceLocation(ChemLib.MODID, "textures/gui/periodic_table.png"));
         blit(pPoseStack, leftPos, topPos, displayWidth, displayHeight, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("chemlib.screen.periodic_table").withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, MutableComponent.create(new TranslatableContents("chemlib.screen.periodic_table")).withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
 
         double boxWidth = 27.75f;
         double boxHeight = 26.9f;

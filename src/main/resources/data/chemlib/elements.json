@@ -7,10 +7,21 @@
       "group": "1",
       "period": "1",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "B3DFFF"
@@ -22,10 +33,21 @@
       "group": "18",
       "period": "1",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "FFFDCC"
@@ -77,10 +99,21 @@
       "group": "15",
       "period": "2",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "E1B4B8"
@@ -92,10 +125,21 @@
       "group": "16",
       "period": "2",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "84CFFE"
@@ -107,10 +151,21 @@
       "group": "17",
       "period": "2",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "B4D14B"
@@ -122,10 +177,21 @@
       "group": "18",
       "period": "2",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "F4BC27"
@@ -197,10 +263,21 @@
       "group": "17",
       "period": "3",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "8dd41c"
@@ -212,10 +289,21 @@
       "group": "18",
       "period": "3",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "6711A3"
@@ -389,10 +477,21 @@
       "group": "17",
       "period": "4",
       "matter_state": "liquid",
-      "fluid_attributes": {
-        "density": 0,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 3000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": true,
+        "can_swim": true,
+        "can_drown": true,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": true,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "a61601"
@@ -404,10 +503,21 @@
       "group": "18",
       "period": "4",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "bce2ef"
@@ -590,10 +700,21 @@
       "group": "18",
       "period": "5",
       "matter_state": "gas",
-      "fluid_attributes": {
-        "density": -10,
-        "luminosity": 0,
-        "viscosity": 0
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "2861a7"
@@ -857,10 +978,21 @@
       "group": "12",
       "period": "6",
       "matter_state": "liquid",
-      "fluid_attributes": {
-        "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+      "fluid_properties": {
+        "density": 3000,
+        "light_level": 0,
+        "viscosity": 6000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": true,
+        "can_swim": false,
+        "can_drown": true,
+        "can_hydrate": false,
+        "can_extinguish": true,
+        "supports_boating": true,
+        "can_convert_to_source": false
       },
       "metal_type": "metal",
       "color": "9d9f9f"
@@ -922,10 +1054,21 @@
       "group": "18",
       "period": "6",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
       "color": "5fd16a"

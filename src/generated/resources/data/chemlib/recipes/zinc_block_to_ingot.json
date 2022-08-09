@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:zinc_ingot",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:zinc_ingot"
   }
 }

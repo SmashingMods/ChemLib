@@ -6,7 +6,8 @@ import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -39,7 +40,7 @@ public class CompoundItem extends Item implements Chemical {
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(new TextComponent(getAbbreviation()).withStyle(ChatFormatting.DARK_AQUA));
+        pTooltipComponents.add(MutableComponent.create(new LiteralContents(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
     }
 
     @Override
@@ -69,10 +70,12 @@ public class CompoundItem extends Item implements Chemical {
         return this.color;
     }
 
+    @SuppressWarnings("unused")
     public Map<String, Integer> getComponents() {
         return this.components;
     }
 
+    @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex > 0 ? -1 : color;
     }

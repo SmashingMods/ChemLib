@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:thallium_nugget",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:thallium_nugget"
   }
 }

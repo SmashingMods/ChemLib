@@ -6,6 +6,24 @@
     "level=1": {
       "model": "minecraft:block/water"
     },
+    "level=10": {
+      "model": "minecraft:block/water"
+    },
+    "level=11": {
+      "model": "minecraft:block/water"
+    },
+    "level=12": {
+      "model": "minecraft:block/water"
+    },
+    "level=13": {
+      "model": "minecraft:block/water"
+    },
+    "level=14": {
+      "model": "minecraft:block/water"
+    },
+    "level=15": {
+      "model": "minecraft:block/water"
+    },
     "level=2": {
       "model": "minecraft:block/water"
     },
@@ -28,24 +46,6 @@
       "model": "minecraft:block/water"
     },
     "level=9": {
-      "model": "minecraft:block/water"
-    },
-    "level=10": {
-      "model": "minecraft:block/water"
-    },
-    "level=11": {
-      "model": "minecraft:block/water"
-    },
-    "level=12": {
-      "model": "minecraft:block/water"
-    },
-    "level=13": {
-      "model": "minecraft:block/water"
-    },
-    "level=14": {
-      "model": "minecraft:block/water"
-    },
-    "level=15": {
       "model": "minecraft:block/water"
     }
   }

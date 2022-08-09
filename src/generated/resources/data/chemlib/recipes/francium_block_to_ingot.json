@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:francium_ingot",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:francium_ingot"
   }
 }

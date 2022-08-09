@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:sodium_nugget",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:sodium_nugget"
   }
 }

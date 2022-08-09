@@ -7,7 +7,8 @@ import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -33,8 +34,8 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (getChemical() instanceof Element element) {
-            pTooltipComponents.add(new TextComponent(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber())).withStyle(ChatFormatting.DARK_AQUA));
-            pTooltipComponents.add(new TextComponent(element.getGroupName()).withStyle(ChatFormatting.GRAY));
+            pTooltipComponents.add(MutableComponent.create(new LiteralContents(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber()))).withStyle(ChatFormatting.DARK_AQUA));
+            pTooltipComponents.add(MutableComponent.create(new LiteralContents(element.getGroupName())).withStyle(ChatFormatting.GRAY));
         }
     }
 
@@ -67,6 +68,7 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
         return getChemical().getColor();
     }
 
+    @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return getColor();
     }

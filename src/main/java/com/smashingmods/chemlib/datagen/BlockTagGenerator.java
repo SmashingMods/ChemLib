@@ -9,8 +9,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeRegistryTagsProvider;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nonnull;
-
 public class BlockTagGenerator extends ForgeRegistryTagsProvider<Block> {
 
     public BlockTagGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -23,11 +21,5 @@ public class BlockTagGenerator extends ForgeRegistryTagsProvider<Block> {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockRegistryObject.get());
             tag(BlockTags.NEEDS_STONE_TOOL).add(blockRegistryObject.get());
         });
-    }
-
-    @Override
-    @Nonnull
-    public String getName() {
-        return null;
     }
 }

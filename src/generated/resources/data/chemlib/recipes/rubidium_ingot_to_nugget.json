@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:rubidium_nugget",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:rubidium_nugget"
   }
 }

@@ -14,6 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -89,7 +90,7 @@ public class ItemModelGenerator extends ItemModelProvider {
     }
 
     private void registerBucket(BucketItem pBucket) {
-        String path = Objects.requireNonNull(pBucket.getRegistryName()).getPath();
+        String path = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(pBucket)).getPath();
         int pieces = path.split("_").length;
         String chemicalName = "";
 
@@ -110,10 +111,10 @@ public class ItemModelGenerator extends ItemModelProvider {
         MatterState matterState = Objects.requireNonNull(chemical).getMatterState();
 
         switch (matterState) {
-            case LIQUID -> withExistingParent(String.format("item/%s", Objects.requireNonNull(pBucket.getRegistryName()).getPath()), mcLoc("item/generated"))
+            case LIQUID -> withExistingParent(String.format("item/%s", path), mcLoc("item/generated"))
                     .texture("layer0", modLoc("items/bucket_layer_0"))
                     .texture("layer1", modLoc("items/bucket_layer_1"));
-            case GAS -> withExistingParent(String.format("item/%s", Objects.requireNonNull(pBucket.getRegistryName()).getPath()), mcLoc("item/generated"))
+            case GAS -> withExistingParent(String.format("item/%s", path), mcLoc("item/generated"))
                     .texture("layer0", modLoc("items/gas_bucket_layer_0"))
                     .texture("layer1", modLoc("items/gas_bucket_layer_1"));
         }

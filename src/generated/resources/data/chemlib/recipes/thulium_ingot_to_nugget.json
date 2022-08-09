@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:thulium_nugget",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:thulium_nugget"
   }
 }

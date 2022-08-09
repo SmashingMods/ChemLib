@@ -4,8 +4,6 @@ import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.ChemicalItemType;
-import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
-import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -100,26 +98,26 @@ public class RecipeGenerator extends RecipeProvider {
         ItemRegistry.getChemicalItemByNameAndType("copper", ChemicalItemType.DUST).ifPresent(dust -> {
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), Items.COPPER_INGOT, 0.7f, 200)
                     .unlockedBy("has_copper", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pFinishedRecipeConsumer, "alchemistry:copper_ingot_from_smelting_copper_dust");
+                    .save(pFinishedRecipeConsumer, String.format("%s:copper_ingot_from_smelting_copper_dust", ChemLib.MODID));
             SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), Items.COPPER_INGOT, 0.7f, 100)
                     .unlockedBy("has_copper", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pFinishedRecipeConsumer, "alchemistry:copper_ingot_from_blasting_copper_dust");
+                    .save(pFinishedRecipeConsumer, String.format("%s:copper_ingot_from_blasting_copper_dust", ChemLib.MODID));
         });
         ItemRegistry.getChemicalItemByNameAndType("iron", ChemicalItemType.DUST).ifPresent(dust -> {
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), Items.IRON_INGOT, 0.7f, 200)
                     .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pFinishedRecipeConsumer, "alchemistry:iron_ingot_from_smelting_iron_dust");
+                    .save(pFinishedRecipeConsumer, String.format("%s:iron_ingot_from_smelting_iron_dust", ChemLib.MODID));
             SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), Items.IRON_INGOT, 0.7f, 100)
                     .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pFinishedRecipeConsumer, "alchemistry:iron_ingot_from_blasting_iron_dust");
+                    .save(pFinishedRecipeConsumer, String.format("%s:iron_ingot_from_blasting_iron_dust", ChemLib.MODID));
         });
         ItemRegistry.getChemicalItemByNameAndType("gold", ChemicalItemType.DUST).ifPresent(dust -> {
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), Items.GOLD_INGOT, 0.7f, 200)
                     .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pFinishedRecipeConsumer, "alchemistry:gold_ingot_from_smelting_gold_dust");
+                    .save(pFinishedRecipeConsumer, String.format("%s:gold_ingot_from_smelting_gold_dust", ChemLib.MODID));
             SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), Items.GOLD_INGOT, 0.7f, 100)
                     .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pFinishedRecipeConsumer, "alchemistry:gold_ingot_from_blasting_gold_dust");
+                    .save(pFinishedRecipeConsumer, String.format("%s:gold_ingot_from_blasting_gold_dust", ChemLib.MODID));
         });
 
         // periodic table

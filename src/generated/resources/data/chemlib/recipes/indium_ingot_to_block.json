@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "III",
-    "III",
-    "III"
-  ],
   "key": {
     "I": {
       "item": "chemlib:indium_ingot"
     }
   },
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
   "result": {
     "item": "chemlib:indium_metal_block"
   }

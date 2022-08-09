@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:aluminum_ingot",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:aluminum_ingot"
   }
 }

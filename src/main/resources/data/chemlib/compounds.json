@@ -3,10 +3,21 @@
     {
       "name": "carbon_dioxide",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "An acidic, trace gas found in the atmosphere, and a common bi-product of combustion, and a major greenhouse gas. Also useful as a refrigerant and supercritical solvent.",
@@ -24,10 +35,21 @@
     {
       "name": "ethylene",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This chemical is widely used in industrial chemistry, particularly in the synthesis of polyethylene plastics.",
@@ -555,10 +577,21 @@
     {
       "name": "ethanol",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "Ethyl alcohol or grain alcohol, this liquid can be made via fermentation, and is flammable at high concentration.",
@@ -615,10 +648,21 @@
     {
       "name": "ammonium",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "An acidic, gaseous form of ammonia, salts of ammonium are useful in promoting plant growth.",
@@ -687,10 +731,21 @@
     {
       "name": "methane",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "The primary component of natural gas, methane can be found naturally in swamp gasses.",
@@ -708,10 +763,21 @@
     {
       "name": "ethane",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "After methane, the second-largest component of natural gas.",
@@ -730,10 +796,21 @@
     {
       "name": "propane",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "While a gas at standard pressure, propane can be compressed into a liquid, making for easy transportation.",
@@ -752,10 +829,21 @@
     {
       "name": "butane",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "Butane and propane were discovered simultaneously, as gasses found dissolved in crude petroluem.",
@@ -774,10 +862,21 @@
     {
       "name": "pentane",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "A popular solvent, pentane's low boiling point also make it ideal for geothermal energy production.",
@@ -796,10 +895,21 @@
     {
       "name": "hexane",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "A non-polar solvent, hexanes are commonly used in the production of leather and glue.",
@@ -1119,10 +1229,21 @@
     {
       "name": "epinephrine",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "A hormone most useful in its ability to treat allergic reaction anaphylaxis.",
@@ -1287,10 +1408,21 @@
     {
       "name": "hydrochloric_acid",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "Known to alchemist as acidum salis or muriatic acid, when combined with nitric acid it is known as aqua regia; an acid capable of dissolving gold.",
@@ -1337,10 +1469,21 @@
     {
       "name": "sulfur_dioxide",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "A product of burning sulfur - smells like matches. Usually a pollutant, but historically has been used to preserve wines.",
@@ -1466,10 +1609,21 @@
     {
       "name": "sulfuric_acid",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "Known to alchemists as oil of vitriol, this chemical has a wide variety of industrial uses, though its primary household use is drain cleaner.",
@@ -1491,10 +1645,21 @@
     {
       "name": "nitric_acid",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This chemical is a strong oxidizer, making it invaluable for use in rocket fuel and dynamite.",
@@ -1515,10 +1680,21 @@
     {
       "name": "nitrogen_dioxide",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This noxious gas is a poisonous by-product of burning fossil fuels, and gives nuclear mushroom clouds their signature red-brown tint.",
@@ -1558,10 +1734,21 @@
     {
       "name": "ammonia",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "A noxious gas commonly found in aquatic waste, this chemical can improve fertilizers and is used as a cleaning agent.",
@@ -1669,10 +1856,21 @@
     {
       "name": "hydrogen_sulfide",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This poisonous, corrosive gas is known to miners as \"stinkdamp\", as it is heavier than air and can pool underground.",
@@ -1690,10 +1888,21 @@
     {
       "name": "acetylene",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This hydrocarbon gas burns intensely when mixed with oxygen, and has been used both for lighthouse lamps and welding torches.",
@@ -1712,10 +1921,21 @@
     {
       "name": "acetic_acid",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "The acid that gives vinegar its flavor. It is useful not only in food, but as an antiseptic and a protic solvent.",
@@ -1785,10 +2005,21 @@
     {
       "name": "carbon_monoxide",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
@@ -3003,10 +3234,21 @@
     {
       "name": "nitric_oxide",
       "matter_state": "gas",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": -1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
@@ -3023,10 +3265,21 @@
     {
       "name": "carbon_disulfide",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
@@ -3065,10 +3318,21 @@
     {
       "name": "sulfur_trioxide",
       "matter_state": "liquid",
-      "fluid_attributes": {
+      "fluid_properties": {
         "density": 1000,
-        "luminosity": 0,
-        "viscosity": 1000
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
       },
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",

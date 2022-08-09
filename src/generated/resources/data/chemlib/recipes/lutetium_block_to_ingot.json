@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:lutetium_ingot",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:lutetium_ingot"
   }
 }

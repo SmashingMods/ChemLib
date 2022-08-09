@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.7,
   "ingredient": {
     "item": "chemlib:silver_dust"
   },
-  "result": "chemlib:silver_ingot",
-  "experience": 0.7,
-  "cookingtime": 200
+  "result": "chemlib:silver_ingot"
 }

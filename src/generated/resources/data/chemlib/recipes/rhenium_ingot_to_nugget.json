@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:rhenium_nugget",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:rhenium_nugget"
   }
 }

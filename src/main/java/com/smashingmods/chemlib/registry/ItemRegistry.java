@@ -184,8 +184,9 @@ public class ItemRegistry {
                 .findFirst();
     }
 
+    @SuppressWarnings("deprecation")
     public static Optional<Item> getChemicalBlockItemByName(String pName) {
-        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> Objects.equals(Objects.requireNonNull(item.getRegistryName()).getPath(), pName)).findFirst();
+        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> Objects.equals(item.builtInRegistryHolder().key().registry().getPath(), pName)).findFirst();
     }
 
     /*

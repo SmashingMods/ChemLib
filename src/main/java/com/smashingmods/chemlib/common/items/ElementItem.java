@@ -8,14 +8,15 @@ import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.IItemRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -52,9 +53,9 @@ public class ElementItem extends Item implements Element {
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(new TextComponent(String.format("%s (%d)", getAbbreviation(), atomicNumber)).withStyle(ChatFormatting.DARK_AQUA));
+        pTooltipComponents.add(MutableComponent.create(new LiteralContents(String.format("%s (%d)", getAbbreviation(), atomicNumber))).withStyle(ChatFormatting.AQUA));
         if (!getGroupName().isEmpty()) {
-            pTooltipComponents.add(new TextComponent(getGroupName()).withStyle(ChatFormatting.GRAY));
+            pTooltipComponents.add(MutableComponent.create(new LiteralContents(getGroupName())).withStyle(ChatFormatting.GRAY));
         }
     }
 
@@ -125,12 +126,13 @@ public class ElementItem extends Item implements Element {
         return this.color;
     }
 
-    public int getColor(@SuppressWarnings("unused") ItemStack pItemStack, int pTintIndex) {
+    @SuppressWarnings("unused")
+    public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex > 0 ? -1 : color;
     }
 
 	@Override
-	public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
+	public void initializeClient(@Nonnull Consumer<IClientItemExtensions> consumer) {
 		super.initializeClient(consumer);
 		consumer.accept(ElementRenderer.RENDERER);
 	}

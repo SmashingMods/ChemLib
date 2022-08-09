@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:gallium_ingot",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:gallium_ingot"
   }
 }

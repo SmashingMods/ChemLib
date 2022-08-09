@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:iridium_nugget",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:iridium_nugget"
   }
 }

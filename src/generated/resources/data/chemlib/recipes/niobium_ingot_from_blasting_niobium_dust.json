@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.7,
   "ingredient": {
     "item": "chemlib:niobium_dust"
   },
-  "result": "chemlib:niobium_ingot",
-  "experience": 0.7,
-  "cookingtime": 100
+  "result": "chemlib:niobium_ingot"
 }

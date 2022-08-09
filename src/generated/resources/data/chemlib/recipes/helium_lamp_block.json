@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "E": {
+      "item": "chemlib:helium"
+    },
+    "G": {
+      "tag": "forge:glass"
+    }
+  },
   "pattern": [
     "GEG",
     "EEE",
     "GEG"
   ],
-  "key": {
-    "G": {
-      "tag": "forge:glass"
-    },
-    "E": {
-      "item": "chemlib:helium"
-    }
-  },
   "result": {
     "item": "chemlib:helium_lamp_block"
   }

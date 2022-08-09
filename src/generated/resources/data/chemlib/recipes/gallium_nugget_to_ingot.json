@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "NNN",
-    "NNN",
-    "NNN"
-  ],
   "key": {
     "N": {
       "item": "chemlib:gallium_nugget"
     }
   },
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
   "result": {
     "item": "chemlib:gallium_ingot"
   }

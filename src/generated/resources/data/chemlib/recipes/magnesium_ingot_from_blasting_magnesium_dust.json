@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.7,
   "ingredient": {
     "item": "chemlib:magnesium_dust"
   },
-  "result": "chemlib:magnesium_ingot",
-  "experience": 0.7,
-  "cookingtime": 100
+  "result": "chemlib:magnesium_ingot"
 }

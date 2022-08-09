@@ -18,8 +18,9 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.IItemRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
+import javax.annotation.Nonnull;
 import java.util.function.Supplier;
 
 public class ElementRenderer extends BlockEntityWithoutLevelRenderer {
@@ -27,10 +28,10 @@ public class ElementRenderer extends BlockEntityWithoutLevelRenderer {
 	public static final Supplier<BlockEntityWithoutLevelRenderer> INSTANCE = Suppliers.memoize(
 			() -> new ElementRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels())
 	);
-	public static final IItemRenderProperties RENDERER = new IItemRenderProperties()
+	public static final IClientItemExtensions RENDERER = new IClientItemExtensions()
 	{
 		@Override
-		public BlockEntityWithoutLevelRenderer getItemStackRenderer() {
+		public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 			return INSTANCE.get();
 		}
 	};
@@ -42,8 +43,9 @@ public class ElementRenderer extends BlockEntityWithoutLevelRenderer {
 		super(pBlockEntityRenderDispatcher, pEntityModelSet);
 	}
 
+	@SuppressWarnings("UnstableApiUsage")
 	@Override
-	public void renderByItem(ItemStack pStack, ItemTransforms.TransformType pTransformType, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+	public void renderByItem(ItemStack pStack, @Nonnull ItemTransforms.TransformType pTransformType, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
 
 		boolean gui = pTransformType == ItemTransforms.TransformType.GUI;
 		boolean frame = pTransformType == ItemTransforms.TransformType.FIXED;

@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "E": {
+      "item": "chemlib:radon"
+    },
+    "G": {
+      "tag": "forge:glass"
+    }
+  },
   "pattern": [
     "GEG",
     "EEE",
     "GEG"
   ],
-  "key": {
-    "G": {
-      "tag": "forge:glass"
-    },
-    "E": {
-      "item": "chemlib:radon"
-    }
-  },
   "result": {
     "item": "chemlib:radon_lamp_block"
   }

@@ -15,7 +15,10 @@ import com.smashingmods.chemlib.common.items.ElementItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.fluids.FluidAttributes;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.common.SoundActions;
+import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashMap;
@@ -65,31 +68,15 @@ public class ChemicalRegistry {
                     case LIQUID, GAS -> {
                         boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
                         if (!hasFluid) {
-                            JsonObject fluidAttributes = object.get("fluid_attributes").getAsJsonObject();
-                            int density = fluidAttributes.get("density").getAsInt();
-                            int luminosity = fluidAttributes.get("luminosity").getAsInt();
-                            int viscosity = fluidAttributes.get("viscosity").getAsInt();
-                            int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
-                            int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
+                            JsonObject properties = object.get("fluid_properties").getAsJsonObject();
+                            int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
+                            int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
-                            FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
-                                    .density(density)
-                                    .luminosity(luminosity)
-                                    .viscosity(viscosity)
-                                    .sound(SoundEvents.BUCKET_FILL)
-                                    .overlay(FluidRegistry.OVERLAY)
-                                    .color((int) Long.parseLong(color, 16));
-
-                            switch (matterState) {
-                                case LIQUID, GAS -> {
-                                    if (group == 18) {
-                                        BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
-                                        BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties().tab(ItemRegistry.MISC_TAB)));
-                                    }
-                                    attributes.gaseous();
-                                    FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
-                                }
+                            if (group == 18) {
+                                BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
+                                BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties().tab(ItemRegistry.MISC_TAB)));
                             }
+                            FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, elementName), (int) Long.parseLong(color, 16), slopeFindDistance, decreasePerBlock);
                         }
                     }
                 }
@@ -131,32 +118,55 @@ public class ChemicalRegistry {
                 case LIQUID, GAS -> {
                     boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
                     if (!hasFluid) {
-                        JsonObject fluidAttributes = object.get("fluid_attributes").getAsJsonObject();
-                        int density = fluidAttributes.get("density").getAsInt();
-                        int luminosity = fluidAttributes.get("luminosity").getAsInt();
-                        int viscosity = fluidAttributes.get("viscosity").getAsInt();
-                        int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
-                        int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
-
-                        FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
-                                .density(density)
-                                .luminosity(luminosity)
-                                .viscosity(viscosity)
-                                .sound(SoundEvents.BUCKET_FILL)
-                                .overlay(FluidRegistry.OVERLAY)
-                                .color((int) Long.parseLong(color, 16));
+                        JsonObject properties = object.get("fluid_properties").getAsJsonObject();
+                        int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
+                        int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
                         switch (matterState) {
-                            case LIQUID -> FluidRegistry.registerFluid(compoundName, attributes, slopeFindDistance, decreasePerBlock);
-                            case GAS -> {
-                                attributes.gaseous();
-                                FluidRegistry.registerFluid(compoundName, attributes, slopeFindDistance, decreasePerBlock);
-                            }
+                            case LIQUID, GAS -> FluidRegistry.registerFluid(compoundName, fluidTypePropertiesFactory(properties, compoundName), (int) Long.parseLong(color, 16), slopeFindDistance, decreasePerBlock);
                         }
                     }
                 }
             }
         }
+    }
+
+    private static FluidType.Properties fluidTypePropertiesFactory(JsonObject pObject, String pName) {
+        int density = pObject.has("density") ? pObject.get("density").getAsInt() : 1000;
+        int lightLevel = pObject.has("light_level") ? pObject.get("light_level").getAsInt() : 0;
+        int viscosity = pObject.has("viscosity") ? pObject.get("viscosity").getAsInt() : 1000;
+        int temperature = pObject.has("temperature") ? pObject.get("temperature").getAsInt() : 300;
+        float motionScale = pObject.has("motion_scale") ? pObject.get("motion_scale").getAsFloat() : 0.014f;
+        int fallDistanceModifier = pObject.has("fall_distance_modifier") ? pObject.get("fall_distance_modifier").getAsInt() : 0;
+        BlockPathTypes pathType = pObject.has("path_type") ? BlockPathTypes.valueOf(pObject.get("path_type").getAsString().toUpperCase()) : BlockPathTypes.WATER;
+        boolean pushEntity = !pObject.has("push_entity") || pObject.get("push_entity").getAsBoolean();
+        boolean canSwim = !pObject.has("can_swim") || pObject.get("can_swim").getAsBoolean();
+        boolean canDrown = pObject.has("can_drown") && pObject.get("can_drown").getAsBoolean();
+        boolean canHydrate = pObject.has("can_hydrate") && pObject.get("can_hydrate").getAsBoolean();
+        boolean canExtinguish = pObject.has("can_extinguish") && pObject.get("can_extinguish").getAsBoolean();
+        boolean supportsBoating = pObject.has("supports_boating") && pObject.get("supports_boating").getAsBoolean();
+        boolean canConvertToSource = pObject.has("can_convert_to_source") && pObject.get("can_convert_to_source").getAsBoolean();
+
+        return FluidType.Properties.create()
+                .descriptionId(String.format("block.chemlib.%s", pName))
+                .density(density)
+                .lightLevel(lightLevel)
+                .viscosity(viscosity)
+                .temperature(temperature)
+                .motionScale(motionScale)
+                .fallDistanceModifier(fallDistanceModifier)
+                .pathType(pathType)
+                .canPushEntity(pushEntity)
+                .canSwim(canSwim)
+                .canDrown(canDrown)
+                .canHydrate(canHydrate)
+                .canExtinguish(canExtinguish)
+                .canConvertToSource(canConvertToSource)
+                .supportsBoating(supportsBoating)
+                .rarity(Rarity.COMMON)
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
+                .sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH);
     }
 
     public static void register() {

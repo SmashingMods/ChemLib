@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.7,
   "ingredient": {
     "item": "chemlib:zirconium_dust"
   },
-  "result": "chemlib:zirconium_ingot",
-  "experience": 0.7,
-  "cookingtime": 100
+  "result": "chemlib:zirconium_ingot"
 }

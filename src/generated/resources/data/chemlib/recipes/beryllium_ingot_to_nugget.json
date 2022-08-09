@@ -6,7 +6,7 @@
     }
   ],
   "result": {
-    "item": "chemlib:beryllium_nugget",
-    "count": 9
+    "count": 9,
+    "item": "chemlib:beryllium_nugget"
   }
 }

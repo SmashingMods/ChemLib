@@ -2,20 +2,14 @@ package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
-import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.common.items.CompoundItem;
-import com.smashingmods.chemlib.common.items.ElementItem;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.FluidRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.RegistryObject;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
-
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class LocalizationGenerator extends LanguageProvider {
 
@@ -27,9 +21,7 @@ public class LocalizationGenerator extends LanguageProvider {
     @SuppressWarnings("deprecation")
     protected void addTranslations() {
 
-        ItemRegistry.getElements().forEach(element -> {
-            add(String.format("item.chemlib.%s", element.getChemicalName()), StringUtils.capitalize(element.getChemicalName()));
-        });
+        ItemRegistry.getElements().forEach(element -> add(String.format("item.chemlib.%s", element.getChemicalName()), StringUtils.capitalize(element.getChemicalName())));
 
         ItemRegistry.getCompounds().forEach(compound -> {
             add(String.format("item.chemlib.%s", compound.getChemicalName()), WordUtils.capitalize(compound.getChemicalName().replace("_", " ")));
@@ -52,18 +44,16 @@ public class LocalizationGenerator extends LanguageProvider {
             });
         }
 
-        FluidRegistry.getFluids().forEach(fluid -> {
-            Objects.requireNonNull(fluid.getRegistryName());
-            int density = fluid.getAttributes().getDensity();
-            String key = fluid.getRegistryName().getPath();
-            String value = WordUtils.capitalize(String.format("%s%s", fluid.getRegistryName().getPath().replace("_fluid", "").replace("_flowing", "").replace("_", " "), density < 0 ? " gas" : ""));
-            add(String.format("fluid.chemlib.%s", key), value);
-        });
+        FluidRegistry.FLUID_TYPES.getEntries().stream().map(RegistryObject::get).forEach(fluidType -> {
+            int density = fluidType.getDensity();
+            String key = fluidType.getDescriptionId();
+            String value = key.split("\\.")[key.split("\\.").length - 1];
+            String translation = WordUtils.capitalize(String.format("%s%s", value.replace("_", " "), density < 0 ? " gas" : ""));
 
-        FluidRegistry.getBuckets().forEach(bucket -> {
-            Objects.requireNonNull(bucket.getRegistryName());
-            String name = bucket.getRegistryName().getPath();
-            add(String.format("item.chemlib.%s", name), WordUtils.capitalize(name.replace("_", " ")));
+            // translation for the fluid
+            add(key, translation);
+            // translation for the bucket
+            add(String.format("item.chemlib.%s_bucket", value), translation + " Bucket");
         });
 
         add("item.chemlib.periodic_table", "Periodic Table of the Elements");

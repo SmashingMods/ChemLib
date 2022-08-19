@@ -27,6 +27,18 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
             TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
             tag(key).add(item);
         });
+
+        ItemRegistry.getCompoundByName("potassium_nitrate_dust").ifPresent(compound -> {
+            ResourceLocation niter = new ResourceLocation("forge", "dusts/niter");
+            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(niter);
+            tag(key).add(compound);
+        });
+
+        ItemRegistry.getCompoundByName("cellulose_dust").ifPresent(compound -> {
+            ResourceLocation sawdust = new ResourceLocation("forge", "sawdust");
+            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(sawdust);
+            tag(key).add(compound);
+        });
     }
 
     @Override

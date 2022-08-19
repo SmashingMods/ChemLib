@@ -1,6 +1,7 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -28,13 +29,13 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
             tag(key).add(item);
         });
 
-        ItemRegistry.getCompoundByName("potassium_nitrate_dust").ifPresent(compound -> {
+        ItemRegistry.getChemicalItemByNameAndType("potassium_nitrate", ChemicalItemType.COMPOUND).ifPresent(compound -> {
             ResourceLocation niter = new ResourceLocation("forge", "dusts/niter");
             TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(niter);
             tag(key).add(compound);
         });
 
-        ItemRegistry.getCompoundByName("cellulose_dust").ifPresent(compound -> {
+        ItemRegistry.getChemicalItemByNameAndType("cellulose", ChemicalItemType.COMPOUND).ifPresent(compound -> {
             ResourceLocation sawdust = new ResourceLocation("forge", "sawdust");
             TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(sawdust);
             tag(key).add(compound);

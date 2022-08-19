@@ -1,3 +1,3 @@
-# ChemLib 1.18.2-2.0.6
+# ChemLib 1.19.1-2.0.7
 
-- Add copper, iron, and gold dust to ingot recipes.
+- Initial port to 1.19.1.

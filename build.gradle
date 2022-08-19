@@ -5,7 +5,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.parchmentmc:librarian:1.2.0'
+        classpath 'org.parchmentmc:librarian:1.+'
     }
 }
 
@@ -25,7 +25,7 @@ archivesBaseName = 'chemlib'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'parchment', version: "1.18.2-2022.08.02-1.19.1"
+    mappings channel: 'parchment', version: "$parchment_version-$minecraft_version"
     runs {
         client {
             workingDirectory project.file('run')
@@ -126,12 +126,12 @@ curseforge {
     apiKey = secrets.getProperty("apiKey")
     project {
         id = '340666'
-        releaseType = 'release'
+        releaseType = 'beta'
         changelogType = 'markdown'
         changelog = file("changelog.md")
         addGameVersion 'Forge'
         addGameVersion 'Java 17'
-        addGameVersion '1.19.1'
+        addGameVersion '1.19.2'
         mainArtifact(jar) {
             displayName = "ChemLib $project.version"
             relations {

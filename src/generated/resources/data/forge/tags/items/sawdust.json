@@ -1,6 +1,5 @@
 {
-  "replace": false,
   "values": [
-    "chemlib:cellulose"
+    "chemlib:cellulose_dust"
   ]
 }

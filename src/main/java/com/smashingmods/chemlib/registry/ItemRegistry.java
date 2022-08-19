@@ -184,7 +184,6 @@ public class ItemRegistry {
                 .findFirst();
     }
 
-    @SuppressWarnings("deprecation")
     public static Optional<Item> getChemicalBlockItemByName(String pName) {
         return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath().equals(pName)).findFirst();
     }

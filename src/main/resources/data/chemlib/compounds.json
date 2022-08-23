@@ -929,7 +929,7 @@
       "name": "graphite",
       "matter_state": "solid",
       "has_item": true,
-      "description": "",
+      "description": "A crystalline form of carbon. It is used in pencils, lubricants, and under pressure it can form diamonds.",
       "color": "1f1f1f",
       "components": [
         {
@@ -942,7 +942,7 @@
       "name": "calcium_sulfide",
       "matter_state": "solid",
       "has_item": true,
-      "description": "",
+      "description": "Known as the mineral oldhamite, it is a rare mineral found in meteorites - though, it can be easily synthesized, often as a side-product of burning coal.",
       "color": "1f1f1f",
       "components": [
         {
@@ -1315,7 +1315,7 @@
     {
       "name": "mercury_sulfide",
       "matter_state": "solid",
-      "has_item": true,
+      "has_item": false,
       "description": "Called vermillion or cinnabar, this red compound has been used as pigment since ancient Greece.",
       "color": "9a4157",
       "components": [
@@ -1377,7 +1377,7 @@
       "name": "calcium_chloride",
       "matter_state": "solid",
       "has_item": false,
-      "description": "",
+      "description": "This salt is often used as a de-icer, as it heats up when absorbing water. Its ability to absorb water also makes it useful in dehumidifiers.",
       "color": "dbd2c7",
       "components": [
         {

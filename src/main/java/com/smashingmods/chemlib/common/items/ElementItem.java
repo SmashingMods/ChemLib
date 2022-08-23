@@ -3,7 +3,7 @@ package com.smashingmods.chemlib.common.items;
 import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
-import com.smashingmods.chemlib.client.ElementRenderer;
+import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -132,6 +132,6 @@ public class ElementItem extends Item implements Element {
 	@Override
 	public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
 		super.initializeClient(consumer);
-		consumer.accept(ElementRenderer.RENDERER);
+		consumer.accept(AbbreviationRenderer.RENDERER);
 	}
 }

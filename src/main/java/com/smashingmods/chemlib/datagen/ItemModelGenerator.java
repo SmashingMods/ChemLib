@@ -29,17 +29,19 @@ public class ItemModelGenerator extends ItemModelProvider {
     protected void registerModels() {
         generateElementModels();
         generateCompoundModels();
+        generateChemicalItemModels();
 
-        ItemRegistry.getElements().stream().forEach(this::registerElement);
-        ItemRegistry.getCompounds().stream().forEach(this::registerCompound);
+        ItemRegistry.getElements().forEach(this::registerElement);
+        ItemRegistry.getCompounds().forEach(this::registerCompound);
 
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.COMPOUND).forEach(this::registerCompoundDust);
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.DUST).forEach(dust -> registerItem(dust.getChemicalName(), "dust"));
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.NUGGET).forEach(nugget -> registerItem(nugget.getChemicalName(), "nugget"));
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> registerItem(ingot.getChemicalName(), "ingot"));
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.PLATE).forEach(plate -> registerItem(plate.getChemicalName(), "plate"));
+
         FluidRegistry.getBuckets().forEach(this::registerBucket);
-        ItemRegistry.getChemicalBlockItems().stream().forEach(this::registerChemicalBlockItems);
+        ItemRegistry.getChemicalBlockItems().forEach(this::registerChemicalBlockItems);
     }
 
     private void generateElementModels() {
@@ -58,6 +60,14 @@ public class ItemModelGenerator extends ItemModelProvider {
         }
     }
 
+    private void generateChemicalItemModels() {
+        Arrays.stream(ChemicalItemType.values())
+                .map(ChemicalItemType::getSerializedName)
+                .forEach(type ->
+                        withExistingParent(String.format("item/chemical_%s_model", type), mcLoc("item/generated"))
+                                .texture("layer0", modLoc(String.format("items/%s", type))));
+    }
+
     private void registerElement(Element pElement) {
         withExistingParent(String.format("item/%s", pElement.getChemicalName()), modLoc("item/builtin_entity"));
     }
@@ -74,9 +84,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         withExistingParent(String.format("item/%s_dust", pItem.getChemicalName()), modLoc("item/compound_dust_model"));
     }
 
-    private void registerItem(String pName, String pSuffix) {
-        withExistingParent(String.format("item/%s_%s", pName, pSuffix), mcLoc("item/generated"))
-                .texture("layer0", modLoc(String.format("items/%s", pSuffix)));
+    private void registerItem(String pName, String pType) {
+        withExistingParent(String.format("item/%s_%s", pName, pType), modLoc("item/builtin_entity"));
     }
 
     private void registerChemicalBlockItems(ChemicalBlockItem pBlockItem) {

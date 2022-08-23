@@ -1,6 +1,7 @@
 package com.smashingmods.chemlib.common.items;
 
 import com.smashingmods.chemlib.api.*;
+import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
@@ -12,12 +13,15 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.IItemRenderProperties;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
@@ -77,10 +81,19 @@ public class ChemicalItem extends Item implements Chemical {
 
     @Override
     public int getColor() {
-        return chemical.getColor();
+        int green = ((chemical.getColor() >> 16) & 0xFF) | 0x44;
+        int red = ((chemical.getColor() >> 8) & 0xFF) | 0x44;
+        int blue = (chemical.getColor() & 0xFF) | 0x44;
+        return  red << 16 | green << 8 | blue;
     }
 
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex == 0 ? getColor() : -1;
+    }
+
+    @Override
+    public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
+        super.initializeClient(consumer);
+        consumer.accept(AbbreviationRenderer.RENDERER);
     }
 }

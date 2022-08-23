@@ -41,7 +41,6 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void onBlockColorHandlerEvent(final RegisterColorHandlersEvent.Block event) {
         BlockRegistry.getAllChemicalBlocks().forEach(block -> event.register(block.getBlockColor(new ItemStack(block.asItem()), 0), block));
-        FluidRegistry.LIQUID_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> event.register((pState, pLevel, pPos, pTintIndex) -> 0xFF00FFFF, block));
     }
 
 	@SubscribeEvent

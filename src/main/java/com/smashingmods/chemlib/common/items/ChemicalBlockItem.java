@@ -65,7 +65,7 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     @Override
     public int getColor() {
-        return getChemical().getColor();
+        return clampMinColorValue(getChemical().getColor(), 0x44);
     }
 
     @SuppressWarnings("unused")

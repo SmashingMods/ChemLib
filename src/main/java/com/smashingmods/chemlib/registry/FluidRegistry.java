@@ -69,7 +69,7 @@ public class FluidRegistry {
 
                     @Override
                     public int getTintColor(FluidState state, BlockAndTintGetter getter, BlockPos pos) {
-                        return BiomeColors.getAverageWaterColor(getter, pos) | pColor;
+                        return pColor;
                     }
                 });
             }

@@ -54,7 +54,7 @@ public class ItemRegistry {
         @Override
         @Nonnull
         public ItemStack makeIcon() {
-            return getCompoundByName("cellulose")
+            return getCompoundByName("cobalt_aluminate")
                     .map(ItemStack::new)
                     .orElseGet(() -> new ItemStack(Items.AIR));
         }

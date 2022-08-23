@@ -14,7 +14,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.IItemRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
@@ -94,7 +94,7 @@ public class ChemicalItem extends Item implements Chemical {
     }
 
     @Override
-    public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
+    public void initializeClient(@Nonnull Consumer<IClientItemExtensions> consumer) {
         super.initializeClient(consumer);
         consumer.accept(AbbreviationRenderer.RENDERER);
     }

@@ -21,7 +21,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.IItemRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -31,10 +31,10 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 	public static final Supplier<BlockEntityWithoutLevelRenderer> INSTANCE = Suppliers.memoize(
 			() -> new AbbreviationRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels())
 	);
-	public static final IItemRenderProperties RENDERER = new IItemRenderProperties()
+	public static final IClientItemExtensions RENDERER = new IClientItemExtensions()
 	{
 		@Override
-		public BlockEntityWithoutLevelRenderer getItemStackRenderer() {
+		public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 			return INSTANCE.get();
 		}
 	};

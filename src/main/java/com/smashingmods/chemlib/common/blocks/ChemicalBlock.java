@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ChemicalBlock extends Block implements Chemical {
 
@@ -25,7 +26,7 @@ public class ChemicalBlock extends Block implements Chemical {
     }
 
     public Chemical getChemical() {
-        return (Chemical) ForgeRegistries.ITEMS.getValue(chemical);
+        return (Chemical) Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(chemical));
     }
 
     public ChemicalBlockType getBlockType() {
@@ -54,7 +55,7 @@ public class ChemicalBlock extends Block implements Chemical {
 
     @Override
     public int getColor() {
-        return getChemical().getColor();
+        return clampMinColorValue(getChemical().getColor(), 0x44);
     }
 
     public BlockColor getBlockColor(ItemStack pItemStack, int pTintIndex) {

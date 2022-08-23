@@ -81,12 +81,10 @@ public class ChemicalItem extends Item implements Chemical {
 
     @Override
     public int getColor() {
-        int green = ((chemical.getColor() >> 16) & 0xFF) | 0x44;
-        int red = ((chemical.getColor() >> 8) & 0xFF) | 0x44;
-        int blue = (chemical.getColor() & 0xFF) | 0x44;
-        return  red << 16 | green << 8 | blue;
+        return clampMinColorValue(chemical.getColor(), 0x44);
     }
 
+    @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex == 0 ? getColor() : -1;
     }

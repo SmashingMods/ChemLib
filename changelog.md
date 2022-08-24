@@ -1,4 +1,4 @@
-# ChemLib 1.18.2-2.0.8
+# ChemLib 1.18.2-2.0.9
 
-- Skipped a version so that it's in line with the 1.19 build.
-- Add ItemTagProvider with niter and sawdust as an example.
+- Add missing item descriptions for a few compounds.
+- Lighten chemical item color values for ingots, nuggets, plates, dusts, and metal blocks.

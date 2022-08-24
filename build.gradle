@@ -98,16 +98,6 @@ jar {
     }
 }
 
-jar.finalizedBy('reobfJar')
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
-        }
-    }
-}
-
 def secrets = new Properties()
 file('secrets.properties').withInputStream {
     stream -> secrets.load(stream)
@@ -120,6 +110,29 @@ fileTree("secrets").matching {
         file.withInputStream {
             stream -> secrets.load(stream)
         }
+}
+
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            afterEvaluate {
+                artifact project.jar
+            }
+            setGroupId 'smashingmods'
+            setArtifactId 'chemlib'
+        }
+    }
+    repositories {
+        maven {
+            url "https://maven.tamaized.com/releases"
+            credentials {
+                username secrets.getProperty("maven_username")
+                password secrets.getProperty("maven_password")
+            }
+        }
+    }
 }
 
 curseforge {

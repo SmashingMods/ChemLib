@@ -1,5 +1,4 @@
-# ChemLib 1.19.2-2.0.8
+# ChemLib 1.19.2-2.0.9
 
-- Update to 1.19.2
-- Fix misc creative tab item being empty.
-- Add ItemTagProvider with niter and sawdust as an example.
+- Add missing item descriptions for a few compounds.
+- Lighten chemical item color values for ingots, nuggets, plates, dusts, and metal blocks.

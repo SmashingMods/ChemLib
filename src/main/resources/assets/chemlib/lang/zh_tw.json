@@ -278,7 +278,7 @@
   "chemlib.jei.compound.zinc_nitrate.description": "目前尚未知道此化學品的用途。",
   "chemlib.jei.compound.zinc_oxide.description": "這種礦物是一種寬能隙半導體，可用於製造透明電器。",
   "chemlib.jei.compound.zinc_sulfate.description": "目前尚未知道此化學品的用途。",
-  "chemlib.jei.compound.zinc_sulfide.description": "這種化合物被稱作閃鋅礦，與合適的活化劑混合後會產生磷光。傳統上用於CRT、X光機和夜光玩具。",
+  "chemlib.jei.compound.zinc_sulfide.description": "這種化合物被稱作閃鋅礦，與合適的活化劑混合後會產生磷光。傳統上用於CRT、X光機以及夜光玩具。",
   "chemlib.jei.element.description": "使用元素週期表以學習更多關於此元素的相關知識。",
   "chemlib.screen.periodic_table": "元素週期表",
   "item.chemlib.acetic_acid": "乙酸",

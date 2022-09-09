@@ -1,4 +1,5 @@
-# ChemLib 1.19.2-2.0.9
+# ChemLib 1.19.2-2.0.10
 
-- Add missing item descriptions for a few compounds.
-- Lighten chemical item color values for ingots, nuggets, plates, dusts, and metal blocks.
+- Add a ton of new helper methods for the Fluidregistry to get fluids, fluid types, etc.
+- Add default method to Chemical to get a reference to a fluid with the same chemical name as an optional.
+- Add translations: zh_tw

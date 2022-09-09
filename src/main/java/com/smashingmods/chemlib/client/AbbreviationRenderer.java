@@ -74,6 +74,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 			pPoseStack.translate(0.5D, 0.5D, 0D);
 			if (gui) {
 				Lighting.setupForFlatItems();
+				pBuffer = Minecraft.getInstance().renderBuffers().bufferSource();
 			}
 			pPoseStack.pushPose();
 
@@ -117,6 +118,9 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 					gui ? 0xF000F0 : pPackedLight,
 					gui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
 					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pTransformType, false));
+			if (gui) {
+				((MultiBufferSource.BufferSource) pBuffer).endBatch();
+			}
 			pPoseStack.popPose();
 
 			if (gui || frame) {
@@ -161,6 +165,9 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 							}
 						}
 					}
+				}
+				if (gui) {
+					Lighting.setupFor3DItems();
 				}
 				pPoseStack.popPose();
 			}

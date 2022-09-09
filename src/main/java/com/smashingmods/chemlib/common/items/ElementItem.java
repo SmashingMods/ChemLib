@@ -6,7 +6,6 @@ import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -20,12 +19,9 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.function.Consumer;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class ElementItem extends Item implements Element {
 
     private final String elementName;

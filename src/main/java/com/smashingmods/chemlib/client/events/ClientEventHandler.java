@@ -16,7 +16,6 @@ import net.minecraftforge.client.model.DynamicFluidContainerModel;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = ChemLib.MODID)
 public class ClientEventHandler {
@@ -24,7 +23,7 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void onClientSetupEvent(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            FluidRegistry.getFluids().forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.solid()));
+            FluidRegistry.getFluidsAsStream().forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.solid()));
             FluidRegistry.getLiquidBlocks().forEach(liquidBlock -> ItemBlockRenderTypes.setRenderLayer(liquidBlock, RenderType.solid()));
         });
     }

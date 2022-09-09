@@ -3,7 +3,6 @@ package com.smashingmods.chemlib.common.items;
 import com.smashingmods.chemlib.api.*;
 import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import net.minecraft.ChatFormatting;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -19,13 +18,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class ChemicalItem extends Item implements Chemical {
 
     private final Chemical chemical;

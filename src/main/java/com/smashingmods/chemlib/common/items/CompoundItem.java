@@ -1,10 +1,9 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.smashingmods.chemlib.api.Chemical;
+import com.smashingmods.chemlib.api.Compound;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -14,13 +13,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Map;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
-public class CompoundItem extends Item implements Chemical {
+public class CompoundItem extends Item implements Compound {
 
     private final String compoundName;
     private String abbreviation = "";
@@ -70,7 +66,6 @@ public class CompoundItem extends Item implements Chemical {
         return this.color;
     }
 
-    @SuppressWarnings("unused")
     public Map<String, Integer> getComponents() {
         return this.components;
     }

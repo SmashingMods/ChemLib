@@ -2,7 +2,6 @@ package com.smashingmods.chemlib.registry;
 
 import com.smashingmods.chemlib.ChemLib;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;
@@ -23,7 +22,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FluidRegistry {
@@ -87,9 +90,75 @@ public class FluidRegistry {
                 .bucket(bucket);
     }
 
-    public static Stream<Fluid> getFluids() {
+    /*
+        This section defines helper methods for accessing fluids and fluid types from the registry.
+
+        The first set of helper methods provide streams of fluid objects.
+     */
+
+    public static Stream<Fluid> getFluidsAsStream() {
         return FLUIDS.getEntries().stream().map(RegistryObject::get);
     }
+
+    public static Stream<FluidType> getFluidTypesAsStream() {
+        return getFluidsAsStream().map(Fluid::getFluidType);
+    }
+
+    public static Stream<ForgeFlowingFluid.Source> getSourceFluidsAsStream() {
+        return getFluidsAsStream().filter(fluid -> fluid instanceof ForgeFlowingFluid.Source).map(fluid -> (ForgeFlowingFluid.Source) fluid);
+    }
+
+    public static Stream<ForgeFlowingFluid.Source> getLiquidSourceFluidsAsStream() {
+        return getSourceFluidsAsStream().filter(source -> !source.getFluidType().isLighterThanAir());
+    }
+
+    public static Stream<ForgeFlowingFluid.Source> getGasSourceFluidsAsStream() {
+        return getSourceFluidsAsStream().filter(source -> source.getFluidType().isLighterThanAir());
+    }
+
+    /*
+        This set of helper methods provide lists of fluid objects.
+     */
+
+    public static List<Fluid> getFluids() {
+        return getFluidsAsStream().collect(Collectors.toList());
+    }
+
+    public static List<Fluid> getSourceFluids() {
+        return getSourceFluidsAsStream().collect(Collectors.toList());
+    }
+
+    public static List<Fluid> getLiquidSourceFluids() {
+        return getLiquidSourceFluidsAsStream().collect(Collectors.toList());
+    }
+
+    public static Optional<ForgeFlowingFluid.Source> getLiquidSourceFluidByName(String pName) {
+        return getLiquidSourceFluidsAsStream().filter(source -> Objects.requireNonNull(ForgeRegistries.FLUID_TYPES.get().getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
+    }
+
+    public static List<Fluid> getGasSourceFluids() {
+        return getGasSourceFluidsAsStream().collect(Collectors.toList());
+    }
+
+    /*
+        Get a single object by filtering a registry stream.
+     */
+
+    public static Optional<FluidType> getFluidTypeByName(String pName) {
+        return getFluidTypesAsStream().filter(fluidType -> Objects.requireNonNull(ForgeRegistries.FLUID_TYPES.get().getKey(fluidType)).getPath().equals(pName)).findFirst();
+    }
+
+    public static Optional<ForgeFlowingFluid.Source> getSourceFluidByName(String pName) {
+        return getSourceFluidsAsStream().filter(source -> Objects.requireNonNull(ForgeRegistries.FLUID_TYPES.get().getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
+    }
+
+    public static Optional<ForgeFlowingFluid.Source> getGasSourceFluidByName(String pName) {
+        return getGasSourceFluidsAsStream().filter(source -> Objects.requireNonNull(ForgeRegistries.FLUID_TYPES.get().getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
+    }
+
+    /*
+        This set of helpers define methods to get blocks and items from the fluid registry.
+     */
 
     public static Stream<LiquidBlock> getLiquidBlocks() {
         return LIQUID_BLOCKS.getEntries().stream().map(RegistryObject::get).map(block -> (LiquidBlock) block);

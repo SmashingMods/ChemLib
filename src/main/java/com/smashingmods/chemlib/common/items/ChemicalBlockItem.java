@@ -5,7 +5,6 @@ import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import net.minecraft.ChatFormatting;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -17,11 +16,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     private final ChemicalBlock block;

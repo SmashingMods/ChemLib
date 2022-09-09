@@ -1,6 +1,5 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.mojang.blaze3d.MethodsReturnNonnullByDefault;
 import com.smashingmods.chemlib.client.PeriodicTableScreen;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
@@ -22,11 +21,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class PeriodicTableItem extends Item {
 
     public PeriodicTableItem() {

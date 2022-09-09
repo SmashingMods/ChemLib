@@ -46,8 +46,8 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 	@Override
 	public void renderByItem(ItemStack pStack, ItemTransforms.TransformType pTransformType, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
 
-		boolean gui = pTransformType == ItemTransforms.TransformType.GUI;
-		boolean frame = pTransformType == ItemTransforms.TransformType.FIXED;
+		boolean isGui = pTransformType == ItemTransforms.TransformType.GUI;
+		boolean isFrame = pTransformType == ItemTransforms.TransformType.FIXED;
 
 		ModelResourceLocation modelResourceLocation = null;
 
@@ -69,12 +69,13 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 		if (modelResourceLocation != null) {
 
 			BakedModel bakedModel = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getModelManager().getModel(modelResourceLocation);
+			MultiBufferSource buffer = pBuffer;
 
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.5D, 0.5D, 0D);
-			if (gui) {
+			if (isGui) {
 				Lighting.setupForFlatItems();
-				pBuffer = Minecraft.getInstance().renderBuffers().bufferSource();
+				buffer = Minecraft.getInstance().renderBuffers().bufferSource();
 			}
 			pPoseStack.pushPose();
 
@@ -114,22 +115,22 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 					pTransformType,
 					false,
 					pPoseStack,
-					pBuffer,
-					gui ? 0xF000F0 : pPackedLight,
-					gui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
+					buffer,
+					isGui ? 0xF000F0 : pPackedLight,
+					isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
 					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pTransformType, false));
-			if (gui) {
-				((MultiBufferSource.BufferSource) pBuffer).endBatch();
+			if (isGui) {
+				((MultiBufferSource.BufferSource) buffer).endBatch();
 			}
 			pPoseStack.popPose();
 
-			if (gui || frame) {
+			if (isGui || isFrame) {
 				pPoseStack.pushPose();
 				pPoseStack.mulPose(Vector3f.XN.rotation(180));
 				pPoseStack.translate(-0.16D, 0, -0.55D);
 				pPoseStack.scale(0.05F, 0.08F, 0.08F);
 
-				if (frame) {
+				if (isFrame) {
 					pPoseStack.mulPose(Vector3f.YN.rotationDegrees(180));
 					pPoseStack.mulPose(Vector3f.XN.rotationDegrees(53));
 					pPoseStack.translate(-8D, -1D, 1.7D);
@@ -166,7 +167,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 						}
 					}
 				}
-				if (gui) {
+				if (isGui) {
 					Lighting.setupFor3DItems();
 				}
 				pPoseStack.popPose();

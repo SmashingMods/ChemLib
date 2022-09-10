@@ -24,7 +24,7 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void onClientSetupEvent(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            FluidRegistry.getFluids().forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.solid()));
+            FluidRegistry.getFluidsAsStream().forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.solid()));
             FluidRegistry.getLiquidBlocks().forEach(liquidBlock -> ItemBlockRenderTypes.setRenderLayer(liquidBlock, RenderType.solid()));
         });
     }

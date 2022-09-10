@@ -17,11 +17,11 @@ public class FluidTagGenerator extends ForgeRegistryTagsProvider<Fluid> {
 
     @Override
     protected void addTags() {
-        FluidRegistry.getFluids().forEach(fluid -> tag(FluidTags.WATER).add(fluid));
+        FluidRegistry.getFluidsAsStream().forEach(fluid -> tag(FluidTags.WATER).add(fluid));
     }
 
     @Override
     public String getName() {
-        return null;
+        return "";
     }
 }

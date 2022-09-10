@@ -1,4 +1,6 @@
-# ChemLib 1.18.2-2.0.9
+# ChemLib 1.18.2-2.0.11
 
-- Add missing item descriptions for a few compounds.
-- Lighten chemical item color values for ingots, nuggets, plates, dusts, and metal blocks.
+- Backport changes to ChemLib, AbbreviationRenderer, Chemical, and FluidRegistry.
+- Add jvmArgs to runs.
+- Add translations: zh_tw, zh_cn.
+- Add graphite, cinnabar, and mercury sulfide dusts.

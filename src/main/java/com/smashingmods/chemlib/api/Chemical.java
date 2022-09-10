@@ -1,6 +1,13 @@
 package com.smashingmods.chemlib.api;
 
+import com.smashingmods.chemlib.registry.FluidRegistry;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Optional;
 
 public interface Chemical extends ItemLike {
 
@@ -13,6 +20,18 @@ public interface Chemical extends ItemLike {
     String getChemicalDescription();
 
     int getColor();
+
+    default Optional<Fluid> getFluidReference() {
+        Optional<Fluid> toReturn = FluidRegistry.getFluidByName(getChemicalName());
+        if (toReturn.isEmpty()) {
+            toReturn = Optional.ofNullable(ForgeRegistries.FLUIDS.getValue(ResourceLocation.tryParse(getChemicalName())));
+        }
+        if (toReturn.isEmpty()) {
+            //noinspection deprecation
+            toReturn = Optional.of(Registry.FLUID.get(ResourceLocation.tryParse(getChemicalName())));
+        }
+        return toReturn;
+    }
 
     default int clampMinColorValue(int pColor, int minValue) {
         int green = ((pColor >> 16) & 0xFF) | minValue;

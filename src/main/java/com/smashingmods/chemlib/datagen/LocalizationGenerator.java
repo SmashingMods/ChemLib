@@ -2,9 +2,6 @@ package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
-import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.common.items.CompoundItem;
-import com.smashingmods.chemlib.common.items.ElementItem;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.FluidRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
@@ -14,8 +11,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 
 import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class LocalizationGenerator extends LanguageProvider {
 
@@ -27,9 +22,7 @@ public class LocalizationGenerator extends LanguageProvider {
     @SuppressWarnings("deprecation")
     protected void addTranslations() {
 
-        ItemRegistry.getElements().forEach(element -> {
-            add(String.format("item.chemlib.%s", element.getChemicalName()), StringUtils.capitalize(element.getChemicalName()));
-        });
+        ItemRegistry.getElements().forEach(element -> add(String.format("item.chemlib.%s", element.getChemicalName()), StringUtils.capitalize(element.getChemicalName())));
 
         ItemRegistry.getCompounds().forEach(compound -> {
             add(String.format("item.chemlib.%s", compound.getChemicalName()), WordUtils.capitalize(compound.getChemicalName().replace("_", " ")));
@@ -52,7 +45,7 @@ public class LocalizationGenerator extends LanguageProvider {
             });
         }
 
-        FluidRegistry.getFluids().forEach(fluid -> {
+        FluidRegistry.getFluidsAsStream().forEach(fluid -> {
             Objects.requireNonNull(fluid.getRegistryName());
             int density = fluid.getAttributes().getDensity();
             String key = fluid.getRegistryName().getPath();

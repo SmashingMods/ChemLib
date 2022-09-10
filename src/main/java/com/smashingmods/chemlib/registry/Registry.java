@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.smashingmods.chemlib.ChemLib;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,13 +11,12 @@ import java.util.Objects;
 
 public class Registry {
 
-    public static void register() {
+    public static void register(IEventBus pModEventBus) {
         ChemicalRegistry.register();
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        BlockRegistry.register(modEventBus);
-        FluidRegistry.register(modEventBus);
-        ItemRegistry.register(modEventBus);
-        PaintingsRegistry.register(modEventBus);
+        BlockRegistry.register(pModEventBus);
+        FluidRegistry.register(pModEventBus);
+        ItemRegistry.register(pModEventBus);
+        PaintingsRegistry.register(pModEventBus);
     }
 
     public static JsonObject getStreamAsJsonObject(String pPath) {

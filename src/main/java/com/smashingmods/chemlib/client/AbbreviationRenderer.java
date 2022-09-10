@@ -29,10 +29,9 @@ import java.util.function.Supplier;
 public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 
 	public static final Supplier<BlockEntityWithoutLevelRenderer> INSTANCE = Suppliers.memoize(
-			() -> new AbbreviationRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels())
+			() -> new com.smashingmods.chemlib.client.AbbreviationRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels())
 	);
-	public static final IItemRenderProperties RENDERER = new IItemRenderProperties()
-	{
+	public static final IItemRenderProperties RENDERER = new IItemRenderProperties() {
 		@Override
 		public BlockEntityWithoutLevelRenderer getItemStackRenderer() {
 			return INSTANCE.get();
@@ -46,10 +45,11 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 	@Override
 	public void renderByItem(ItemStack pStack, ItemTransforms.TransformType pTransformType, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
 
-		boolean gui = pTransformType == ItemTransforms.TransformType.GUI;
-		boolean frame = pTransformType == ItemTransforms.TransformType.FIXED;
+		boolean isGui = pTransformType == ItemTransforms.TransformType.GUI;
+		boolean isFrame = pTransformType == ItemTransforms.TransformType.FIXED;
 
 		ModelResourceLocation modelResourceLocation = null;
+		MultiBufferSource buffer = pBuffer;
 
 		if (pStack.getItem() instanceof ElementItem elementItem) {
 			switch (elementItem.getMatterState()) {
@@ -72,8 +72,9 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.5D, 0.5D, 0D);
-			if (gui) {
+			if (isGui) {
 				Lighting.setupForFlatItems();
+				buffer = Minecraft.getInstance().renderBuffers().bufferSource();
 			}
 			pPoseStack.pushPose();
 
@@ -113,19 +114,22 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 					pTransformType,
 					false,
 					pPoseStack,
-					pBuffer,
-					gui ? 0xF000F0 : pPackedLight,
-					gui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
+					buffer,
+					isGui ? 0xF000F0 : pPackedLight,
+					isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
 					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pTransformType, false));
+			if (isGui) {
+				((MultiBufferSource.BufferSource) buffer).endBatch();
+			}
 			pPoseStack.popPose();
 
-			if (gui || frame) {
+			if (isGui || isFrame) {
 				pPoseStack.pushPose();
 				pPoseStack.mulPose(Vector3f.XN.rotation(180));
 				pPoseStack.translate(-0.16D, 0, -0.55D);
 				pPoseStack.scale(0.05F, 0.08F, 0.08F);
 
-				if (frame) {
+				if (isFrame) {
 					pPoseStack.mulPose(Vector3f.YN.rotationDegrees(180));
 					pPoseStack.mulPose(Vector3f.XN.rotationDegrees(53));
 					pPoseStack.translate(-8D, -1D, 1.7D);
@@ -161,6 +165,9 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 							}
 						}
 					}
+				}
+				if (isGui) {
+					Lighting.setupFor3DItems();
 				}
 				pPoseStack.popPose();
 			}

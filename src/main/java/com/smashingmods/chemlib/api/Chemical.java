@@ -27,10 +27,11 @@ public interface Chemical extends ItemLike {
             toReturn = Optional.ofNullable(ForgeRegistries.FLUID_TYPES.get().getValue(ResourceLocation.tryParse(getChemicalName())));
         }
         if (toReturn.isEmpty()) {
+            //noinspection deprecation
             toReturn = Optional.of(Registry.FLUID.get(ResourceLocation.tryParse(getChemicalName())).getFluidType());
         }
         return toReturn;
-    };
+    }
 
     default int clampMinColorValue(int pColor, int minValue) {
         int green = ((pColor >> 16) & 0xFF) | minValue;

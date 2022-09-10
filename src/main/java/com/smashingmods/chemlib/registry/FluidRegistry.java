@@ -132,10 +132,6 @@ public class FluidRegistry {
         return getLiquidSourceFluidsAsStream().collect(Collectors.toList());
     }
 
-    public static Optional<ForgeFlowingFluid.Source> getLiquidSourceFluidByName(String pName) {
-        return getLiquidSourceFluidsAsStream().filter(source -> Objects.requireNonNull(ForgeRegistries.FLUID_TYPES.get().getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
-    }
-
     public static List<Fluid> getGasSourceFluids() {
         return getGasSourceFluidsAsStream().collect(Collectors.toList());
     }
@@ -150,6 +146,10 @@ public class FluidRegistry {
 
     public static Optional<ForgeFlowingFluid.Source> getSourceFluidByName(String pName) {
         return getSourceFluidsAsStream().filter(source -> Objects.requireNonNull(ForgeRegistries.FLUID_TYPES.get().getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
+    }
+
+    public static Optional<ForgeFlowingFluid.Source> getLiquidSourceFluidByName(String pName) {
+        return getLiquidSourceFluidsAsStream().filter(source -> Objects.requireNonNull(ForgeRegistries.FLUID_TYPES.get().getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
     }
 
     public static Optional<ForgeFlowingFluid.Source> getGasSourceFluidByName(String pName) {

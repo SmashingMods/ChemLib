@@ -14,15 +14,20 @@ import com.smashingmods.chemlib.common.items.CompoundItem;
 import com.smashingmods.chemlib.common.items.ElementItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.registries.RegistryObject;
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
+
+import static net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS;
 
 public class ChemicalRegistry {
 
@@ -106,7 +111,21 @@ public class ChemicalRegistry {
                 componentMap.put(componentName, count);
             }
 
-            ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color));
+            List<MobEffectInstance> effectsList = new ArrayList<>();
+            JsonArray effects = object.getAsJsonArray("effect");
+            if(effects != null) {
+                for (JsonElement effect : effects) {
+                    JsonObject effectObject = effect.getAsJsonObject();
+                    String effectLocation = effectObject.get("location").getAsString();
+                    int effectDuration = effectObject.get("duration").getAsInt();
+                    int effectAmplifier = effectObject.get("amplifier").getAsInt();
+                    MobEffect mobEffect = MOB_EFFECTS.getValue(new ResourceLocation(effectLocation));
+                    if (mobEffect != null)
+                        effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
+                }
+            }
+
+            ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, effectsList));
 
             switch (matterState) {
                 case SOLID -> {

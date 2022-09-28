@@ -7,10 +7,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -27,16 +24,14 @@ public class CompoundItem extends Item implements Compound {
     private final Map<String, Integer> components;
     private final String description;
     private final int color;
-    private final List<MobEffectInstance> effects;
 
-    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects) {
+    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor) {
         super(new Item.Properties().tab(ItemRegistry.COMPOUND_TAB));
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;
         this.description = pDescription;
         this.color = (int) Long.parseLong(pColor, 16);
-        this.effects = pEffects;
     }
 
     @OnlyIn(Dist.CLIENT)

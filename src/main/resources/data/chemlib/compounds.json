@@ -608,23 +608,6 @@
         {
           "name": "hydroxide"
         }
-      ],
-      "effect": [
-        {
-          "location": "minecraft:poison",
-          "duration": "600",
-          "amplifier": 1
-        },
-        {
-          "location": "minecraft:nausea",
-          "duration": "600",
-          "amplifier": 2
-        },
-        {
-          "location": "minecraft:strength",
-          "duration": "600",
-          "amplifier": 0
-        }
       ]
     },
     {

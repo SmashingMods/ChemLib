@@ -58,8 +58,6 @@ public class ElementItem extends Item implements Element {
         }
     }
 
-    public List<MobEffectInstance> getEffects(){ return this.effects; }
-
     @Override
     public String getChemicalName() {
         return this.elementName;
@@ -120,6 +118,11 @@ public class ElementItem extends Item implements Element {
     @Override
     public String getChemicalDescription() {
         return "";
+    }
+
+    @Override
+    public List<MobEffectInstance> getEffects() {
+        return this.effects;
     }
 
     @Override

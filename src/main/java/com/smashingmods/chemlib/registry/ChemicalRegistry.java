@@ -51,7 +51,7 @@ public class ChemicalRegistry {
             boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
             String color = object.get("color").getAsString();
 
-            ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, getMobEffects(object)));
+            ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, mobEffectsFactory(object)));
             RegistryObject<Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
             if (!artificial) {
@@ -111,7 +111,7 @@ public class ChemicalRegistry {
                 componentMap.put(componentName, count);
             }
 
-            ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, getMobEffects(object)));
+            ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, mobEffectsFactory(object)));
 
             switch (matterState) {
                 case SOLID -> {
@@ -136,7 +136,7 @@ public class ChemicalRegistry {
         }
     }
 
-    private static List<MobEffectInstance> getMobEffects(JsonObject object) {
+    private static List<MobEffectInstance> mobEffectsFactory(JsonObject object) {
         List<MobEffectInstance> effectsList = new ArrayList<>();
         JsonArray effects = object.getAsJsonArray("effect");
         if (effects != null) {
@@ -146,8 +146,9 @@ public class ChemicalRegistry {
                 int effectDuration = effectObject.get("duration").getAsInt();
                 int effectAmplifier = effectObject.get("amplifier").getAsInt();
                 MobEffect mobEffect = MOB_EFFECTS.getValue(new ResourceLocation(effectLocation));
-                if (mobEffect != null)
+                if (mobEffect != null) {
                     effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
+                }
             }
         }
         return effectsList;

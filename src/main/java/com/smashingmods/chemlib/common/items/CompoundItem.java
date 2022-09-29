@@ -44,8 +44,6 @@ public class CompoundItem extends Item implements Compound {
         pTooltipComponents.add(MutableComponent.create(new LiteralContents(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
     }
 
-    public List<MobEffectInstance> getEffects(){ return this.effects; }
-
     @Override
     public String getChemicalName() {
         return this.compoundName;
@@ -71,6 +69,11 @@ public class CompoundItem extends Item implements Compound {
     @Override
     public int getColor() {
         return this.color;
+    }
+
+    @Override
+    public List<MobEffectInstance> getEffects() {
+        return this.effects;
     }
 
     public Map<String, Integer> getComponents() {

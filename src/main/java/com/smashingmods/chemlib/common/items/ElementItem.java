@@ -9,6 +9,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -33,8 +34,9 @@ public class ElementItem extends Item implements Element {
     private final MetalType metalType;
     private final boolean artificial;
     private final int color;
+    private final List<MobEffectInstance> effects;
 
-    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pColor) {
+    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pColor, List<MobEffectInstance> pEffects) {
         super(new Item.Properties().tab(ItemRegistry.ELEMENT_TAB));
         this.elementName = pChemicalName;
         this.atomicNumber = pAtomicNumber;
@@ -45,6 +47,7 @@ public class ElementItem extends Item implements Element {
         this.metalType = pMetalType;
         this.artificial = pArtificial;
         this.color = (int) Long.parseLong(pColor, 16);
+        this.effects = pEffects;
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -115,6 +118,11 @@ public class ElementItem extends Item implements Element {
     @Override
     public String getChemicalDescription() {
         return "";
+    }
+
+    @Override
+    public List<MobEffectInstance> getEffects() {
+        return this.effects;
     }
 
     @Override

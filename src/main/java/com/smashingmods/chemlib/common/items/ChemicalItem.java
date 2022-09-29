@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -74,6 +75,11 @@ public class ChemicalItem extends Item implements Chemical {
     @Override
     public String getChemicalDescription() {
         return "";
+    }
+
+    @Override
+    public List<MobEffectInstance> getEffects() {
+        return getChemical().getEffects();
     }
 
     @Override

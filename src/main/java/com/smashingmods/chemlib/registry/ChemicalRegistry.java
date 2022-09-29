@@ -51,7 +51,7 @@ public class ChemicalRegistry {
             boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
             String color = object.get("color").getAsString();
 
-            ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color));
+            ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, getMobEffects(object)));
             RegistryObject<Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
             if (!artificial) {
@@ -111,21 +111,7 @@ public class ChemicalRegistry {
                 componentMap.put(componentName, count);
             }
 
-            List<MobEffectInstance> effectsList = new ArrayList<>();
-            JsonArray effects = object.getAsJsonArray("effect");
-            if(effects != null) {
-                for (JsonElement effect : effects) {
-                    JsonObject effectObject = effect.getAsJsonObject();
-                    String effectLocation = effectObject.get("location").getAsString();
-                    int effectDuration = effectObject.get("duration").getAsInt();
-                    int effectAmplifier = effectObject.get("amplifier").getAsInt();
-                    MobEffect mobEffect = MOB_EFFECTS.getValue(new ResourceLocation(effectLocation));
-                    if (mobEffect != null)
-                        effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
-                }
-            }
-
-            ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, effectsList));
+            ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, getMobEffects(object)));
 
             switch (matterState) {
                 case SOLID -> {
@@ -148,6 +134,23 @@ public class ChemicalRegistry {
                 }
             }
         }
+    }
+
+    private static List<MobEffectInstance> getMobEffects(JsonObject object) {
+        List<MobEffectInstance> effectsList = new ArrayList<>();
+        JsonArray effects = object.getAsJsonArray("effect");
+        if (effects != null) {
+            for (JsonElement effect : effects) {
+                JsonObject effectObject = effect.getAsJsonObject();
+                String effectLocation = effectObject.get("location").getAsString();
+                int effectDuration = effectObject.get("duration").getAsInt();
+                int effectAmplifier = effectObject.get("amplifier").getAsInt();
+                MobEffect mobEffect = MOB_EFFECTS.getValue(new ResourceLocation(effectLocation));
+                if (mobEffect != null)
+                    effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
+            }
+        }
+        return effectsList;
     }
 
     private static FluidType.Properties fluidTypePropertiesFactory(JsonObject pObject, String pName) {

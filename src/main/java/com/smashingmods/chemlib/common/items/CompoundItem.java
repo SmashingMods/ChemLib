@@ -44,6 +44,8 @@ public class CompoundItem extends Item implements Compound {
         pTooltipComponents.add(MutableComponent.create(new LiteralContents(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
     }
 
+    public List<MobEffectInstance> getEffects(){ return this.effects; }
+
     @Override
     public String getChemicalName() {
         return this.compoundName;

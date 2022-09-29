@@ -168,7 +168,24 @@
         "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
-      "color": "B4D14B"
+      "color": "B4D14B",
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "100",
+          "amplifier": 0
+        }
+      ]
     },
     {
       "name": "neon",
@@ -280,7 +297,24 @@
         "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
-      "color": "8dd41c"
+      "color": "8dd41c",
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "100",
+          "amplifier": 0
+        }
+      ]
     },
     {
       "name": "argon",
@@ -458,7 +492,24 @@
       "period": "4",
       "matter_state": "solid",
       "metal_type": "metalloid",
-      "color": "8c3f31"
+      "color": "8c3f31",
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "200",
+          "amplifier": 0
+        }
+      ]
     },
     {
       "name": "selenium",
@@ -747,7 +798,14 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "metal",
-      "color": "ba9160"
+      "color": "ba9160",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "cerium",
@@ -995,7 +1053,14 @@
         "can_convert_to_source": false
       },
       "metal_type": "metal",
-      "color": "9d9f9f"
+      "color": "9d9f9f",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "thallium",
@@ -1045,7 +1110,14 @@
       "period": "6",
       "matter_state": "solid",
       "metal_type": "nonmetal",
-      "color": "9fc413"
+      "color": "9fc413",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "radon",
@@ -1071,7 +1143,14 @@
         "can_convert_to_source": false
       },
       "metal_type": "nonmetal",
-      "color": "5fd16a"
+      "color": "5fd16a",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "francium",
@@ -1091,7 +1170,19 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "color": "3c9c6f"
+      "color": "3c9c6f",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:glowing",
+          "duration": "360",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "actinium",
@@ -1131,7 +1222,19 @@
       "period": "7",
       "matter_state": "solid",
       "metal_type": "metal",
-      "color": "d1c33e"
+      "color": "d1c33e",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:glowing",
+          "duration": "360",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "neptunium",
@@ -1153,7 +1256,19 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "color": "db6e22"
+      "color": "db6e22",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:glowing",
+          "duration": "360",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "americium",
@@ -1175,7 +1290,19 @@
       "matter_state": "solid",
       "artificial": true,
       "metal_type": "metal",
-      "color": "920133"
+      "color": "920133",
+      "effect": [
+        {
+          "location": "minecraft:weakness",
+          "duration": "60",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:glowing",
+          "duration": "360",
+          "amplifier": 1
+        }
+      ]
     },
     {
       "name": "berkelium",

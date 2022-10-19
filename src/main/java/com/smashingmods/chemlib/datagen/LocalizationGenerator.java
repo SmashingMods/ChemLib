@@ -11,6 +11,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 
+import java.util.Objects;
+
 public class LocalizationGenerator extends LanguageProvider {
 
     public LocalizationGenerator(DataGenerator gen, String locale) {

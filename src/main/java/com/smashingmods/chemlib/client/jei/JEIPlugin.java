@@ -14,8 +14,6 @@ import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
 

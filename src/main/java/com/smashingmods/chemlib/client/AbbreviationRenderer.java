@@ -31,8 +31,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 	public static final Supplier<BlockEntityWithoutLevelRenderer> INSTANCE = Suppliers.memoize(
 			() -> new AbbreviationRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels())
 	);
-	public static final IClientItemExtensions RENDERER = new IClientItemExtensions()
-	{
+	public static final IClientItemExtensions RENDERER = new IClientItemExtensions() {
 		@Override
 		public BlockEntityWithoutLevelRenderer getCustomRenderer() {
 			return INSTANCE.get();
@@ -50,6 +49,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 		boolean isFrame = pTransformType == ItemTransforms.TransformType.FIXED;
 
 		ModelResourceLocation modelResourceLocation = null;
+		MultiBufferSource buffer = pBuffer;
 
 		if (pStack.getItem() instanceof ElementItem elementItem) {
 			switch (elementItem.getMatterState()) {
@@ -69,7 +69,6 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 		if (modelResourceLocation != null) {
 
 			BakedModel bakedModel = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getModelManager().getModel(modelResourceLocation);
-			MultiBufferSource buffer = pBuffer;
 
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.5D, 0.5D, 0D);

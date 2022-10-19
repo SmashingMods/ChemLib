@@ -63,8 +63,8 @@ public class ItemRegistry {
         public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
             super.fillItemList(pItems);
             pItems.clear();
-            List<ItemStack> compounds = getCompounds().stream().map(ItemStack::new).collect(Collectors.toList());
-            List<ItemStack> compoundDusts = getChemicalItemsByTypeAsStream(ChemicalItemType.COMPOUND).map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> compounds = getCompounds().stream().map(ItemStack::new).toList();
+            List<ItemStack> compoundDusts = getChemicalItemsByTypeAsStream(ChemicalItemType.COMPOUND).map(ItemStack::new).toList();
             pItems.addAll(compounds);
             pItems.addAll(compoundDusts);
         }
@@ -84,12 +84,12 @@ public class ItemRegistry {
             super.fillItemList(pItems);
             pItems.clear();
 
-            List<ItemStack> dustStacks = getChemicalItemsByType(ChemicalItemType.DUST).stream().map(ItemStack::new).collect(Collectors.toList());
-            List<ItemStack> nuggetStacks = getChemicalItemsByType(ChemicalItemType.NUGGET).stream().map(ItemStack::new).collect(Collectors.toList());
-            List<ItemStack> ingotStacks = getChemicalItemsByType(ChemicalItemType.INGOT).stream().map(ItemStack::new).collect(Collectors.toList());
-            List<ItemStack> plateStacks = getChemicalItemsByType(ChemicalItemType.PLATE).stream().map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> dustStacks = getChemicalItemsByType(ChemicalItemType.DUST).stream().map(ItemStack::new).toList();
+            List<ItemStack> nuggetStacks = getChemicalItemsByType(ChemicalItemType.NUGGET).stream().map(ItemStack::new).toList();
+            List<ItemStack> ingotStacks = getChemicalItemsByType(ChemicalItemType.INGOT).stream().map(ItemStack::new).toList();
+            List<ItemStack> plateStacks = getChemicalItemsByType(ChemicalItemType.PLATE).stream().map(ItemStack::new).toList();
 
-            List<ItemStack> blockItemStacks = getChemicalBlockItems().stream().filter(item -> ((ChemicalBlock) item.getBlock()).getBlockType().getSerializedName().equals("metal")).map(ItemStack::new).collect(Collectors.toList());
+            List<ItemStack> blockItemStacks = getChemicalBlockItems().stream().filter(item -> ((ChemicalBlock) item.getBlock()).getBlockType().getSerializedName().equals("metal")).map(ItemStack::new).toList();
 
             pItems.addAll(ingotStacks);
             pItems.addAll(blockItemStacks);

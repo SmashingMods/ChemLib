@@ -988,7 +988,7 @@
     {
       "name": "graphite",
       "matter_state": "solid",
-      "has_item": true,
+      "has_item": false,
       "description": "A crystalline form of carbon. It is used in pencils, lubricants, and under pressure it can form diamonds.",
       "color": "1f1f1f",
       "components": [

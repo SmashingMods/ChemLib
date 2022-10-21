@@ -2,6 +2,7 @@ package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalItemType;
+import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -27,6 +28,15 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
             String name = item.getChemicalName();
             TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
             tag(key).add(item);
+        });
+
+        ItemRegistry.getChemicalBlockItems().forEach(item -> {
+            if (item.getMatterState() != MatterState.GAS ) {
+                String type = "storage_block";
+                String name = item.getChemicalName();
+                TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
+                tag(key).add(item);
+            }
         });
 
         ItemRegistry.getChemicalItemByNameAndType("potassium_nitrate", ChemicalItemType.COMPOUND).ifPresent(compound -> {

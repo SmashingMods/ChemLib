@@ -31,10 +31,9 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
         });
 
         ItemRegistry.getChemicalBlockItems().forEach(item -> {
-            if (item.getMatterState() != MatterState.GAS ) {
-                String type = "storage_block";
+            if (item.getMatterState().equals(MatterState.SOLID)) {
                 String name = item.getChemicalName();
-                TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
+                TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("storage_blocks/%s", name)));
                 tag(key).add(item);
             }
         });

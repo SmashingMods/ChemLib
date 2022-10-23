@@ -2,6 +2,7 @@ package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalItemType;
+import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -29,14 +30,34 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
             tag(key).add(item);
         });
 
+        ItemRegistry.getChemicalBlockItems().forEach(item -> {
+            if (item.getMatterState().equals(MatterState.SOLID)) {
+                String name = item.getChemicalName();
+                TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("storage_blocks/%s", name)));
+                tag(key).add(item);
+            }
+        });
+
         ItemRegistry.getChemicalItemByNameAndType("potassium_nitrate", ChemicalItemType.COMPOUND).ifPresent(compound -> {
             ResourceLocation niter = new ResourceLocation("forge", "dusts/niter");
             TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(niter);
             tag(key).add(compound);
         });
 
+        ItemRegistry.getChemicalItemByNameAndType("hydroxylapatite", ChemicalItemType.COMPOUND).ifPresent(compound -> {
+            ResourceLocation niter = new ResourceLocation("forge", "dusts/apatite");
+            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(niter);
+            tag(key).add(compound);
+        });
+
         ItemRegistry.getChemicalItemByNameAndType("cellulose", ChemicalItemType.COMPOUND).ifPresent(compound -> {
             ResourceLocation sawdust = new ResourceLocation("forge", "sawdust");
+            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(sawdust);
+            tag(key).add(compound);
+        });
+
+        ItemRegistry.getChemicalItemByNameAndType("mercury_sulfide", ChemicalItemType.COMPOUND).ifPresent(compound -> {
+            ResourceLocation sawdust = new ResourceLocation("forge", "dusts/cinnabar");
             TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(sawdust);
             tag(key).add(compound);
         });

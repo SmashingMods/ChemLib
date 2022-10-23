@@ -1,6 +1,5 @@
-# ChemLib 1.18.2-2.0.11
+# ChemLib 1.18.2-2.0.13
 
-- Backport changes to ChemLib, AbbreviationRenderer, Chemical, and FluidRegistry.
-- Add jvmArgs to runs.
-- Add translations: zh_tw, zh_cn.
-- Add graphite, cinnabar, and mercury sulfide dusts.
+Changes:
+- Update Forge, parchment, and bump for parity.
+- Tag all solid chemical block items as storage blocks.

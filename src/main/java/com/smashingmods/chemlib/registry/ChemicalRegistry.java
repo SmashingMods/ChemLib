@@ -118,6 +118,9 @@ public class ChemicalRegistry {
                     boolean hasItem = object.get("has_item").getAsBoolean();
                     if (!hasItem) {
                         ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.COMPOUND, ItemRegistry.COMPOUND_TAB);
+                        if(compoundName.equals("polyvinyl_chloride")) {
+                            ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.PLATE, ItemRegistry.COMPOUND_TAB);
+                        }
                     }
                 }
                 case LIQUID, GAS -> {

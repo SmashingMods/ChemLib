@@ -39,7 +39,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.DUST).forEach(dust -> registerItem(dust.getChemicalName(), "dust"));
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.NUGGET).forEach(nugget -> registerItem(nugget.getChemicalName(), "nugget"));
         ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.INGOT).forEach(ingot -> registerItem(ingot.getChemicalName(), "ingot"));
-        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.PLATE).forEach(plate -> registerItem(plate.getChemicalName(), "plate"));
+        ItemRegistry.getChemicalItemsByTypeAsStream(ChemicalItemType.PLATE).forEach(plate -> {
+            if(!plate.getChemicalName().equals("polyvinyl_chloride")) {
+                registerItem(plate.getChemicalName(), "plate");
+            }
+        });
 
         FluidRegistry.getBuckets().forEach(this::registerBucket);
         ItemRegistry.getChemicalBlockItems().forEach(this::registerChemicalBlockItems);

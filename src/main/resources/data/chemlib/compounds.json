@@ -630,12 +630,12 @@
         {
           "location": "minecraft:poison",
           "duration": "600",
-          "amplifier": 1
+          "amplifier": 0
         },
         {
           "location": "minecraft:nausea",
           "duration": "600",
-          "amplifier": 2
+          "amplifier": 1
         },
         {
           "location": "minecraft:strength",

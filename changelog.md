@@ -1,5 +1,5 @@
-# ChemLib 1.19.2-2.0.13
+# ChemLib 1.19.2-2.0.14
 
 Changes:
-- Update Forge, parchment, and bump for parity.
-- Tag all solid chemical block items as storage blocks.
+- Update Forge and Parchment.
+- Add PVC plates for SquirtGun.

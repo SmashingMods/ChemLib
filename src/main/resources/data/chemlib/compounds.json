@@ -635,7 +635,7 @@
         {
           "location": "minecraft:nausea",
           "duration": "600",
-          "amplifier": 2
+          "amplifier": 1
         },
         {
           "location": "minecraft:strength",

@@ -23,8 +23,6 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static com.smashingmods.chemlib.api.Utility.addTooltipEffects;
-
 public class ElementItem extends Item implements Element {
 
     private final String elementName;
@@ -58,7 +56,6 @@ public class ElementItem extends Item implements Element {
         if (!getGroupName().isEmpty()) {
             pTooltipComponents.add(MutableComponent.create(new LiteralContents(getGroupName())).withStyle(ChatFormatting.GRAY));
         }
-        addTooltipEffects(this.effects, pTooltipComponents);
     }
 
     @Override

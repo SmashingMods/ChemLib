@@ -65,6 +65,7 @@ public class LocalizationGenerator extends LanguageProvider {
         add("itemGroup.chemlib.compounds", "Compounds");
         add("itemGroup.chemlib.metals", "Metals");
         add("itemGroup.chemlib.misc", "Misc Items");
+        add("chemlib.effect.on_hit", "Effects on Hit");
 
         add("chemlib.screen.periodic_table", "Periodic Table of the Elements");
 

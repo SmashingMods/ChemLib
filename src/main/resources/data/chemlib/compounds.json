@@ -602,7 +602,7 @@
         {
           "location": "minecraft:nausea",
           "duration": "600",
-          "amplifier": 1
+          "amplifier": 2
         },
         {
           "location": "minecraft:strength",
@@ -851,18 +851,6 @@
           "name": "hydrogen",
           "count": 12
         }
-      ],
-      "effect": [
-        {
-          "location": "minecraft:poison",
-          "duration": "400",
-          "amplifier": 0
-        },
-        {
-          "location": "minecraft:nausea",
-          "duration": "300",
-          "amplifier": 0
-        }
       ]
     },
     {
@@ -884,18 +872,6 @@
         {
           "name": "hydrogen",
           "count": 14
-        }
-      ],
-      "effect": [
-        {
-          "location": "minecraft:poison",
-          "duration": "400",
-          "amplifier": 0
-        },
-        {
-          "location": "minecraft:nausea",
-          "duration": "300",
-          "amplifier": 0
         }
       ]
     },
@@ -1214,7 +1190,7 @@
       "effect": [
         {
           "location": "minecraft:poison",
-          "duration": "600",
+          "duration": "200",
           "amplifier": 3
         },
         {
@@ -1225,7 +1201,7 @@
       ,
         {
           "location": "minecraft:wither",
-          "duration": "600",
+          "duration": "100",
           "amplifier": 1
         }
       ]
@@ -1296,11 +1272,6 @@
           "location": "minecraft:regeneration",
           "duration": "100",
           "amplifier": 0
-        },
-        {
-          "location": "minecraft:instant_health",
-          "duration": "100",
-          "amplifier": 0
         }
       ]
     },
@@ -1331,7 +1302,7 @@
       "effect": [
         {
           "location": "minecraft:speed",
-          "duration": "500",
+          "duration": "600",
           "amplifier": 0
         },
         {
@@ -1341,7 +1312,7 @@
         },
         {
           "location": "minecraft:strength",
-          "duration": "600",
+          "duration": "500",
           "amplifier": 0
         }
       ]
@@ -1378,8 +1349,8 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
-          "amplifier": 2
+          "duration": "60",
+          "amplifier": 1
         },
         {
           "location": "minecraft:nausea",
@@ -1430,9 +1401,9 @@
       ],
       "effect": [
         {
-          "location": "minecraft:instant_damage",
-          "duration": "400",
-          "amplifier": 2
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
         },
         {
           "location": "minecraft:nausea",
@@ -1446,7 +1417,7 @@
         },
         {
           "location": "minecraft:blindness",
-          "duration": "400",
+          "duration": "200",
           "amplifier": 0
         }
       ]
@@ -1505,8 +1476,8 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
-          "amplifier": 2
+          "duration": "40",
+          "amplifier": 0
         },
         {
           "location": "minecraft:nausea",
@@ -1515,17 +1486,12 @@
         },
         {
           "location": "minecraft:weakness",
-          "duration": "400",
+          "duration": "600",
           "amplifier": 1
         },
         {
           "location": "minecraft:blindness",
-          "duration": "300",
-          "amplifier": 1
-        },
-        {
-          "location": "minecraft:wither",
-          "duration": "100",
+          "duration": "400",
           "amplifier": 1
         }
       ]
@@ -1583,7 +1549,7 @@
       "effect": [
         {
           "location": "minecraft:wither",
-          "duration": "400",
+          "duration": "100",
           "amplifier": 0
         },
         {
@@ -1737,28 +1703,18 @@
       ],
       "effect": [
         {
-          "location": "minecraft:instant_damage",
+          "location": "minecraft:wither",
           "duration": "400",
-          "amplifier": 2
+          "amplifier": 0
         },
         {
           "location": "minecraft:nausea",
-          "duration": "600",
+          "duration": "200",
           "amplifier": 1
         },
         {
           "location": "minecraft:weakness",
-          "duration": "300",
-          "amplifier": 1
-        },
-        {
-          "location": "minecraft:blindness",
-          "duration": "300",
-          "amplifier": 1
-        },
-        {
-          "location": "minecraft:wither",
-          "duration": "100",
+          "duration": "600",
           "amplifier": 1
         }
       ]
@@ -1788,28 +1744,18 @@
       ],
       "effect": [
         {
-          "location": "minecraft:instant_damage",
-          "duration": "400",
-          "amplifier": 2
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
         },
         {
           "location": "minecraft:nausea",
-          "duration": "400",
-          "amplifier": 1
+          "duration": "200",
+          "amplifier": 2
         },
         {
           "location": "minecraft:weakness",
-          "duration": "300",
-          "amplifier": 1
-        },
-        {
-          "location": "minecraft:blindness",
-          "duration": "300",
-          "amplifier": 1
-        },
-        {
-          "location": "minecraft:wither",
-          "duration": "100",
+          "duration": "400",
           "amplifier": 1
         }
       ]
@@ -1836,23 +1782,13 @@
       ],
       "effect": [
         {
-          "location": "minecraft:instant_damage",
+          "location": "minecraft:poison",
           "duration": "400",
           "amplifier": 0
         },
         {
-          "location": "minecraft:nausea",
-          "duration": "200",
-          "amplifier": 2
-        },
-        {
           "location": "minecraft:weakness",
           "duration": "600",
-          "amplifier": 1
-        },
-        {
-          "location": "minecraft:blindness",
-          "duration": "400",
           "amplifier": 1
         }
       ]
@@ -1908,7 +1844,7 @@
         {
           "location": "minecraft:weakness",
           "duration": "200",
-          "amplifier": 1
+          "amplifier": 0
         }
       ]
     },
@@ -1952,8 +1888,8 @@
       ],
       "effect": [
         {
-          "location": "minecraft:instant_damage",
-          "duration": "400",
+          "location": "minecraft:poison",
+          "duration": "100",
           "amplifier": 0
         },
         {
@@ -2047,7 +1983,7 @@
         },
         {
           "location": "minecraft:wither",
-          "duration": "400",
+          "duration": "200",
           "amplifier": 0
         }
       ]
@@ -2102,7 +2038,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "60",
+          "duration": "40",
           "amplifier": 1
         }
       ]
@@ -2177,7 +2113,7 @@
         {
           "location": "minecraft:wither",
           "duration": "400",
-          "amplifier": 1
+          "amplifier": 0
         },
         {
           "location": "minecraft:nausea",
@@ -2223,7 +2159,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2245,7 +2181,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2267,7 +2203,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2290,7 +2226,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2313,7 +2249,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2336,7 +2272,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2359,7 +2295,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2382,7 +2318,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2405,7 +2341,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2428,7 +2364,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2451,7 +2387,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -2474,7 +2410,7 @@
       "effect": [
         {
           "location": "minecraft:instant_damage",
-          "duration": "400",
+          "duration": "0",
           "amplifier": 0
         }
       ]
@@ -3538,7 +3474,7 @@
         },
         {
           "location": "minecraft:weakness",
-          "duration": "300",
+          "duration": "600",
           "amplifier": 0
         }
       ]
@@ -3582,18 +3518,6 @@
         {
           "name": "oxygen",
           "count": 3
-        }
-      ],
-      "effect": [
-        {
-          "location": "minecraft:poison",
-          "duration": "400",
-          "amplifier": 0
-        },
-        {
-          "location": "minecraft:nausea",
-          "duration": "300",
-          "amplifier": 0
         }
       ]
     },

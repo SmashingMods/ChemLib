@@ -19,6 +19,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 
+import static com.smashingmods.chemlib.api.Utility.addTooltipEffects;
+
 public class CompoundItem extends Item implements Compound {
 
     private final String compoundName;
@@ -42,6 +44,7 @@ public class CompoundItem extends Item implements Compound {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(MutableComponent.create(new LiteralContents(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
+        addTooltipEffects(this.effects, pTooltipComponents);
     }
 
     @Override

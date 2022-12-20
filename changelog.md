@@ -1,4 +1,4 @@
-# ChemLib 1.19.2-2.0.15
+# ChemLib 1.19.2-2.0.16
 
 Changes:
-- Modify chemical effects to more sane values.
+- Add effect tooltips to chemical fluid buckets.

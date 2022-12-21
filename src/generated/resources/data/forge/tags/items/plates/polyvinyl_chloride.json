@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "chemlib:polyvinyl_chloride_plate"
   ]

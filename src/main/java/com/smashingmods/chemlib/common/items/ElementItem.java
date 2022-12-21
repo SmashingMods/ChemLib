@@ -45,7 +45,7 @@ public class ElementItem extends Item implements Element {
         this.matterState = pMatterState;
         this.metalType = pMetalType;
         this.artificial = pArtificial;
-        this.color = (int) Long.parseLong(pColor, 16);
+        this.color = Integer.parseInt(pColor, 16) | 0xFF000000;
         this.effects = pEffects;
     }
 

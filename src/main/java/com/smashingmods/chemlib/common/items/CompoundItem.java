@@ -32,7 +32,7 @@ public class CompoundItem extends Item implements Compound {
         this.matterState = pMatterState;
         this.components = pComponents;
         this.description = pDescription;
-        this.color = (int) Long.parseLong(pColor, 16);
+        this.color = Integer.parseInt(pColor, 16) | 0xFF000000;
         this.effects = pEffects;
     }
 

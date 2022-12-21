@@ -16,6 +16,7 @@ import java.util.function.Function;
 
 @Mod.EventBusSubscriber(modid = ChemLib.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ForgeEventHandler {
+
     @SubscribeEvent
     public static void onRenderTooltip(RenderTooltipEvent.GatherComponents event) {
         if (event.getItemStack().getItem() instanceof BucketItem bucket

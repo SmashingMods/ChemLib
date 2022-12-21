@@ -3,20 +3,14 @@ package com.smashingmods.chemlib.api;
 import com.smashingmods.chemlib.registry.FluidRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import com.smashingmods.chemlib.registry.FluidRegistry;
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Optional;
 import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface Chemical extends ItemLike {
 

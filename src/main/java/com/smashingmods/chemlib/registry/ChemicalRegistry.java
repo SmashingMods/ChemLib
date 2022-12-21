@@ -81,7 +81,7 @@ public class ChemicalRegistry {
                                 BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
                                 BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties().tab(ItemRegistry.MISC_TAB)));
                             }
-                            FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, elementName), (int) Long.parseLong(color, 16), slopeFindDistance, decreasePerBlock);
+                            FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, elementName), (int) Long.parseLong("FF" + color, 16), slopeFindDistance, decreasePerBlock);
                         }
                     }
                 }
@@ -131,7 +131,7 @@ public class ChemicalRegistry {
                         int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
                         switch (matterState) {
-                            case LIQUID, GAS -> FluidRegistry.registerFluid(compoundName, fluidTypePropertiesFactory(properties, compoundName), (int) Long.parseLong(color, 16), slopeFindDistance, decreasePerBlock);
+                            case LIQUID, GAS -> FluidRegistry.registerFluid(compoundName, fluidTypePropertiesFactory(properties, compoundName), (int) Long.parseLong("FF" + color, 16), slopeFindDistance, decreasePerBlock);
                         }
                     }
                 }

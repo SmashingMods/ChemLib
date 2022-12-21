@@ -1,5 +1,5 @@
-# ChemLib 1.18.2-2.0.13
+# ChemLib 1.18.2-2.0.16
 
 Changes:
-- Update Forge, parchment, and bump for parity.
-- Tag all solid chemical block items as storage blocks.
+- Update Forge and bump version for parity.
+- Backport 1.19.x mob effect changes introduced recently.

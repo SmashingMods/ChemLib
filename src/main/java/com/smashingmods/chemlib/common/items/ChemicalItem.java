@@ -3,10 +3,10 @@ package com.smashingmods.chemlib.common.items;
 import com.smashingmods.chemlib.api.*;
 import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import net.minecraft.ChatFormatting;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -18,13 +18,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class ChemicalItem extends Item implements Chemical {
 
     private final Chemical chemical;
@@ -77,6 +74,11 @@ public class ChemicalItem extends Item implements Chemical {
     @Override
     public String getChemicalDescription() {
         return "";
+    }
+
+    @Override
+    public List<MobEffectInstance> getEffects() {
+        return getChemical().getEffects();
     }
 
     @Override

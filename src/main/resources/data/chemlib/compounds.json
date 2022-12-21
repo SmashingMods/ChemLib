@@ -42,6 +42,23 @@
           "count": 4
 
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:slowness",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -575,6 +592,23 @@
         {
           "name": "hydroxide"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:strength",
+          "duration": "600",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -630,6 +664,18 @@
         {
           "name": "hydrogen",
           "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 0
         }
       ]
     },
@@ -703,6 +749,13 @@
           "name": "hydrogen",
           "count": 4
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        }
       ]
     },
     {
@@ -724,6 +777,13 @@
         {
           "name": "hydrogen",
           "count": 6
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 0
         }
       ]
     },
@@ -1040,6 +1100,18 @@
           "name": "sulfur",
           "count": 4
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "300",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1114,6 +1186,24 @@
         {
           "name": "nitrogen"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "200",
+          "amplifier": 3
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        }
+      ,
+        {
+          "location": "minecraft:wither",
+          "duration": "100",
+          "amplifier": 1
+        }
       ]
     },
     {
@@ -1143,6 +1233,18 @@
           "name": "oxygen",
           "count": 3
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:strength",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:speed",
+          "duration": "600",
+          "amplifier": 2
+        }
       ]
     },
     {
@@ -1163,6 +1265,13 @@
         {
           "name": "oxygen",
           "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:regeneration",
+          "duration": "100",
+          "amplifier": 0
         }
       ]
     },
@@ -1188,6 +1297,23 @@
         {
           "name": "oxygen",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:speed",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:jump_boost",
+          "duration": "500",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:strength",
+          "duration": "500",
+          "amplifier": 0
         }
       ]
     },
@@ -1219,6 +1345,28 @@
         {
           "name": "hydroxide"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "60",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:blindness",
+          "duration": "400",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1249,6 +1397,28 @@
         {
           "name": "hydroxide",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:blindness",
+          "duration": "200",
+          "amplifier": 0
         }
       ]
     },
@@ -1302,6 +1472,28 @@
         {
           "name": "chlorine"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "40",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:blindness",
+          "duration": "400",
+          "amplifier": 1
+        }
       ]
     },
     {
@@ -1352,6 +1544,28 @@
         {
           "name": "oxygen",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "100",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:unluck",
+          "duration": "400",
+          "amplifier": 1
         }
       ]
     },
@@ -1486,6 +1700,23 @@
           "name": "oxygen",
           "count": 4
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        }
       ]
     },
     {
@@ -1510,6 +1741,23 @@
           "name": "oxygen",
           "count": 3
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "400",
+          "amplifier": 1
+        }
       ]
     },
     {
@@ -1530,6 +1778,18 @@
         {
           "name": "oxygen",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
         }
       ]
     },
@@ -1574,6 +1834,18 @@
           "name": "hydrogen",
           "count": "3"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "200",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1612,6 +1884,18 @@
         {
           "name": "oxygen",
           "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "100",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 0
         }
       ]
     },
@@ -1685,6 +1969,23 @@
         {
           "name": "sulfur"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1732,6 +2033,13 @@
         {
           "name": "oxygen",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "40",
+          "amplifier": 1
         }
       ]
     },
@@ -1800,6 +2108,23 @@
         {
           "name": "oxygen"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        }
       ]
     },
     {
@@ -1830,6 +2155,13 @@
         {
           "name": "hydroxide"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1845,6 +2177,13 @@
         {
           "name": "hydroxide"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1859,6 +2198,13 @@
         },
         {
           "name": "hydroxide"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
         }
       ]
     },
@@ -1876,6 +2222,13 @@
           "name": "hydroxide",
           "count": 2
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1891,6 +2244,13 @@
         {
           "name": "hydroxide",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
         }
       ]
     },
@@ -1908,6 +2268,13 @@
           "name": "hydroxide",
           "count": 2
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1923,6 +2290,13 @@
         {
           "name": "hydroxide",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
         }
       ]
     },
@@ -1940,6 +2314,13 @@
           "name": "hydroxide",
           "count": 3
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1955,6 +2336,13 @@
         {
           "name": "hydroxide",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
         }
       ]
     },
@@ -1972,6 +2360,13 @@
           "name": "hydroxide",
           "count": 2
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -1988,6 +2383,13 @@
           "name": "hydroxide",
           "count": 2
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
+        }
       ]
     },
     {
@@ -2003,6 +2405,13 @@
         {
           "name": "hydroxide",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "0",
+          "amplifier": 0
         }
       ]
     },
@@ -3018,6 +3427,23 @@
         {
           "name": "oxygen"
         }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "120",
+          "amplifier": 1
+        }
       ]
     },
     {
@@ -3038,6 +3464,18 @@
         {
           "name": "sulfur",
           "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 0
         }
       ]
     },

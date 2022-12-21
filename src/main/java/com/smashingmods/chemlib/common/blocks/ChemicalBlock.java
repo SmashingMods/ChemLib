@@ -5,6 +5,7 @@ import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.MatterState;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -51,6 +52,11 @@ public class ChemicalBlock extends Block implements Chemical {
     @Override
     public String getChemicalDescription() {
         return "";
+    }
+
+    @Override
+    public List<MobEffectInstance> getEffects() {
+        return getChemical().getEffects();
     }
 
     @Override

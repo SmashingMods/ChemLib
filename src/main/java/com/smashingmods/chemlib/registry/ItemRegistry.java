@@ -87,7 +87,10 @@ public class ItemRegistry {
             List<ItemStack> dustStacks = getChemicalItemsByType(ChemicalItemType.DUST).stream().map(ItemStack::new).toList();
             List<ItemStack> nuggetStacks = getChemicalItemsByType(ChemicalItemType.NUGGET).stream().map(ItemStack::new).toList();
             List<ItemStack> ingotStacks = getChemicalItemsByType(ChemicalItemType.INGOT).stream().map(ItemStack::new).toList();
-            List<ItemStack> plateStacks = getChemicalItemsByType(ChemicalItemType.PLATE).stream().map(ItemStack::new).toList();
+            List<ItemStack> plateStacks = getChemicalItemsByType(ChemicalItemType.PLATE)
+                    .stream()
+                    .filter(chemicalItem -> !chemicalItem.getDescriptionId().equals("item.chemlib.polyvinyl_chloride_plate"))
+                    .map(ItemStack::new).toList();
 
             List<ItemStack> blockItemStacks = getChemicalBlockItems().stream().filter(item -> ((ChemicalBlock) item.getBlock()).getBlockType().getSerializedName().equals("metal")).map(ItemStack::new).toList();
 
@@ -104,6 +107,16 @@ public class ItemRegistry {
         @Nonnull
         public ItemStack makeIcon() {
             return getChemicalBlockItemByName("radon_lamp_block").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR));
+        }
+
+        //TODO: make more efficient
+        @Override
+        public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
+            super.fillItemList(pItems);
+            pItems.addAll(getChemicalItemsByType(ChemicalItemType.PLATE)
+                    .stream()
+                    .filter(chemicalItem -> chemicalItem.getDescriptionId().equals("item.chemlib.polyvinyl_chloride_plate"))
+                    .map(ItemStack::new).toList());
         }
     };
 
@@ -126,7 +139,7 @@ public class ItemRegistry {
     public static Stream<ChemicalItem> getChemicalItems() {
         List<ChemicalItem> items = new ArrayList<>();
         for (ChemicalItemType type : ChemicalItemType.values()) {
-            items.addAll(getChemicalItemsByTypeAsStream(type).collect(Collectors.toList()));
+            items.addAll(getChemicalItemsByTypeAsStream(type).toList());
         }
         return items.stream();
     }

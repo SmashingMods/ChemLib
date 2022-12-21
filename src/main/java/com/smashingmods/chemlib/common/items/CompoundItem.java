@@ -1,25 +1,22 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.smashingmods.chemlib.api.Chemical;
+import com.smashingmods.chemlib.api.Compound;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Map;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
-public class CompoundItem extends Item implements Chemical {
+public class CompoundItem extends Item implements Compound {
 
     private final String compoundName;
     private String abbreviation = "";
@@ -27,14 +24,16 @@ public class CompoundItem extends Item implements Chemical {
     private final Map<String, Integer> components;
     private final String description;
     private final int color;
+    private final List<MobEffectInstance> effects;
 
-    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor) {
+    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects) {
         super(new Item.Properties().tab(ItemRegistry.COMPOUND_TAB));
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;
         this.description = pDescription;
-        this.color = (int) Long.parseLong(pColor, 16);
+        this.color = Integer.parseInt(pColor, 16) | 0xFF000000;
+        this.effects = pEffects;
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -69,10 +68,16 @@ public class CompoundItem extends Item implements Chemical {
         return this.color;
     }
 
+    @Override
+    public List<MobEffectInstance> getEffects() {
+        return this.effects;
+    }
+
     public Map<String, Integer> getComponents() {
         return this.components;
     }
 
+    @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex > 0 ? -1 : color;
     }

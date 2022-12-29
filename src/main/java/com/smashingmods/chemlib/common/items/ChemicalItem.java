@@ -1,6 +1,10 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.smashingmods.chemlib.api.*;
+import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.api.Chemical;
+import com.smashingmods.chemlib.api.ChemicalItemType;
+import com.smashingmods.chemlib.api.Element;
+import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -16,6 +20,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -46,7 +51,13 @@ public class ChemicalItem extends Item implements Chemical {
             pTooltipComponents.add(MutableComponent.create(new LiteralContents(element.getGroupName())).withStyle(ChatFormatting.GRAY));
         } else {
             pTooltipComponents.add(MutableComponent.create(new LiteralContents(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
+            pTooltipComponents.add(MutableComponent.create(
+                    new LiteralContents(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
         }
+    }
+
+    public String getNamespace() {
+        return ForgeRegistries.ITEMS.getResourceKey(this).get().location().getNamespace();
     }
 
     public Chemical getChemical() {

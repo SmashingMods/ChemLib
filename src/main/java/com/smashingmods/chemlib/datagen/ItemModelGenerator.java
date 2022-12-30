@@ -1,7 +1,10 @@
 package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.api.*;
+import com.smashingmods.chemlib.api.Chemical;
+import com.smashingmods.chemlib.api.ChemicalItemType;
+import com.smashingmods.chemlib.api.Element;
+import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.items.ChemicalBlockItem;
 import com.smashingmods.chemlib.common.items.ChemicalItem;

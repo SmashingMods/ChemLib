@@ -1,13 +1,13 @@
-package com.smashingmods.chemlib.api.modadditions.registry;
+package com.smashingmods.chemlib.api.addons.registry;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mojang.datafixers.util.Either;
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.api.modadditions.datagen.ModBlockStateGenerator;
-import com.smashingmods.chemlib.api.modadditions.datagen.ModItemModelGenerator;
-import com.smashingmods.chemlib.api.modadditions.datagen.ModItemTagGenerator;
-import com.smashingmods.chemlib.api.modadditions.datagen.ModLocalizationGenerator;
+import com.smashingmods.chemlib.api.addons.datagen.ModBlockStateGenerator;
+import com.smashingmods.chemlib.api.addons.datagen.ModItemModelGenerator;
+import com.smashingmods.chemlib.api.addons.datagen.ModItemTagGenerator;
+import com.smashingmods.chemlib.api.addons.datagen.ModLocalizationGenerator;
 import com.smashingmods.chemlib.api.utility.FluidEffectsTooltipUtility;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
@@ -71,7 +71,7 @@ public class AddonRegisters {
         LIQUID_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, pModID);
         BUCKETS = DeferredRegister.create(ForgeRegistries.ITEMS, pModID);
         addListeners();
-        if(!ModTracker.addModRegisters(this)) {
+        if (!ModTracker.addModRegisters(this)) {
             throw new RuntimeException("Mod ID already used to create and register chemical compounds");
         }
     }
@@ -79,13 +79,13 @@ public class AddonRegisters {
     /**
      * Pass in your own DeferredRegister objects
      *
-     * @param pModID Your Mod ID string
-     * @param pCompounds DeferredRegister for compounds
+     * @param pModID         Your Mod ID string
+     * @param pCompounds     DeferredRegister for compounds
      * @param pCompoundDusts DeferredRegister for Compound dusts
-     * @param pFluids DeferredRegister for fluids
-     * @param pFluidTypes DeferredRegister for fluid types
-     * @param pLiquidBlocks DeferredRegister for liquid blocks
-     * @param pBuckets DeferredRegister for buckets
+     * @param pFluids        DeferredRegister for fluids
+     * @param pFluidTypes    DeferredRegister for fluid types
+     * @param pLiquidBlocks  DeferredRegister for liquid blocks
+     * @param pBuckets       DeferredRegister for buckets
      */
     public AddonRegisters(String pModID, DeferredRegister<Item> pCompounds, DeferredRegister<Item> pCompoundDusts, DeferredRegister<Fluid> pFluids, DeferredRegister<FluidType> pFluidTypes, DeferredRegister<Block> pLiquidBlocks, DeferredRegister<Item> pBuckets) throws RuntimeException {
         modID = pModID;
@@ -96,7 +96,7 @@ public class AddonRegisters {
         LIQUID_BLOCKS = pLiquidBlocks;
         BUCKETS = pBuckets;
         addListeners();
-        if(!ModTracker.addModRegisters(this)) {
+        if (!ModTracker.addModRegisters(this)) {
             throw new RuntimeException("Mod ID already used to create and register chemical compounds");
         }
     }
@@ -119,7 +119,7 @@ public class AddonRegisters {
     }
 
     public void registerCompounds(IEventBus pEventBus, Class<?> pCaller, String pPath) {
-        JsonObject jsonObject =JsonParser.parseReader(new BufferedReader(new InputStreamReader(Objects.requireNonNull(pCaller.getResourceAsStream(pPath))))).getAsJsonObject();
+        JsonObject jsonObject = JsonParser.parseReader(new BufferedReader(new InputStreamReader(Objects.requireNonNull(pCaller.getResourceAsStream(pPath))))).getAsJsonObject();
         CompoundRegistration.RegisterCompounds(this, jsonObject);
         register(pEventBus);
     }
@@ -150,9 +150,9 @@ public class AddonRegisters {
     }
 
     public void onItemColorHandlerEvent(final RegisterColorHandlersEvent.Item event) {
-            getCompounds().forEach(compound -> event.register(compound::getColor, compound));
-            getCompoundItemsAsStream().forEach(item -> event.register(item::getColor, item));
-            getBucketsAsStream().forEach(bucket -> event.register(new DynamicFluidContainerModel.Colors(), bucket));
+        getCompounds().forEach(compound -> event.register(compound::getColor, compound));
+        getCompoundItemsAsStream().forEach(item -> event.register(item::getColor, item));
+        getBucketsAsStream().forEach(bucket -> event.register(new DynamicFluidContainerModel.Colors(), bucket));
     }
 
     public void onRenderTooltip(RenderTooltipEvent.GatherComponents event) {

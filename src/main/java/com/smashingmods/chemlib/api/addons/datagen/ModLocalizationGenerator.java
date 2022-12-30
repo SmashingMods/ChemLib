@@ -1,6 +1,6 @@
-package com.smashingmods.chemlib.api.modadditions.datagen;
+package com.smashingmods.chemlib.api.addons.datagen;
 
-import com.smashingmods.chemlib.api.modadditions.registry.AddonRegisters;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegisters;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
@@ -8,6 +8,7 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public class ModLocalizationGenerator extends LanguageProvider {
     private final AddonRegisters addonRegisters;
+
     public ModLocalizationGenerator(DataGenerator gen, AddonRegisters pAddonRegisters, String locale) {
         super(gen, pAddonRegisters.getModID(), locale);
         this.addonRegisters = pAddonRegisters;
@@ -35,7 +36,7 @@ public class ModLocalizationGenerator extends LanguageProvider {
             String translation = WordUtils.capitalize(String.format("%s%s", value.replace("_", " "), density < 0 ? " gas" : ""));
 
             add(key, translation);
-            add(String.format("item.%s.%s_bucket",addonRegisters.getModID(),  value), translation + " Bucket");
+            add(String.format("item.%s.%s_bucket", addonRegisters.getModID(), value), translation + " Bucket");
         });
     }
 }

@@ -1,6 +1,6 @@
 package com.smashingmods.chemlib;
 
-import com.smashingmods.chemlib.api.modadditions.registry.ModTracker;
+import com.smashingmods.chemlib.api.addons.registry.ModTracker;
 import com.smashingmods.chemlib.registry.Registry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Style;

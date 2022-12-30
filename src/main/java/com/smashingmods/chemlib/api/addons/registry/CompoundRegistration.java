@@ -1,4 +1,4 @@
-package com.smashingmods.chemlib.api.modadditions.registry;
+package com.smashingmods.chemlib.api.addons.registry;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -33,7 +33,9 @@ import static com.smashingmods.chemlib.registry.ChemicalRegistry.fluidTypeProper
 import static com.smashingmods.chemlib.registry.ChemicalRegistry.mobEffectsFactory;
 
 public class CompoundRegistration {
-    private CompoundRegistration() {}
+    private CompoundRegistration() {
+    }
+
     public static void RegisterCompounds(AddonRegisters pRegisters, JsonObject pCompoundsJson) {
         CreativeModeTab creativeTab = Objects.requireNonNullElseGet(pRegisters.getCompoundsTab(), () -> makeCompoundsTab(pRegisters));
         for (JsonElement jsonElement : pCompoundsJson.getAsJsonArray("compounds")) {
@@ -121,6 +123,7 @@ public class CompoundRegistration {
                     public ResourceLocation getRenderOverlayTexture(Minecraft mc) {
                         return new ResourceLocation("minecraft", "textures/misc/underwater.png");
                     }
+
                     @Override
                     public int getTintColor() {
                         return pColor;

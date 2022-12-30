@@ -1,6 +1,6 @@
-package com.smashingmods.chemlib.api.modadditions.datagen;
+package com.smashingmods.chemlib.api.addons.datagen;
 
-import com.smashingmods.chemlib.api.modadditions.registry.AddonRegisters;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegisters;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -15,6 +15,7 @@ import java.util.Objects;
 
 public class ModItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
     private final AddonRegisters addonRegisters;
+
     public ModItemTagGenerator(DataGenerator generator, AddonRegisters pAddonRegisters, @Nullable ExistingFileHelper existingFileHelper) {
         super(generator, ForgeRegistries.ITEMS, pAddonRegisters.getModID(), existingFileHelper);
         addonRegisters = pAddonRegisters;

@@ -1,4 +1,4 @@
-package com.smashingmods.chemlib.api.modadditions.registry;
+package com.smashingmods.chemlib.api.addons.registry;
 
 import net.minecraft.resources.ResourceLocation;
 
@@ -15,23 +15,22 @@ public class ModTracker {
     public static CopyOnWriteArrayList<String> modsList = new CopyOnWriteArrayList<>();
 
     public static boolean compoundExists(String pCompoundName) {
-        for(ResourceLocation loc : compounds) {
-            if(loc.getPath().equals(pCompoundName)) {
+        for (ResourceLocation loc : compounds) {
+            if (loc.getPath().equals(pCompoundName)) {
                 return true;
             }
         }
         return false;
-//        return compounds.stream().anyMatch(compound -> compound.getPath().equals(pCompoundName));
     }
 
     public static void addCompound(ResourceLocation pCompound) {
-        if(!compoundExists(pCompound.getPath())) {
+        if (!compoundExists(pCompound.getPath())) {
             compounds.add(pCompound);
         }
     }
 
     public static boolean addModRegisters(AddonRegisters addOnRegisters) {
-        if(addonRegistersList.stream().anyMatch(register -> Objects.equals(register.getModID(), addOnRegisters.getModID()))) {
+        if (addonRegistersList.stream().anyMatch(register -> Objects.equals(register.getModID(), addOnRegisters.getModID()))) {
             return false;
         }
         modsList.add(addOnRegisters.getModID());

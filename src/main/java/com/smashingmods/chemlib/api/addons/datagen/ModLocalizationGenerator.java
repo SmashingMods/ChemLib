@@ -34,9 +34,22 @@ public class ModLocalizationGenerator extends LanguageProvider {
             String key = fluidType.getDescriptionId();
             String value = key.split("\\.")[key.split("\\.").length - 1];
             String translation = WordUtils.capitalize(String.format("%s%s", value.replace("_", " "), density < 0 ? " gas" : ""));
-
             add(key, translation);
             add(String.format("item.%s.%s_bucket", addonRegisters.getModID(), value), translation + " Bucket");
         });
+
+        if (!addonRegisters.usedCustomCompoundsTab()) {
+            String rawName = addonRegisters.getCompoundsTab().getDisplayName().getString();
+            if (rawName.startsWith("itemGroup.")) {
+                add(rawName, String.format("%s Compounds", WordUtils.capitalize(addonRegisters.getModID())));
+            }
+        }
+
+        if (!addonRegisters.usedCustomCompoundsTab()) {
+            String rawName = addonRegisters.getBucketsTab().getDisplayName().getString();
+            if (rawName.startsWith("itemGroup.")) {
+                add(rawName, String.format("%s Fluids", WordUtils.capitalize(addonRegisters.getModID())));
+            }
+        }
     }
 }

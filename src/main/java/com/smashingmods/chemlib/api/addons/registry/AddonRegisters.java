@@ -13,14 +13,13 @@ import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.NonNullList;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
-import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.Fluid;
@@ -39,6 +38,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.annotation.Nonnull;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
@@ -50,6 +50,8 @@ public class AddonRegisters {
     public static String modID;
     private CreativeModeTab bucketsTab = null;
     private CreativeModeTab compoundsTab = null;
+    private boolean usedCustomBucketsTab = false;
+    private boolean usedCustomCompoundsTab = false;
     public DeferredRegister<Item> COMPOUNDS;
     public DeferredRegister<Item> COMPOUND_DUSTS;
     public DeferredRegister<Fluid> FLUIDS;
@@ -87,7 +89,13 @@ public class AddonRegisters {
      * @param pLiquidBlocks  DeferredRegister for liquid blocks
      * @param pBuckets       DeferredRegister for buckets
      */
-    public AddonRegisters(String pModID, DeferredRegister<Item> pCompounds, DeferredRegister<Item> pCompoundDusts, DeferredRegister<Fluid> pFluids, DeferredRegister<FluidType> pFluidTypes, DeferredRegister<Block> pLiquidBlocks, DeferredRegister<Item> pBuckets) throws RuntimeException {
+    public AddonRegisters(String pModID
+            , DeferredRegister<Item> pCompounds
+            , DeferredRegister<Item> pCompoundDusts
+            , DeferredRegister<Fluid> pFluids
+            , DeferredRegister<FluidType> pFluidTypes
+            , DeferredRegister<Block> pLiquidBlocks
+            , DeferredRegister<Item> pBuckets) throws RuntimeException {
         modID = pModID;
         COMPOUNDS = pCompounds;
         COMPOUND_DUSTS = pCompoundDusts;
@@ -113,14 +121,23 @@ public class AddonRegisters {
         return JsonParser.parseReader(new BufferedReader(new InputStreamReader(Objects.requireNonNull(pCaller.getResourceAsStream(pPath))))).getAsJsonObject();
     }
 
-    public void registerCompounds(IEventBus pEventBus, JsonObject pCompoundsJson) {
-        CompoundRegistration.RegisterCompounds(this, pCompoundsJson);
-        register(pEventBus);
+    public void registerCompounds(IEventBus pEventBus, Class<?> pCaller, String pPath) {
+        registerCompounds(pEventBus, getStreamAsJsonObject(pCaller, pPath));
     }
 
-    public void registerCompounds(IEventBus pEventBus, Class<?> pCaller, String pPath) {
-        JsonObject jsonObject = JsonParser.parseReader(new BufferedReader(new InputStreamReader(Objects.requireNonNull(pCaller.getResourceAsStream(pPath))))).getAsJsonObject();
-        CompoundRegistration.RegisterCompounds(this, jsonObject);
+    public void registerCompounds(IEventBus pEventBus, JsonObject pCompoundsJson) {
+        if (compoundsTab == null) {
+            compoundsTab = makeCompoundsTab(this);
+        }
+        if (bucketsTab == null) {
+            bucketsTab = makeBucketsTab(this);
+        }
+
+        while (true) {
+            if (ModTracker.ChemlibRegistered) break;
+        }
+
+        CompoundRegistration.registerCompounds(this, pCompoundsJson);
         register(pEventBus);
     }
 
@@ -131,6 +148,38 @@ public class AddonRegisters {
         FLUID_TYPES.register(eventBus);
         LIQUID_BLOCKS.register(eventBus);
         BUCKETS.register(eventBus);
+    }
+
+    private CreativeModeTab makeBucketsTab(AddonRegisters pRegisters) {
+        return new CreativeModeTab(String.format("%s.fluids", pRegisters.getModID())) {
+            @Override
+            @Nonnull
+            public ItemStack makeIcon() {
+                return new ItemStack(Items.WATER_BUCKET, 1);
+            }
+
+            @Override
+            public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
+                pItems.addAll(pRegisters.getSortedBuckets().stream().map(ItemStack::new).toList());
+            }
+        };
+    }
+
+    private CreativeModeTab makeCompoundsTab(AddonRegisters pRegisters) {
+        return new CreativeModeTab(String.format("%s.compounds", pRegisters.getModID())) {
+            @Override
+            @Nonnull
+            public ItemStack makeIcon() {
+                List<CompoundItem> compounds = pRegisters.getCompounds();
+                return new ItemStack(compounds.isEmpty() ? Items.AIR : compounds.get(0), 1);
+            }
+
+            @Override
+            public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
+                pItems.addAll(pRegisters.getSortedCompounds().stream().map(ItemStack::new).toList());
+                pItems.addAll(pRegisters.getSortedChemicalItems().stream().map(ItemStack::new).toList());
+            }
+        };
     }
 
     //region events
@@ -180,22 +229,32 @@ public class AddonRegisters {
      * @param pCompoundsTab Custom creative tab for your compounds
      */
     public void setCompoundsTab(CreativeModeTab pCompoundsTab) {
-        this.compoundsTab = pCompoundsTab;
+        compoundsTab = pCompoundsTab;
+        usedCustomCompoundsTab = true;
     }
 
     /**
      * @param pBucketsTab Custom creative tab for your fluids
      */
     public void setBucketsTab(CreativeModeTab pBucketsTab) {
-        this.bucketsTab = pBucketsTab;
+        bucketsTab = pBucketsTab;
+        usedCustomBucketsTab = true;
+    }
+
+    public CreativeModeTab getCompoundsTab() {
+        return compoundsTab;
     }
 
     public CreativeModeTab getBucketsTab() {
         return bucketsTab;
     }
 
-    public CreativeModeTab getCompoundsTab() {
-        return compoundsTab;
+    public boolean usedCustomCompoundsTab() {
+        return usedCustomCompoundsTab;
+    }
+
+    public boolean usedCustomBucketsTab() {
+        return usedCustomBucketsTab;
     }
 
     public List<CompoundItem> getCompounds() {

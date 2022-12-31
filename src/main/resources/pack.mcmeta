@@ -1,7 +1,6 @@
 {
     "pack": {
         "description": "chem lib resources",
-        "pack_format": 9,
-        "_comment": ""
+        "pack_format": 9
     }
 }

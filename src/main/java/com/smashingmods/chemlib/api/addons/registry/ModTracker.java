@@ -9,6 +9,8 @@ public class ModTracker {
     public static CopyOnWriteArrayList<ResourceLocation> compounds = new CopyOnWriteArrayList<>();
     public static CopyOnWriteArrayList<AddonRegisters> addonRegistersList = new CopyOnWriteArrayList<>();
 
+    public static boolean ChemlibRegistered = false;
+
     /**
      * facilitates efficiency in tooltip creation
      */

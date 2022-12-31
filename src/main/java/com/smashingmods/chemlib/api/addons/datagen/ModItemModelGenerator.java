@@ -18,8 +18,12 @@ public class ModItemModelGenerator extends ItemModelProvider {
     private final AddonRegisters addonRegisters;
 
     public ModItemModelGenerator(DataGenerator generator, AddonRegisters pAddonRegisters, ExistingFileHelper existingFileHelper) {
-        super(generator, pAddonRegisters.getModID(), existingFileHelper);
+        super(generator, pAddonRegisters.getModID(), makeNewHelper(existingFileHelper));
         addonRegisters = pAddonRegisters;
+    }
+
+    private static ExistingFileHelper makeNewHelper(ExistingFileHelper pExistingFileHelper) {
+        return pExistingFileHelper;
     }
 
     @Override
@@ -33,12 +37,12 @@ public class ModItemModelGenerator extends ItemModelProvider {
     private void generateCompoundModels() {
         for (String type : Arrays.asList("solid", "liquid", "gas", "dust")) {
             withExistingParent(String.format("item/compound_%s_model", type), mcLoc("item/generated"))
-                    .texture("layer0", String.format("items/compound_%s_layer_0", type))
-                    .texture("layer1", String.format("items/compound_%s_layer_1", type))
+                    .texture("layer0", String.format("chemlib:items/compound_%s_layer_0", type))
+                    .texture("layer1", String.format("chemlib:items/compound_%s_layer_1", type));
             ;
         }
         withExistingParent("item/chemical_dust_model", mcLoc("item/generated"))
-                .texture("layer0", "items/dust")
+                .texture("layer0", "chemlib:items/dust")
         ;
     }
 
@@ -52,10 +56,6 @@ public class ModItemModelGenerator extends ItemModelProvider {
 
     private void registerCompoundDust(ChemicalItem pItem) {
         withExistingParent(String.format("item/%s_dust", pItem.getChemicalName()), modLoc("item/compound_dust_model"));
-    }
-
-    private void registerItem(String pName, String pType) {
-        withExistingParent(String.format("item/%s_%s", pName, pType), modLoc("item/builtin_entity"));
     }
 
     private void registerBucket(BucketItem pBucket) {
@@ -72,11 +72,11 @@ public class ModItemModelGenerator extends ItemModelProvider {
         MatterState matterState = Objects.requireNonNull(optionalCompound.get()).getMatterState();
         switch (matterState) {
             case LIQUID -> withExistingParent(String.format("item/%s", path), mcLoc("item/generated"))
-                    .texture("layer0", "#chemlib/items/bucket_layer_0")
-                    .texture("layer1", "#chemlib/items/bucket_layer_1");
+                    .texture("layer0", "chemlib:items/bucket_layer_0")
+                    .texture("layer1", "chemlib:items/bucket_layer_1");
             case GAS -> withExistingParent(String.format("item/%s", path), mcLoc("item/generated"))
-                    .texture("layer0", "#chemlib/items/gas_bucket_layer_0")
-                    .texture("layer1", "#chemlib/textures/items/gas_bucket_layer_1");
+                    .texture("layer0", "chemlib:items/gas_bucket_layer_0")
+                    .texture("layer1", "chemlib:items/gas_bucket_layer_1");
         }
     }
 }

@@ -11,8 +11,6 @@ import net.minecraftforge.registries.RegistryObject;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 
-import java.util.Objects;
-
 public class LocalizationGenerator extends LanguageProvider {
 
     public LocalizationGenerator(DataGenerator gen, String locale) {
@@ -60,7 +58,7 @@ public class LocalizationGenerator extends LanguageProvider {
 
         add("item.chemlib.periodic_table", "Periodic Table of the Elements");
         add("item.chemlib.periodic_table.tooltip", "Use this to see a full periodic table.");
-        
+
         add("itemGroup.chemlib.elements", "Elements");
         add("itemGroup.chemlib.compounds", "Compounds");
         add("itemGroup.chemlib.metals", "Metals");

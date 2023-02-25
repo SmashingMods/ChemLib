@@ -1,7 +1,11 @@
 package com.smashingmods.chemlib.registry;
 
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.api.*;
+import com.smashingmods.chemlib.api.ChemicalItemType;
+import com.smashingmods.chemlib.api.MatterState;
+import com.smashingmods.chemlib.api.MetalType;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegistry;
+import com.smashingmods.chemlib.api.addons.registry.ModTracker;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.items.*;
 import net.minecraft.core.NonNullList;
@@ -61,12 +65,8 @@ public class ItemRegistry {
 
         @Override
         public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
-            super.fillItemList(pItems);
-            pItems.clear();
-            List<ItemStack> compounds = getCompounds().stream().map(ItemStack::new).toList();
-            List<ItemStack> compoundDusts = getChemicalItemsByTypeAsStream(ChemicalItemType.COMPOUND).map(ItemStack::new).toList();
-            pItems.addAll(compounds);
-            pItems.addAll(compoundDusts);
+            pItems.addAll(getSortedCompounds().stream().map(ItemStack::new).toList());
+            pItems.addAll(getSortedChemicalItemsByType(ChemicalItemType.COMPOUND).stream().map(ItemStack::new).toList());
         }
     };
 
@@ -112,6 +112,7 @@ public class ItemRegistry {
         //TODO: make more efficient
         @Override
         public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
+            pItems.addAll(FluidRegistry.getAllSortedBuckets().stream().map(ItemStack::new).toList());
             super.fillItemList(pItems);
             pItems.addAll(getChemicalItemsByType(ChemicalItemType.PLATE)
                     .stream()
@@ -134,6 +135,20 @@ public class ItemRegistry {
 
     public static List<CompoundItem> getCompounds() {
         return REGISTRY_COMPOUNDS.getEntries().stream().map(RegistryObject::get).map(item -> (CompoundItem) item).collect(Collectors.toList());
+    }
+
+    public static List<CompoundItem> getSortedCompounds() {
+        List<CompoundItem> compounds = new ArrayList<>(REGISTRY_COMPOUNDS.getEntries().stream().map(RegistryObject::get).map(item -> (CompoundItem) item).toList());
+        compounds.sort(Comparator.comparing(CompoundItem::getChemicalName));
+        return compounds;
+    }
+
+    public static List<CompoundItem> getAllCompounds() {
+        List<CompoundItem> outList = new LinkedList<>(REGISTRY_COMPOUNDS.getEntries().stream().map(RegistryObject::get).map(item -> (CompoundItem) item).toList());
+        for (AddonRegistry modRegister : ModTracker.addonRegistryList) {
+            outList.addAll(modRegister.getCompounds());
+        }
+        return outList;
     }
 
     public static Stream<ChemicalItem> getChemicalItems() {
@@ -179,11 +194,15 @@ public class ItemRegistry {
     }
 
     public static Optional<CompoundItem> getCompoundByName(String pName) {
-        return getCompounds().stream().filter(compound -> compound.getChemicalName().equals(pName)).findFirst();
+        return getAllCompounds().stream().filter(compound -> compound.getChemicalName().equals(pName)).findFirst();
     }
 
     public static List<ChemicalItem> getChemicalItemsByType(ChemicalItemType pChemicalItemType) {
         return getChemicalItemsByTypeAsStream(pChemicalItemType).collect(Collectors.toList());
+    }
+
+    public static List<ChemicalItem> getSortedChemicalItemsByType(ChemicalItemType pChemicalItemType) {
+        return getChemicalItemsByTypeAsStream(pChemicalItemType).sorted(Comparator.comparing(ChemicalItem::getChemicalName)).collect(Collectors.toList());
     }
 
     public static Stream<ChemicalItem> getChemicalItemsByTypeAsStream(ChemicalItemType pChemicalItemType) {
@@ -210,7 +229,7 @@ public class ItemRegistry {
         String registryName = String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName());
         Supplier<ChemicalItem> supplier = () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties().tab(pTab));
 
-        switch(pChemicalItemType) {
+        switch (pChemicalItemType) {
             case COMPOUND -> REGISTRY_COMPOUND_DUSTS.register(registryName, supplier);
             case DUST -> REGISTRY_METAL_DUSTS.register(registryName, supplier);
             case NUGGET -> REGISTRY_NUGGETS.register(registryName, supplier);

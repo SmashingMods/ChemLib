@@ -5,15 +5,13 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Optional;
-import net.minecraftforge.fluids.FluidType;
-
 import java.util.List;
+import java.util.Optional;
 
 public interface Chemical extends ItemLike {
-
     String getChemicalName();
 
     String getAbbreviation();
@@ -23,7 +21,6 @@ public interface Chemical extends ItemLike {
     String getChemicalDescription();
 
     List<MobEffectInstance> getEffects();
-
     int getColor();
 
     default Optional<FluidType> getFluidTypeReference() {

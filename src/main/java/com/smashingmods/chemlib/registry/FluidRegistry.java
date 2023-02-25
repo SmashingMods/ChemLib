@@ -20,10 +20,9 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -80,7 +79,7 @@ public class FluidRegistry {
         RegistryObject<FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", pName), () -> new ForgeFlowingFluid.Source(ref.properties));
         RegistryObject<FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", pName), () -> new ForgeFlowingFluid.Flowing(ref.properties));
         RegistryObject<LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(pName, () -> new ChemicalLiquidBlock(fluidSource, pName));
-        RegistryObject<Item> bucket = BUCKETS.register(String.format("%s_bucket", pName), () -> new BucketItem(fluidSource, new Item.Properties().tab(ItemRegistry.MISC_TAB).stacksTo(1)));
+        RegistryObject<Item> bucket = BUCKETS.register(String.format("%s_bucket", pName), () -> new BucketItem(fluidSource, new Item.Properties().stacksTo(1)));
 
         ref.properties = new ForgeFlowingFluid.Properties(fluidType, fluidSource, fluidFlowing)
                 .slopeFindDistance(pSlopeFindDistance)
@@ -165,6 +164,36 @@ public class FluidRegistry {
 
     public static Stream<BucketItem> getBuckets() {
         return BUCKETS.getEntries().stream().map(RegistryObject::get).map(item -> (BucketItem) item);
+    }
+
+    public static List<BucketItem> getAllSortedBuckets() {
+        LinkedList<BucketItem> buckets = new LinkedList<>(getElementBuckets());
+        buckets.addAll(getSortedCompoundBuckets());
+        return buckets;
+    }
+
+    public static List<BucketItem> getElementBuckets() {
+        Map<Integer, BucketItem> bucketMap = new TreeMap<>();
+        for(BucketItem bucket : BUCKETS.getEntries().stream().map(RegistryObject::get).map(item -> (BucketItem) item).toList()) {
+            String path = StringUtils.removeEnd(ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getPath(), "_fluid");
+            ItemRegistry.getElementByName(path).ifPresent(elementItem -> bucketMap.put(elementItem.getAtomicNumber(), bucket));
+        }
+        return bucketMap.values().stream().toList();
+    }
+
+    public static List<BucketItem> getCompoundBuckets() {
+        ArrayList<BucketItem> buckets = new ArrayList<>();
+        for(BucketItem bucket : BUCKETS.getEntries().stream().map(RegistryObject::get).map(item -> (BucketItem) item).toList()) {
+            String path = StringUtils.removeEnd(ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getPath(), "_fluid");
+            ItemRegistry.getCompoundByName(path).ifPresent(compoundItem -> buckets.add(bucket));
+        }
+        return buckets;
+    }
+
+    public static List<BucketItem> getSortedCompoundBuckets() {
+        List<BucketItem> buckets = getCompoundBuckets();
+        buckets.sort((BucketItem b1, BucketItem b2) -> b1.getFluid().getFluidType().toString().compareToIgnoreCase(b2.getFluid().getFluidType().toString()));
+        return buckets;
     }
 
     public static void register(IEventBus eventBus) {

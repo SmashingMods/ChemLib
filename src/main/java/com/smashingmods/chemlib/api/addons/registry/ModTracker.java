@@ -7,36 +7,38 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ModTracker {
     public static CopyOnWriteArrayList<ResourceLocation> compounds = new CopyOnWriteArrayList<>();
-    public static CopyOnWriteArrayList<AddonRegisters> addonRegistersList = new CopyOnWriteArrayList<>();
+    public static CopyOnWriteArrayList<AddonRegistry> addonRegistryList = new CopyOnWriteArrayList<>();
 
     public static boolean ChemlibRegistered = false;
 
     /**
-     * facilitates efficiency in tooltip creation
+     * Facilitates efficiency in tooltip creation
      */
-    public static CopyOnWriteArrayList<String> modsList = new CopyOnWriteArrayList<>();
+    public static CopyOnWriteArrayList<String> addonList = new CopyOnWriteArrayList<>();
 
-    public static boolean compoundExists(String pCompoundName) {
-        for (ResourceLocation loc : compounds) {
-            if (loc.getPath().equals(pCompoundName)) {
-                return true;
-            }
+    public static boolean compoundNotExist(String pCompoundName) {
+        for (ResourceLocation resourceLocation : compounds) {
+            return !resourceLocation.getPath().equals(pCompoundName);
         }
-        return false;
+        return true;
     }
 
     public static void addCompound(ResourceLocation pCompound) {
-        if (!compoundExists(pCompound.getPath())) {
+        if (compoundNotExist(pCompound.getPath())) {
             compounds.add(pCompound);
         }
     }
 
-    public static boolean addModRegisters(AddonRegisters addOnRegisters) {
-        if (addonRegistersList.stream().anyMatch(register -> Objects.equals(register.getModID(), addOnRegisters.getModID()))) {
-            return false;
+    public static boolean addonRegistered (AddonRegistry pAddonRegistry) {
+        return addonRegistryList.stream().anyMatch(addonRegistry -> Objects.equals(addonRegistry.getModID(), pAddonRegistry.getModID()));
+    }
+
+    public static void addModRegistries(AddonRegistry pAddonRegistry) {
+        if (!addonRegistered(pAddonRegistry)) {
+            addonList.add(pAddonRegistry.getModID());
+            addonRegistryList.add(pAddonRegistry);
+        } else {
+            throw new RuntimeException("Mod ID already used to create and register chemical compounds");
         }
-        modsList.add(addOnRegisters.getModID());
-        addonRegistersList.add(addOnRegisters);
-        return true;
     }
 }

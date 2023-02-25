@@ -1,6 +1,5 @@
 package com.smashingmods.chemlib;
 
-import com.smashingmods.chemlib.api.addons.registry.ModTracker;
 import com.smashingmods.chemlib.registry.Registry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Style;
@@ -23,9 +22,7 @@ public class ChemLib {
     public ChemLib() {
         MinecraftForge.EVENT_BUS.register(this);
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModTracker.modsList.add(ChemLib.MODID);
         Registry.register(modEventBus);
-        ModTracker.ChemlibRegistered = true;
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
         Config.loadConfig(Config.COMMON_SPEC, FMLPaths.CONFIGDIR.get().resolve("chemlib-common.toml"));
     }

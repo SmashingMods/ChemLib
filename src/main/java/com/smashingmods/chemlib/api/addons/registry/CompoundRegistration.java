@@ -32,7 +32,7 @@ class CompoundRegistration {
     CompoundRegistration() {
     }
 
-    static void registerCompounds(AddonRegisters pRegisters, JsonObject pCompoundsJson) {
+    static void registerCompounds(AddonRegistry pRegisters, JsonObject pCompoundsJson) {
         for (JsonElement jsonElement : pCompoundsJson.getAsJsonArray("compounds")) {
             JsonObject object = jsonElement.getAsJsonObject();
             String compoundName = object.get("name").getAsString();
@@ -49,7 +49,7 @@ class CompoundRegistration {
                 componentMap.put(componentName, count);
             }
 
-            if (!ModTracker.compoundExists(compoundName)) {
+            if (ModTracker.compoundNotExist(compoundName)) {
                 RegistryObject<Item> registryObject =
                         pRegisters.COMPOUNDS.register(compoundName
                                 , () -> new CompoundItem(compoundName
@@ -89,7 +89,7 @@ class CompoundRegistration {
         }
     }
 
-    static void registerFluid(AddonRegisters pRegisters, String pName, FluidType.Properties pFluidProperties, int pColor, int pSlopeFindDistance, int pDecreasePerBlock) {
+    static void registerFluid(AddonRegistry pRegisters, String pName, FluidType.Properties pFluidProperties, int pColor, int pSlopeFindDistance, int pDecreasePerBlock) {
         var ref = new Object() {
             ForgeFlowingFluid.Properties properties = null;
         };

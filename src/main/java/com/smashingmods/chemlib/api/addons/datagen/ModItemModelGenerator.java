@@ -1,7 +1,7 @@
 package com.smashingmods.chemlib.api.addons.datagen;
 
 import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.api.addons.registry.AddonRegisters;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegistry;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import net.minecraft.data.DataGenerator;
@@ -15,11 +15,11 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class ModItemModelGenerator extends ItemModelProvider {
-    private final AddonRegisters addonRegisters;
+    private final AddonRegistry addonRegistry;
 
-    public ModItemModelGenerator(DataGenerator generator, AddonRegisters pAddonRegisters, ExistingFileHelper existingFileHelper) {
-        super(generator, pAddonRegisters.getModID(), makeNewHelper(existingFileHelper));
-        addonRegisters = pAddonRegisters;
+    public ModItemModelGenerator(DataGenerator generator, AddonRegistry pAddonRegistry, ExistingFileHelper existingFileHelper) {
+        super(generator, pAddonRegistry.getModID(), makeNewHelper(existingFileHelper));
+        addonRegistry = pAddonRegistry;
     }
 
     private static ExistingFileHelper makeNewHelper(ExistingFileHelper pExistingFileHelper) {
@@ -29,9 +29,9 @@ public class ModItemModelGenerator extends ItemModelProvider {
     @Override
     protected void registerModels() {
         generateCompoundModels();
-        addonRegisters.getCompounds().forEach(this::registerCompound);
-        addonRegisters.getCompoundItemsAsStream().forEach(this::registerCompoundDust);
-        addonRegisters.getBucketsAsStream().forEach(this::registerBucket);
+        addonRegistry.getCompounds().forEach(this::registerCompound);
+        addonRegistry.getCompoundItemsAsStream().forEach(this::registerCompoundDust);
+        addonRegistry.getBucketsAsStream().forEach(this::registerBucket);
     }
 
     private void generateCompoundModels() {
@@ -65,7 +65,7 @@ public class ModItemModelGenerator extends ItemModelProvider {
         for (int i = 0; i < pieces - 1; i++) {
             chemicalName = String.format("%s%s%s", chemicalName, chemicalName.isEmpty() ? "" : "_", path.split("_")[i]);
         }
-        Optional<CompoundItem> optionalCompound = addonRegisters.getCompoundByName(chemicalName);
+        Optional<CompoundItem> optionalCompound = addonRegistry.getCompoundByName(chemicalName);
         if (optionalCompound.isEmpty()) {
             return;
         }

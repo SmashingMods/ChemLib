@@ -4,7 +4,7 @@ import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
-import com.smashingmods.chemlib.api.addons.registry.AddonRegisters;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegistry;
 import com.smashingmods.chemlib.api.addons.registry.ModTracker;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.items.*;
@@ -145,7 +145,7 @@ public class ItemRegistry {
 
     public static List<CompoundItem> getAllCompounds() {
         List<CompoundItem> outList = new LinkedList<>(REGISTRY_COMPOUNDS.getEntries().stream().map(RegistryObject::get).map(item -> (CompoundItem) item).toList());
-        for (AddonRegisters modRegister : ModTracker.addonRegistersList) {
+        for (AddonRegistry modRegister : ModTracker.addonRegistryList) {
             outList.addAll(modRegister.getCompounds());
         }
         return outList;

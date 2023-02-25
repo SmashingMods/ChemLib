@@ -2,23 +2,17 @@ package com.smashingmods.chemlib.api.addons.registry;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.mojang.datafixers.util.Either;
-import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.addons.datagen.ModBlockStateGenerator;
 import com.smashingmods.chemlib.api.addons.datagen.ModItemModelGenerator;
 import com.smashingmods.chemlib.api.addons.datagen.ModItemTagGenerator;
 import com.smashingmods.chemlib.api.addons.datagen.ModLocalizationGenerator;
-import com.smashingmods.chemlib.api.utility.FluidEffectsTooltipUtility;
+import com.smashingmods.chemlib.client.events.ForgeEventHandler;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.NonNullList;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.network.chat.FormattedText;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -36,17 +30,15 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nonnull;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class AddonRegisters {
+public class AddonRegistry {
     public static String modID;
     private CreativeModeTab bucketsTab = null;
     private CreativeModeTab compoundsTab = null;
@@ -64,7 +56,7 @@ public class AddonRegisters {
      *
      * @param pModID Your Mod ID string
      */
-    public AddonRegisters(String pModID) throws RuntimeException {
+    public AddonRegistry(String pModID) throws RuntimeException {
         modID = pModID;
         COMPOUNDS = DeferredRegister.create(ForgeRegistries.ITEMS, pModID);
         COMPOUND_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, pModID);
@@ -73,9 +65,7 @@ public class AddonRegisters {
         LIQUID_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, pModID);
         BUCKETS = DeferredRegister.create(ForgeRegistries.ITEMS, pModID);
         addListeners();
-        if (!ModTracker.addModRegisters(this)) {
-            throw new RuntimeException("Mod ID already used to create and register chemical compounds");
-        }
+        ModTracker.addModRegistries(this);
     }
 
     /**
@@ -89,13 +79,13 @@ public class AddonRegisters {
      * @param pLiquidBlocks  DeferredRegister for liquid blocks
      * @param pBuckets       DeferredRegister for buckets
      */
-    public AddonRegisters(String pModID
-            , DeferredRegister<Item> pCompounds
-            , DeferredRegister<Item> pCompoundDusts
-            , DeferredRegister<Fluid> pFluids
-            , DeferredRegister<FluidType> pFluidTypes
-            , DeferredRegister<Block> pLiquidBlocks
-            , DeferredRegister<Item> pBuckets) throws RuntimeException {
+    public AddonRegistry(String pModID,
+                         DeferredRegister<Item> pCompounds,
+                         DeferredRegister<Item> pCompoundDusts,
+                         DeferredRegister<Fluid> pFluids,
+                         DeferredRegister<FluidType> pFluidTypes,
+                         DeferredRegister<Block> pLiquidBlocks,
+                         DeferredRegister<Item> pBuckets) throws RuntimeException {
         modID = pModID;
         COMPOUNDS = pCompounds;
         COMPOUND_DUSTS = pCompoundDusts;
@@ -104,16 +94,14 @@ public class AddonRegisters {
         LIQUID_BLOCKS = pLiquidBlocks;
         BUCKETS = pBuckets;
         addListeners();
-        if (!ModTracker.addModRegisters(this)) {
-            throw new RuntimeException("Mod ID already used to create and register chemical compounds");
-        }
+        ModTracker.addModRegistries(this);
     }
 
     private void addListeners() {
-        IEventBus iEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        iEventBus.addListener(this::gatherData);
-        iEventBus.addListener(this::onClientSetupEvent);
-        iEventBus.addListener(this::onItemColorHandlerEvent);
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::gatherData);
+        modEventBus.addListener(this::onClientSetupEvent);
+        modEventBus.addListener(this::onItemColorHandlerEvent);
         MinecraftForge.EVENT_BUS.addListener(this::onRenderTooltip);
     }
 
@@ -150,7 +138,7 @@ public class AddonRegisters {
         BUCKETS.register(eventBus);
     }
 
-    private CreativeModeTab makeBucketsTab(AddonRegisters pRegisters) {
+    private CreativeModeTab makeBucketsTab(AddonRegistry pRegisters) {
         return new CreativeModeTab(String.format("%s.fluids", pRegisters.getModID())) {
             @Override
             @Nonnull
@@ -165,7 +153,7 @@ public class AddonRegisters {
         };
     }
 
-    private CreativeModeTab makeCompoundsTab(AddonRegisters pRegisters) {
+    private CreativeModeTab makeCompoundsTab(AddonRegistry pRegisters) {
         return new CreativeModeTab(String.format("%s.compounds", pRegisters.getModID())) {
             @Override
             @Nonnull
@@ -191,6 +179,7 @@ public class AddonRegisters {
         generator.addProvider(event.includeServer(), new ModItemTagGenerator(generator, this, event.getExistingFileHelper()));
     }
 
+    @SuppressWarnings("removal")
     public void onClientSetupEvent(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             getFluidsAsStream().forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.solid()));
@@ -209,13 +198,7 @@ public class AddonRegisters {
                 && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).isPresent()
                 && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace().equals(getModID())) {
 
-            Function<FormattedText, Either<FormattedText, TooltipComponent>> formattedTextFunction = Either::left;
-
-            for (FormattedText textElement : FluidEffectsTooltipUtility.getBucketEffectTooltipComponents(event.getItemStack())) {
-                event.getTooltipElements().add(formattedTextFunction.apply(textElement));
-            }
-            String namespace = ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace();
-            event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(new LiteralContents(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
+            ForgeEventHandler.gatherTooltipComponents(event, bucket);
         }
     }
     //endregion

@@ -28,9 +28,7 @@ import java.util.function.Consumer;
 import static com.smashingmods.chemlib.registry.ChemicalRegistry.fluidTypePropertiesFactory;
 import static com.smashingmods.chemlib.registry.ChemicalRegistry.mobEffectsFactory;
 
-class CompoundRegistration {
-    CompoundRegistration() {
-    }
+public class CompoundRegistration {
 
     static void registerCompounds(AddonRegistry pRegisters, JsonObject pCompoundsJson) {
         for (JsonElement jsonElement : pCompoundsJson.getAsJsonArray("compounds")) {
@@ -50,15 +48,14 @@ class CompoundRegistration {
             }
 
             if (ModTracker.compoundNotExist(compoundName)) {
-                RegistryObject<Item> registryObject =
-                        pRegisters.COMPOUNDS.register(compoundName
-                                , () -> new CompoundItem(compoundName
-                                        , matterState
-                                        , componentMap
-                                        , description
-                                        , color
-                                        , mobEffectsFactory(object)
-                                        , pRegisters.getCompoundsTab()));
+                RegistryObject<Item> registryObject = pRegisters.COMPOUNDS.register(compoundName,
+                    () -> new CompoundItem(compoundName,
+                        matterState,
+                        componentMap,
+                        description,
+                        color,
+                        mobEffectsFactory(object),
+                        pRegisters.getCompoundsTab()));
 
                 switch (matterState) {
                     case SOLID -> {
@@ -66,9 +63,9 @@ class CompoundRegistration {
                         if (!hasItem) {
                             String registryName = String.format("%s_%s", registryObject.getId().getPath(), ChemicalItemType.COMPOUND.getSerializedName());
                             pRegisters.COMPOUND_DUSTS.register(registryName,
-                                    () -> new ChemicalItem(registryObject.getId()
-                                            , ChemicalItemType.COMPOUND
-                                            , new Item.Properties().tab(pRegisters.getCompoundsTab())));
+                                () -> new ChemicalItem(registryObject.getId(),
+                                    ChemicalItemType.COMPOUND,
+                                    new Item.Properties().tab(pRegisters.getCompoundsTab())));
                         }
                     }
                     case LIQUID, GAS -> {

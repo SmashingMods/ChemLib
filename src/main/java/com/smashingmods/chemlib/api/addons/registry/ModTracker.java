@@ -1,5 +1,6 @@
 package com.smashingmods.chemlib.api.addons.registry;
 
+import com.smashingmods.chemlib.ChemLib;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Objects;
@@ -38,7 +39,7 @@ public class ModTracker {
             addonList.add(pAddonRegistry.getModID());
             addonRegistryList.add(pAddonRegistry);
         } else {
-            throw new RuntimeException("Mod ID already used to create and register chemical compounds");
+            ChemLib.LOGGER.error(String.format("Mod ID %s already used to create and register chemical compounds.", pAddonRegistry.getModID()));
         }
     }
 }

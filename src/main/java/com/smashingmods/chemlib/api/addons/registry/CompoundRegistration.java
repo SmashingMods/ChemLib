@@ -1,4 +1,4 @@
-package com.smashingmods.chemlib.api.modadditions.registry;
+package com.smashingmods.chemlib.api.addons.registry;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -10,7 +10,6 @@ import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.BlockAndTintGetter;
@@ -22,20 +21,16 @@ import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.RegistryObject;
 
-import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Objects;
 import java.util.function.Consumer;
 
 import static com.smashingmods.chemlib.registry.ChemicalRegistry.fluidTypePropertiesFactory;
 import static com.smashingmods.chemlib.registry.ChemicalRegistry.mobEffectsFactory;
 
 public class CompoundRegistration {
-    private CompoundRegistration() {}
-    public static void RegisterCompounds(AddonRegisters pRegisters, JsonObject pCompoundsJson) {
-        CreativeModeTab creativeTab = Objects.requireNonNullElseGet(pRegisters.getCompoundsTab(), () -> makeCompoundsTab(pRegisters));
+
+    static void registerCompounds(AddonRegistry pRegisters, JsonObject pCompoundsJson) {
         for (JsonElement jsonElement : pCompoundsJson.getAsJsonArray("compounds")) {
             JsonObject object = jsonElement.getAsJsonObject();
             String compoundName = object.get("name").getAsString();
@@ -52,16 +47,15 @@ public class CompoundRegistration {
                 componentMap.put(componentName, count);
             }
 
-            if (!ModTracker.compoundExists(compoundName)) {
-                RegistryObject<Item> registryObject =
-                        pRegisters.COMPOUNDS.register(compoundName
-                                , () -> new CompoundItem(compoundName
-                                        , matterState
-                                        , componentMap
-                                        , description
-                                        , color
-                                        , mobEffectsFactory(object)
-                                        , creativeTab));
+            if (ModTracker.compoundNotExist(compoundName)) {
+                RegistryObject<Item> registryObject = pRegisters.COMPOUNDS.register(compoundName,
+                    () -> new CompoundItem(compoundName,
+                        matterState,
+                        componentMap,
+                        description,
+                        color,
+                        mobEffectsFactory(object),
+                        pRegisters.getCompoundsTab()));
 
                 switch (matterState) {
                     case SOLID -> {
@@ -69,9 +63,9 @@ public class CompoundRegistration {
                         if (!hasItem) {
                             String registryName = String.format("%s_%s", registryObject.getId().getPath(), ChemicalItemType.COMPOUND.getSerializedName());
                             pRegisters.COMPOUND_DUSTS.register(registryName,
-                                    () -> new ChemicalItem(registryObject.getId()
-                                            , ChemicalItemType.COMPOUND
-                                            , new Item.Properties().tab(creativeTab)));
+                                () -> new ChemicalItem(registryObject.getId(),
+                                    ChemicalItemType.COMPOUND,
+                                    new Item.Properties().tab(pRegisters.getCompoundsTab())));
                         }
                     }
                     case LIQUID, GAS -> {
@@ -92,8 +86,7 @@ public class CompoundRegistration {
         }
     }
 
-    private static void registerFluid(AddonRegisters pRegisters, String pName, FluidType.Properties pFluidProperties, int pColor, int pSlopeFindDistance, int pDecreasePerBlock) {
-        CreativeModeTab fluidsTab = Objects.requireNonNullElseGet(pRegisters.getBucketsTab(), () -> makeBucketsTab(pRegisters));
+    static void registerFluid(AddonRegistry pRegisters, String pName, FluidType.Properties pFluidProperties, int pColor, int pSlopeFindDistance, int pDecreasePerBlock) {
         var ref = new Object() {
             ForgeFlowingFluid.Properties properties = null;
         };
@@ -121,6 +114,7 @@ public class CompoundRegistration {
                     public ResourceLocation getRenderOverlayTexture(Minecraft mc) {
                         return new ResourceLocation("minecraft", "textures/misc/underwater.png");
                     }
+
                     @Override
                     public int getTintColor() {
                         return pColor;
@@ -138,44 +132,12 @@ public class CompoundRegistration {
         RegistryObject<FlowingFluid> fluidFlowing = pRegisters.FLUIDS.register(String.format("%s_flowing", pName), () -> new ForgeFlowingFluid.Flowing(ref.properties));
         RegistryObject<LiquidBlock> liquidBlock = pRegisters.LIQUID_BLOCKS.register(pName, () -> new ChemicalLiquidBlock(fluidSource, pName));
         RegistryObject<Item> bucket = pRegisters.BUCKETS.register(String.format("%s_bucket", pName)
-                , () -> new BucketItem(fluidSource, new Item.Properties().tab(fluidsTab).stacksTo(1)));
+                , () -> new BucketItem(fluidSource, new Item.Properties().tab(pRegisters.getBucketsTab()).stacksTo(1)));
 
         ref.properties = new ForgeFlowingFluid.Properties(fluidType, fluidSource, fluidFlowing)
                 .slopeFindDistance(pSlopeFindDistance)
                 .levelDecreasePerBlock(pDecreasePerBlock)
                 .block(liquidBlock)
                 .bucket(bucket);
-    }
-
-    private static CreativeModeTab makeBucketsTab(AddonRegisters pRegisters) {
-        return new CreativeModeTab(String.format("%s.fluids", pRegisters.getModID())) {
-            @Override
-            @Nonnull
-            public ItemStack makeIcon() {
-                return new ItemStack(Items.WATER_BUCKET, 1);
-            }
-
-            @Override
-            public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
-                pItems.addAll(pRegisters.getSortedBuckets().stream().map(ItemStack::new).toList());
-            }
-        };
-    }
-
-    private static CreativeModeTab makeCompoundsTab(AddonRegisters pRegisters) {
-        return new CreativeModeTab(String.format("%s.compounds", pRegisters.getModID())) {
-            @Override
-            @Nonnull
-            public ItemStack makeIcon() {
-                List<CompoundItem> compounds = pRegisters.getCompounds();
-                return new ItemStack(compounds.isEmpty() ? Items.AIR : compounds.get(0), 1);
-            }
-
-            @Override
-            public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
-                pItems.addAll(pRegisters.getSortedCompounds().stream().map(ItemStack::new).toList());
-                pItems.addAll(pRegisters.getSortedChemicalItems().stream().map(ItemStack::new).toList());
-            }
-        };
     }
 }

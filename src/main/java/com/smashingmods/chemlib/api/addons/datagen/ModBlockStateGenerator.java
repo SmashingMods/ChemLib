@@ -1,4 +1,4 @@
-package com.smashingmods.chemlib.api.modadditions.datagen;
+package com.smashingmods.chemlib.api.addons.datagen;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
@@ -13,6 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModBlockStateGenerator extends BlockStateProvider {
     private final DeferredRegister<Block> blocks;
     private final ExistingFileHelper existingFileHelper;
+
     public ModBlockStateGenerator(DataGenerator gen, String modid, DeferredRegister<Block> pBlocks, ExistingFileHelper exFileHelper) {
         super(gen, modid, exFileHelper);
         blocks = pBlocks;
@@ -21,7 +22,7 @@ public class ModBlockStateGenerator extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        for(LiquidBlock block : blocks.getEntries().stream().map(RegistryObject::get).map(block -> (LiquidBlock) block).toList()) {
+        for (LiquidBlock block : blocks.getEntries().stream().map(RegistryObject::get).map(block -> (LiquidBlock) block).toList()) {
             ModelFile modelFile = new ModelFile.ExistingModelFile(mcLoc("block/water"), existingFileHelper);
             getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
         }

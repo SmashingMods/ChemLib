@@ -4,8 +4,8 @@ import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
-import com.smashingmods.chemlib.api.modadditions.registry.AddonRegisters;
-import com.smashingmods.chemlib.api.modadditions.registry.ModTracker;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegistry;
+import com.smashingmods.chemlib.api.addons.registry.ModTracker;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.items.*;
 import net.minecraft.core.NonNullList;
@@ -65,11 +65,6 @@ public class ItemRegistry {
 
         @Override
         public void fillItemList(@Nonnull NonNullList<ItemStack> pItems) {
-//            super.fillItemList(pItems);
-//            pItems.clear();
-//            List<ItemStack> compounds = getSortedCompounds().stream().map(ItemStack::new).toList();
-//            List<ItemStack> compoundDusts = getSortedChemicalItemsByType(ChemicalItemType.COMPOUND).stream().map(ItemStack::new).toList();
-
             pItems.addAll(getSortedCompounds().stream().map(ItemStack::new).toList());
             pItems.addAll(getSortedChemicalItemsByType(ChemicalItemType.COMPOUND).stream().map(ItemStack::new).toList());
         }
@@ -150,7 +145,7 @@ public class ItemRegistry {
 
     public static List<CompoundItem> getAllCompounds() {
         List<CompoundItem> outList = new LinkedList<>(REGISTRY_COMPOUNDS.getEntries().stream().map(RegistryObject::get).map(item -> (CompoundItem) item).toList());
-        for (AddonRegisters modRegister : ModTracker.addonRegistersList) {
+        for (AddonRegistry modRegister : ModTracker.addonRegistryList) {
             outList.addAll(modRegister.getCompounds());
         }
         return outList;
@@ -234,7 +229,7 @@ public class ItemRegistry {
         String registryName = String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName());
         Supplier<ChemicalItem> supplier = () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties().tab(pTab));
 
-        switch(pChemicalItemType) {
+        switch (pChemicalItemType) {
             case COMPOUND -> REGISTRY_COMPOUND_DUSTS.register(registryName, supplier);
             case DUST -> REGISTRY_METAL_DUSTS.register(registryName, supplier);
             case NUGGET -> REGISTRY_NUGGETS.register(registryName, supplier);

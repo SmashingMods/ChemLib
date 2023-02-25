@@ -26,13 +26,17 @@ public class ForgeEventHandler {
                 && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).isPresent()
                 && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace().equals(ChemLib.MODID)) {
 
-            Function<FormattedText, Either<FormattedText, TooltipComponent>> formattedTextFunction = Either::left;
-
-            for (FormattedText textElement : FluidEffectsTooltipUtility.getBucketEffectTooltipComponents(event.getItemStack())) {
-                event.getTooltipElements().add(formattedTextFunction.apply(textElement));
-            }
-            String namespace = ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace();
-            event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(new LiteralContents(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
+            gatherTooltipComponents(event, bucket);
         }
+    }
+
+    public static void gatherTooltipComponents(RenderTooltipEvent.GatherComponents event, BucketItem bucket) {
+        Function<FormattedText, Either<FormattedText, TooltipComponent>> formattedTextFunction = Either::left;
+
+        for (FormattedText textElement : FluidEffectsTooltipUtility.getBucketEffectTooltipComponents(event.getItemStack())) {
+            event.getTooltipElements().add(formattedTextFunction.apply(textElement));
+        }
+        String namespace = ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace();
+        event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(new LiteralContents(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
     }
 }

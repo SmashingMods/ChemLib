@@ -1,7 +1,7 @@
-package com.smashingmods.chemlib.api.modadditions.datagen;
+package com.smashingmods.chemlib.api.addons.datagen;
 
 import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.api.modadditions.registry.AddonRegisters;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegistry;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import net.minecraft.data.DataGenerator;
@@ -15,28 +15,35 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class ModItemModelGenerator extends ItemModelProvider {
-    private final AddonRegisters addonRegisters;
-    public ModItemModelGenerator(DataGenerator generator, AddonRegisters pAddonRegisters, ExistingFileHelper existingFileHelper) {
-        super(generator, pAddonRegisters.getModID(), existingFileHelper);
-        addonRegisters = pAddonRegisters;
+    private final AddonRegistry addonRegistry;
+
+    public ModItemModelGenerator(DataGenerator generator, AddonRegistry pAddonRegistry, ExistingFileHelper existingFileHelper) {
+        super(generator, pAddonRegistry.getModID(), makeNewHelper(existingFileHelper));
+        addonRegistry = pAddonRegistry;
+    }
+
+    private static ExistingFileHelper makeNewHelper(ExistingFileHelper pExistingFileHelper) {
+        return pExistingFileHelper;
     }
 
     @Override
     protected void registerModels() {
         generateCompoundModels();
-        addonRegisters.getCompounds().forEach(this::registerCompound);
-        addonRegisters.getCompoundItemsAsStream().forEach(this::registerCompoundDust);
-        addonRegisters.getBucketsAsStream().forEach(this::registerBucket);
+        addonRegistry.getCompounds().forEach(this::registerCompound);
+        addonRegistry.getCompoundItemsAsStream().forEach(this::registerCompoundDust);
+        addonRegistry.getBucketsAsStream().forEach(this::registerBucket);
     }
 
     private void generateCompoundModels() {
-        for (String type : Arrays.asList("solid", "liquid", "gas","dust")) {
+        for (String type : Arrays.asList("solid", "liquid", "gas", "dust")) {
             withExistingParent(String.format("item/compound_%s_model", type), mcLoc("item/generated"))
-                    .texture("layer0", modLoc(String.format("items/compound_%s_layer_0", type)))
-                    .texture("layer1", modLoc(String.format("items/compound_%s_layer_1", type)));
+                    .texture("layer0", String.format("chemlib:items/compound_%s_layer_0", type))
+                    .texture("layer1", String.format("chemlib:items/compound_%s_layer_1", type));
+            ;
         }
         withExistingParent("item/chemical_dust_model", mcLoc("item/generated"))
-                .texture("layer0", modLoc("items/dust"));
+                .texture("layer0", "chemlib:items/dust")
+        ;
     }
 
     private void registerCompound(CompoundItem pCompound) {
@@ -51,33 +58,25 @@ public class ModItemModelGenerator extends ItemModelProvider {
         withExistingParent(String.format("item/%s_dust", pItem.getChemicalName()), modLoc("item/compound_dust_model"));
     }
 
-    private void registerItem(String pName, String pType) {
-        withExistingParent(String.format("item/%s_%s", pName, pType), modLoc("item/builtin_entity"));
-    }
     private void registerBucket(BucketItem pBucket) {
         String path = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(pBucket)).getPath();
         int pieces = path.split("_").length;
         String chemicalName = "";
-
         for (int i = 0; i < pieces - 1; i++) {
             chemicalName = String.format("%s%s%s", chemicalName, chemicalName.isEmpty() ? "" : "_", path.split("_")[i]);
         }
-
-        Optional<CompoundItem> optionalCompound = addonRegisters.getCompoundByName(chemicalName);
-
-        if(optionalCompound.isEmpty()) {
+        Optional<CompoundItem> optionalCompound = addonRegistry.getCompoundByName(chemicalName);
+        if (optionalCompound.isEmpty()) {
             return;
         }
-
         MatterState matterState = Objects.requireNonNull(optionalCompound.get()).getMatterState();
-
         switch (matterState) {
             case LIQUID -> withExistingParent(String.format("item/%s", path), mcLoc("item/generated"))
-                    .texture("layer0", modLoc("items/bucket_layer_0"))
-                    .texture("layer1", modLoc("items/bucket_layer_1"));
+                    .texture("layer0", "chemlib:items/bucket_layer_0")
+                    .texture("layer1", "chemlib:items/bucket_layer_1");
             case GAS -> withExistingParent(String.format("item/%s", path), mcLoc("item/generated"))
-                    .texture("layer0", modLoc("items/gas_bucket_layer_0"))
-                    .texture("layer1", modLoc("items/gas_bucket_layer_1"));
+                    .texture("layer0", "chemlib:items/gas_bucket_layer_0")
+                    .texture("layer1", "chemlib:items/gas_bucket_layer_1");
         }
     }
 }

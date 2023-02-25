@@ -1,6 +1,6 @@
-package com.smashingmods.chemlib.api.modadditions.datagen;
+package com.smashingmods.chemlib.api.addons.datagen;
 
-import com.smashingmods.chemlib.api.modadditions.registry.AddonRegisters;
+import com.smashingmods.chemlib.api.addons.registry.AddonRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -14,15 +14,16 @@ import javax.annotation.Nonnull;
 import java.util.Objects;
 
 public class ModItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
-    private final AddonRegisters addonRegisters;
-    public ModItemTagGenerator(DataGenerator generator, AddonRegisters pAddonRegisters, @Nullable ExistingFileHelper existingFileHelper) {
-        super(generator, ForgeRegistries.ITEMS, pAddonRegisters.getModID(), existingFileHelper);
-        addonRegisters = pAddonRegisters;
+    private final AddonRegistry addonRegistry;
+
+    public ModItemTagGenerator(DataGenerator generator, AddonRegistry pAddonRegistry, @Nullable ExistingFileHelper existingFileHelper) {
+        super(generator, ForgeRegistries.ITEMS, pAddonRegistry.getModID(), existingFileHelper);
+        addonRegistry = pAddonRegistry;
     }
 
     @Override
     protected void addTags() {
-        addonRegisters.getCompoundItemsAsStream().forEach(item -> {
+        addonRegistry.getCompoundItemsAsStream().forEach(item -> {
             String type = item.getItemType().getSerializedName();
             String name = item.getChemicalName();
             TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
@@ -33,6 +34,6 @@ public class ModItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
     @Override
     @Nonnull
     public String getName() {
-        return addonRegisters.getModID() + ":tags";
+        return addonRegistry.getModID() + ":tags";
     }
 }

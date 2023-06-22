@@ -2,21 +2,22 @@ package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.registry.FluidRegistry;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeRegistryTagsProvider;
-import net.minecraftforge.registries.ForgeRegistries;
 
-public class FluidTagGenerator extends ForgeRegistryTagsProvider<Fluid> {
+import java.util.concurrent.CompletableFuture;
 
-    public FluidTagGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, ForgeRegistries.FLUIDS, ChemLib.MODID, existingFileHelper);
+public class FluidTagGenerator extends FluidTagsProvider {
+
+    public FluidTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper existingFileHelper) {
+        super(pOutput, pLookupProvider, ChemLib.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    public void addTags(HolderLookup.Provider pProvider) {
         FluidRegistry.getFluidsAsStream().forEach(fluid -> tag(FluidTags.WATER).add(fluid));
     }
 

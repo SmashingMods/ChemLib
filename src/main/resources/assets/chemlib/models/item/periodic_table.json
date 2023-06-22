@@ -1,7 +1,7 @@
 {
   "texture_size": [1024, 536],
   "textures": {
-    "0": "chemlib:items/periodic_table"
+    "0": "chemlib:item/periodic_table"
   },
   "elements": [
     {

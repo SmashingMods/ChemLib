@@ -2,21 +2,22 @@ package com.smashingmods.chemlib.datagen;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.registry.BlockRegistry;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeRegistryTagsProvider;
-import net.minecraftforge.registries.ForgeRegistries;
 
-public class BlockTagGenerator extends ForgeRegistryTagsProvider<Block> {
+import java.util.concurrent.CompletableFuture;
 
-    public BlockTagGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, ForgeRegistries.BLOCKS, ChemLib.MODID, existingFileHelper);
+public class BlockTagGenerator extends BlockTagsProvider {
+
+    public BlockTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper pFileHelper) {
+        super(pOutput, pLookupProvider, ChemLib.MODID, pFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    public void addTags(HolderLookup.Provider pProvider) {
         BlockRegistry.BLOCKS.getEntries().forEach(blockRegistryObject -> {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockRegistryObject.get());
             tag(BlockTags.NEEDS_STONE_TOOL).add(blockRegistryObject.get());

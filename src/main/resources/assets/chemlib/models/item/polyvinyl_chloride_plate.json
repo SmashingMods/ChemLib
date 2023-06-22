@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chemlib:items/polyvinyl_chloride_plate"
+    "layer0": "chemlib:item/polyvinyl_chloride_plate"
   }
 }

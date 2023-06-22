@@ -1,7 +1,6 @@
 package com.smashingmods.chemlib.common.items;
 
 import com.smashingmods.chemlib.client.PeriodicTableScreen;
-import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -26,7 +25,7 @@ import java.util.List;
 public class PeriodicTableItem extends Item {
 
     public PeriodicTableItem() {
-        super(new Item.Properties().tab(ItemRegistry.MISC_TAB).stacksTo(1));
+        super(new Item.Properties().stacksTo(1));
     }
 
     @Override

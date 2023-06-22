@@ -43,7 +43,7 @@ public class CompoundItem extends Item implements Compound {
      * @param pEffects
      */
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects) {
-        super(new Item.Properties().tab(ItemRegistry.COMPOUND_TAB));
+        super(new Item.Properties());
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;
@@ -63,7 +63,7 @@ public class CompoundItem extends Item implements Compound {
      * @param pTab
      */
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects, CreativeModeTab pTab) {
-        super(new Item.Properties().tab(pTab));
+        super(new Item.Properties());
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;

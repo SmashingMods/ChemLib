@@ -5,7 +5,7 @@ import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.FluidRegistry;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -15,11 +15,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockStateGenerator extends BlockStateProvider {
 
-    private final ExistingFileHelper existingFileHelper;
+    private final ExistingFileHelper fileHelper;
 
-    public BlockStateGenerator(DataGenerator pGenerator, ExistingFileHelper pExistingFileHelper) {
-        super(pGenerator, ChemLib.MODID, pExistingFileHelper);
-        this.existingFileHelper = pExistingFileHelper;
+    public BlockStateGenerator(PackOutput pOutput, ExistingFileHelper pFileHelper) {
+        super(pOutput, ChemLib.MODID, pFileHelper);
+        this.fileHelper = pFileHelper;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         models().withExistingParent(name, modLoc("block/metal_model"))
                 .texture("all", modLoc("block/metal_block"));
 
-        ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc("block/metal_model"), existingFileHelper);
+        ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc("block/metal_model"), fileHelper);
         getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
     }
 
@@ -64,7 +64,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         models().withExistingParent(on, modLoc("block/lamp_on_model"));
 
         getVariantBuilder(pBlock).forAllStates(state -> {
-            ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc(String.format("block/lamp_%s_model", state.getValue(BlockStateProperties.LIT) ? "on" : "off")), existingFileHelper);
+            ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc(String.format("block/lamp_%s_model", state.getValue(BlockStateProperties.LIT) ? "on" : "off")), fileHelper);
             return ConfiguredModel.builder()
                     .modelFile(modelFile)
                     .build();
@@ -72,7 +72,7 @@ public class BlockStateGenerator extends BlockStateProvider {
     }
 
     private void registerLiquidBlock(LiquidBlock pBlock) {
-        ModelFile modelFile = new ModelFile.ExistingModelFile(mcLoc("block/water"), existingFileHelper);
+        ModelFile modelFile = new ModelFile.ExistingModelFile(mcLoc("block/water"), fileHelper);
         getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
     }
 }

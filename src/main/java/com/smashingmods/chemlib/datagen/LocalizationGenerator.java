@@ -5,7 +5,7 @@ import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.FluidRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
 import org.apache.commons.lang3.StringUtils;
@@ -13,8 +13,8 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public class LocalizationGenerator extends LanguageProvider {
 
-    public LocalizationGenerator(DataGenerator gen, String locale) {
-        super(gen, ChemLib.MODID, locale);
+    public LocalizationGenerator(PackOutput pOutput, String locale) {
+        super(pOutput, ChemLib.MODID, locale);
     }
 
     @Override

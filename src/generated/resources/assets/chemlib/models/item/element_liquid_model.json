@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "chemlib:items/element_liquid_layer_0",
-    "layer1": "chemlib:items/element_liquid_layer_1"
+    "layer0": "chemlib:item/element_liquid_layer_0",
+    "layer1": "chemlib:item/element_liquid_layer_1"
   }
 }

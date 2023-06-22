@@ -4,25 +4,29 @@ import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeRegistryTagsProvider;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
-public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
+public class ItemTagGenerator extends ItemTagsProvider {
 
-    public ItemTagGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, ForgeRegistries.ITEMS, ChemLib.MODID, existingFileHelper);
+    public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, TagsProvider<Block> pBlockTagProvider, ExistingFileHelper pFileHelper) {
+        super(pOutput, pLookupProvider, pBlockTagProvider, ChemLib.MODID, pFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    public void addTags(HolderLookup.Provider lookupProvider) {
         ItemRegistry.getChemicalItems().forEach(item -> {
             String type = item.getItemType().getSerializedName();
             String name = item.getChemicalName();

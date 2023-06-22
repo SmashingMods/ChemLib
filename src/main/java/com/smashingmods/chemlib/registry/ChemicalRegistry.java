@@ -8,7 +8,6 @@ import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
-import com.smashingmods.chemlib.api.addons.registry.ModTracker;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.blocks.LampBlock;
 import com.smashingmods.chemlib.common.items.CompoundItem;
@@ -61,15 +60,15 @@ public class ChemicalRegistry {
                         boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
 
                         if (metalType == MetalType.METAL) {
-                            ItemRegistry.registerItemByType(registryObject, ChemicalItemType.PLATE, ItemRegistry.METALS_TAB);
+                            ItemRegistry.registerItemByType(registryObject, ChemicalItemType.PLATE);
                             if (!hasItem) {
-                                ItemRegistry.registerItemByType(registryObject, ChemicalItemType.NUGGET, ItemRegistry.METALS_TAB);
-                                ItemRegistry.registerItemByType(registryObject, ChemicalItemType.INGOT, ItemRegistry.METALS_TAB);
+                                ItemRegistry.registerItemByType(registryObject, ChemicalItemType.NUGGET);
+                                ItemRegistry.registerItemByType(registryObject, ChemicalItemType.INGOT);
                                 BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
-                                BlockRegistry.getRegistryObjectByName(String.format("%s_metal_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties().tab(ItemRegistry.METALS_TAB)));
+                                BlockRegistry.getRegistryObjectByName(String.format("%s_metal_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                             }
                         }
-                        ItemRegistry.registerItemByType(registryObject, ChemicalItemType.DUST, ItemRegistry.METALS_TAB);
+                        ItemRegistry.registerItemByType(registryObject, ChemicalItemType.DUST);
                     }
                     case LIQUID, GAS -> {
                         boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
@@ -80,7 +79,7 @@ public class ChemicalRegistry {
 
                             if (group == 18) {
                                 BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
-                                BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties().tab(ItemRegistry.MISC_TAB)));
+                                BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                             }
                             FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
                         }
@@ -118,9 +117,9 @@ public class ChemicalRegistry {
                 case SOLID -> {
                     boolean hasItem = object.get("has_item").getAsBoolean();
                     if (!hasItem) {
-                        ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.COMPOUND, ItemRegistry.COMPOUND_TAB);
+                        ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.COMPOUND);
                         if (compoundName.equals("polyvinyl_chloride")) {
-                            ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.PLATE, ItemRegistry.COMPOUND_TAB);
+                            ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.PLATE);
                         }
                     }
                 }
@@ -137,7 +136,6 @@ public class ChemicalRegistry {
                     }
                 }
             }
-            ModTracker.addCompound(new ResourceLocation("chemlib", compoundName));
         }
     }
 

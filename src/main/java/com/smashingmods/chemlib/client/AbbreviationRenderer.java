@@ -13,12 +13,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -43,19 +43,23 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 	}
 
 	@Override
-	public void renderByItem(ItemStack pStack, ItemTransforms.TransformType pTransformType, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+	public void renderByItem(ItemStack pStack, ItemDisplayContext pItemDisplayContext, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
 
-		boolean isGui = pTransformType == ItemTransforms.TransformType.GUI;
-		boolean isFrame = pTransformType == ItemTransforms.TransformType.FIXED;
+
+		boolean isGui = pItemDisplayContext == ItemDisplayContext.GUI;
+		boolean isFrame = pItemDisplayContext == ItemDisplayContext.FIXED;
 
 		ModelResourceLocation modelResourceLocation = null;
 		MultiBufferSource buffer = pBuffer;
 
 		if (pStack.getItem() instanceof ElementItem elementItem) {
 			switch (elementItem.getMatterState()) {
-				case LIQUID -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory");
-				case GAS -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory");
-				default -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory");
+				case LIQUID ->
+						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory");
+				case GAS ->
+						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory");
+				default ->
+						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory");
 			}
 		} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
 			switch (chemicalItem.getItemType()) {
@@ -78,7 +82,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 			}
 			pPoseStack.pushPose();
 
-			switch (pTransformType) {
+			switch (pItemDisplayContext) {
 				case THIRD_PERSON_LEFT_HAND, THIRD_PERSON_RIGHT_HAND -> {
 					pPoseStack.translate(0, -0.2D, 0.45D);
 				}
@@ -111,13 +115,13 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 
 			Minecraft.getInstance().getItemRenderer().render(
 					pStack,
-					pTransformType,
+					pItemDisplayContext,
 					false,
 					pPoseStack,
 					buffer,
 					isGui ? 0xF000F0 : pPackedLight,
 					isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
-					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pTransformType, false));
+					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pItemDisplayContext, false));
 			if (isGui) {
 				((MultiBufferSource.BufferSource) buffer).endBatch();
 			}

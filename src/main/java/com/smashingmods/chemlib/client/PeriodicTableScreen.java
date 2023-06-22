@@ -24,7 +24,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class PeriodicTableScreen extends Screen {
 
     public PeriodicTableScreen() {
-        super(MutableComponent.create(new TranslatableContents("item.chemlib.periodic_table")));
+        super(MutableComponent.create(new TranslatableContents("item.chemlib.periodic_table", null, TranslatableContents.NO_ARGS)));
     }
 
     @Override
@@ -42,7 +42,7 @@ public class PeriodicTableScreen extends Screen {
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, new ResourceLocation(ChemLib.MODID, "textures/gui/periodic_table.png"));
         blit(pPoseStack, leftPos, topPos, displayWidth, displayHeight, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, MutableComponent.create(new TranslatableContents("chemlib.screen.periodic_table")).withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, MutableComponent.create(new TranslatableContents("chemlib.screen.periodic_table", null, TranslatableContents.NO_ARGS)).withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
 
         double boxWidth = 27.75f;
         double boxHeight = 26.9f;

@@ -49,6 +49,6 @@ public class PeriodicTableItem extends Item {
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(MutableComponent.create(new TranslatableContents("item.chemlib.periodic_table.tooltip")).withStyle(ChatFormatting.DARK_AQUA));
+        pTooltipComponents.add(MutableComponent.create(new TranslatableContents("item.chemlib.periodic_table.tooltip", null, TranslatableContents.NO_ARGS)).withStyle(ChatFormatting.DARK_AQUA));
     }
 }

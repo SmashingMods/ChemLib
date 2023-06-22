@@ -22,7 +22,7 @@ import java.util.concurrent.CompletableFuture;
 public class ItemTagGenerator extends ItemTagsProvider {
 
     public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, TagsProvider<Block> pBlockTagProvider, ExistingFileHelper pFileHelper) {
-        super(pOutput, pLookupProvider, pBlockTagProvider, ChemLib.MODID, pFileHelper);
+        super(pOutput, pLookupProvider, pBlockTagProvider.contentsGetter(), ChemLib.MODID, pFileHelper);
     }
 
     @Override

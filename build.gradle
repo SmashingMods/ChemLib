@@ -25,7 +25,7 @@ archivesBaseName = 'chemlib'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'parchment', version: "$parchment_version-$minecraft_version"
+    mappings channel: 'parchment', version: "1.19.3-$parchment_version-$minecraft_version"
     runs {
         client {
             workingDirectory project.file('run')

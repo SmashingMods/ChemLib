@@ -117,11 +117,18 @@ fileTree("secrets").matching {
 
 jar.finalizedBy('reobfJar')
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             afterEvaluate {
                 artifact project.jar
+                artifact project.sourcesJar
+                artifact project.javadocJar
             }
             setGroupId 'smashingmods'
             setArtifactId 'chemlib'

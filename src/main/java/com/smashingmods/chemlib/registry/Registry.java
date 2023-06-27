@@ -16,6 +16,7 @@ public class Registry {
         BlockRegistry.register(pModEventBus);
         FluidRegistry.register(pModEventBus);
         ItemRegistry.register(pModEventBus);
+        TabsRegistry.register(pModEventBus);
         PaintingsRegistry.register(pModEventBus);
     }
 

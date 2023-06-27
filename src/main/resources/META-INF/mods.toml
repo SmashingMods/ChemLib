@@ -1,28 +1,23 @@
 modLoader="javafml"
-loaderVersion="[40,)"
-license="ARR"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
 [[mods]]
-modId="chemlib"
-version="${file.jarVersion}"
-displayName="ChemLib"
-logoFile=""
-authors="DarkArcana"
-description='''
-ChemLib provides all of the elements of the periodic table and many compounds of those elements. It also includes some items based on the elements and compounds such as ingots and lamps.
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''${mod_description}'''
 
-Credits:
-- Andrea Hazard, creator of 'Enhanced Bohr Model' images. Their work is shared under the Creative Commons Attribution-Share Alike 4.0 International license. Read more about the license here: https://creativecommons.org/licenses/by-sa/4.0/deed.en
-'''
-[[dependencies.chemlib]]
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
-    versionRange="[40.1.0,)"
+    versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
-[[dependencies.chemlib]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"

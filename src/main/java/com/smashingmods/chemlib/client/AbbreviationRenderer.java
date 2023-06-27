@@ -10,6 +10,7 @@ import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.ElementItem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -44,7 +45,6 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 
 	@Override
 	public void renderByItem(ItemStack pStack, ItemDisplayContext pItemDisplayContext, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
-
 
 		boolean isGui = pItemDisplayContext == ItemDisplayContext.GUI;
 		boolean isFrame = pItemDisplayContext == ItemDisplayContext.FIXED;
@@ -113,6 +113,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 				}
 			}
 
+			//noinspection UnstableApiUsage
 			Minecraft.getInstance().getItemRenderer().render(
 					pStack,
 					pItemDisplayContext,
@@ -141,8 +142,26 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 				}
 
 				Consumer<Chemical> renderAbbreviation = (chemical) -> {
-					Minecraft.getInstance().font.draw(pPoseStack, chemical.getAbbreviation(), -4, 0, 0x333333);
-					Minecraft.getInstance().font.draw(pPoseStack, chemical.getAbbreviation(), -5, 0, 0xFFFFFF);
+					Minecraft.getInstance().font.drawInBatch(chemical.getAbbreviation(),
+							-4,
+							0,
+							0x333333,
+							false,
+							pPoseStack.last().pose(),
+							Minecraft.getInstance().renderBuffers().bufferSource(),
+							Font.DisplayMode.NORMAL,
+							0,
+							pPackedLight);
+					Minecraft.getInstance().font.drawInBatch(chemical.getAbbreviation(),
+							-5,
+							0,
+							0xFFFFFF,
+							false,
+							pPoseStack.last().pose(),
+							Minecraft.getInstance().renderBuffers().bufferSource(),
+							Font.DisplayMode.NORMAL,
+							0,
+							pPackedLight);
 				};
 
 				if (pStack.getItem() instanceof ElementItem elementItem) {

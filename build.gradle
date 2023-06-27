@@ -117,11 +117,19 @@ fileTree("secrets").matching {
 
 jar.finalizedBy('reobfJar')
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             afterEvaluate {
                 artifact project.jar
+                artifact project.sourcesJar
+                artifact project.javadocJar
             }
             setGroupId 'smashingmods'
             setArtifactId 'chemlib'
@@ -147,7 +155,7 @@ curseforge {
         changelog = file("changelog.md")
         addGameVersion 'Forge'
         addGameVersion 'Java 17'
-        addGameVersion '1.19.2'
+        addGameVersion '1.19.3'
         mainArtifact(jar) {
             displayName = "ChemLib $project.version"
             relations {

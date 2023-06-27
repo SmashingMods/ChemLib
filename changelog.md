@@ -1,5 +1,6 @@
-# ChemLib 1.19.3-2.0.17
+# ChemLib 1.20-2.0.17
 
 Changes:
 
-- Post to 1.19.3
+- Port to 1.20
+- Fix lamp blocks not turning off when redstone signal is removed.

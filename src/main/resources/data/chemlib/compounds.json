@@ -636,13 +636,82 @@
           "location": "minecraft:nausea",
           "duration": "600",
           "amplifier": 1
-        },
-        {
-          "location": "minecraft:strength",
-          "duration": "600",
-          "amplifier": 0
         }
       ]
+    },
+    {
+      "name": "propan-1-ol",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 803,
+        "light_level": 0,
+        "viscosity": 2040,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Propan-1-ol, also known as n-propanol or 1-propanol, is a colorless liquid with a strong odor. It is used as a solvent and in the production of various chemicals.",
+      "color": "ffa500",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 8
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": []
+    },
+    {
+      "name": "propan-2-ol",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 785,
+        "light_level": 0,
+        "viscosity": 2400,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Propan-2-ol, also known as isopropyl alcohol or isopropanol, is a colorless liquid with a strong odor. It is used as a solvent, cleaning agent, and in many household products.",
+      "color": "808080",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 8
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": []
     },
     {
       "name": "amide",
@@ -982,6 +1051,39 @@
         {
           "name": "hydrogen",
           "count": 14
+        }
+      ]
+    },
+    {
+      "name": "heptane",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 0.379,
+        "temperature": 298.2,
+        "motion_scale": 0.012,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Heptane is a straight-chain alkane with seven carbon atoms. It is commonly used as a non-polar solvent and is highly flammable.",
+      "color": "d9d900",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 7
+        },
+        {
+          "name": "hydrogen",
+          "count": 16
         }
       ]
     },

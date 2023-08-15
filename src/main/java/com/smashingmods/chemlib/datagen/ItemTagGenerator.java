@@ -6,13 +6,16 @@ import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeRegistryTagsProvider;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.logging.log4j.core.config.arbiters.Arbiter;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
@@ -57,10 +60,18 @@ public class ItemTagGenerator extends ForgeRegistryTagsProvider<Item> {
         });
 
         ItemRegistry.getChemicalItemByNameAndType("mercury_sulfide", ChemicalItemType.COMPOUND).ifPresent(compound -> {
-            ResourceLocation sawdust = new ResourceLocation("forge", "dusts/cinnabar");
-            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(sawdust);
+            ResourceLocation cinnabar = new ResourceLocation("forge", "dusts/cinnabar");
+            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(cinnabar);
             tag(key).add(compound);
         });
+
+        ItemRegistry.getChemicalItemByNameAndType("sodium_chloride", ChemicalItemType.COMPOUND).ifPresent(compound -> {
+            ResourceLocation salt = new ResourceLocation("forge", "salt");
+            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(salt);
+            tag(key).add(compound);
+        });
+
+
     }
 
     @Override

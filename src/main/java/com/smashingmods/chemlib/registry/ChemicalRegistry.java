@@ -9,7 +9,10 @@ import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.api.addons.registry.ModTracker;
+import com.smashingmods.chemlib.client.events.PlayerEventHandler;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
+import com.smashingmods.chemlib.common.blocks.ChemicalFire;
+import com.smashingmods.chemlib.common.blocks.DustBlock;
 import com.smashingmods.chemlib.common.blocks.LampBlock;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import com.smashingmods.chemlib.common.items.ElementItem;
@@ -19,6 +22,8 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
@@ -34,6 +39,11 @@ import static net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS;
 public class ChemicalRegistry {
     public static final JsonObject ELEMENTS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/elements.json");
     public static final JsonObject COMPOUNDS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/compounds.json");
+
+    public static ArrayList<String> BURNABLES = new ArrayList<String>();
+    public static ArrayList<String> FIRE_COLOR = new ArrayList<String>();
+
+    public static HashMap<String,String> fireColorMap = new HashMap<>();
 
     /*
         Elements are built from the Elements json and then everything is registered based on that information.
@@ -55,10 +65,13 @@ public class ChemicalRegistry {
             ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, mobEffectsFactory(object)));
             RegistryObject<Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
+            boolean makesColoredFire = object.has("makes_colored_fire") && object.get("makes_colored_fire").getAsBoolean();
+
             if (!artificial) {
                 switch (matterState) {
                     case SOLID -> {
                         boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
+
 
                         if (metalType == MetalType.METAL) {
                             ItemRegistry.registerItemByType(registryObject, ChemicalItemType.PLATE, ItemRegistry.METALS_TAB);
@@ -70,6 +83,13 @@ public class ChemicalRegistry {
                             }
                         }
                         ItemRegistry.registerItemByType(registryObject, ChemicalItemType.DUST, ItemRegistry.METALS_TAB);
+
+                        if (makesColoredFire) {
+                            String fire_color = object.get("fire_color").getAsString();
+                            BlockRegistry.BLOCKS.register(String.format("%s_dust_block", elementName), () -> new DustBlock(new ResourceLocation(ChemLib.MODID, elementName),ChemicalBlockType.DUST,BlockRegistry.DUST_BLOCKS,BlockRegistry.DUST_PROPERTIES));
+                            fireColorMap.put(elementName+"_dust_block",fire_color);
+                            BURNABLES.add(elementName);
+                        }
                     }
                     case LIQUID, GAS -> {
                         boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
@@ -102,6 +122,7 @@ public class ChemicalRegistry {
             MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
             String description = object.has("description") ? object.get("description").getAsString() : "";
             String color = object.get("color").getAsString();
+            boolean makesColoredFire = object.has("makes_colored_fire") && object.get("makes_colored_fire").getAsBoolean();
 
             JsonArray components = object.getAsJsonArray("components");
             HashMap<String, Integer> componentMap = new LinkedHashMap<>();
@@ -113,6 +134,13 @@ public class ChemicalRegistry {
             }
 
             ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, mobEffectsFactory(object)));
+
+            if (makesColoredFire) {
+                String fire_color = object.get("fire_color").getAsString();
+                BlockRegistry.BLOCKS.register(String.format("%s_dust_block", compoundName), () -> new DustBlock(new ResourceLocation(ChemLib.MODID, compoundName),ChemicalBlockType.DUST,BlockRegistry.DUST_BLOCKS,BlockRegistry.DUST_PROPERTIES));
+                fireColorMap.put(compoundName+"_dust_block",fire_color);
+                BURNABLES.add(compoundName);
+            }
 
             switch (matterState) {
                 case SOLID -> {
@@ -140,6 +168,14 @@ public class ChemicalRegistry {
             ModTracker.addCompound(new ResourceLocation("chemlib", compoundName));
         }
     }
+
+    private static void registerFires() {
+        for (PlayerEventHandler.FireColors fire_color : PlayerEventHandler.FireColors.values()) {
+            BlockRegistry.BLOCKS.register(String.format("%s_fire", fire_color.toString().toLowerCase()), () -> new ChemicalFire(BlockRegistry.FIRES,BlockRegistry.FIRE_PROPERTIES));
+
+        }
+    }
+
 
     public static List<MobEffectInstance> mobEffectsFactory(JsonObject object) {
         List<MobEffectInstance> effectsList = new ArrayList<>();
@@ -200,5 +236,6 @@ public class ChemicalRegistry {
     public static void register() {
         registerElements();
         registerCompounds();
+        registerFires();
     }
 }

@@ -1,5 +1,7 @@
 package com.smashingmods.chemlib.datagen;
 
+import com.smashingmods.chemlib.api.ChemicalBlockType;
+import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;

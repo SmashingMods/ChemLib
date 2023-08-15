@@ -22,6 +22,8 @@
       "has_item": false,
       "description": "An acidic, trace gas found in the atmosphere, and a common bi-product of combustion, and a major greenhouse gas. Also useful as a refrigerant and supercritical solvent.",
       "color": "32c832",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon"
@@ -54,6 +56,8 @@
       "has_item": false,
       "description": "This chemical is widely used in industrial chemistry, particularly in the synthesis of polyethylene plastics.",
       "color": "c6c79f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -89,6 +93,8 @@
       "has_item": false,
       "description": "An important structural component of green plants, cellulose is the most abundant organic polymer on Earth. It is used to make paper, and can be chemically treated to make cellophane plastics.",
       "color": "bdab8e",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -110,6 +116,8 @@
       "has_item": false,
       "description": "An organic polymer, the primary component of the cells of fungi, and the exoskeletons of arthropods. Structurally similar to cellulose, but functionally a protein.",
       "color": "30160d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -134,6 +142,8 @@
       "has_item": false,
       "description": "A fibrous protein, this compound makes up hair, nails, feathers, horns, scales, claws, hooves, and skin.",
       "color": "30160d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "protein",
@@ -155,6 +165,8 @@
       "has_item": true,
       "description": "Also known as silica, this abundant mineral is a major constituent of sand, and is a key component in almost every mineral. Crystalline forms include clear quartz and opal.",
       "color": "807461",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "silicon"
@@ -171,6 +183,8 @@
       "has_item": false,
       "description": "A polyatomic anion, salts formed from nitrate are called 'nitrates'. Nitrates are largely water-soluble, and are common components in fertilizers and explosives.",
       "color": "5fb5c6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nitrogen"
@@ -187,6 +201,8 @@
       "has_item": false,
       "description": "Also known as niter or saltpeter, this chemical is commonly used to synthesize fertilizers and gunpowder. It can also be used as a salt to cure meats.",
       "color": "c6985f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium"
@@ -202,6 +218,8 @@
       "has_item": false,
       "description": "Also known as corundum, this mineral is a key component in many precious stones. Metallic impurites in corundum can create vibrant colors, becoming ruby or sapphire.",
       "color": "a0a2de",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "aluminum",
@@ -219,6 +237,8 @@
       "has_item": false,
       "description": "Also known as periclase, this mineral is highly resistant to heat and pressure. It's a common component in contact metamorphic rocks.",
       "color": "edb2ad",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "magnesium"
@@ -234,6 +254,8 @@
       "has_item": false,
       "description": "A metal halide salt, potassium chloride is also known as sylvite, and can be used as an food additive as a low-sodium salt substitute.",
       "color": "a33007",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium"
@@ -249,6 +271,8 @@
       "has_item": false,
       "description": "Common table salt, sodium chloride is the salt most responsible for the salinity of seawater. It has numerous uses in manufacturing and electrolysis.",
       "color": "c7c1a1",
+      "makes_colored_fire": true,
+      "fire_color": "yellow",
       "components": [
         {
           "name": "sodium"
@@ -265,6 +289,8 @@
       "has_fluid": true,
       "description": "Also known as dihydrogen monoxide, and a vital component for all organic life. Not only is it vital for life and farming, but most long-distance trade goods are transported over water.",
       "color": "115ec0",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "hydrogen",
@@ -281,6 +307,8 @@
       "has_item": true,
       "description": "Rocks made from kaolinite are known as kaolin clay. It's a popular material for use in ceramics. It's also sometimes eaten as a snack, or as a health food, though it has little to no dietary benefit.",
       "color": "a49fda",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "aluminum_oxide"
@@ -301,6 +329,8 @@
       "has_item": true,
       "description": "Proteins are large, complicated molecules made from chains of amino acids, that make up all living things. This protein is one of the most simple, known as cysteine.",
       "color": "906c15",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "ammonia"
@@ -322,6 +352,8 @@
       "has_item": false,
       "description": "Also known as hematite, iron(III) oxide is a common ore used in the making of steel. It can also be used as a polishing abrasive, or as a pigment.",
       "color": "782020",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "iron",
@@ -339,6 +371,8 @@
       "has_item": false,
       "description": "Simple white sugar or table sugar, sucrose is usually extracted from sugar cane or sugar beets. It's a common food additive, but can be particularly bad for your teeth.",
       "color": "e0d5d2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -360,6 +394,8 @@
       "has_item": false,
       "description": "An anion of carbonic acid can be combined with metals to form carbonate salts of many varieties. It's the simplest oxocarbon anion.",
       "color": "61715a",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon"
@@ -376,6 +412,8 @@
       "has_item": false,
       "description": "A major component in limestone, this compound is also found in shellfish, pearls, and eggshells. It's also often sold as antacid tablets.",
       "color": "97a15c",
+      "makes_colored_fire": true,
+      "fire_color": "orange",
       "components": [
         {
           "name": "calcium"
@@ -391,6 +429,8 @@
       "has_item": false,
       "description": "An anion of phosphoric acid, phosphates play a key role in biochemistry - they add hardness to bones and teeth, and are vital to the growth of some plants.",
       "color": "cf9953",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "phosphorus"
@@ -407,6 +447,8 @@
       "has_item": false,
       "description": "A diatomic anion, hydroxide occurs as a natural constituent of water",
       "color": "ffae00",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "oxygen"
@@ -422,6 +464,8 @@
       "has_item": true,
       "description": "Hydroxylapatite is the primary mineral in human bones. It can also be found in calcified organs, sometimes called \"Brain sand\".",
       "color": "b2d9b2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "calcium",
@@ -443,6 +487,8 @@
       "has_item": false,
       "description": "The mineral Strontianite, when combined with other metals, helps with conductivity, and is electroluminescent.",
       "color": "ce5818",
+      "makes_colored_fire": true,
+      "fire_color": "red",
       "components": [
         {
           "name": "strontium"
@@ -458,6 +504,8 @@
       "has_item": false,
       "description": "A hexagonal, crystalline mineral, beryl can form many kinds of precious stones, such as emerald and aquamarine.",
       "color": "b1d6bf",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "beryllium",
@@ -483,6 +531,8 @@
       "has_item": false,
       "description": "Starch is the most common carbohydrate in the human diet. It is also used to make bioplastics.",
       "color": "fcefa6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -504,6 +554,8 @@
       "has_item": false,
       "description": "A natural bitterant found in squash plants. Eating too much can cause poisoning, called \"Toxic Squash Syndrome\"",
       "color": "ffc800",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -525,6 +577,8 @@
       "has_item": false,
       "description": "A wide-band gap semiconductor, this mineral is useful for making transparent electronics.",
       "color": "bdc48d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "zinc"
@@ -540,6 +594,8 @@
       "has_item": false,
       "description": "Also called Cobalt Blue, this compound is commonly used in dying ceramics and glass.",
       "color": "1172c6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cobalt"
@@ -560,6 +616,8 @@
       "has_item": false,
       "description": "An esther of three fatty acids, triglycerides are the main component of animal fats and plant oils.",
       "color": "c8c85a",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -581,6 +639,8 @@
       "has_item": true,
       "description": "A tradition lead pigment, rarely used in modern times due to toxicity.",
       "color": "d6c633",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lead"
@@ -613,6 +673,8 @@
       "has_item": false,
       "description": "Ethyl alcohol or grain alcohol, this liquid can be made via fermentation, and is flammable at high concentration.",
       "color": "d2fa96",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -661,6 +723,8 @@
       "has_item": false,
       "description": "Propan-1-ol, also known as n-propanol or 1-propanol, is a colorless liquid with a strong odor. It is used as a solvent and in the production of various chemicals.",
       "color": "ffa500",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -698,6 +762,8 @@
       "has_item": false,
       "description": "Propan-2-ol, also known as isopropyl alcohol or isopropanol, is a colorless liquid with a strong odor. It is used as a solvent, cleaning agent, and in many household products.",
       "color": "808080",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -719,6 +785,8 @@
       "has_item": false,
       "description": "Amide groups are common in organic compounds, found in proteins, plastics, and medication.",
       "color": "d2fafa",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nitrogen"
@@ -735,6 +803,8 @@
       "has_item": false,
       "description": "Also known as carbamide, urea is a common product of nitrogen metabolism.",
       "color": "e6f0b4",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon"
@@ -770,6 +840,8 @@
       "has_item": false,
       "description": "An acidic, gaseous form of ammonia, salts of ammonium are useful in promoting plant growth.",
       "color": "b4fafa",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nitrogen"
@@ -817,6 +889,8 @@
       "has_item": false,
       "description": "A primary component of potash, this salt is often used in the production of glass, soap, and as a leavening agent.",
       "color": "c6985f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium",
@@ -833,6 +907,8 @@
       "has_item": false,
       "description": "With a high melting point and strong crystal structure, mullite makes strong porcelain.",
       "color": "6e6e96",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "aluminum_oxide",
@@ -865,6 +941,8 @@
       "has_item": false,
       "description": "The primary component of natural gas, methane can be found naturally in swamp gasses.",
       "color": "c81eb4",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon"
@@ -904,6 +982,8 @@
       "has_item": false,
       "description": "After methane, the second-largest component of natural gas.",
       "color": "c81e32",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -944,6 +1024,8 @@
       "has_item": false,
       "description": "While a gas at standard pressure, propane can be compressed into a liquid, making for easy transportation.",
       "color": "641e32",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -977,6 +1059,8 @@
       "has_item": false,
       "description": "Butane and propane were discovered simultaneously, as gasses found dissolved in crude petroluem.",
       "color": "6f96b4",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1010,6 +1094,8 @@
       "has_item": false,
       "description": "A popular solvent, pentane's low boiling point also make it ideal for geothermal energy production.",
       "color": "6f9655",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1043,6 +1129,8 @@
       "has_item": false,
       "description": "A non-polar solvent, hexanes are commonly used in the production of leather and glue.",
       "color": "6fcd32",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1076,6 +1164,8 @@
       "has_item": false,
       "description": "Heptane is a straight-chain alkane with seven carbon atoms. It is commonly used as a non-polar solvent and is highly flammable.",
       "color": "d9d900",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1093,6 +1183,8 @@
       "has_item": false,
       "description": "A crystalline form of carbon. It is used in pencils, lubricants, and under pressure it can form diamonds.",
       "color": "1f1f1f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1106,6 +1198,8 @@
       "has_item": true,
       "description": "Known as the mineral oldhamite, it is a rare mineral found in meteorites - though, it can be easily synthesized, often as a side-product of burning coal.",
       "color": "1f1f1f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "calcium",
@@ -1123,6 +1217,8 @@
       "has_item": true,
       "description": "While this chemical can be used as a richly-colored wood stain, chromium is a common allergen, causing skin irritation.",
       "color": "e88746",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium",
@@ -1144,6 +1240,8 @@
       "has_item": false,
       "description": "This chemical can turn a wide variety of colors when the salt forms complexes with other substances, but green is the most common.",
       "color": "5da773",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nickel"
@@ -1160,6 +1258,8 @@
       "has_item": true,
       "description": "Traditionally used as a disinfectant, this chemical can be used on both wounds and to purify water, though it tends to turn the water pink.",
       "color": "935fb5",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium"
@@ -1179,6 +1279,8 @@
       "has_item": true,
       "description": "Also know as epsom salt or bath salt, it's one of the primary salts in seawater, and the main reason sound doesn't travel well through the ocean.",
       "color": "af9fad",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "magnesium"
@@ -1198,6 +1300,8 @@
       "has_item": true,
       "description": "Forming the rare mineral tolbachite, this chemical can be used in pyrotechnics to give the flame a blue-green color.",
       "color": "5bb37c",
+      "makes_colored_fire": true,
+      "fire_color": "blue",
       "components": [
         {
           "name": "copper"
@@ -1214,6 +1318,8 @@
       "has_item": false,
       "description": "In addition to its use as a pigment, this chemical can be used in thin films to make solar cells.",
       "color": "c6c23b",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cadmium"
@@ -1229,6 +1335,8 @@
       "has_item": false,
       "description": "Called eskolaite or viridian, this pigment's fine powder is also useful for polishing the edges of knives.",
       "color": "83ab61",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "chromium",
@@ -1246,6 +1354,8 @@
       "has_item": false,
       "description": "This mineral is commonly used not only as a pigment, but as flame retardant in many materials, such textiles and electronics.",
       "color": "faffc8",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "antimony",
@@ -1263,6 +1373,8 @@
       "has_item": true,
       "description": "A black semiconductor, this mineral can be found extremely rarely in nature as tistarite.",
       "color": "321e32",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "titanium",
@@ -1280,6 +1392,8 @@
       "has_item": true,
       "description": "A tradition Chinese pigment, it's possible the recipe for making this compound came from improvements to the earlier Egyptian Blue.",
       "color": "dc64ff",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "barium"
@@ -1303,6 +1417,8 @@
       "has_item": true,
       "description": "Called \"ruby of arsenic\", this chemical forms brilliant red crystals, and can be used both for explosives and as a pesticide.",
       "color": "fa6482",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "arsenic",
@@ -1332,6 +1448,8 @@
       "has_item": true,
       "description": "The mineral barite is the most common source of barium, and can be used as a pigment, drilling fluid, and as a contrast agent of X-ray imaging.",
       "color": "b5cbda",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "barium"
@@ -1351,6 +1469,8 @@
       "has_item": false,
       "description": "A strongly coloured organic pigment, common in fungi, plants, and fruits. A fantastic source of vitamin A.",
       "color": "ff8c28",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1368,6 +1488,8 @@
       "has_item": false,
       "description": "PVC is a rigid polymer, strong but brittle. Among other uses, it's often pressed into vinyl records.",
       "color": "d7aea6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1388,6 +1510,8 @@
       "has_item": false,
       "description": "This crystalline salt is useful in the mining of gold - processing ore in a salt solution can remove the gold chemically, extracting more metal than can be done conventionally.",
       "color": "c6985f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium"
@@ -1440,6 +1564,8 @@
       "has_item": false,
       "description": "A hormone most useful in its ability to treat allergic reaction anaphylaxis.",
       "color": "e6a078",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1476,6 +1602,8 @@
       "has_item": false,
       "description": "Also known as aspirin, this chemical is well known for its ability to reduce pain, fever, and inflammation.",
       "color": "82beff",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1504,6 +1632,8 @@
       "has_item": false,
       "description": "The world's most popular psychoactive drug. Can be extracted from coffee and cacao beans.",
       "color": "646414",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -1546,6 +1676,8 @@
       "has_item": false,
       "description": "Called vermillion or cinnabar, this red compound has been used as pigment since ancient Greece.",
       "color": "9a4157",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "mercury"
@@ -1561,6 +1693,8 @@
       "has_item": false,
       "description": "Also called caustic soda, it can decompose proteins causing severe chemical burns. It's also use as an esterification in the production of soap.",
       "color": "d3c683",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "sodium"
@@ -1598,6 +1732,8 @@
       "has_item": false,
       "description": "Also called quicklime, this chemical is commonly used in industrial processes, though the Romans used choking clouds of it as a weapon.",
       "color": "dbd2c7",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "calcium"
@@ -1613,6 +1749,8 @@
       "has_item": false,
       "description": "Also called slaked lime, this chemical is useful in the preparation of mortar, as well as in sewage treatment.",
       "color": "dbd2c7",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "calcium"
@@ -1651,6 +1789,8 @@
       "has_item": false,
       "description": "This salt is often used as a de-icer, as it heats up when absorbing water. Its ability to absorb water also makes it useful in dehumidifiers.",
       "color": "dbd2c7",
+      "makes_colored_fire": true,
+      "fire_color": "orange",
       "components": [
         {
           "name": "calcium"
@@ -1667,6 +1807,8 @@
       "has_item": false,
       "description": "Called soda ash, this chemical is traditionally extract from the ashes of plants. Useful both for cleaning and as a more-alkaline alternative to baking soda.",
       "color": "d3c683",
+      "makes_colored_fire": true,
+      "fire_color": "yellow",
       "components": [
         {
           "name": "sodium",
@@ -1699,6 +1841,8 @@
       "has_item": false,
       "description": "Known to alchemist as acidum salis or muriatic acid, when combined with nitric acid it is known as aqua regia; an acid capable of dissolving gold.",
       "color": "0000ff",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "hydrogen"
@@ -1736,6 +1880,8 @@
       "has_item": false,
       "description": "This compounds hygroscopic properties make it an import part of major table salt brands - as an additive, it stops salt clumping in wet weather.",
       "color": "edb2ad",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "magnesium"
@@ -1751,6 +1897,8 @@
       "has_item": false,
       "description": "Called litharge or massicot, this compound is used extensively in lead glass.",
       "color": "ba87c1",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lead"
@@ -1782,6 +1930,8 @@
       "has_item": false,
       "description": "A product of burning sulfur - smells like matches. Usually a pollutant, but historically has been used to preserve wines.",
       "color": "9b9b32",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "sulfur"
@@ -1820,6 +1970,8 @@
       "has_item": false,
       "description": "Found in the ore galena, a common natural source of lead. It's thought the lead sulfide snows on the mountains of Venus.",
       "color": "ba87c1",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lead"
@@ -1835,6 +1987,8 @@
       "has_item": false,
       "description": "Known as sphalerite, this compound becomes phosphorescent win mixed with a suitable activator. Traditionally used in CRTs, x-ray machines, and glow-in-the-dark toys.",
       "color": "bdc48d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "zinc"
@@ -1850,6 +2004,8 @@
       "has_item": false,
       "description": "Called pyrite or fool's gold, this mineral forms cubic crystals with a golden lustre. The name 'pyrite' comes from the fact that it produces sparks when struck against steel.",
       "color": "808080",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "iron"
@@ -1866,6 +2022,8 @@
       "has_item": false,
       "description": "Called cassiterite, this compound is a useful tool in gas detection, as it changes electrical resistance when exposed to flammable gasses.",
       "color": "84a1ce",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "tin"
@@ -1882,6 +2040,8 @@
       "has_item": false,
       "description": "Also called pyrolusite, this compound is a major component in dry-cell batteries.",
       "color": "e1baf2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "manganese"
@@ -1898,6 +2058,8 @@
       "has_item": false,
       "description": "CRTs are required to use strontium oxide as a screen coating, in order to block the emission of X-ray radiation.",
       "color": "ce5818",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "strontium"
@@ -1913,6 +2075,8 @@
       "has_item": false,
       "description": "Known as wüstite, this black oxide makes up 8% of the earth's crust, and is often used in tattoos.",
       "color": "2f2f2f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "iron"
@@ -1944,6 +2108,8 @@
       "has_item": false,
       "description": "Known to alchemists as oil of vitriol, this chemical has a wide variety of industrial uses, though its primary household use is drain cleaner.",
       "color": "96a00a",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "hydrogen",
@@ -1997,6 +2163,8 @@
       "has_item": false,
       "description": "This chemical is a strong oxidizer, making it invaluable for use in rocket fuel and dynamite.",
       "color": "427bd6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "hydrogen"
@@ -2049,6 +2217,8 @@
       "has_item": false,
       "description": "This noxious gas is a poisonous by-product of burning fossil fuels, and gives nuclear mushroom clouds their signature red-brown tint.",
       "color": "b94407",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nitrogen"
@@ -2077,6 +2247,8 @@
       "has_item": false,
       "description": "This acid salt is commonly used in cleaning products, and can also be found in some cake mixes.",
       "color": "d3c683",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "sodium"
@@ -2115,6 +2287,8 @@
       "has_item": false,
       "description": "A noxious gas commonly found in aquatic waste, this chemical can improve fertilizers and is used as a cleaning agent.",
       "color": "3c78fa",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nitrogen"
@@ -2143,6 +2317,8 @@
       "has_item": false,
       "description": "Called sal ammoniac, this mineral can be found naturally and as residue from burning coal dumps. Used to flavor licorice, and in cough medicine.",
       "color": "3c78dc",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nitrogen"
@@ -2162,6 +2338,8 @@
       "has_item": false,
       "description": "Though it's used in toothpaste as a cleaning agent and foods to make them more tart, you shouldn't eat too much of this acid, as it can cause kidney stones.",
       "color": "e16487",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "hydrogen",
@@ -2194,6 +2372,8 @@
       "has_item": false,
       "description": "Also called gypsum, this compound is biocompatible and can be used in bone grafts.",
       "color": "dbd2c7",
+      "makes_colored_fire": true,
+      "fire_color": "orange",
       "components": [
         {
           "name": "calcium"
@@ -2213,6 +2393,8 @@
       "has_item": false,
       "description": "This chemical is most commonly used as a marine fungicide, but shows promise as a potential solar cell coating.",
       "color": "ff9a1e",
+      "makes_colored_fire": true,
+      "fire_color": "blue",
       "components": [
         {
           "name": "copper",
@@ -2229,6 +2411,8 @@
       "has_item": false,
       "description": "Found in nature as chalcocite, this mineral can easily be converted to pure copper by heating in an oxygen-rich environment.",
       "color": "ff9a1e",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "copper",
@@ -2261,6 +2445,8 @@
       "has_item": false,
       "description": "This poisonous, corrosive gas is known to miners as \"stinkdamp\", as it is heavier than air and can pool underground.",
       "color": "f0dc1e",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "hydrogen",
@@ -2310,6 +2496,8 @@
       "has_item": false,
       "description": "This hydrocarbon gas burns intensely when mixed with oxygen, and has been used both for lighthouse lamps and welding torches.",
       "color": "96e61e",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -2343,6 +2531,8 @@
       "has_item": false,
       "description": "The acid that gives vinegar its flavor. It is useful not only in food, but as an antiseptic and a protic solvent.",
       "color": "c8f064",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon",
@@ -2371,6 +2561,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c69da2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nickel"
@@ -2386,6 +2578,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c1963a",
+      "makes_colored_fire": true,
+      "fire_color": "white",
       "components": [
         {
           "name": "antimony",
@@ -2403,6 +2597,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c69da2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nickel"
@@ -2434,6 +2630,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "454653",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon"
@@ -2466,6 +2664,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "289e56",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lithium"
@@ -2481,6 +2681,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c6985f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium"
@@ -2503,6 +2705,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "0f3d28",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "rubidium"
@@ -2525,6 +2729,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9400",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cesium"
@@ -2547,6 +2753,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "b8c7e0",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "beryllium"
@@ -2570,6 +2778,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "edb2ad",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "magnesium"
@@ -2593,6 +2803,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ce5818",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "strontium"
@@ -2616,6 +2828,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "00dbb3",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "barium"
@@ -2639,6 +2853,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ed643b",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "aluminum"
@@ -2662,6 +2878,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "bdc48d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "zinc"
@@ -2685,6 +2903,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "e1baf2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "manganese"
@@ -2708,6 +2928,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "a09373",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cadmium"
@@ -2731,6 +2953,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9a1e",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "copper"
@@ -2754,6 +2978,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "289e56",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lithium"
@@ -2769,6 +2995,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "0f3d28",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "rubidium"
@@ -2784,6 +3012,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9400",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cesium"
@@ -2799,6 +3029,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "b8c7e0",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "beryllium"
@@ -2815,6 +3047,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "edb2ad",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "magnesium"
@@ -2831,6 +3065,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ce5818",
+      "makes_colored_fire": true,
+      "fire_color": "red",
       "components": [
         {
           "name": "strontium"
@@ -2847,6 +3083,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "00dbb3",
+      "makes_colored_fire": true,
+      "fire_color": "green",
       "components": [
         {
           "name": "barium"
@@ -2863,6 +3101,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "289e56",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lithium",
@@ -2879,6 +3119,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "d3c683",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "sodium",
@@ -2895,6 +3137,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c6985f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium",
@@ -2911,6 +3155,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "0f3d28",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "rubidium",
@@ -2927,6 +3173,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "b8c7e0",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "beryllium"
@@ -2942,6 +3190,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "00dbb3",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "barium"
@@ -2957,6 +3207,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "289e56",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lithium",
@@ -2973,6 +3225,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "0f3d28",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "rubidium",
@@ -2989,6 +3243,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9400",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cesium",
@@ -3005,6 +3261,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "b8c7e0",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "beryllium"
@@ -3020,6 +3278,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "00dbb3",
+      "makes_colored_fire": true,
+      "fire_color": "green",
       "components": [
         {
           "name": "barium"
@@ -3035,6 +3295,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "e1baf2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "manganese"
@@ -3050,6 +3312,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "808080",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "iron"
@@ -3065,6 +3329,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "1172c6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cobalt"
@@ -3080,6 +3346,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c69da2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nickel"
@@ -3095,6 +3363,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9a1e",
+      "makes_colored_fire": true,
+      "fire_color": "blue",
       "components": [
         {
           "name": "copper"
@@ -3110,6 +3380,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "bdc48d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "zinc"
@@ -3125,6 +3397,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "a09373",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cadmium"
@@ -3140,6 +3414,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ba87c1",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lead"
@@ -3155,6 +3431,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "289e56",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lithium",
@@ -3175,6 +3453,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "d3c683",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "sodium",
@@ -3195,6 +3475,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c6985f",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium",
@@ -3215,6 +3497,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "0f3d28",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "rubidium",
@@ -3235,6 +3519,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9400",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cesium",
@@ -3255,6 +3541,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "b8c7e0",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "beryllium"
@@ -3274,6 +3562,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ce5818",
+      "makes_colored_fire": true,
+      "fire_color": "red",
       "components": [
         {
           "name": "strontium"
@@ -3293,6 +3583,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "e1baf2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "manganese"
@@ -3312,6 +3604,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "1172c6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cobalt"
@@ -3331,6 +3625,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c69da2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nickel"
@@ -3350,6 +3646,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "808080",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "iron"
@@ -3369,6 +3667,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9a1e",
+      "makes_colored_fire": true,
+      "fire_color": "blue",
       "components": [
         {
           "name": "copper"
@@ -3388,6 +3688,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "bdc48d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "zinc"
@@ -3407,6 +3709,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "a09373",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cadmium"
@@ -3426,6 +3730,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ba87c1",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lead"
@@ -3445,6 +3751,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "84a1ce",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "tin"
@@ -3464,6 +3772,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "289e56",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lithium"
@@ -3479,6 +3789,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "d3c683",
+      "makes_colored_fire": true,
+      "fire_color": "yellow",
       "components": [
         {
           "name": "sodium"
@@ -3494,6 +3806,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "0f3d28",
+      "makes_colored_fire": true,
+      "fire_color": "infrared",
       "components": [
         {
           "name": "rubidium"
@@ -3509,6 +3823,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9400",
+      "makes_colored_fire": true,
+      "fire_color": "infrared",
       "components": [
         {
           "name": "cesium"
@@ -3524,6 +3840,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "b8c7e0",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "beryllium"
@@ -3540,6 +3858,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "edb2ad",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "magnesium"
@@ -3556,6 +3876,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "dbd2c7",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "calcium"
@@ -3572,6 +3894,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ce5818",
+      "makes_colored_fire": true,
+      "fire_color": "red",
       "components": [
         {
           "name": "strontium"
@@ -3588,6 +3912,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "00dbb3",
+      "makes_colored_fire": true,
+      "fire_color": "green",
       "components": [
         {
           "name": "barium"
@@ -3604,6 +3930,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ffbaf2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "manganese"
@@ -3620,6 +3948,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "808080",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "iron"
@@ -3636,6 +3966,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "1172c6",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cobalt"
@@ -3652,6 +3984,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c69da2",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nickel"
@@ -3668,6 +4002,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ff9a1e",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "copper"
@@ -3684,6 +4020,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "bdc48d",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "zinc"
@@ -3700,6 +4038,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "ba87c1",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "lead"
@@ -3716,6 +4056,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "a09373",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "cadmium"
@@ -3732,6 +4074,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "f76e45",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "aluminum"
@@ -3764,6 +4108,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "4178c8",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "nitrogen"
@@ -3812,6 +4158,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c878c8",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "carbon"
@@ -3840,6 +4188,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "c878c8",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "potassium"
@@ -3877,6 +4227,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "82a032",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "sulfur"
@@ -3893,6 +4245,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "00dbb3",
+      "makes_colored_fire": false,
+      "fire_color": "none",
       "components": [
         {
           "name": "barium"

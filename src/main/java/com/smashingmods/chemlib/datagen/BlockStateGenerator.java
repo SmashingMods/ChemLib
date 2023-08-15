@@ -1,17 +1,20 @@
 package com.smashingmods.chemlib.datagen;
 
+import com.ibm.icu.text.Normalizer2;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.FluidRegistry;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BlockStateGenerator extends BlockStateProvider {
 
@@ -24,11 +27,13 @@ public class BlockStateGenerator extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        ModelFile dustBlock = new ModelFile.ExistingModelFile(modLoc("block/dust_block"),models().existingFileHelper);
         generateBlockModel("metal", "metal_block");
         generateBlockModel("lamp_off", "lamp_block");
         generateBlockModel("lamp_on", "lamp_on");
 
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.METAL).forEach(this::registerMetalBlock);
+        BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.DUST).forEach(this::registerDustBlock);
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.LAMP).forEach(this::registerLampBlock);
         FluidRegistry.getLiquidBlocks().forEach(this::registerLiquidBlock);
     }
@@ -53,6 +58,16 @@ public class BlockStateGenerator extends BlockStateProvider {
                 .texture("all", modLoc("block/metal_block"));
 
         ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc("block/metal_model"), existingFileHelper);
+        getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
+    }
+
+    private void registerDustBlock(ChemicalBlock pBlock) {
+        String name = String.format("block/%s_dust_block", pBlock.getChemicalName());
+
+        models().withExistingParent(name, modLoc("block/dust_block"))
+                .texture("all", modLoc("block/dust_block"));
+
+        ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc("block/dust_block"), existingFileHelper);
         getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
     }
 

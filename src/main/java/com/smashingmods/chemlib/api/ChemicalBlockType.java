@@ -6,7 +6,8 @@ import javax.annotation.Nonnull;
 
 public enum ChemicalBlockType implements StringRepresentable {
     METAL("metal"),
-    LAMP("lamp");
+    LAMP("lamp"),
+    DUST("dust");
 
     private final String type;
 

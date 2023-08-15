@@ -9,6 +9,7 @@ import com.smashingmods.chemlib.api.addons.datagen.ModLocalizationGenerator;
 import com.smashingmods.chemlib.client.events.ForgeEventHandler;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.CompoundItem;
+import com.smashingmods.chemlib.registry.BlockRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.NonNullList;

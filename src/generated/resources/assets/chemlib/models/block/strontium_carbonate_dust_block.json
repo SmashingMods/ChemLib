@@ -1,0 +1,6 @@
+{
+  "parent": "chemlib:block/dust_block",
+  "textures": {
+    "all": "chemlib:block/dust_block"
+  }
+}

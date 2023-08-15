@@ -1,0 +1,7 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "minecraft:block/template_fire_side_alt",
+  "textures": {
+    "fire": "chemlib:block/orange_fire_0"
+  }
+}

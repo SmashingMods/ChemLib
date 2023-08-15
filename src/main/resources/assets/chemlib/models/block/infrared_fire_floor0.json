@@ -1,0 +1,7 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "minecraft:block/template_fire_floor",
+  "textures": {
+    "fire": "chemlib:block/infrared_fire_0"
+  }
+}

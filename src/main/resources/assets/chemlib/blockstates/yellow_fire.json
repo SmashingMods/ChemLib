@@ -1,0 +1,90 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "chemlib:block/yellow_fire_floor0"
+        },
+        {
+          "model": "chemlib:block/yellow_fire_floor1"
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "chemlib:block/yellow_fire_side0"
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side1"
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt0"
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt1"
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "chemlib:block/yellow_fire_side0",
+          "y": 90
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side1",
+          "y": 90
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt0",
+          "y": 90
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt1",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "chemlib:block/yellow_fire_side0",
+          "y": 180
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side1",
+          "y": 180
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt0",
+          "y": 180
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt1",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "chemlib:block/yellow_fire_side0",
+          "y": 270
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side1",
+          "y": 270
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt0",
+          "y": 270
+        },
+        {
+          "model": "chemlib:block/yellow_fire_side_alt1",
+          "y": 270
+        }
+      ]
+    }
+  ]
+}

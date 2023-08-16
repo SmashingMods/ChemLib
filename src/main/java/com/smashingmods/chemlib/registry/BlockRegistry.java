@@ -2,6 +2,7 @@ package com.smashingmods.chemlib.registry;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
+import com.smashingmods.chemlib.api.FireColors;
 import com.smashingmods.chemlib.client.events.PlayerEventHandler;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import net.minecraft.world.level.block.Block;
@@ -68,7 +69,7 @@ public class BlockRegistry {
         return FIRES;
     }
 
-    public static Optional<RegistryObject<Block>> getFireByColor(PlayerEventHandler.FireColors pColor) {
+    public static Optional<RegistryObject<Block>> getFireByColor(FireColors pColor) {
         return BLOCKS.getEntries().stream().filter(blockRegistryObject -> blockRegistryObject.getId().getPath().equals(pColor.name().toLowerCase()+"_fire")).findFirst();
     }
 

@@ -254,8 +254,8 @@
       "has_item": false,
       "description": "A metal halide salt, potassium chloride is also known as sylvite, and can be used as an food additive as a low-sodium salt substitute.",
       "color": "a33007",
-      "makes_colored_fire": false,
-      "fire_color": "none",
+      "makes_colored_fire": true,
+      "fire_color": "purple",
       "components": [
         {
           "name": "potassium"
@@ -2978,8 +2978,8 @@
       "has_item": false,
       "description": "This chemical's uses are unknown at this time.",
       "color": "289e56",
-      "makes_colored_fire": false,
-      "fire_color": "none",
+      "makes_colored_fire": true,
+      "fire_color": "red",
       "components": [
         {
           "name": "lithium"
@@ -4253,6 +4253,33 @@
         },
         {
           "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "sodium_borate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also known as Borax, has many industrial and household uses, including as a pesticide, as a metal soldering flux, as a component of glass, enamel, and pottery glazes, for tanning of skins and hides, for artificial aging of wood, as a preservative against wood fungus, and as a pharmaceutic alkalizer. In chemical laboratories, it is used as a buffering agent",
+      "color": "e6e6e6",
+      "makes_colored_fire": true,
+      "fire_color": "green",
+      "components": [
+        {
+          "name": "sodium",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 20
+        },
+        {
+          "name": "boron",
+          "count": 4
+        },
+        {
+          "name": "oxygen",
+          "count": 17
         }
       ]
     }

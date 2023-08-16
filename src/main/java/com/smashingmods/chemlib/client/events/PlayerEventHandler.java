@@ -3,6 +3,7 @@ package com.smashingmods.chemlib.client.events;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.ChemicalItemType;
+import com.smashingmods.chemlib.api.FireColors;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.ChemicalRegistry;
@@ -32,10 +33,6 @@ import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid = ChemLib.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class PlayerEventHandler {
-
-    public enum FireColors {
-        RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE, WHITE, INFRARED
-    }
 
     @SubscribeEvent
     public static void placeDust(PlayerInteractEvent.RightClickBlock event) {
@@ -127,8 +124,6 @@ public class PlayerEventHandler {
                 burnableItems.add(ItemRegistry.getChemicalItemByNameAndType(burnableItem,ChemicalItemType.COMPOUND).get());
             }
         }
-
-        System.out.println(block_name);
 
         if (ChemicalRegistry.fireColorMap.containsKey(block_name+"_block")) {
 

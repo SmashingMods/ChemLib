@@ -4,10 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.smashingmods.chemlib.ChemLib;
-import com.smashingmods.chemlib.api.ChemicalBlockType;
-import com.smashingmods.chemlib.api.ChemicalItemType;
-import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.api.MetalType;
+import com.smashingmods.chemlib.api.*;
 import com.smashingmods.chemlib.api.addons.registry.ModTracker;
 import com.smashingmods.chemlib.client.events.PlayerEventHandler;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
@@ -170,7 +167,7 @@ public class ChemicalRegistry {
     }
 
     private static void registerFires() {
-        for (PlayerEventHandler.FireColors fire_color : PlayerEventHandler.FireColors.values()) {
+        for (FireColors fire_color : FireColors.values()) {
             BlockRegistry.BLOCKS.register(String.format("%s_fire", fire_color.toString().toLowerCase()), () -> new ChemicalFire(BlockRegistry.FIRES,BlockRegistry.FIRE_PROPERTIES));
 
         }

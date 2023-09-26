@@ -1,5 +1,4 @@
-# ChemLib 1.18.2-2.0.16
+# ChemLib 1.18.2-2.0.18
 
 Changes:
-- Update Forge and bump version for parity.
-- Backport 1.19.x mob effect changes introduced recently.
+- Add tags for metal chemical blocks.

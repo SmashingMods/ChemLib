@@ -1,5 +1,5 @@
-# ChemLib 1.20.1-2.0.17
+# ChemLib 1.20.1-2.0.18
 
 Changes:
 
-- Port to 1.20.1
+- Add tags for metal chemical blocks.

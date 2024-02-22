@@ -11,7 +11,8 @@ import com.smashingmods.chemlib.common.items.CompoundItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -23,6 +24,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.function.Consumer;
 
 import static com.smashingmods.chemlib.registry.ChemicalRegistry.fluidTypePropertiesFactory;
@@ -34,7 +36,7 @@ public class CompoundRegistration {
         for (JsonElement jsonElement : pCompoundsJson.getAsJsonArray("compounds")) {
             JsonObject object = jsonElement.getAsJsonObject();
             String compoundName = object.get("name").getAsString();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
+            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase(Locale.ROOT));
             String description = object.has("description") ? object.get("description").getAsString() : "";
             String color = object.get("color").getAsString();
 

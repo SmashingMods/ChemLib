@@ -20,10 +20,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 
 import static net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS;
 
@@ -44,8 +41,8 @@ public class ChemicalRegistry {
             String abbreviation = object.get("abbreviation").getAsString();
             int group = object.get("group").getAsInt();
             int period = object.get("period").getAsInt();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
-            MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase());
+            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase(Locale.ROOT));
+            MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase(Locale.ROOT));
             boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
             String color = object.get("color").getAsString();
 
@@ -112,7 +109,7 @@ public class ChemicalRegistry {
         for (JsonElement jsonElement : COMPOUNDS_JSON.getAsJsonArray("compounds")) {
             JsonObject object = jsonElement.getAsJsonObject();
             String compoundName = object.get("name").getAsString();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
+            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase(Locale.ROOT));
             String description = object.has("description") ? object.get("description").getAsString() : "";
             String color = object.get("color").getAsString();
 

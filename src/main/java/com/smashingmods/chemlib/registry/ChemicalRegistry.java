@@ -23,10 +23,7 @@ import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 
 import static net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS;
 
@@ -46,8 +43,8 @@ public class ChemicalRegistry {
             String abbreviation = object.get("abbreviation").getAsString();
             int group = object.get("group").getAsInt();
             int period = object.get("period").getAsInt();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
-            MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase());
+            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase(Locale.ROOT));
+            MetalType metalType = MetalType.valueOf(object.get("metal_type").getAsString().toUpperCase(Locale.ROOT));
             boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
             String color = object.get("color").getAsString();
 
@@ -98,7 +95,7 @@ public class ChemicalRegistry {
         for (JsonElement jsonElement : COMPOUNDS_JSON.getAsJsonArray("compounds")) {
             JsonObject object = jsonElement.getAsJsonObject();
             String compoundName = object.get("name").getAsString();
-            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase());
+            MatterState matterState = MatterState.valueOf(object.get("matter_state").getAsString().toUpperCase(Locale.ROOT));
             String description = object.has("description") ? object.get("description").getAsString() : "";
             String color = object.get("color").getAsString();
 
@@ -164,7 +161,7 @@ public class ChemicalRegistry {
         int temperature = pObject.has("temperature") ? pObject.get("temperature").getAsInt() : 300;
         float motionScale = pObject.has("motion_scale") ? pObject.get("motion_scale").getAsFloat() : 0.014f;
         int fallDistanceModifier = pObject.has("fall_distance_modifier") ? pObject.get("fall_distance_modifier").getAsInt() : 0;
-        BlockPathTypes pathType = pObject.has("path_type") ? BlockPathTypes.valueOf(pObject.get("path_type").getAsString().toUpperCase()) : BlockPathTypes.WATER;
+        BlockPathTypes pathType = pObject.has("path_type") ? BlockPathTypes.valueOf(pObject.get("path_type").getAsString().toUpperCase(Locale.ROOT)) : BlockPathTypes.WATER;
         boolean pushEntity = !pObject.has("push_entity") || pObject.get("push_entity").getAsBoolean();
         boolean canSwim = !pObject.has("can_swim") || pObject.get("can_swim").getAsBoolean();
         boolean canDrown = pObject.has("can_drown") && pObject.get("can_drown").getAsBoolean();

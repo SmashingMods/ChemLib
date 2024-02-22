@@ -1,5 +1,7 @@
-# ChemLib 1.19.2-2.0.18
+# ChemLib 1.19.2-2.0.19
 
 Changes:
 
-- Add tags for metal chemical blocks.
+- Fix all calls to toUpperCase() passing in Locale.ROOT. This should fix issues with the Turkish language loading the
+  mod.
+- Upgrade Forge version.

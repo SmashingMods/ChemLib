@@ -553,7 +553,7 @@
         {
           "name": "thorium_fluoride",
           "matter_state": "solid",
-          "has_item": false,
+          "has_item": true,
           "description": "Thorium fluoride is a solid compound with applications in nuclear technology. It is utilized in specific processes, contributing to the efficiency of thorium-based nuclear reactors.",
           "color": "20B2AA",
           "components": [

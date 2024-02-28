@@ -393,6 +393,98 @@
       ]
     },
     {
+      "name": "uranyl_acetate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranyl acetate is a solid compound with applications in nuclear chemistry and research. It is commonly used as a stain in electron microscopy and as a source of uranium for various experimental purposes.",
+      "color": "FFD700",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 3
+        },
+        {
+          "name": "oxygen",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "name": "uranium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium chloride is a solid compound with applications in nuclear chemistry. It is utilized in various nuclear technologies for specific processes and experiments.",
+      "color": "D2B48C",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "chlorine",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "uranium_hexachloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium hexachloride is a solid compound important in the nuclear fuel cycle. Its properties make it suitable for specific processes in nuclear fuel production and other applications.",
+      "color": "CDC5BF",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "chlorine",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "uranium_hydride",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Uranium hydride is a gaseous compound used in nuclear applications. Its gaseous form facilitates specific processes in the nuclear industry.",
+      "color": "C0C0C0",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "hydrogen",
+          "count": 3
+        }
+      ]
+    },
+    {
       "name": "thorium_nitrate",
       "matter_state": "liquid",
       "fluid_properties": {
@@ -654,98 +746,6 @@
         },
         {
           "name": "oxygen",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "name": "uranyl_acetate",
-      "matter_state": "solid",
-      "has_item": false,
-      "description": "Uranyl acetate is a solid compound with applications in nuclear chemistry and research. It is commonly used as a stain in electron microscopy and as a source of uranium for various experimental purposes.",
-      "color": "FFD700",
-      "components": [
-        {
-          "name": "uranium",
-          "count": 1
-        },
-        {
-          "name": "carbon",
-          "count": 2
-        },
-        {
-          "name": "hydrogen",
-          "count": 3
-        },
-        {
-          "name": "oxygen",
-          "count": 7
-        }
-      ]
-    },
-    {
-      "name": "uranium_chloride",
-      "matter_state": "solid",
-      "has_item": false,
-      "description": "Uranium chloride is a solid compound with applications in nuclear chemistry. It is utilized in various nuclear technologies for specific processes and experiments.",
-      "color": "D2B48C",
-      "components": [
-        {
-          "name": "uranium",
-          "count": 1
-        },
-        {
-          "name": "chlorine",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "name": "uranium_hexachloride",
-      "matter_state": "solid",
-      "has_item": false,
-      "description": "Uranium hexachloride is a solid compound important in the nuclear fuel cycle. Its properties make it suitable for specific processes in nuclear fuel production and other applications.",
-      "color": "CDC5BF",
-      "components": [
-        {
-          "name": "uranium",
-          "count": 1
-        },
-        {
-          "name": "chlorine",
-          "count": 6
-        }
-      ]
-    },
-    {
-      "name": "uranium_hydride",
-      "matter_state": "gas",
-      "fluid_properties": {
-        "density": -1000,
-        "light_level": 0,
-        "viscosity": 0,
-        "temperature": 300,
-        "motion_scale": 0.014,
-        "fall_distance_modifier": 0,
-        "path_type": "water",
-        "push_entity": false,
-        "can_swim": false,
-        "can_drown": false,
-        "can_hydrate": false,
-        "can_extinguish": false,
-        "supports_boating": false,
-        "can_convert_to_source": false
-      },
-      "has_item": false,
-      "description": "Uranium hydride is a gaseous compound used in nuclear applications. Its gaseous form facilitates specific processes in the nuclear industry.",
-      "color": "C0C0C0",
-      "components": [
-        {
-          "name": "uranium",
-          "count": 1
-        },
-        {
-          "name": "hydrogen",
           "count": 3
         }
       ]

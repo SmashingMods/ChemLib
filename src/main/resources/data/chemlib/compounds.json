@@ -617,11 +617,11 @@
           "components": [
             {
               "name": "plutonium",
-              "count": 1
+              "count": 2
             },
             {
               "name": "carbon",
-              "count": 1
+              "count": 2
             }
           ]
         },

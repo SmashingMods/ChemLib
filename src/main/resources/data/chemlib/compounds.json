@@ -611,7 +611,7 @@
         {
           "name": "plutonium_carbide",
           "matter_state": "solid",
-          "has_item": false,
+          "has_item": true,
           "description": "Plutonium carbide is a solid compound used in nuclear engineering. It is known for its high melting point and is employed in certain applications within the field of nuclear science.",
           "color": "9932CC",
           "components": [

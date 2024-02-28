@@ -1,0 +1,3991 @@
+{
+  "compounds": [
+    {
+      "name": "carbon_dioxide",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "An acidic, trace gas found in the atmosphere, and a common bi-product of combustion, and a major greenhouse gas. Also useful as a refrigerant and supercritical solvent.",
+      "color": "32c832",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "ethylene",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This chemical is widely used in industrial chemistry, particularly in the synthesis of polyethylene plastics.",
+      "color": "c6c79f",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:slowness",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "cellulose",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "An important structural component of green plants, cellulose is the most abundant organic polymer on Earth. It is used to make paper, and can be chemically treated to make cellophane plastics.",
+      "color": "bdab8e",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 6
+        },
+        {
+          "name": "hydrogen",
+          "count": 10
+        },
+        {
+          "name": "oxygen",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "chitin",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "An organic polymer, the primary component of the cells of fungi, and the exoskeletons of arthropods. Structurally similar to cellulose, but functionally a protein.",
+      "color": "30160d",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 8
+        },
+        {
+          "name": "hydrogen",
+          "count": 13
+        },
+        {
+          "name": "oxygen",
+          "count": 5
+        },
+        {
+          "name": "nitrogen"
+        }
+      ]
+    },
+    {
+      "name": "keratin",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A fibrous protein, this compound makes up hair, nails, feathers, horns, scales, claws, hooves, and skin.",
+      "color": "30160d",
+      "components": [
+        {
+          "name": "protein",
+          "count": 2
+        },
+        {
+          "name": "starch",
+          "count": 2
+        },
+        {
+          "name": "sulfur_dioxide",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "plutonium tetroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Plutonium tetroxide is a radioactive compound, primarily used in nuclear fuel production. It plays a crucial role in the generation of energy through fission reactions.",
+      "color": "F7901C",
+      "components": [
+        {
+          "name": "plutonium",
+          "count": 1
+        },
+        {
+          "name": "oxygeon",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "uranium hexafluoride",
+      "matter_state": "gas",
+      "has_item": false,
+      "description": "Uranium hexafluoride is a crucial compound in nuclear fuel production, used for uranium enrichment. Its gaseous form enables effective isotope separation, making it essential in the nuclear industry.",
+      "color": "1E733E ",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "uranium dioxide",
+      "matter_state": "gas",
+      "has_item": false,
+      "description": "Uranium dioxide is a key component in nuclear fuel, commonly used in reactor cores. It provides a stable and efficient material for sustaining nuclear fission reactions, contributing to the generation of nuclear power.",
+      "color": "61DD90",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "uranium tetrafluoride",
+      "matter_state": "gas",
+      "has_item": false,
+      "description": "Uranium tetrafluoride is a compound used in the nuclear fuel cycle. Its role involves conversion to other uranium compounds for various applications, such as fuel fabrication for nuclear reactors.",
+      "color": "AFE4AE",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "thorium dioxide",
+      "matter_state": "gas",
+      "has_item": false,
+      "description": "Thorium dioxide is a material used in nuclear technology, particularly as an alternative fuel in certain reactor designs. It exhibits favorable properties for sustaining nuclear reactions.",
+      "color": "464C46",
+      "components": [
+        {
+          "name": "thorium",
+          "count": 1
+        },
+        {
+          "name": "oxygeon",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "silicon_dioxide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Also known as silica, this abundant mineral is a major constituent of sand, and is a key component in almost every mineral. Crystalline forms include clear quartz and opal.",
+      "color": "807461",
+      "components": [
+        {
+          "name": "silicon"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A polyatomic anion, salts formed from nitrate are called 'nitrates'. Nitrates are largely water-soluble, and are common components in fertilizers and explosives.",
+      "color": "5fb5c6",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "potassium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also known as niter or saltpeter, this chemical is commonly used to synthesize fertilizers and gunpowder. It can also be used as a salt to cure meats.",
+      "color": "c6985f",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "aluminum_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also known as corundum, this mineral is a key component in many precious stones. Metallic impurites in corundum can create vibrant colors, becoming ruby or sapphire.",
+      "color": "a0a2de",
+      "components": [
+        {
+          "name": "aluminum",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "magnesium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also known as periclase, this mineral is highly resistant to heat and pressure. It's a common component in contact metamorphic rocks.",
+      "color": "edb2ad",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "potassium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A metal halide salt, potassium chloride is also known as sylvite, and can be used as an food additive as a low-sodium salt substitute.",
+      "color": "a33007",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "sodium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Common table salt, sodium chloride is the salt most responsible for the salinity of seawater. It has numerous uses in manufacturing and electrolysis.",
+      "color": "c7c1a1",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "water",
+      "matter_state": "liquid",
+      "has_item": false,
+      "has_fluid": true,
+      "description": "Also known as dihydrogen monoxide, and a vital component for all organic life. Not only is it vital for life and farming, but most long-distance trade goods are transported over water.",
+      "color": "115ec0",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "kaolinite",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Rocks made from kaolinite are known as kaolin clay. It's a popular material for use in ceramics. It's also sometimes eaten as a snack, or as a health food, though it has little to no dietary benefit.",
+      "color": "a49fda",
+      "components": [
+        {
+          "name": "aluminum_oxide"
+        },
+        {
+          "name": "silicon_dioxide",
+          "count": 2
+        },
+        {
+          "name": "water",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "protein",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Proteins are large, complicated molecules made from chains of amino acids, that make up all living things. This protein is one of the most simple, known as cysteine.",
+      "color": "906c15",
+      "components": [
+        {
+          "name": "ammonia"
+        },
+        {
+          "name": "carbon_dioxide"
+        },
+        {
+          "name": "ethylene"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "iron_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also known as hematite, iron(III) oxide is a common ore used in the making of steel. It can also be used as a polishing abrasive, or as a pigment.",
+      "color": "782020",
+      "components": [
+        {
+          "name": "iron",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "sucrose",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Simple white sugar or table sugar, sucrose is usually extracted from sugar cane or sugar beets. It's a common food additive, but can be particularly bad for your teeth.",
+      "color": "e0d5d2",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 12
+        },
+        {
+          "name": "hydrogen",
+          "count": 22
+        },
+        {
+          "name": "oxygen",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "An anion of carbonic acid can be combined with metals to form carbonate salts of many varieties. It's the simplest oxocarbon anion.",
+      "color": "61715a",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "calcium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A major component in limestone, this compound is also found in shellfish, pearls, and eggshells. It's also often sold as antacid tablets.",
+      "color": "97a15c",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "phosphate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "An anion of phosphoric acid, phosphates play a key role in biochemistry - they add hardness to bones and teeth, and are vital to the growth of some plants.",
+      "color": "cf9953",
+      "components": [
+        {
+          "name": "phosphorus"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A diatomic anion, hydroxide occurs as a natural constituent of water",
+      "color": "ffae00",
+      "components": [
+        {
+          "name": "oxygen"
+        },
+        {
+          "name": "hydrogen"
+        }
+      ]
+    },
+    {
+      "name": "hydroxylapatite",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Hydroxylapatite is the primary mineral in human bones. It can also be found in calcified organs, sometimes called \"Brain sand\".",
+      "color": "b2d9b2",
+      "components": [
+        {
+          "name": "calcium",
+          "count": 5
+        },
+        {
+          "name": "phosphate",
+          "count": 6
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "strontium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "The mineral Strontianite, when combined with other metals, helps with conductivity, and is electroluminescent.",
+      "color": "ce5818",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "beryl",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A hexagonal, crystalline mineral, beryl can form many kinds of precious stones, such as emerald and aquamarine.",
+      "color": "b1d6bf",
+      "components": [
+        {
+          "name": "beryllium",
+          "count": 3
+        },
+        {
+          "name": "aluminum",
+          "count": 2
+        },
+        {
+          "name": "silicon",
+          "count": 6
+        },
+        {
+          "name": "oxygen",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "name": "starch",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Starch is the most common carbohydrate in the human diet. It is also used to make bioplastics.",
+      "color": "fcefa6",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 12
+        },
+        {
+          "name": "hydrogen",
+          "count": 20
+        },
+        {
+          "name": "oxygen",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "cucurbitacin",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A natural bitterant found in squash plants. Eating too much can cause poisoning, called \"Toxic Squash Syndrome\"",
+      "color": "ffc800",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 32
+        },
+        {
+          "name": "hydrogen",
+          "count": 44
+        },
+        {
+          "name": "oxygen",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "name": "zinc_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A wide-band gap semiconductor, this mineral is useful for making transparent electronics.",
+      "color": "bdc48d",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "cobalt_aluminate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also called Cobalt Blue, this compound is commonly used in dying ceramics and glass.",
+      "color": "1172c6",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "aluminum",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "triglyceride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "An esther of three fatty acids, triglycerides are the main component of animal fats and plant oils.",
+      "color": "c8c85a",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 18
+        },
+        {
+          "name": "hydrogen",
+          "count": 32
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "lead_iodide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "A tradition lead pigment, rarely used in modern times due to toxicity.",
+      "color": "d6c633",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "iodine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "ethanol",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Ethyl alcohol or grain alcohol, this liquid can be made via fermentation, and is flammable at high concentration.",
+      "color": "d2fa96",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 5
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "propan-1-ol",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 803,
+        "light_level": 0,
+        "viscosity": 2040,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Propan-1-ol, also known as n-propanol or 1-propanol, is a colorless liquid with a strong odor. It is used as a solvent and in the production of various chemicals.",
+      "color": "ffa500",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 7
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": []
+    },
+    {
+      "name": "propan-2-ol",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 785,
+        "light_level": 0,
+        "viscosity": 2400,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Propan-2-ol, also known as isopropyl alcohol or isopropanol, is a colorless liquid with a strong odor. It is used as a solvent, cleaning agent, and in many household products.",
+      "color": "808080",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 7
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": []
+    },
+    {
+      "name": "amide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Amide groups are common in organic compounds, found in proteins, plastics, and medication.",
+      "color": "d2fafa",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "urea",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also known as carbamide, urea is a common product of nitrogen metabolism.",
+      "color": "e6f0b4",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen"
+        },
+        {
+          "name": "amide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "ammonium",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "An acidic, gaseous form of ammonia, salts of ammonium are useful in promoting plant growth.",
+      "color": "b4fafa",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "diammonium_phosphate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "DAP for short, this chemical is a common plant food, and can be used as a fire retardant.",
+      "color": "d2fa96",
+      "components": [
+        {
+          "name": "ammonium",
+          "count": 2
+        },
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "phosphate"
+        }
+      ]
+    },
+    {
+      "name": "potassium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A primary component of potash, this salt is often used in the production of glass, soap, and as a leavening agent.",
+      "color": "c6985f",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "mullite",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "With a high melting point and strong crystal structure, mullite makes strong porcelain.",
+      "color": "6e6e96",
+      "components": [
+        {
+          "name": "aluminum_oxide",
+          "count": 2
+        },
+        {
+          "name": "silicon_dioxide"
+        }
+      ]
+    },
+    {
+      "name": "methane",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "The primary component of natural gas, methane can be found naturally in swamp gasses.",
+      "color": "c81eb4",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "ethane",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "After methane, the second-largest component of natural gas.",
+      "color": "c81e32",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 6
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "propane",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "While a gas at standard pressure, propane can be compressed into a liquid, making for easy transportation.",
+      "color": "641e32",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 3
+        },
+        {
+          "name": "hydrogen",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "name": "butane",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Butane and propane were discovered simultaneously, as gasses found dissolved in crude petroluem.",
+      "color": "6f96b4",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 4
+        },
+        {
+          "name": "hydrogen",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "pentane",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "A popular solvent, pentane's low boiling point also make it ideal for geothermal energy production.",
+      "color": "6f9655",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 5
+        },
+        {
+          "name": "hydrogen",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "name": "hexane",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "A non-polar solvent, hexanes are commonly used in the production of leather and glue.",
+      "color": "6fcd32",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 6
+        },
+        {
+          "name": "hydrogen",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "name": "heptane",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 0.379,
+        "temperature": 298.2,
+        "motion_scale": 0.012,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Heptane is a straight-chain alkane with seven carbon atoms. It is commonly used as a non-polar solvent and is highly flammable.",
+      "color": "d9d900",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 7
+        },
+        {
+          "name": "hydrogen",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "name": "graphite",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A crystalline form of carbon. It is used in pencils, lubricants, and under pressure it can form diamonds.",
+      "color": "1f1f1f",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "calcium_sulfide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Known as the mineral oldhamite, it is a rare mineral found in meteorites - though, it can be easily synthesized, often as a side-product of burning coal.",
+      "color": "1f1f1f",
+      "components": [
+        {
+          "name": "calcium",
+          "count": 1
+        },
+        {
+          "name": "sulfur",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "potassium_dichromate",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "While this chemical can be used as a richly-colored wood stain, chromium is a common allergen, causing skin irritation.",
+      "color": "e88746",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "chromium",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "name": "nickel_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical can turn a wide variety of colors when the salt forms complexes with other substances, but green is the most common.",
+      "color": "5da773",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "chlorine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "potassium_permanganate",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Traditionally used as a disinfectant, this chemical can be used on both wounds and to purify water, though it tends to turn the water pink.",
+      "color": "935fb5",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "magnesium_sulfate",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Also know as epsom salt or bath salt, it's one of the primary salts in seawater, and the main reason sound doesn't travel well through the ocean.",
+      "color": "af9fad",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "copper_chloride",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Forming the rare mineral tolbachite, this chemical can be used in pyrotechnics to give the flame a blue-green color.",
+      "color": "5bb37c",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "chlorine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "cadmium_sulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "In addition to its use as a pigment, this chemical can be used in thin films to make solar cells.",
+      "color": "c6c23b",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "chromium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Called eskolaite or viridian, this pigment's fine powder is also useful for polishing the edges of knives.",
+      "color": "83ab61",
+      "components": [
+        {
+          "name": "chromium",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "antimony_trioxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This mineral is commonly used not only as a pigment, but as flame retardant in many materials, such textiles and electronics.",
+      "color": "faffc8",
+      "components": [
+        {
+          "name": "antimony",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "titanium_oxide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "A black semiconductor, this mineral can be found extremely rarely in nature as tistarite.",
+      "color": "321e32",
+      "components": [
+        {
+          "name": "titanium",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "han_purple",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "A tradition Chinese pigment, it's possible the recipe for making this compound came from improvements to the earlier Egyptian Blue.",
+      "color": "dc64ff",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "copper"
+        },
+        {
+          "name": "silicon",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "arsenic_sulfide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Called \"ruby of arsenic\", this chemical forms brilliant red crystals, and can be used both for explosives and as a pesticide.",
+      "color": "fa6482",
+      "components": [
+        {
+          "name": "arsenic",
+          "count": 4
+        },
+        {
+          "name": "sulfur",
+          "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "300",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "barium_sulfate",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "The mineral barite is the most common source of barium, and can be used as a pigment, drilling fluid, and as a contrast agent of X-ray imaging.",
+      "color": "b5cbda",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "beta_carotene",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A strongly coloured organic pigment, common in fungi, plants, and fruits. A fantastic source of vitamin A.",
+      "color": "ff8c28",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 40
+        },
+        {
+          "name": "hydrogen",
+          "count": 56
+        }
+      ]
+    },
+    {
+      "name": "polyvinyl_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "PVC is a rigid polymer, strong but brittle. Among other uses, it's often pressed into vinyl records.",
+      "color": "d7aea6",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 3
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "potassium_cyanide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This crystalline salt is useful in the mining of gold - processing ore in a salt solution can remove the gold chemically, extracting more metal than can be done conventionally.",
+      "color": "c6985f",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "nitrogen"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "200",
+          "amplifier": 3
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        }
+      ,
+        {
+          "location": "minecraft:wither",
+          "duration": "100",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "epinephrine",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "A hormone most useful in its ability to treat allergic reaction anaphylaxis.",
+      "color": "e6a078",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 9
+        },
+        {
+          "name": "hydrogen",
+          "count": 13
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:strength",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:speed",
+          "duration": "600",
+          "amplifier": 2
+        }
+      ]
+    },
+    {
+      "name": "acetylsalicylic_acid",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also known as aspirin, this chemical is well known for its ability to reduce pain, fever, and inflammation.",
+      "color": "82beff",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 9
+        },
+        {
+          "name": "hydrogen",
+          "count": 8
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:regeneration",
+          "duration": "100",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "caffeine",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "The world's most popular psychoactive drug. Can be extracted from coffee and cacao beans.",
+      "color": "646414",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 8
+        },
+        {
+          "name": "hydrogen",
+          "count": 10
+        },
+        {
+          "name": "nitrogen",
+          "count": 4
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:speed",
+          "duration": "600",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:jump_boost",
+          "duration": "500",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:strength",
+          "duration": "500",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "mercury_sulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Called vermillion or cinnabar, this red compound has been used as pigment since ancient Greece.",
+      "color": "9a4157",
+      "components": [
+        {
+          "name": "mercury"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "sodium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also called caustic soda, it can decompose proteins causing severe chemical burns. It's also use as an esterification in the production of soap.",
+      "color": "d3c683",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "60",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:blindness",
+          "duration": "400",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "calcium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also called quicklime, this chemical is commonly used in industrial processes, though the Romans used choking clouds of it as a weapon.",
+      "color": "dbd2c7",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "calcium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also called slaked lime, this chemical is useful in the preparation of mortar, as well as in sewage treatment.",
+      "color": "dbd2c7",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:blindness",
+          "duration": "200",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "calcium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This salt is often used as a de-icer, as it heats up when absorbing water. Its ability to absorb water also makes it useful in dehumidifiers.",
+      "color": "dbd2c7",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "chlorine",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "sodium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Called soda ash, this chemical is traditionally extract from the ashes of plants. Useful both for cleaning and as a more-alkaline alternative to baking soda.",
+      "color": "d3c683",
+      "components": [
+        {
+          "name": "sodium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "hydrochloric_acid",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Known to alchemist as acidum salis or muriatic acid, when combined with nitric acid it is known as aqua regia; an acid capable of dissolving gold.",
+      "color": "0000ff",
+      "components": [
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "chlorine"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:instant_damage",
+          "duration": "40",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:blindness",
+          "duration": "400",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "magnesium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This compounds hygroscopic properties make it an import part of major table salt brands - as an additive, it stops salt clumping in wet weather.",
+      "color": "edb2ad",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "lead_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Called litharge or massicot, this compound is used extensively in lead glass.",
+      "color": "ba87c1",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "sulfur_dioxide",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "A product of burning sulfur - smells like matches. Usually a pollutant, but historically has been used to preserve wines.",
+      "color": "9b9b32",
+      "components": [
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "100",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:unluck",
+          "duration": "400",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "lead_sulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Found in the ore galena, a common natural source of lead. It's thought the lead sulfide snows on the mountains of Venus.",
+      "color": "ba87c1",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "zinc_sulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Known as sphalerite, this compound becomes phosphorescent win mixed with a suitable activator. Traditionally used in CRTs, x-ray machines, and glow-in-the-dark toys.",
+      "color": "bdc48d",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "iron_disulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Called pyrite or fool's gold, this mineral forms cubic crystals with a golden lustre. The name 'pyrite' comes from the fact that it produces sparks when struck against steel.",
+      "color": "808080",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "sulfur",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "tin_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Called cassiterite, this compound is a useful tool in gas detection, as it changes electrical resistance when exposed to flammable gasses.",
+      "color": "84a1ce",
+      "components": [
+        {
+          "name": "tin"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "manganese_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also called pyrolusite, this compound is a major component in dry-cell batteries.",
+      "color": "e1baf2",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "strontium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "CRTs are required to use strontium oxide as a screen coating, in order to block the emission of X-ray radiation.",
+      "color": "ce5818",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "iron_ii_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Known as wüstite, this black oxide makes up 8% of the earth's crust, and is often used in tattoos.",
+      "color": "2f2f2f",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "sulfuric_acid",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Known to alchemists as oil of vitriol, this chemical has a wide variety of industrial uses, though its primary household use is drain cleaner.",
+      "color": "96a00a",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "nitric_acid",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This chemical is a strong oxidizer, making it invaluable for use in rocket fuel and dynamite.",
+      "color": "427bd6",
+      "components": [
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "400",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "nitrogen_dioxide",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This noxious gas is a poisonous by-product of burning fossil fuels, and gives nuclear mushroom clouds their signature red-brown tint.",
+      "color": "b94407",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "sodium_bisulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This acid salt is commonly used in cleaning products, and can also be found in some cake mixes.",
+      "color": "d3c683",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "hydrogen"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "ammonia",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "A noxious gas commonly found in aquatic waste, this chemical can improve fertilizers and is used as a cleaning agent.",
+      "color": "3c78fa",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": "3"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "200",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "ammonium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Called sal ammoniac, this mineral can be found naturally and as residue from burning coal dumps. Used to flavor licorice, and in cough medicine.",
+      "color": "3c78dc",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "hydrogen",
+          "count": "4"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "phosphoric_acid",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Though it's used in toothpaste as a cleaning agent and foods to make them more tart, you shouldn't eat too much of this acid, as it can cause kidney stones.",
+      "color": "e16487",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 3
+        },
+        {
+          "name": "phosphorus"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "100",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "calcium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Also called gypsum, this compound is biocompatible and can be used in bone grafts.",
+      "color": "dbd2c7",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "copper_i_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical is most commonly used as a marine fungicide, but shows promise as a potential solar cell coating.",
+      "color": "ff9a1e",
+      "components": [
+        {
+          "name": "copper",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "copper_i_sulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Found in nature as chalcocite, this mineral can easily be converted to pure copper by heating in an oxygen-rich environment.",
+      "color": "ff9a1e",
+      "components": [
+        {
+          "name": "copper",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "hydrogen_sulfide",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This poisonous, corrosive gas is known to miners as \"stinkdamp\", as it is heavier than air and can pool underground.",
+      "color": "f0dc1e",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 2
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:wither",
+          "duration": "200",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "acetylene",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This hydrocarbon gas burns intensely when mixed with oxygen, and has been used both for lighthouse lamps and welding torches.",
+      "color": "96e61e",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "acetic_acid",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "The acid that gives vinegar its flavor. It is useful not only in food, but as an antiseptic and a protic solvent.",
+      "color": "c8f064",
+      "components": [
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 4
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:poison",
+          "duration": "40",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "nickel_sulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c69da2",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    },
+    {
+      "name": "antimony_trisulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c1963a",
+      "components": [
+        {
+          "name": "antimony",
+          "count": 2
+        },
+        {
+          "name": "sulfur",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "nickel_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c69da2",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "carbon_monoxide",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "454653",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "oxygen"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:wither",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 1
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "lithium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "289e56",
+      "components": [
+        {
+          "name": "lithium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ]
+    },
+    {
+      "name": "potassium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c6985f",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "rubidium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "0f3d28",
+      "components": [
+        {
+          "name": "rubidium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "cesium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9400",
+      "components": [
+        {
+          "name": "cesium"
+        },
+        {
+          "name": "hydroxide"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "beryllium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "b8c7e0",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "magnesium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "edb2ad",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "strontium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ce5818",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "barium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "00dbb3",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "aluminum_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ed643b",
+      "components": [
+        {
+          "name": "aluminum"
+        },
+        {
+          "name": "hydroxide",
+          "count": 3
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "zinc_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "bdc48d",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "manganese_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "e1baf2",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "cadmium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "a09373",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "copper_ii_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9a1e",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "hydroxide",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "0",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "lithium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "289e56",
+      "components": [
+        {
+          "name": "lithium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "0f3d28",
+      "components": [
+        {
+          "name": "rubidium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "cesium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9400",
+      "components": [
+        {
+          "name": "cesium"
+        },
+        {
+          "name": "chlorine"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "b8c7e0",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "magnesium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "edb2ad",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "strontium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ce5818",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "barium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "00dbb3",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "chlorine",
+          "count": "2"
+        }
+      ]
+    },
+    {
+      "name": "lithium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "289e56",
+      "components": [
+        {
+          "name": "lithium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "sodium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "d3c683",
+      "components": [
+        {
+          "name": "sodium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "potassium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c6985f",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "0f3d28",
+      "components": [
+        {
+          "name": "rubidium",
+          "count": 2
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "b8c7e0",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "barium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "00dbb3",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "oxygen"
+        }
+      ]
+    },
+    {
+      "name": "lithium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "289e56",
+      "components": [
+        {
+          "name": "lithium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "0f3d28",
+      "components": [
+        {
+          "name": "rubidium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "cesium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9400",
+      "components": [
+        {
+          "name": "cesium",
+          "count": 2
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "b8c7e0",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "barium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "00dbb3",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "manganese_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "e1baf2",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "iron_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "808080",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "cobalt_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "1172c6",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "nickel_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c69da2",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "copper_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9a1e",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "zinc_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "bdc48d",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "cadmium_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "a09373",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "lead_carbonate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ba87c1",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "carbonate"
+        }
+      ]
+    },
+    {
+      "name": "lithium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "289e56",
+      "components": [
+        {
+          "name": "lithium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "sodium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "d3c683",
+      "components": [
+        {
+          "name": "sodium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "potassium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c6985f",
+      "components": [
+        {
+          "name": "potassium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "rubidium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "0f3d28",
+      "components": [
+        {
+          "name": "rubidium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "cesium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9400",
+      "components": [
+        {
+          "name": "cesium",
+          "count": 2
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "beryllium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "b8c7e0",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "strontium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ce5818",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "manganese_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "e1baf2",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "cobalt_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "1172c6",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "nickel_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c69da2",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "iron_ii_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "808080",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "copper_ii_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9a1e",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "zinc_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "bdc48d",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "cadmium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "a09373",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "lead_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ba87c1",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "tin_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "84a1ce",
+      "components": [
+        {
+          "name": "tin"
+        },
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "lithium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "289e56",
+      "components": [
+        {
+          "name": "lithium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "sodium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "d3c683",
+      "components": [
+        {
+          "name": "sodium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "rubidium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "0f3d28",
+      "components": [
+        {
+          "name": "rubidium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "cesium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9400",
+      "components": [
+        {
+          "name": "cesium"
+        },
+        {
+          "name": "nitrate"
+        }
+      ]
+    },
+    {
+      "name": "beryllium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "b8c7e0",
+      "components": [
+        {
+          "name": "beryllium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "magnesium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "edb2ad",
+      "components": [
+        {
+          "name": "magnesium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "calcium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "dbd2c7",
+      "components": [
+        {
+          "name": "calcium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "strontium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ce5818",
+      "components": [
+        {
+          "name": "strontium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "barium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "00dbb3",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "manganese_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ffbaf2",
+      "components": [
+        {
+          "name": "manganese"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "iron_iii_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "808080",
+      "components": [
+        {
+          "name": "iron"
+        },
+        {
+          "name": "nitrate",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "cobalt_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "1172c6",
+      "components": [
+        {
+          "name": "cobalt"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "nickel_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c69da2",
+      "components": [
+        {
+          "name": "nickel"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "copper_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ff9a1e",
+      "components": [
+        {
+          "name": "copper"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "zinc_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "bdc48d",
+      "components": [
+        {
+          "name": "zinc"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "lead_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "ba87c1",
+      "components": [
+        {
+          "name": "lead"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "cadmium_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "a09373",
+      "components": [
+        {
+          "name": "cadmium"
+        },
+        {
+          "name": "nitrate",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "aluminum_nitrate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "f76e45",
+      "components": [
+        {
+          "name": "aluminum"
+        },
+        {
+          "name": "nitrate",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "nitric_oxide",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "4178c8",
+      "components": [
+        {
+          "name": "nitrogen"
+        },
+        {
+          "name": "oxygen"
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "400",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "120",
+          "amplifier": 1
+        }
+      ]
+    },
+    {
+      "name": "carbon_disulfide",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c878c8",
+      "components": [
+        {
+          "name": "carbon"
+        },
+        {
+          "name": "sulfur",
+          "count": 2
+        }
+      ],
+      "effect": [
+        {
+          "location": "minecraft:nausea",
+          "duration": "200",
+          "amplifier": 0
+        },
+        {
+          "location": "minecraft:weakness",
+          "duration": "600",
+          "amplifier": 0
+        }
+      ]
+    },
+    {
+      "name": "potassium_ethyl_xanthate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "c878c8",
+      "components": [
+        {
+          "name": "potassium"
+        },
+        {
+          "name": "polyvinyl_chloride"
+        },
+        {
+          "name": "water"
+        },
+        {
+          "name": "carbon_disulfide"
+        }
+      ]
+    },
+    {
+      "name": "sulfur_trioxide",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1000,
+        "light_level": 0,
+        "viscosity": 1000,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "82a032",
+      "components": [
+        {
+          "name": "sulfur"
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "barium_sulfide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "This chemical's uses are unknown at this time.",
+      "color": "00dbb3",
+      "components": [
+        {
+          "name": "barium"
+        },
+        {
+          "name": "sulfur"
+        }
+      ]
+    }
+  ]
+}

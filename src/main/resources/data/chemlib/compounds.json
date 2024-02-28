@@ -612,27 +612,6 @@
         ]
       },
       {
-        "name": "oil",
-        "matter_state": "solid",
-        "has_item": false,
-        "description": "Oil is an extremely useful material used in most major power production plants!",
-        "color": "8B008B",
-        "components": [
-          {
-            "name": "hydrogen",
-            "count": 12
-          },
-          {
-            "name": "carbon",
-            "count": 5
-          },
-          {
-            "name": "oxygen",
-            "count": 1
-          }
-        ]
-      },
-      {
         "name": "thorium_fluoride",
         "matter_state": "solid",
         "has_item": true,
@@ -821,45 +800,45 @@
           "count": 3
         },
         {
-          "name": "oil",
-          "matter_state": "liquid",
-          "fluid_properties": {
-            "density": -1000,
-            "light_level": 0,
-            "viscosity": 0,
-            "temperature": 300,
-            "motion_scale": 0.014,
-            "fall_distance_modifier": 0,
-            "path_type": "water",
-            "push_entity": false,
-            "can_swim": false,
-            "can_drown": false,
-            "can_hydrate": false,
-            "can_extinguish": false,
-            "supports_boating": false,
-            "can_convert_to_source": false
-          },
-          "has_item": false,
-          "description": "Oil is an extremely useful material used in most major power production plants!",
-          "color": "8B008B",
-          "components": [
-            {
-              "name": "hydrogen",
-              "count": 12
-            },
-            {
-              "name": "carbon",
-              "count": 5
-            },
-            {
-              "name": "oxygen",
-              "count": 1
-            }
-          ]
-        },
-        {
           "name": "fluorine",
           "count": 5
+        }
+      ]
+    },
+    {
+      "name": "oil",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Oil is an extremely useful material used in most major power production plants!",
+      "color": "151716",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 12
+        },
+        {
+          "name": "carbon",
+          "count": 5
+        },
+        {
+          "name": "oxygen",
+          "count": 1
         }
       ]
     },
@@ -876,6 +855,64 @@
         {
           "name": "oxygen",
           "count": 2
+        }
+      ]
+    },
+    {
+      "name": "plutonium_hexafluoride",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1800,
+        "light_level": 0,
+        "viscosity": 0.02,
+        "temperature": 500,
+        "motion_scale": 0.015,
+        "fall_distance_modifier": 0.05,
+        "path_type": "lava",
+        "push_entity": true,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": true,
+        "can_convert_to_source": true
+      },
+      "has_item": false,
+      "description": "Plutonium hexafluoride is a liquid radioactive compound used in advanced nuclear processes. It plays a crucial role in certain experiments within the field of nuclear science.",
+      "color": "EC7E2D",
+      "components": [
+        {
+          "name": "plutonium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "corium",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Corium is a solid mixture of nuclear fuel and reactor coolant, typically formed during severe nuclear accidents. It poses a significant challenge due to its radioactive nature.",
+      "color": "FF4500",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "plutonium",
+          "count": 1
+        },
+        {
+          "name": "thorium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 3
         }
       ]
     },

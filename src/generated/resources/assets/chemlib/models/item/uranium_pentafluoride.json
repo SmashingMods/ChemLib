@@ -1,3 +1,3 @@
 {
-  "parent": "chemlib:item/compound_gas_model"
+  "parent": "chemlib:item/compound_liquid_model"
 }

@@ -896,7 +896,7 @@
       "matter_state": "solid",
       "has_item": false,
       "description": "Corium is a solid mixture of nuclear fuel and reactor coolant, typically formed during severe nuclear accidents. It poses a significant challenge due to its radioactive nature.",
-      "color": "FF4500",
+      "color": "3E6311",
       "components": [
         {
           "name": "uranium",

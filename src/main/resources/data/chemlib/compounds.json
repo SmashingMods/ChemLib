@@ -150,6 +150,699 @@
       ]
     },
     {
+      "name": "plutonium_tetroxide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Plutonium tetroxide is a radioactive compound, primarily used in nuclear fuel production. It plays a crucial role in the generation of energy through fission reactions.",
+      "color": "F7901C",
+      "components": [
+        {
+          "name": "plutonium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "uranium_hexafluoride",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Uranium hexafluoride is a crucial compound in nuclear fuel production, used for uranium enrichment. Its gaseous form enables effective isotope separation, making it essential in the nuclear industry.",
+      "color": "327332",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "uranium_dioxide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Uranium dioxide is a key component in nuclear fuel, commonly used in reactor cores. It provides a stable and efficient material for sustaining nuclear fission reactions, contributing to the generation of nuclear power.",
+      "color": "61DD90",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "uranium_tetrafluoride",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Uranium tetrafluoride is a compound used in the nuclear fuel cycle. Its role involves conversion to other uranium compounds for various applications, such as fuel fabrication for nuclear reactors.",
+      "color": "AFE4AE",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "name": "thorium_dioxide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "Thorium dioxide is a material used in nuclear technology, particularly as an alternative fuel in certain reactor designs. It exhibits favorable properties for sustaining nuclear reactions.",
+      "color": "464C46",
+      "components": [
+        {
+          "name": "thorium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "uranium_trifluoride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium trifluoride is a solid compound used in various nuclear applications. Its properties make it suitable for specific processes in nuclear fuel production and other nuclear technologies.",
+      "color": "A4D1E0",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "uranyl_nitrate",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Uranyl nitrate is a liquid compound used in nuclear chemistry. It serves various purposes, including analytical chemistry and as a precursor in the production of other uranium compounds.",
+      "color": "FFCC00",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "nitrogen",
+          "count": 2
+        },
+        {
+          "name": "oxygen",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "uranium_nitride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium nitride is a solid compound used in nuclear fuel production. It plays a role in specific processes, contributing to the efficiency of nuclear reactors.",
+      "color": "2E8B57",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "nitrogen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "thorium_hydride",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Thorium hydride is a gaseous compound with applications in nuclear research. Its gaseous form facilitates specific processes in thorium-based nuclear technologies.",
+      "color": "D2691E",
+      "components": [
+        {
+          "name": "thorium",
+          "count": 1
+        },
+        {
+          "name": "hydrogen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "plutonium_dioxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Plutonium dioxide is a solid compound primarily used in nuclear fuel production. It is a crucial component for sustaining nuclear fission reactions.",
+      "color": "483D8B",
+      "components": [
+        {
+          "name": "plutonium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "neptunium_hydroxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Neptunium hydroxide is a solid compound with applications in nuclear chemistry. It is used in specific processes and experiments within the field of nuclear science.",
+      "color": "4169E1",
+      "components": [
+        {
+          "name": "neptunium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "uranyl_acetate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranyl acetate is a solid compound with applications in nuclear chemistry and research. It is commonly used as a stain in electron microscopy and as a source of uranium for various experimental purposes.",
+      "color": "FFD700",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "carbon",
+          "count": 2
+        },
+        {
+          "name": "hydrogen",
+          "count": 3
+        },
+        {
+          "name": "oxygen",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "name": "uranium_chloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium chloride is a solid compound with applications in nuclear chemistry. It is utilized in various nuclear technologies for specific processes and experiments.",
+      "color": "D2B48C",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "chlorine",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "uranium_hexachloride",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium hexachloride is a solid compound important in the nuclear fuel cycle. Its properties make it suitable for specific processes in nuclear fuel production and other applications.",
+      "color": "CDC5BF",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "chlorine",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "uranium_hydride",
+      "matter_state": "gas",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Uranium hydride is a gaseous compound used in nuclear applications. Its gaseous form facilitates specific processes in the nuclear industry.",
+      "color": "C0C0C0",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "hydrogen",
+          "count": 3
+        }
+      ]
+    },
+      {
+        "name": "uranium_carbide",
+        "matter_state": "solid",
+        "has_item": true,
+        "description": "Uranium carbide is known for its high melting point and is employed in certain applications within the field of nuclear science.",
+        "color": "54856E",
+        "components": [
+          {
+            "name": "uranium",
+            "count": 1
+          },
+          {
+            "name": "carbon",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "thorium_carbonate",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Thorium carbonate is a solid compound with applications in nuclear technology. It is utilized in specific processes, contributing to the efficiency of thorium-based nuclear reactors.",
+        "color": "006400",
+        "components": [
+          {
+            "name": "thorium",
+            "count": 1
+          },
+          {
+            "name": "carbon",
+            "count": 3
+          },
+          {
+            "name": "oxygen",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "name": "plutonium_hydroxide",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Plutonium hydroxide is a solid compound used in nuclear chemistry and research. It is involved in specific processes and experiments within the field of nuclear science.",
+        "color": "800080",
+        "components": [
+          {
+            "name": "plutonium",
+            "count": 1
+          },
+          {
+            "name": "oxygen",
+            "count": 2
+          },
+          {
+            "name": "hydrogen",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "uranium_silicide",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Uranium silicide is a solid compound with applications in nuclear engineering. It is known for its high thermal conductivity and is employed in specific nuclear technologies.",
+        "color": "696969",
+        "components": [
+          {
+            "name": "uranium",
+            "count": 1
+          },
+          {
+            "name": "silicon",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "thorium_chloride",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Thorium chloride is a solid compound used in nuclear chemistry. It plays a role in specific experiments and applications within the field of thorium-based nuclear science.",
+        "color": "FF8C00",
+        "components": [
+          {
+            "name": "thorium",
+            "count": 1
+          },
+          {
+            "name": "chlorine",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "name": "plutonium_carbide",
+        "matter_state": "solid",
+        "has_item": true,
+        "description": "Plutonium carbide is a solid compound used in nuclear engineering. It is known for its high melting point and is employed in certain applications within the field of nuclear science.",
+        "color": "9932CC",
+        "components": [
+          {
+            "name": "plutonium",
+            "count": 2
+          },
+          {
+            "name": "carbon",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "uranium_bromide",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Uranium bromide is a solid compound used in nuclear engineering. It is employed in specific applications within the field of nuclear science.",
+        "color": "8B008B",
+        "components": [
+          {
+            "name": "uranium",
+            "count": 1
+          },
+          {
+            "name": "bromine",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "thorium_fluoride",
+        "matter_state": "solid",
+        "has_item": true,
+        "description": "Thorium fluoride is a solid compound with applications in nuclear technology. It is utilized in specific processes, contributing to the efficiency of thorium-based nuclear reactors.",
+        "color": "20B2AA",
+        "components": [
+          {
+            "name": "thorium",
+            "count": 1
+          },
+          {
+            "name": "fluorine",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "name": "plutonium_oxide",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Plutonium oxide is a solid compound used in nuclear fuel production. It is a key component for sustaining nuclear fission reactions.",
+        "color": "2F4F4F",
+        "components": [
+          {
+            "name": "plutonium",
+            "count": 1
+          },
+          {
+            "name": "oxygen",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "thorium_iodide",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Thorium iodide is a solid compound used in nuclear chemistry and research. It plays a role in specific experiments and applications within the field of thorium-based nuclear science.",
+        "color": "008080",
+        "components": [
+          {
+            "name": "thorium",
+            "count": 1
+          },
+          {
+            "name": "iodine",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "name": "polonium_chloride",
+        "matter_state": "solid",
+        "has_item": false,
+        "description": "Polonium chloride is a solid compound with radioactive properties. It is involved in specific processes and experiments within the field of nuclear science.",
+        "color": "800000",
+        "components": [
+          {
+            "name": "polonium",
+            "count": 1
+          },
+          {
+            "name": "chlorine",
+            "count": 2
+          }
+        ]
+      },
+    {
+      "name": "neptunium_oxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Neptunium oxide is a solid compound used in nuclear fuel production. It is a crucial component for sustaining nuclear fission reactions.",
+      "color": "00008B",
+      "components": [
+        {
+          "name": "neptunium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "uranium_trioxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium trioxide is a solid compound used in the nuclear fuel cycle. It is a key component in reactor cores, contributing to the efficient and stable sustenance of nuclear fission reactions.",
+      "color": "B8AFA9",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "oxygen",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "uranium_iodide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium iodide is a solid compound used in nuclear chemistry and research. It plays a role in specific experiments and applications within the nuclear field.",
+      "color": "9932CC",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "iodine",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "uranium_sulfate",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Uranium sulfate is a solid compound with applications in nuclear technology. It is utilized for specific processes in nuclear fuel production and other nuclear applications.",
+      "color": "FF6347",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "sulfur",
+          "count": 4
+        },
+        {
+          "name": "oxygen",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "name": "triuranium_octoxide",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Triuranium octoxide is a solid compound with applications in nuclear fuel production. It is a key component in certain reactor designs, contributing to the efficiency of nuclear reactions.",
+      "color": "8B4513",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 3
+        },
+        {
+          "name": "oxygen",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "name": "thorium_nitrate",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Thorium nitrate is a liquid compound used in nuclear chemistry. It has applications in analytical chemistry and serves as a precursor in the production of other thorium compounds.",
+      "color": "00BFFF",
+      "components": [
+        {
+          "name": "thorium",
+          "count": 1
+        },
+        {
+          "name": "nitrogen",
+          "count": 3
+        },
+        {
+          "name": "fluorine",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "oil",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": -1000,
+        "light_level": 0,
+        "viscosity": 0,
+        "temperature": 300,
+        "motion_scale": 0.014,
+        "fall_distance_modifier": 0,
+        "path_type": "water",
+        "push_entity": false,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": false,
+        "can_convert_to_source": false
+      },
+      "has_item": false,
+      "description": "Oil is an extremely useful material used in most major power production plants!",
+      "color": "151716",
+      "components": [
+        {
+          "name": "hydrogen",
+          "count": 12
+        },
+        {
+          "name": "carbon",
+          "count": 5
+        },
+        {
+          "name": "oxygen",
+          "count": 1
+        }
+      ]
+    },
+    {
       "name": "silicon_dioxide",
       "matter_state": "solid",
       "has_item": true,
@@ -162,6 +855,64 @@
         {
           "name": "oxygen",
           "count": 2
+        }
+      ]
+    },
+    {
+      "name": "plutonium_hexafluoride",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1800,
+        "light_level": 0,
+        "viscosity": 0.02,
+        "temperature": 500,
+        "motion_scale": 0.015,
+        "fall_distance_modifier": 0.05,
+        "path_type": "lava",
+        "push_entity": true,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": true,
+        "can_convert_to_source": true
+      },
+      "has_item": false,
+      "description": "Plutonium hexafluoride is a liquid radioactive compound used in advanced nuclear processes. It plays a crucial role in certain experiments within the field of nuclear science.",
+      "color": "EC7E2D",
+      "components": [
+        {
+          "name": "plutonium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "corium",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "Corium is a solid mixture of nuclear fuel and reactor coolant, typically formed during severe nuclear accidents. It poses a significant challenge due to its radioactive nature.",
+      "color": "3E6311",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "plutonium",
+          "count": 1
+        },
+        {
+          "name": "thorium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 3
         }
       ]
     },
@@ -985,6 +1736,39 @@
         {
           "name": "hydrogen",
           "count": 10
+        }
+      ]
+    },
+    {
+      "name": "uranium_pentafluoride",
+      "matter_state": "liquid",
+      "fluid_properties": {
+        "density": 1500,
+        "light_level": 0,
+        "viscosity": 0.01,
+        "temperature": 400,
+        "motion_scale": 0.02,
+        "fall_distance_modifier": 0.1,
+        "path_type": "lava",
+        "push_entity": true,
+        "can_swim": false,
+        "can_drown": false,
+        "can_hydrate": false,
+        "can_extinguish": false,
+        "supports_boating": true,
+        "can_convert_to_source": true
+      },
+      "has_item": false,
+      "description": "Uranium pentafluoride is a liquid compound used in nuclear chemistry. It has applications in various nuclear processes and experiments.",
+      "color": "00FFFF",
+      "components": [
+        {
+          "name": "uranium",
+          "count": 1
+        },
+        {
+          "name": "fluorine",
+          "count": 5
         }
       ]
     },

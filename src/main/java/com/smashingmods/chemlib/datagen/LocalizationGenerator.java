@@ -6,8 +6,8 @@ import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.FluidRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 
@@ -44,7 +44,7 @@ public class LocalizationGenerator extends LanguageProvider {
             });
         }
 
-        FluidRegistry.FLUID_TYPES.getEntries().stream().map(RegistryObject::get).forEach(fluidType -> {
+        FluidRegistry.FLUID_TYPES.getEntries().stream().map(DeferredHolder::get).forEach(fluidType -> {
             int density = fluidType.getDensity();
             String key = fluidType.getDescriptionId();
             String value = key.split("\\.")[key.split("\\.").length - 1];

@@ -6,14 +6,14 @@ import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.items.*;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -27,34 +27,34 @@ public class ItemRegistry {
         Each item type has a separate registry to make understanding and organizing them simpler.
      */
 
-    public static final DeferredRegister<Item> REGISTRY_ELEMENTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_COMPOUNDS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_COMPOUND_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_METAL_DUSTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_NUGGETS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_INGOTS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_PLATES = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
-    public static final DeferredRegister<Item> REGISTRY_MISC_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_ELEMENTS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_COMPOUNDS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_COMPOUND_DUSTS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_METAL_DUSTS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_NUGGETS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_INGOTS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_PLATES = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_BLOCK_ITEMS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister<Item> REGISTRY_MISC_ITEMS = DeferredRegister.create(Registries.ITEM, ChemLib.MODID);
 
     /*
         This section defines helper methods for getting specific objects out of the registry.
      */
 
-    public static Stream<RegistryObject<Item>> getRegistryItems() {
+    public static Stream<DeferredHolder<Item, ? extends Item>> getRegistryItems() {
         return ItemRegistry.REGISTRY_ELEMENTS.getEntries().stream();
     }
 
     public static List<ElementItem> getElements() {
-        return REGISTRY_ELEMENTS.getEntries().stream().map(RegistryObject::get).map(item -> (ElementItem) item).collect(Collectors.toList());
+        return REGISTRY_ELEMENTS.getEntries().stream().map(DeferredHolder::get).map(item -> (ElementItem) item).collect(Collectors.toList());
     }
 
     public static List<CompoundItem> getCompounds() {
-        return REGISTRY_COMPOUNDS.getEntries().stream().map(RegistryObject::get).map(item -> (CompoundItem) item).collect(Collectors.toList());
+        return REGISTRY_COMPOUNDS.getEntries().stream().map(DeferredHolder::get).map(item -> (CompoundItem) item).collect(Collectors.toList());
     }
 
     public static List<CompoundItem> getAllCompounds() {
-        return new LinkedList<>(REGISTRY_COMPOUNDS.getEntries().stream().map(RegistryObject::get).map(item -> (CompoundItem) item).toList());
+        return new LinkedList<>(REGISTRY_COMPOUNDS.getEntries().stream().map(DeferredHolder::get).map(item -> (CompoundItem) item).toList());
     }
 
     public static Stream<ChemicalItem> getChemicalItems() {
@@ -66,11 +66,11 @@ public class ItemRegistry {
     }
 
     public static List<ChemicalBlockItem> getChemicalBlockItems() {
-        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> item instanceof ChemicalBlockItem).map(item -> (ChemicalBlockItem) item).collect(Collectors.toList());
+        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(DeferredHolder::get).filter(item -> item instanceof ChemicalBlockItem).map(item -> (ChemicalBlockItem) item).collect(Collectors.toList());
     }
 
     public static List<BlockItem> getLiquidBlockItems() {
-        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> item instanceof BlockItem).map(item -> (BlockItem) item).filter(blockItem -> blockItem.getBlock() instanceof LiquidBlock).collect(Collectors.toList());
+        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(DeferredHolder::get).filter(item -> item instanceof BlockItem).map(item -> (BlockItem) item).filter(blockItem -> blockItem.getBlock() instanceof LiquidBlock).collect(Collectors.toList());
     }
 
     public static DeferredRegister<Item> getChemicalItemRegistryByType(ChemicalItemType pChemicalItemType) {
@@ -108,7 +108,7 @@ public class ItemRegistry {
     }
 
     public static Stream<ChemicalItem> getChemicalItemsByTypeAsStream(ChemicalItemType pChemicalItemType) {
-        return getChemicalItemRegistryByType(pChemicalItemType).getEntries().stream().map(RegistryObject::get).map(item -> (ChemicalItem) item);
+        return getChemicalItemRegistryByType(pChemicalItemType).getEntries().stream().map(DeferredHolder::get).map(item -> (ChemicalItem) item);
     }
 
     public static Optional<ChemicalItem> getChemicalItemByNameAndType(String pName, ChemicalItemType pChemicalItemType) {
@@ -119,14 +119,18 @@ public class ItemRegistry {
     }
 
     public static Optional<Item> getChemicalBlockItemByName(String pName) {
-        return REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).getPath().equals(pName)).findFirst();
+        return REGISTRY_BLOCK_ITEMS.getEntries().stream()
+                .map(DeferredHolder::get)
+                .filter(item -> item.getDefaultInstance().getItem().toString().endsWith(pName))
+                .findFirst()
+                .map(item -> (Item) item);
     }
 
     /*
         Helper methods for registering items.
      */
 
-    public static void registerItemByType(RegistryObject<Item> pRegistryObject, ChemicalItemType pChemicalItemType) {
+    public static void registerItemByType(DeferredHolder<Item, ? extends Item> pRegistryObject, ChemicalItemType pChemicalItemType) {
 
         String registryName = String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName());
         Supplier<ChemicalItem> supplier = () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties());
@@ -141,15 +145,15 @@ public class ItemRegistry {
     }
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    public static RegistryObject<Item> getRegistryObject(DeferredRegister<Item> pRegister, String pName) {
+    public static DeferredHolder<Item, ? extends Item> getRegistryObject(DeferredRegister<Item> pRegister, String pName) {
         return pRegister.getEntries().stream().filter(item -> item.getId().getPath().equals(pName)).findFirst().get();
     }
 
-    public static <B extends Block> void fromChemicalBlock(RegistryObject<B> pBlock, Item.Properties pProperties) {
+    public static <B extends Block> void fromChemicalBlock(DeferredHolder<Block, ? extends Block> pBlock, Item.Properties pProperties) {
         REGISTRY_BLOCK_ITEMS.register(pBlock.getId().getPath(), () -> new ChemicalBlockItem((ChemicalBlock) pBlock.get(), pProperties));
     }
 
-    public static <B extends Block> void fromBlock(RegistryObject<B> pBlock, Item.Properties pProperties) {
+    public static <B extends Block> void fromBlock(DeferredHolder<Block, ? extends Block> pBlock, Item.Properties pProperties) {
         REGISTRY_BLOCK_ITEMS.register(pBlock.getId().getPath(), () -> new BlockItem(pBlock.get(), pProperties));
     }
 

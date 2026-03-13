@@ -2,8 +2,6 @@ package com.smashingmods.chemlib.api;
 
 import net.minecraft.util.StringRepresentable;
 
-import javax.annotation.Nonnull;
-
 public enum ChemicalItemType implements StringRepresentable {
     COMPOUND("dust"),
     DUST("dust"),
@@ -18,7 +16,6 @@ public enum ChemicalItemType implements StringRepresentable {
     }
 
     @Override
-    @Nonnull
     public String getSerializedName() {
         return type;
     }

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:neon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:neon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:neon_lamp_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:neon"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:neon_lamp_block"
+    ]
+  }
+}

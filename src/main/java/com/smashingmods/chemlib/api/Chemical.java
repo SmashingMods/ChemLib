@@ -1,14 +1,11 @@
 package com.smashingmods.chemlib.api;
 
 import com.smashingmods.chemlib.registry.FluidRegistry;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.fluids.FluidType;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public interface Chemical extends ItemLike {
@@ -24,14 +21,8 @@ public interface Chemical extends ItemLike {
     int getColor();
 
     default Optional<FluidType> getFluidTypeReference() {
-        Optional<FluidType> toReturn = FluidRegistry.getFluidTypeByName(getChemicalName());
-        if (toReturn.isEmpty()) {
-            toReturn = Optional.ofNullable(ForgeRegistries.FLUID_TYPES.get().getValue(ResourceLocation.tryParse(getChemicalName())));
-        }
-        if (toReturn.isEmpty()) {
-            toReturn = Optional.of(Objects.requireNonNull(ForgeRegistries.FLUIDS.getValue(ResourceLocation.tryParse(getChemicalName()))).getFluidType());
-        }
-        return toReturn;
+        // NeoForge fluids are already registered via FluidRegistry; resolve via our helper.
+        return FluidRegistry.getFluidTypeByName(getChemicalName());
     }
 
     default int clampMinColorValue(int pColor, int minValue) {

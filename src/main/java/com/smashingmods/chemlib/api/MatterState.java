@@ -2,8 +2,6 @@ package com.smashingmods.chemlib.api;
 
 import net.minecraft.util.StringRepresentable;
 
-import javax.annotation.Nonnull;
-
 public enum MatterState implements StringRepresentable {
     SOLID("solid"),
     LIQUID("liquid"),
@@ -16,7 +14,6 @@ public enum MatterState implements StringRepresentable {
     }
 
     @Override
-    @Nonnull
     public String getSerializedName() {
         return state;
     }

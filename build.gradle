@@ -1,70 +1,20 @@
 plugins {
-    id 'java'
     id 'idea'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'java-library'
+    id 'maven-publish'
     id 'com.matthewprenger.cursegradle' version '1.4.0'
+    id 'net.neoforged.moddev' version '1.0.23'
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'maven-publish'
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
+}
 
 version = "$minecraft_version-$mod_version"
-group = 'com.smashingmods'
-archivesBaseName = 'chemlib'
-
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
-minecraft {
-    mappings channel: mapping_channel, version: "$mapping_version-1.20.1"
-    copyIdeResources = true
-    runs {
-        client {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            jvmArgs '-XX:+AllowEnhancedClassRedefinition'
-
-            mods {
-                chemlib {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            jvmArgs '-XX:+AllowEnhancedClassRedefinition'
-
-            mods {
-                chemlib {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        data {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            jvmArgs '-XX:+AllowEnhancedClassRedefinition'
-            args '--mod', "$archivesBaseName", '--all', '--output', file('src/generated/resources'), '--existing', file('src/main/resources')
-
-            mods {
-                chemlib {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
-}
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+group = mod_group_id
 
 repositories {
+    mavenLocal()
     maven { url "https://maven.blamejared.com/" }
     maven {
         url "https://www.cursemaven.com"
@@ -74,58 +24,92 @@ repositories {
     }
 }
 
-dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+base {
+    archivesName = mod_id
 }
 
-def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']
-def replaceProperties = [
-        minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
-        forge_version: forge_version, forge_version_range: forge_version_range,
-        loader_version_range: loader_version_range,
-        mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-        mod_authors: mod_authors, mod_description: mod_description
-]
-processResources {
-    inputs.properties replaceProperties
-    replaceProperties.put 'project', project
+// Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-    filesMatching(resourceTargets) {
-        expand replaceProperties
+neoForge {
+    // Specify the version of NeoForge to use.
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
     }
-}
 
-jar {
-    manifest {
-        attributes([
-                "Specification-Title"     : "$archivesBaseName",
-                "Specification-Vendor"    : "SmashingMods",
-                "Specification-Version"   : "1",
-                "Implementation-Title"    : project.name,
-                "Implementation-Version"  : project.version,
-                "Implementation-Vendor"   : "SmashingMods",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
-    }
-}
-
-def secrets = new Properties()
-file('secrets.properties').withInputStream {
-    stream -> secrets.load(stream)
-}
-
-fileTree("secrets").matching {
-    include "**/*.properties"
-}.each {
-    File file ->
-        file.withInputStream {
-            stream -> secrets.load(stream)
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
+
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        gameTestServer {
+            type = "gameTestServer"
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
 }
 
-jar.finalizedBy('reobfJar')
+// Include resources generated by data generators.
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+dependencies {
+    // Optional integrations
+    compileOnly "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
+    runtimeOnly "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
+}
+
+var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            neo_version_range      : neo_version_range,
+            loader_version_range   : loader_version_range,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description
+    ]
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from "src/main/templates"
+    into "build/generated/sources/modMetadata"
+}
+
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
 
 java {
     withSourcesJar()
@@ -134,41 +118,16 @@ java {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            afterEvaluate {
-                artifact project.jar
-                artifact project.sourcesJar
-                artifact project.javadocJar
-            }
-            setGroupId 'smashingmods'
-            setArtifactId 'chemlib'
+        register('mavenJava', MavenPublication) {
+            from components.java
         }
     }
     repositories {
         maven {
             url "https://maven.tamaized.com/releases"
             credentials {
-                username secrets.getProperty("maven_username")
-                password secrets.getProperty("maven_password")
-            }
-        }
-    }
-}
-
-curseforge {
-    apiKey = secrets.getProperty("apiKey")
-    project {
-        id = '340666'
-        releaseType = 'release'
-        changelogType = 'markdown'
-        changelog = file("changelog.md")
-        addGameVersion 'Forge'
-        addGameVersion 'Java 17'
-        addGameVersion "$minecraft_version"
-        mainArtifact(jar) {
-            displayName = "ChemLib $version"
-            relations {
-                optionalDependency 'jei'
+                username findProperty("maven_username") ?: ""
+                password findProperty("maven_password") ?: ""
             }
         }
     }
@@ -176,4 +135,11 @@ curseforge {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
 }

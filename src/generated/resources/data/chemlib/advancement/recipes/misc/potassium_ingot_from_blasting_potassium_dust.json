@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:potassium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:potassium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:potassium_ingot_from_blasting_potassium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:potassium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:potassium_ingot_from_blasting_potassium_dust"
+    ]
+  }
+}

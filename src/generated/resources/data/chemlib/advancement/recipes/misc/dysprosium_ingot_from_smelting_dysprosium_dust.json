@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:dysprosium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:dysprosium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:dysprosium_ingot_from_smelting_dysprosium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:dysprosium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:dysprosium_ingot_from_smelting_dysprosium_dust"
+    ]
+  }
+}

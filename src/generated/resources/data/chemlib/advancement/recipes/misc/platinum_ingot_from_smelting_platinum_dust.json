@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:platinum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:platinum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:platinum_ingot_from_smelting_platinum_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:platinum"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:platinum_ingot_from_smelting_platinum_dust"
+    ]
+  }
+}

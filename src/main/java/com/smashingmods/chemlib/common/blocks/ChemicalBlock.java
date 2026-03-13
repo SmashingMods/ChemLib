@@ -4,12 +4,12 @@ import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.MatterState;
 import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +27,7 @@ public class ChemicalBlock extends Block implements Chemical {
     }
 
     public Chemical getChemical() {
-        return (Chemical) Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(chemical));
+        return (Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.get(chemical));
     }
 
     public ChemicalBlockType getBlockType() {

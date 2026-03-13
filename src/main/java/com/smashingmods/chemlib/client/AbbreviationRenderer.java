@@ -21,8 +21,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -55,18 +54,19 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 		if (pStack.getItem() instanceof ElementItem elementItem) {
 			switch (elementItem.getMatterState()) {
 				case LIQUID ->
-						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory");
+						modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_liquid_model"), "standalone");
 				case GAS ->
-						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory");
+						modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_gas_model"), "standalone");
 				default ->
-						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory");
+						modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_solid_model"), "standalone");
 			}
 		} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
 			switch (chemicalItem.getItemType()) {
-				case DUST -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_dust_model"), "inventory");
-				case NUGGET -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_nugget_model"), "inventory");
-				case INGOT -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_ingot_model"), "inventory");
-				case PLATE -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_plate_model"), "inventory");
+				case COMPOUND -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/compound_dust_model"), "standalone");
+				case DUST -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_dust_model"), "standalone");
+				case NUGGET -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_nugget_model"), "standalone");
+				case INGOT -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_ingot_model"), "standalone");
+				case PLATE -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_plate_model"), "standalone");
 			}
 		}
 
@@ -83,9 +83,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 			pPoseStack.pushPose();
 
 			switch (pItemDisplayContext) {
-				case THIRD_PERSON_LEFT_HAND, THIRD_PERSON_RIGHT_HAND -> {
-					pPoseStack.translate(0, -0.2D, 0.45D);
-				}
+				case THIRD_PERSON_LEFT_HAND, THIRD_PERSON_RIGHT_HAND -> pPoseStack.translate(0, -0.2D, 0.45D);
 				case FIRST_PERSON_LEFT_HAND -> {
 					pPoseStack.translate(-0.025D, -0.025D, 0.75D);
 					pPoseStack.mulPose(Axis.ZP.rotationDegrees(25));
@@ -113,16 +111,15 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 				}
 			}
 
-			//noinspection UnstableApiUsage
-			Minecraft.getInstance().getItemRenderer().render(
-					pStack,
-					pItemDisplayContext,
-					false,
-					pPoseStack,
-					buffer,
-					isGui ? 0xF000F0 : pPackedLight,
-					isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
-					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pItemDisplayContext, false));
+            Minecraft.getInstance().getItemRenderer().render(
+                    pStack,
+                    pItemDisplayContext,
+                    false,
+                    pPoseStack,
+                    buffer,
+                    isGui ? 0xF000F0 : pPackedLight,
+                    isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
+                    bakedModel);
 			if (isGui) {
 				((MultiBufferSource.BufferSource) buffer).endBatch();
 			}
@@ -170,12 +167,12 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 					}
 				} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
 					switch (chemicalItem.getItemType()) {
-						case DUST -> {
+						case COMPOUND, DUST -> {
 							if (Config.Common.renderDustAbbreviations.get()) {
 								renderAbbreviation.accept(chemicalItem);
 							}
 						}
-						case NUGGET -> {
+                        case NUGGET -> {
 							if (Config.Common.renderNuggetAbbreviations.get()) {
 								renderAbbreviation.accept(chemicalItem);
 							}

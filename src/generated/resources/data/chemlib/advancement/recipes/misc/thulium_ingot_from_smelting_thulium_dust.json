@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:thulium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:thulium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:thulium_ingot_from_smelting_thulium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:thulium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:thulium_ingot_from_smelting_thulium_dust"
+    ]
+  }
+}

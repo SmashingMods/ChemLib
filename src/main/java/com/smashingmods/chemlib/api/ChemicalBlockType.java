@@ -2,8 +2,6 @@ package com.smashingmods.chemlib.api;
 
 import net.minecraft.util.StringRepresentable;
 
-import javax.annotation.Nonnull;
-
 public enum ChemicalBlockType implements StringRepresentable {
     METAL("metal"),
     LAMP("lamp");
@@ -15,7 +13,6 @@ public enum ChemicalBlockType implements StringRepresentable {
     }
 
     @Override
-    @Nonnull
     public String getSerializedName() {
         return type;
     }

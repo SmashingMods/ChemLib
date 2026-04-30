@@ -15,12 +15,9 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-@SuppressWarnings("deprecation")
 @MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class LampBlock extends ChemicalBlock {
 
     private static final BooleanProperty LIT = BlockStateProperties.LIT;

@@ -16,7 +16,6 @@ import net.minecraft.world.level.material.PushReaction;
 
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Supplier;
 
 public class ChemicalLiquidBlock extends LiquidBlock {
 
@@ -34,7 +33,6 @@ public class ChemicalLiquidBlock extends LiquidBlock {
         return Optional.of(atomicChemical.get());
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
         if (pEntity instanceof LivingEntity livingEntity) {

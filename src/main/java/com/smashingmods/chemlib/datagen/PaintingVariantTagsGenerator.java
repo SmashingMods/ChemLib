@@ -22,7 +22,7 @@ public class PaintingVariantTagsGenerator extends TagsProvider<PaintingVariant> 
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.tag(PaintingVariantTags.PLACEABLE)
-                .add(PERIODIC_TABLE);
+//        this.tag(PaintingVariantTags.PLACEABLE)
+//                .add(PERIODIC_TABLE);
     }
 }

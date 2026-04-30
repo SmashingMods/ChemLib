@@ -5,6 +5,7 @@ import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
@@ -12,8 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
@@ -30,7 +30,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
         ItemRegistry.getChemicalItems().forEach(item -> {
             String type = item.getItemType().getSerializedName();
             String name = item.getChemicalName();
-            TagKey<Item> key = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
+            TagKey<Item> key = Objects.requireNonNull(BuiltInRegistries.ITEM.tags()).createTagKey(new ResourceLocation("forge", String.format("%ss/%s", type, name)));
             tag(key).add(item);
         });
 

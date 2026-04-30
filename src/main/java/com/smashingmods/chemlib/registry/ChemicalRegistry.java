@@ -12,20 +12,18 @@ import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.blocks.LampBlock;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import com.smashingmods.chemlib.common.items.ElementItem;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraftforge.common.SoundActions;
-import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.pathfinder.PathType;
+import net.neoforged.neoforge.common.SoundActions;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.*;
-
-import static net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS;
 
 public class ChemicalRegistry {
     public static final JsonObject ELEMENTS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/elements.json");
@@ -49,7 +47,7 @@ public class ChemicalRegistry {
             String color = object.get("color").getAsString();
 
             ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, mobEffectsFactory(object)));
-            RegistryObject<Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
+            DeferredHolder<Item, ? extends Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
             if (!artificial) {
                 switch (matterState) {
@@ -61,7 +59,7 @@ public class ChemicalRegistry {
                             if (!hasItem) {
                                 ItemRegistry.registerItemByType(registryObject, ChemicalItemType.NUGGET);
                                 ItemRegistry.registerItemByType(registryObject, ChemicalItemType.INGOT);
-                                BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
+                                BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
                                 BlockRegistry.getRegistryObjectByName(String.format("%s_metal_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                             }
                         }
@@ -75,7 +73,7 @@ public class ChemicalRegistry {
                             int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
                             if (group == 18) {
-                                BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
+                                BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
                                 BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                             }
                             FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
@@ -145,10 +143,7 @@ public class ChemicalRegistry {
                 String effectLocation = effectObject.get("location").getAsString();
                 int effectDuration = effectObject.get("duration").getAsInt();
                 int effectAmplifier = effectObject.get("amplifier").getAsInt();
-                MobEffect mobEffect = MOB_EFFECTS.getValue(new ResourceLocation(effectLocation));
-                if (mobEffect != null) {
-                    effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
-                }
+                BuiltInRegistries.MOB_EFFECT.getHolder(ResourceLocation.parse(effectLocation)).ifPresent(holder -> effectsList.add(new MobEffectInstance(holder, effectDuration, effectAmplifier)));
             }
         }
         return effectsList;
@@ -161,7 +156,7 @@ public class ChemicalRegistry {
         int temperature = pObject.has("temperature") ? pObject.get("temperature").getAsInt() : 300;
         float motionScale = pObject.has("motion_scale") ? pObject.get("motion_scale").getAsFloat() : 0.014f;
         int fallDistanceModifier = pObject.has("fall_distance_modifier") ? pObject.get("fall_distance_modifier").getAsInt() : 0;
-        BlockPathTypes pathType = pObject.has("path_type") ? BlockPathTypes.valueOf(pObject.get("path_type").getAsString().toUpperCase(Locale.ROOT)) : BlockPathTypes.WATER;
+        PathType pathType = pObject.has("path_type") ? PathType.valueOf(pObject.get("path_type").getAsString().toUpperCase(Locale.ROOT)) : PathType.WATER;
         boolean pushEntity = !pObject.has("push_entity") || pObject.get("push_entity").getAsBoolean();
         boolean canSwim = !pObject.has("can_swim") || pObject.get("can_swim").getAsBoolean();
         boolean canDrown = pObject.has("can_drown") && pObject.get("can_drown").getAsBoolean();

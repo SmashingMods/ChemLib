@@ -6,7 +6,6 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
-import javax.annotation.Nonnull;
 import java.util.Set;
 
 public class BlockLootTables extends BlockLootSubProvider {
@@ -21,7 +20,6 @@ public class BlockLootTables extends BlockLootSubProvider {
     }
 
     @Override
-    @Nonnull
     protected Iterable<Block> getKnownBlocks() {
         return BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }

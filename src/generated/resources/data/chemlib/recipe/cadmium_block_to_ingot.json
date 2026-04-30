@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "chemlib:cadmium_metal_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "chemlib:cadmium_ingot"
+  }
+}

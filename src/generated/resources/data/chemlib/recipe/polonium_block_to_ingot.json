@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "chemlib:polonium_metal_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "chemlib:polonium_ingot"
+  }
+}

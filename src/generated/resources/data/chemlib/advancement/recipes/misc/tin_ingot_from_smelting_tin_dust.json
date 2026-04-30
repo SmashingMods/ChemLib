@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:tin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:tin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:tin_ingot_from_smelting_tin_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:tin"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:tin_ingot_from_smelting_tin_dust"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:molybdenum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:molybdenum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:molybdenum_nugget_to_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:molybdenum"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:molybdenum_nugget_to_ingot"
+    ]
+  }
+}

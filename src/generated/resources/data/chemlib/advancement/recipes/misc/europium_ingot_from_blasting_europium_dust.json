@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:europium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:europium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:europium_ingot_from_blasting_europium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:europium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:europium_ingot_from_blasting_europium_dust"
+    ]
+  }
+}

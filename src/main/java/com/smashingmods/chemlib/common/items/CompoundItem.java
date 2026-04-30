@@ -28,21 +28,21 @@ public class CompoundItem extends Item implements Compound {
 
     /**
      * Default Compound Item constructor
-     * @param pCompoundName
-     * @param pMatterState
-     * @param pComponents
-     * @param pDescription
-     * @param pColor
-     * @param pEffects
+     * @param compoundName
+     * @param matterState
+     * @param components
+     * @param description
+     * @param color
+     * @param effects
      */
-    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects) {
+    public CompoundItem(String compoundName, MatterState matterState, Map<String, Integer> components, String description, String color, List<MobEffectInstance> effects) {
         super(new Item.Properties());
-        this.compoundName = pCompoundName;
-        this.matterState = pMatterState;
-        this.components = pComponents;
-        this.description = pDescription;
-        this.color = Integer.parseInt(pColor, 16) | 0xFF000000;
-        this.effects = pEffects;
+        this.compoundName = compoundName;
+        this.matterState = matterState;
+        this.components = components;
+        this.description = description;
+        this.color = Integer.parseInt(color, 16) | 0xFF000000;
+        this.effects = effects;
     }
 
     @Override
@@ -92,16 +92,16 @@ public class CompoundItem extends Item implements Compound {
     }
 
     @SuppressWarnings("unused")
-    public int getColor(ItemStack pItemStack, int pTintIndex) {
-        return pTintIndex > 0 ? -1 : color;
+    public int getColor(ItemStack stack, int tintIndex) {
+        return tintIndex > 0 ? -1 : color;
     }
 
-    public static String getSubscript(String pString) {
+    public static String getSubscript(String string) {
         //subscriptZeroCodepoint is subscript 0 unicode char, adding 1-9 gives the subscript for that num
         //i.e. ₀ + 3 = ₃
         final int subscriptZeroCodepoint = 0x2080;
         StringBuilder builder = new StringBuilder();
-        for (char character : pString.toCharArray()) {
+        for (char character : string.toCharArray()) {
             builder.append(Character.toChars(subscriptZeroCodepoint + Character.getNumericValue(character)));
         }
         return builder.toString();

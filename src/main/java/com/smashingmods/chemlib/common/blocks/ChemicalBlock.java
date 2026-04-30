@@ -19,11 +19,11 @@ public class ChemicalBlock extends Block implements Chemical {
     private final ResourceLocation chemical;
     private final ChemicalBlockType blockType;
 
-    public ChemicalBlock(ResourceLocation pChemical, ChemicalBlockType pBlockType, List<ChemicalBlock> pList, BlockBehaviour.Properties pProperties) {
-        super(pProperties);
-        this.chemical = pChemical;
-        this.blockType = pBlockType;
-        pList.add(this);
+    public ChemicalBlock(ResourceLocation chemical, ChemicalBlockType chemicalBlockType, List<ChemicalBlock> list, BlockBehaviour.Properties properties) {
+        super(properties);
+        this.chemical = chemical;
+        this.blockType = chemicalBlockType;
+        list.add(this);
     }
 
     public Chemical getChemical() {
@@ -64,7 +64,7 @@ public class ChemicalBlock extends Block implements Chemical {
         return clampMinColorValue(getChemical().getColor(), 0x44);
     }
 
-    public BlockColor getBlockColor(ItemStack pItemStack, int pTintIndex) {
-        return (pState, pLevel, pPos, pTintIndex1) -> getChemical().getColor();
+    public BlockColor getBlockColor(ItemStack stack, int tintIndex) {
+        return (state, level, pos, tintIndex1) -> getChemical().getColor();
     }
 }

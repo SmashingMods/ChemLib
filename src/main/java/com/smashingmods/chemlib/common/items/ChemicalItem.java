@@ -28,14 +28,14 @@ public class ChemicalItem extends Item implements Chemical {
     private final Chemical chemical;
     private final ChemicalItemType itemType;
 
-    public ChemicalItem(Chemical pChemical, ChemicalItemType pChemicalItemType, Item.Properties pProperties) {
-        super(pProperties);
-        this.chemical = pChemical;
-        this.itemType = pChemicalItemType;
+    public ChemicalItem(Chemical chemical, ChemicalItemType chemicalItemType, Item.Properties properties) {
+        super(properties);
+        this.chemical = chemical;
+        this.itemType = chemicalItemType;
     }
 
-    public ChemicalItem(ResourceLocation pResourceLocation, ChemicalItemType pChemicalItemType, Item.Properties pProperties) {
-        this((Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.get(pResourceLocation)), pChemicalItemType, pProperties);
+    public ChemicalItem(ResourceLocation resourceLocation, ChemicalItemType chemicalItemType, Item.Properties properties) {
+        this((Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.get(resourceLocation)), chemicalItemType, properties);
     }
 
     @Override
@@ -91,8 +91,8 @@ public class ChemicalItem extends Item implements Chemical {
         return clampMinColorValue(chemical.getColor(), 0x44);
     }
 
-    public int getColor(ItemStack pItemStack, int pTintIndex) {
-        return pTintIndex == 0 ? FastColor.ARGB32.opaque(getColor()) : -1;
+    public int getColor(ItemStack stack, int tintIndex) {
+        return tintIndex == 0 ? FastColor.ARGB32.opaque(getColor()) : -1;
     }
 
     @SuppressWarnings("removal")

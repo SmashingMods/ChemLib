@@ -25,16 +25,16 @@ public class PeriodicTableItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        if (pLevel.isClientSide()) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+        if (level.isClientSide()) {
             Minecraft.getInstance().setScreen(new PeriodicTableScreen());
         }
-        return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
+        return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext pContext) {
-        if (pContext.getLevel().isClientSide()) {
+    public InteractionResult useOn(UseOnContext context) {
+        if (context.getLevel().isClientSide()) {
             Minecraft.getInstance().setScreen(new PeriodicTableScreen());
         }
         return InteractionResult.SUCCESS;

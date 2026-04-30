@@ -17,9 +17,9 @@ public class BlockStateGenerator extends BlockStateProvider {
 
     private final ExistingFileHelper fileHelper;
 
-    public BlockStateGenerator(PackOutput pOutput, ExistingFileHelper pFileHelper) {
-        super(pOutput, ChemLib.MODID, pFileHelper);
-        this.fileHelper = pFileHelper;
+    public BlockStateGenerator(PackOutput packOutput, ExistingFileHelper exFileHelper) {
+        super(packOutput, ChemLib.MODID, exFileHelper);
+        this.fileHelper = exFileHelper;
     }
 
     @Override
@@ -33,9 +33,9 @@ public class BlockStateGenerator extends BlockStateProvider {
         FluidRegistry.getLiquidBlocks().forEach(this::registerLiquidBlock);
     }
 
-    private void generateBlockModel(String pName, String pTexture) {
-        models().withExistingParent(String.format("block/%s_model", pName), mcLoc("block/block"))
-                .texture("all", modLoc(String.format("block/%s", pTexture)))
+    private void generateBlockModel(String name, String texture) {
+        models().withExistingParent(String.format("block/%s_model", name), mcLoc("block/block"))
+                .texture("all", modLoc(String.format("block/%s", texture)))
                 .texture("particle", "#all")
                 .element()
                 .cube("#all")
@@ -46,24 +46,24 @@ public class BlockStateGenerator extends BlockStateProvider {
                 .end();
     }
 
-    private void registerMetalBlock(ChemicalBlock pBlock) {
-        String name = String.format("block/%s_metal_block", pBlock.getChemicalName());
+    private void registerMetalBlock(ChemicalBlock block) {
+        String name = String.format("block/%s_metal_block", block.getChemicalName());
 
         models().withExistingParent(name, modLoc("block/metal_model"))
                 .texture("all", modLoc("block/metal_block"));
 
         ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc("block/metal_model"), fileHelper);
-        getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
+        getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
     }
 
-    private void registerLampBlock(ChemicalBlock pBlock) {
-        String off = String.format("block/%s_lamp_block", pBlock.getChemicalName());
-        String on = String.format("block/%s_lamp_block_on", pBlock.getChemicalName());
+    private void registerLampBlock(ChemicalBlock block) {
+        String off = String.format("block/%s_lamp_block", block.getChemicalName());
+        String on = String.format("block/%s_lamp_block_on", block.getChemicalName());
 
         models().withExistingParent(off, modLoc("block/lamp_off_model"));
         models().withExistingParent(on, modLoc("block/lamp_on_model"));
 
-        getVariantBuilder(pBlock).forAllStates(state -> {
+        getVariantBuilder(block).forAllStates(state -> {
             ModelFile modelFile = new ModelFile.ExistingModelFile(modLoc(String.format("block/lamp_%s_model", state.getValue(BlockStateProperties.LIT) ? "on" : "off")), fileHelper);
             return ConfiguredModel.builder()
                     .modelFile(modelFile)
@@ -71,8 +71,8 @@ public class BlockStateGenerator extends BlockStateProvider {
         });
     }
 
-    private void registerLiquidBlock(LiquidBlock pBlock) {
+    private void registerLiquidBlock(LiquidBlock block) {
         ModelFile modelFile = new ModelFile.ExistingModelFile(mcLoc("block/water"), fileHelper);
-        getVariantBuilder(pBlock).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
+        getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFile).build());
     }
 }

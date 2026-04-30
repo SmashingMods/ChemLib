@@ -26,7 +26,7 @@ public class TabsRegistry {
     public static DeferredHolder<CreativeModeTab, CreativeModeTab> METALS_TAB;
     public static DeferredHolder<CreativeModeTab, CreativeModeTab> MISC_TAB;
 
-    public static void register(IEventBus pEventBus) {
+    public static void register(IEventBus eventBus) {
 
         ELEMENT_TAB = REGISTRY_TABS.register("element_tab", () -> CreativeModeTab.builder()
                 .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
@@ -83,6 +83,6 @@ public class TabsRegistry {
                 })
                 .build());
 
-        REGISTRY_TABS.register(pEventBus);
+        REGISTRY_TABS.register(eventBus);
     }
 }

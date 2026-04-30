@@ -31,18 +31,18 @@ public class ElementItem extends Item implements Element {
     private final int color;
     private final List<MobEffectInstance> effects;
 
-    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pColor, List<MobEffectInstance> pEffects) {
+    public ElementItem(String chemicalName, int atomicNumber, String abbreviation, int group, int period, MatterState matterState, MetalType metalType, boolean artificial, String color, List<MobEffectInstance> effects) {
         super(new Item.Properties());
-        this.elementName = pChemicalName;
-        this.atomicNumber = pAtomicNumber;
-        this.abbreviation = pAbbreviation;
-        this.group = pGroup;
-        this.period = pPeriod;
-        this.matterState = pMatterState;
-        this.metalType = pMetalType;
-        this.artificial = pArtificial;
-        this.color = Integer.parseInt(pColor, 16) | 0xFF000000;
-        this.effects = pEffects;
+        this.elementName = chemicalName;
+        this.atomicNumber = atomicNumber;
+        this.abbreviation = abbreviation;
+        this.group = group;
+        this.period = period;
+        this.matterState = matterState;
+        this.metalType = metalType;
+        this.artificial = artificial;
+        this.color = Integer.parseInt(color, 16) | 0xFF000000;
+        this.effects = effects;
     }
 
     @Override
@@ -131,8 +131,8 @@ public class ElementItem extends Item implements Element {
     }
 
     @SuppressWarnings("unused")
-    public int getColor(ItemStack pItemStack, int pTintIndex) {
-        return pTintIndex > 0 ? -1 : color;
+    public int getColor(ItemStack stack, int tintIndex) {
+        return tintIndex > 0 ? -1 : color;
     }
 
 	@SuppressWarnings("removal")

@@ -9,8 +9,8 @@ public enum MetalType implements StringRepresentable {
 
     private final String state;
 
-    MetalType(String pState) {
-        this.state = pState;
+    MetalType(String state) {
+        this.state = state;
     }
 
     @Override

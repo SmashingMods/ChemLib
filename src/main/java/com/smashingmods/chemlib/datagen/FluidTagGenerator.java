@@ -12,12 +12,12 @@ import java.util.concurrent.CompletableFuture;
 
 public class FluidTagGenerator extends FluidTagsProvider {
 
-    public FluidTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper existingFileHelper) {
-        super(pOutput, pLookupProvider, ChemLib.MODID, existingFileHelper);
+    public FluidTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper exFileHelper) {
+        super(output, lookupProvider, ChemLib.MODID, exFileHelper);
     }
 
     @Override
-    public void addTags(HolderLookup.Provider pProvider) {
+    public void addTags(HolderLookup.Provider provider) {
         FluidRegistry.getFluidsAsStream().forEach(fluid -> tag(FluidTags.WATER).add(fluid));
     }
 

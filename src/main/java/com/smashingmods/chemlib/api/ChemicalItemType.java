@@ -11,8 +11,8 @@ public enum ChemicalItemType implements StringRepresentable {
 
     private final String type;
 
-    ChemicalItemType(String pType) {
-        this.type = pType;
+    ChemicalItemType(String type) {
+        this.type = type;
     }
 
     @Override

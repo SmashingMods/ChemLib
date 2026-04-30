@@ -16,8 +16,8 @@ import static com.smashingmods.chemlib.registry.PaintingsRegistry.*;
 
 public class PaintingVariantTagsGenerator extends TagsProvider<PaintingVariant> {
 
-    protected PaintingVariantTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, Registries.PAINTING_VARIANT, lookupProvider, ChemLib.MODID, existingFileHelper);
+    protected PaintingVariantTagsGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper exFileHelper) {
+        super(output, Registries.PAINTING_VARIANT, lookupProvider, ChemLib.MODID, exFileHelper);
     }
 
     @Override

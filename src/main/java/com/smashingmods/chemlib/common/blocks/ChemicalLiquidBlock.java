@@ -21,9 +21,9 @@ public class ChemicalLiquidBlock extends LiquidBlock {
 
     private final String chemicalName;
 
-    public ChemicalLiquidBlock(FlowingFluid pFluid, String pChemicalName) {
-        super(pFluid, BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().pushReaction(PushReaction.DESTROY).liquid());
-        this.chemicalName = pChemicalName;
+    public ChemicalLiquidBlock(FlowingFluid fluid, String chemicalName) {
+        super(fluid, BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().pushReaction(PushReaction.DESTROY).liquid());
+        this.chemicalName = chemicalName;
     }
 
     private Optional<Chemical> getChemical() {
@@ -34,8 +34,8 @@ public class ChemicalLiquidBlock extends LiquidBlock {
     }
 
     @Override
-    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
-        if (pEntity instanceof LivingEntity livingEntity) {
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+        if (entity instanceof LivingEntity livingEntity) {
             getChemical().ifPresent(chemical -> {
                 for (MobEffectInstance effectInstance : chemical.getEffects()) {
                     MobEffectInstance copyEffect = new MobEffectInstance(effectInstance.getEffect(), effectInstance.getDuration(), effectInstance.getAmplifier());
@@ -44,6 +44,6 @@ public class ChemicalLiquidBlock extends LiquidBlock {
             });
 
         }
-        super.entityInside(pState, pLevel, pPos, pEntity);
+        super.entityInside(state, level, pos, entity);
     }
 }

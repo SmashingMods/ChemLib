@@ -22,25 +22,25 @@ public class LampBlock extends ChemicalBlock {
 
     private static final BooleanProperty LIT = BlockStateProperties.LIT;
 
-    public LampBlock(ResourceLocation pChemical, ChemicalBlockType pBlockType, List<ChemicalBlock> pList, Properties pProperties) {
-        super(pChemical, pBlockType, pList, pProperties);
+    public LampBlock(ResourceLocation chemical, ChemicalBlockType blockType, List<ChemicalBlock> list, Properties properties) {
+        super(chemical, blockType, list, properties);
     }
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return this.defaultBlockState().setValue(LIT, pContext.getLevel().hasNeighborSignal(pContext.getClickedPos()));
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(LIT, context.getLevel().hasNeighborSignal(context.getClickedPos()));
     }
 
     @Override
-    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
-        if (!pLevel.isClientSide()) {
-            boolean flag = pState.getValue(LIT);
-            if (flag != pLevel.hasNeighborSignal(pPos)) {
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
+        if (!level.isClientSide()) {
+            boolean flag = state.getValue(LIT);
+            if (flag != level.hasNeighborSignal(pos)) {
                 if (flag) {
-                    pLevel.scheduleTick(pPos, this, 4);
+                    level.scheduleTick(pos, this, 4);
                 } else {
-                    pLevel.setBlock(pPos, pState.cycle(LIT), 2);
+                    level.setBlock(pos, state.cycle(LIT), 2);
                 }
             }
         }

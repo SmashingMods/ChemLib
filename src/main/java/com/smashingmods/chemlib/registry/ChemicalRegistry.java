@@ -149,24 +149,24 @@ public class ChemicalRegistry {
         return effectsList;
     }
 
-    public static FluidType.Properties fluidTypePropertiesFactory(JsonObject pObject, String pNamespace, String pName) {
-        int density = pObject.has("density") ? pObject.get("density").getAsInt() : 1000;
-        int lightLevel = pObject.has("light_level") ? pObject.get("light_level").getAsInt() : 0;
-        int viscosity = pObject.has("viscosity") ? pObject.get("viscosity").getAsInt() : 1000;
-        int temperature = pObject.has("temperature") ? pObject.get("temperature").getAsInt() : 300;
-        float motionScale = pObject.has("motion_scale") ? pObject.get("motion_scale").getAsFloat() : 0.014f;
-        int fallDistanceModifier = pObject.has("fall_distance_modifier") ? pObject.get("fall_distance_modifier").getAsInt() : 0;
-        PathType pathType = pObject.has("path_type") ? PathType.valueOf(pObject.get("path_type").getAsString().toUpperCase(Locale.ROOT)) : PathType.WATER;
-        boolean pushEntity = !pObject.has("push_entity") || pObject.get("push_entity").getAsBoolean();
-        boolean canSwim = !pObject.has("can_swim") || pObject.get("can_swim").getAsBoolean();
-        boolean canDrown = pObject.has("can_drown") && pObject.get("can_drown").getAsBoolean();
-        boolean canHydrate = pObject.has("can_hydrate") && pObject.get("can_hydrate").getAsBoolean();
-        boolean canExtinguish = pObject.has("can_extinguish") && pObject.get("can_extinguish").getAsBoolean();
-        boolean supportsBoating = pObject.has("supports_boating") && pObject.get("supports_boating").getAsBoolean();
-        boolean canConvertToSource = pObject.has("can_convert_to_source") && pObject.get("can_convert_to_source").getAsBoolean();
+    public static FluidType.Properties fluidTypePropertiesFactory(JsonObject object, String namespace, String name) {
+        int density = object.has("density") ? object.get("density").getAsInt() : 1000;
+        int lightLevel = object.has("light_level") ? object.get("light_level").getAsInt() : 0;
+        int viscosity = object.has("viscosity") ? object.get("viscosity").getAsInt() : 1000;
+        int temperature = object.has("temperature") ? object.get("temperature").getAsInt() : 300;
+        float motionScale = object.has("motion_scale") ? object.get("motion_scale").getAsFloat() : 0.014f;
+        int fallDistanceModifier = object.has("fall_distance_modifier") ? object.get("fall_distance_modifier").getAsInt() : 0;
+        PathType pathType = object.has("path_type") ? PathType.valueOf(object.get("path_type").getAsString().toUpperCase(Locale.ROOT)) : PathType.WATER;
+        boolean pushEntity = !object.has("push_entity") || object.get("push_entity").getAsBoolean();
+        boolean canSwim = !object.has("can_swim") || object.get("can_swim").getAsBoolean();
+        boolean canDrown = object.has("can_drown") && object.get("can_drown").getAsBoolean();
+        boolean canHydrate = object.has("can_hydrate") && object.get("can_hydrate").getAsBoolean();
+        boolean canExtinguish = object.has("can_extinguish") && object.get("can_extinguish").getAsBoolean();
+        boolean supportsBoating = object.has("supports_boating") && object.get("supports_boating").getAsBoolean();
+        boolean canConvertToSource = object.has("can_convert_to_source") && object.get("can_convert_to_source").getAsBoolean();
 
         return FluidType.Properties.create()
-                .descriptionId(String.format("block.%s.%s",pNamespace, pName))
+                .descriptionId(String.format("block.%s.%s",namespace, name))
                 .density(density)
                 .lightLevel(lightLevel)
                 .viscosity(viscosity)

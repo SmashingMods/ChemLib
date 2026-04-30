@@ -22,7 +22,7 @@ public class PeriodicTableScreen extends Screen {
     }
 
     @Override
-    public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
 
         int imageWidth = 2000;
         int imageHeight = 1016;
@@ -31,8 +31,8 @@ public class PeriodicTableScreen extends Screen {
         int leftPos = (this.width - displayWidth) / 2;
         int topPos = (this.height - displayHeight) / 2;
 
-        pGuiGraphics.blit(PERIODIC_TABLE, leftPos, topPos, displayWidth, displayHeight, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
-        pGuiGraphics.drawCenteredString(Minecraft.getInstance().font, MutableComponent.create(new TranslatableContents("chemlib.screen.periodic_table", null, TranslatableContents.NO_ARGS)).withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
+        guiGraphics.blit(PERIODIC_TABLE, leftPos, topPos, displayWidth, displayHeight, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
+        guiGraphics.drawCenteredString(Minecraft.getInstance().font, MutableComponent.create(new TranslatableContents("chemlib.screen.periodic_table", null, TranslatableContents.NO_ARGS)).withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
 
         double boxWidth = 27.75f;
         double boxHeight = 26.9f;
@@ -51,8 +51,8 @@ public class PeriodicTableScreen extends Screen {
                     for (int col = 1; col <= 18; col++) {
                         if (col == group) {
                             if (!((period == 6 || period == 7) && group == 3)) {
-                                if (pMouseX >= x && pMouseX < x + boxWidth && pMouseY >= y && pMouseY < y + boxHeight) {
-                                    drawElementTip(pGuiGraphics, element);
+                                if (mouseX >= x && mouseX < x + boxWidth && mouseY >= y && mouseY < y + boxHeight) {
+                                    drawElementTip(guiGraphics, element);
                                 }
                             } else {
                                 double resetX = x;
@@ -60,16 +60,16 @@ public class PeriodicTableScreen extends Screen {
                                 if (period == 6) {
                                     y = (boxHeight * 7.45f) + startY;
                                     x = (boxWidth * count) + startX + boxWidth * 2;
-                                    if (pMouseX >= x && pMouseX < x + boxWidth && pMouseY >= y && pMouseY < y + boxHeight) {
-                                        drawElementTip(pGuiGraphics, element);
+                                    if (mouseX >= x && mouseX < x + boxWidth && mouseY >= y && mouseY < y + boxHeight) {
+                                        drawElementTip(guiGraphics, element);
                                     }
                                     count++;
                                 }
                                 if (period == 7) {
                                     y = (boxHeight * 8.45f) + startY;
                                     x = (boxWidth * (count - 15)) + startX + boxWidth * 2;
-                                    if (pMouseX >= x && pMouseX < x + boxWidth && pMouseY >= y && pMouseY < y + boxHeight) {
-                                        drawElementTip(pGuiGraphics, element);
+                                    if (mouseX >= x && mouseX < x + boxWidth && mouseY >= y && mouseY < y + boxHeight) {
+                                        drawElementTip(guiGraphics, element);
                                     }
                                     count++;
                                 }
@@ -84,11 +84,11 @@ public class PeriodicTableScreen extends Screen {
                 y += boxHeight;
             }
         }
-        super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
     }
 
-    private void drawElementTip(GuiGraphics pGuiGraphics, Element pElement) {
-        pGuiGraphics.blit(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())), ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 274, 80, 0, 0, 40, 40, 40, 40);
+    private void drawElementTip(GuiGraphics guiGraphics, Element element) {
+        guiGraphics.blit(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", element.getChemicalName())), ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 274, 80, 0, 0, 40, 40, 40, 40);
     }
 
     @Override

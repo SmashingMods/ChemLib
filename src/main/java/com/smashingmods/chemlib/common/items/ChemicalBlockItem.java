@@ -17,9 +17,9 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     private final ChemicalBlock block;
 
-    public ChemicalBlockItem(ChemicalBlock pBlock, Properties pProperties) {
-        super(pBlock, pProperties);
-        this.block = pBlock;
+    public ChemicalBlockItem(ChemicalBlock chemicalBlock, Properties properties) {
+        super(chemicalBlock, properties);
+        this.block = chemicalBlock;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
     }
 
     @SuppressWarnings("unused")
-    public int getColor(ItemStack pItemStack, int pTintIndex) {
+    public int getColor(ItemStack stack, int tintIndex) {
         return getColor();
     }
 }

@@ -15,18 +15,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.Tags;
 
-import javax.annotation.Nonnull;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 public class RecipeGenerator extends RecipeProvider {
-    public RecipeGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(pOutput, lookupProvider);
+    public RecipeGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, lookupProvider);
     }
 
     @Override
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    protected void buildRecipes(RecipeOutput pOutput) {
+    protected void buildRecipes(RecipeOutput output) {
         // Register lamp recipes
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.LAMP).forEach(block -> {
             Chemical chemical = block.getChemical();
@@ -37,7 +35,7 @@ public class RecipeGenerator extends RecipeProvider {
                     .pattern("EEE")
                     .pattern("GEG")
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pOutput);
+                    .save(output);
         });
 
         // register ingot -> block recipes
@@ -49,7 +47,7 @@ public class RecipeGenerator extends RecipeProvider {
                     .pattern("III")
                     .pattern("III")
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pOutput, String.format("%s:%s_ingot_to_block", ChemLib.MODID, chemical.getChemicalName())));
+                    .save(output, String.format("%s:%s_ingot_to_block", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register nugget -> ingot
@@ -61,7 +59,7 @@ public class RecipeGenerator extends RecipeProvider {
                     .pattern("NNN")
                     .pattern("NNN")
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pOutput, String.format("%s:%s_nugget_to_ingot", ChemLib.MODID, chemical.getChemicalName())));
+                    .save(output, String.format("%s:%s_nugget_to_ingot", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register block -> ingot recipes
@@ -70,7 +68,7 @@ public class RecipeGenerator extends RecipeProvider {
             BlockRegistry.getChemicalBlockByNameAndType(chemical.getChemicalName(), ChemicalBlockType.METAL).ifPresent(block -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingot, 9)
                     .requires(block)
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pOutput, String.format("%s:%s_block_to_ingot", ChemLib.MODID, chemical.getChemicalName())));
+                    .save(output, String.format("%s:%s_block_to_ingot", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register ingot -> nugget
@@ -79,7 +77,7 @@ public class RecipeGenerator extends RecipeProvider {
             ItemRegistry.getChemicalItemByNameAndType(chemical.getChemicalName(), ChemicalItemType.NUGGET).ifPresent(nugget -> ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, nugget, 9)
                     .requires(ingot)
                     .unlockedBy(String.format("has_%s", chemical), inventoryTrigger(ItemPredicate.Builder.item().of(chemical).build()))
-                    .save(pOutput, String.format("%s:%s_ingot_to_nugget", ChemLib.MODID, chemical.getChemicalName())));
+                    .save(output, String.format("%s:%s_ingot_to_nugget", ChemLib.MODID, chemical.getChemicalName())));
         });
 
         // register dust -> ingot
@@ -90,36 +88,36 @@ public class RecipeGenerator extends RecipeProvider {
                     String chemicalName = chemicalItem.getChemicalName();
                     SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), RecipeCategory.MISC, chemicalItem, 0.7f, 200)
                             .unlockedBy(String.format("has_%s", chemicalItem.getChemical()), inventoryTrigger(ItemPredicate.Builder.item().of(chemicalItem.getChemical()).build()))
-                            .save(pOutput, String.format("%s:%s_ingot_from_smelting_%s_dust", ChemLib.MODID, chemicalName, chemicalName));
+                            .save(output, String.format("%s:%s_ingot_from_smelting_%s_dust", ChemLib.MODID, chemicalName, chemicalName));
                     SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), RecipeCategory.MISC, chemicalItem, 0.7f, 100)
                             .unlockedBy(String.format("has_%s", chemicalItem.getChemical()), inventoryTrigger(ItemPredicate.Builder.item().of(chemicalItem.getChemical()).build()))
-                            .save(pOutput, String.format("%s:%s_ingot_from_blasting_%s_dust", ChemLib.MODID, chemicalName, chemicalName));
+                            .save(output, String.format("%s:%s_ingot_from_blasting_%s_dust", ChemLib.MODID, chemicalName, chemicalName));
                 }));
 
         // hard-code vanilla dust to ingot smelting/blasting recipes
         ItemRegistry.getChemicalItemByNameAndType("copper", ChemicalItemType.DUST).ifPresent(dust -> {
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), RecipeCategory.MISC, Items.COPPER_INGOT, 0.7f, 200)
                     .unlockedBy("has_copper", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pOutput, String.format("%s:copper_ingot_from_smelting_copper_dust", ChemLib.MODID));
+                    .save(output, String.format("%s:copper_ingot_from_smelting_copper_dust", ChemLib.MODID));
             SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), RecipeCategory.MISC, Items.COPPER_INGOT, 0.7f, 100)
                     .unlockedBy("has_copper", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pOutput, String.format("%s:copper_ingot_from_blasting_copper_dust", ChemLib.MODID));
+                    .save(output, String.format("%s:copper_ingot_from_blasting_copper_dust", ChemLib.MODID));
         });
         ItemRegistry.getChemicalItemByNameAndType("iron", ChemicalItemType.DUST).ifPresent(dust -> {
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), RecipeCategory.MISC, Items.IRON_INGOT, 0.7f, 200)
                     .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pOutput, String.format("%s:iron_ingot_from_smelting_iron_dust", ChemLib.MODID));
+                    .save(output, String.format("%s:iron_ingot_from_smelting_iron_dust", ChemLib.MODID));
             SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), RecipeCategory.MISC, Items.IRON_INGOT, 0.7f, 100)
                     .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pOutput, String.format("%s:iron_ingot_from_blasting_iron_dust", ChemLib.MODID));
+                    .save(output, String.format("%s:iron_ingot_from_blasting_iron_dust", ChemLib.MODID));
         });
         ItemRegistry.getChemicalItemByNameAndType("gold", ChemicalItemType.DUST).ifPresent(dust -> {
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), RecipeCategory.MISC, Items.GOLD_INGOT, 0.7f, 200)
                     .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pOutput, String.format("%s:gold_ingot_from_smelting_gold_dust", ChemLib.MODID));
+                    .save(output, String.format("%s:gold_ingot_from_smelting_gold_dust", ChemLib.MODID));
             SimpleCookingRecipeBuilder.blasting(Ingredient.of(dust), RecipeCategory.MISC, Items.GOLD_INGOT, 0.7f, 100)
                     .unlockedBy("has_gold", inventoryTrigger(ItemPredicate.Builder.item().of(dust).build()))
-                    .save(pOutput, String.format("%s:gold_ingot_from_blasting_gold_dust", ChemLib.MODID));
+                    .save(output, String.format("%s:gold_ingot_from_blasting_gold_dust", ChemLib.MODID));
         });
 
         // periodic table
@@ -133,6 +131,6 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("HPH")
                 .pattern("HHH")
                 .unlockedBy("has_hydrogen", inventoryTrigger(ItemPredicate.Builder.item().of(hydrogen).build()))
-                .save(pOutput);
+                .save(output);
     }
 }

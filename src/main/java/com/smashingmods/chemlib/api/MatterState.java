@@ -9,8 +9,8 @@ public enum MatterState implements StringRepresentable {
 
     private final String state;
 
-    MatterState(String pState) {
-        this.state = pState;
+    MatterState(String state) {
+        this.state = state;
     }
 
     @Override

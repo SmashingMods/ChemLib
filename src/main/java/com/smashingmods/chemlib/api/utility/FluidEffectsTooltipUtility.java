@@ -22,15 +22,14 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class FluidEffectsTooltipUtility {
 
-    public static List<Component> getBucketEffectTooltipComponents(ItemStack pStack, Item.TooltipContext context) {
+    public static List<Component> getBucketEffectTooltipComponents(ItemStack stack, Item.TooltipContext context) {
         List<Component> componentList = new ArrayList<>();
 
-        BuiltInRegistries.FLUID.getResourceKey(((BucketItem) pStack.getItem()).content).ifPresent(fluidResourceKey -> {
+        BuiltInRegistries.FLUID.getResourceKey(((BucketItem) stack.getItem()).content).ifPresent(fluidResourceKey -> {
             String chemicalName = StringUtils.removeEnd(fluidResourceKey.location().getPath(), "_fluid");
             AtomicReference<List<MobEffectInstance>> effectList = new AtomicReference<>();
             ItemRegistry.getElementByName(chemicalName).ifPresent(element -> effectList.set(element.getEffects()));
@@ -40,16 +39,16 @@ public class FluidEffectsTooltipUtility {
         return componentList;
     }
 
-    private static void addTooltipEffects(List<MobEffectInstance> pEffects, List<Component> pTooltips, Item.TooltipContext context) {
+    private static void addTooltipEffects(List<MobEffectInstance> effects, List<Component> tooltips, Item.TooltipContext context) {
         List<Pair<Holder<Attribute>, AttributeModifier>> list = Lists.newArrayList();
-        if (pEffects.isEmpty()) {
-            pTooltips.add(CommonComponents.EMPTY);
-            pTooltips.add(Component.translatable("chemlib.effect.on_hit").withStyle(ChatFormatting.UNDERLINE).append(":"));
-            pTooltips.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
+        if (effects.isEmpty()) {
+            tooltips.add(CommonComponents.EMPTY);
+            tooltips.add(Component.translatable("chemlib.effect.on_hit").withStyle(ChatFormatting.UNDERLINE).append(":"));
+            tooltips.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
         } else {
-            pTooltips.add(CommonComponents.EMPTY);
-            pTooltips.add(Component.translatable("chemlib.effect.on_hit").withStyle(ChatFormatting.UNDERLINE).append(":"));
-            for (MobEffectInstance effectInstance : pEffects) {
+            tooltips.add(CommonComponents.EMPTY);
+            tooltips.add(Component.translatable("chemlib.effect.on_hit").withStyle(ChatFormatting.UNDERLINE).append(":"));
+            for (MobEffectInstance effectInstance : effects) {
                 MutableComponent mutableComponent = Component.translatable(effectInstance.getDescriptionId());
                 MobEffect effect = effectInstance.getEffect().value();
                 effect.createModifiers(effectInstance.getAmplifier(), (attribute, attributeModifier) -> list.add(new Pair<>(attribute, attributeModifier)));
@@ -60,7 +59,7 @@ public class FluidEffectsTooltipUtility {
                 if (effectInstance.endsWithin(20)) {
                     mutableComponent = Component.translatable("potion.withDuration", mutableComponent, MobEffectUtil.formatDuration(effectInstance, 1.0F, context.tickRate()));
                 }
-                pTooltips.add(mutableComponent.withStyle(effect.getCategory().getTooltipFormatting()));
+                tooltips.add(mutableComponent.withStyle(effect.getCategory().getTooltipFormatting()));
             }
         }
 
@@ -78,7 +77,7 @@ public class FluidEffectsTooltipUtility {
                 }
 
                 if (baseModifierAmount > 0.0) {
-                    pTooltips.add(
+                    tooltips.add(
                             Component.translatable(
                                     String.format("attribute.modifier.plus.%s", attributeModifier.operation().id()),
                                     ItemAttributeModifiers.ATTRIBUTE_MODIFIER_FORMAT.format(finalModifierAmount),
@@ -87,7 +86,7 @@ public class FluidEffectsTooltipUtility {
                     );
                 } else if (baseModifierAmount < 0.0) {
                     finalModifierAmount *= -1.0;
-                    pTooltips.add(
+                    tooltips.add(
                             Component.translatable(
                                     String.format("attribute.modifier.take.%s", attributeModifier.operation().id()),
                                     ItemAttributeModifiers.ATTRIBUTE_MODIFIER_FORMAT.format(finalModifierAmount),

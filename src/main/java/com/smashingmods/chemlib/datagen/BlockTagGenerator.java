@@ -18,12 +18,12 @@ import java.util.concurrent.CompletableFuture;
 
 public class BlockTagGenerator extends BlockTagsProvider {
 
-    public BlockTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper pFileHelper) {
-        super(pOutput, pLookupProvider, ChemLib.MODID, pFileHelper);
+    public BlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper exFileHelper) {
+        super(output, lookupProvider, ChemLib.MODID, exFileHelper);
     }
 
     @Override
-    public void addTags(HolderLookup.Provider pProvider) {
+    public void addTags(HolderLookup.Provider provider) {
         BlockRegistry.BLOCKS.getEntries().forEach(blockRegistryObject -> {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockRegistryObject.get());
             tag(BlockTags.NEEDS_STONE_TOOL).add(blockRegistryObject.get());

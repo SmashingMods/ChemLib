@@ -8,8 +8,8 @@ public enum ChemicalBlockType implements StringRepresentable {
 
     private final String type;
 
-    ChemicalBlockType(String pType) {
-        this.type = pType;
+    ChemicalBlockType(String type) {
+        this.type = type;
     }
 
     @Override

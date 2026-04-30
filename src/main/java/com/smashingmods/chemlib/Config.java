@@ -28,7 +28,6 @@ public class Config {
         public Common(ModConfigSpec.Builder builder) {
 
             builder.comment("""
-                        
                         These options are for rendering element abbreviations on different items in your inventory
                         Disable rendering abbreviations on a per item type basis.
                     """)

@@ -13,8 +13,8 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public class LocalizationGenerator extends LanguageProvider {
 
-    public LocalizationGenerator(PackOutput pOutput, String locale) {
-        super(pOutput, ChemLib.MODID, locale);
+    public LocalizationGenerator(PackOutput output, String locale) {
+        super(output, ChemLib.MODID, locale);
     }
 
     @Override

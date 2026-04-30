@@ -20,8 +20,8 @@ public class JEIPlugin implements IModPlugin {
     }
 
     @Override
-    public void registerRecipes(IRecipeRegistration pRegistration) {
-        ItemRegistry.getElements().forEach(element -> pRegistration.addIngredientInfo(new ItemStack(element), VanillaTypes.ITEM_STACK, MutableComponent.create(new TranslatableContents("chemlib.jei.element.description", null, TranslatableContents.NO_ARGS))));
-        ItemRegistry.getCompounds().forEach(compound -> pRegistration.addIngredientInfo(new ItemStack(compound), VanillaTypes.ITEM_STACK, MutableComponent.create(new TranslatableContents(String.format("chemlib.jei.compound.%s.description", compound.getChemicalName()), null, TranslatableContents.NO_ARGS))));
+    public void registerRecipes(IRecipeRegistration registration) {
+        ItemRegistry.getElements().forEach(element -> registration.addIngredientInfo(new ItemStack(element), VanillaTypes.ITEM_STACK, MutableComponent.create(new TranslatableContents("chemlib.jei.element.description", null, TranslatableContents.NO_ARGS))));
+        ItemRegistry.getCompounds().forEach(compound -> registration.addIngredientInfo(new ItemStack(compound), VanillaTypes.ITEM_STACK, MutableComponent.create(new TranslatableContents(String.format("chemlib.jei.compound.%s.description", compound.getChemicalName()), null, TranslatableContents.NO_ARGS))));
     }
 }

@@ -32,8 +32,8 @@ public class BlockRegistry {
             .sound(SoundType.GLASS)
             .lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0);
 
-    public static Optional<DeferredHolder<Block, ? extends Block>> getRegistryObjectByName(String pName) {
-        return BLOCKS.getEntries().stream().filter(blockRegistryObject -> blockRegistryObject.getId().getPath().equals(pName)).findFirst();
+    public static Optional<DeferredHolder<Block, ? extends Block>> getRegistryObjectByName(String name) {
+        return BLOCKS.getEntries().stream().filter(blockRegistryObject -> blockRegistryObject.getId().getPath().equals(name)).findFirst();
     }
 
     public static List<ChemicalBlock> getAllChemicalBlocks() {
@@ -43,21 +43,21 @@ public class BlockRegistry {
         return all;
     }
 
-    public static List<ChemicalBlock> getChemicalBlocksByType(ChemicalBlockType pChemicalBlockType) {
-        return switch (pChemicalBlockType) {
+    public static List<ChemicalBlock> getChemicalBlocksByType(ChemicalBlockType chemicalBlockType) {
+        return switch (chemicalBlockType) {
             case METAL -> METAL_BLOCKS;
             case LAMP -> LAMP_BLOCKS;
         };
     }
 
-    public static Stream<ChemicalBlock> getChemicalBlocksStreamByType(ChemicalBlockType pChemicalBlockType) {
-        return getChemicalBlocksByType(pChemicalBlockType)
-                .stream().filter(block -> block.getBlockType().equals(pChemicalBlockType));
+    public static Stream<ChemicalBlock> getChemicalBlocksStreamByType(ChemicalBlockType chemicalBlockType) {
+        return getChemicalBlocksByType(chemicalBlockType)
+                .stream().filter(block -> block.getBlockType().equals(chemicalBlockType));
     }
 
-    public static Optional<ChemicalBlock> getChemicalBlockByNameAndType(String pName, ChemicalBlockType pChemicalBlockType) {
-        return getChemicalBlocksStreamByType(pChemicalBlockType)
-                .filter(block -> block.getChemical().getChemicalName().equals(pName))
+    public static Optional<ChemicalBlock> getChemicalBlockByNameAndType(String name, ChemicalBlockType chemicalBlockType) {
+        return getChemicalBlocksStreamByType(chemicalBlockType)
+                .filter(block -> block.getChemical().getChemicalName().equals(name))
                 .findFirst();
     }
 

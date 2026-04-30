@@ -15,13 +15,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-import javax.annotation.Nonnull;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTagGenerator extends ItemTagsProvider {
 
-    public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, TagsProvider<Block> pBlockTagProvider, ExistingFileHelper pFileHelper) {
-        super(pOutput, pLookupProvider, pBlockTagProvider.contentsGetter(), ChemLib.MODID, pFileHelper);
+    public ItemTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, TagsProvider<Block> blockTagsProvider, ExistingFileHelper exFileHelper) {
+        super(output, lookupProvider, blockTagsProvider.contentsGetter(), ChemLib.MODID, exFileHelper);
     }
 
     @Override
@@ -67,7 +66,6 @@ public class ItemTagGenerator extends ItemTagsProvider {
     }
 
     @Override
-    @Nonnull
     public String getName() {
         return ChemLib.MODID + ":tags";
     }

@@ -37,13 +37,13 @@ public class FluidRegistry {
     public static final DeferredRegister<Block> LIQUID_BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, ChemLib.MODID);
     public static final DeferredRegister<Item> BUCKETS = DeferredRegister.create(BuiltInRegistries.ITEM, ChemLib.MODID);
 
-    protected static void registerFluid(String pName, FluidType.Properties pFluidProperties, int pColor, int pSlopeFindDistance, int pDecreasePerBlock) {
+    protected static void registerFluid(String name, FluidType.Properties fluidProperties, int color, int slopeFindDistance, int decreasePerBlock) {
 
         var ref = new Object() {
             BaseFlowingFluid.Properties properties = null;
         };
 
-        Supplier<FluidType> fluidType = FLUID_TYPES.register(pName, () -> new FluidType(pFluidProperties) {
+        Supplier<FluidType> fluidType = FLUID_TYPES.register(name, () -> new FluidType(fluidProperties) {
             @SuppressWarnings("removal")
             @Override
             public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
@@ -69,25 +69,25 @@ public class FluidRegistry {
                     }
                     @Override
                     public int getTintColor() {
-                        return pColor;
+                        return color;
                     }
 
                     @Override
                     public int getTintColor(FluidState state, BlockAndTintGetter getter, BlockPos pos) {
-                        return pColor;
+                        return color;
                     }
                 });
             }
         });
 
-        DeferredHolder<Fluid, FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", pName), () -> new BaseFlowingFluid.Source(ref.properties));
-        DeferredHolder<Fluid, FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", pName), () -> new BaseFlowingFluid.Flowing(ref.properties));
-        DeferredHolder<Block, LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(pName, () -> new ChemicalLiquidBlock(fluidSource.get(), pName));
-        DeferredHolder<Item, Item> bucket = BUCKETS.register(String.format("%s_bucket", pName), () -> new BucketItem(fluidSource.get(), new Item.Properties().stacksTo(1)));
+        DeferredHolder<Fluid, FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", name), () -> new BaseFlowingFluid.Source(ref.properties));
+        DeferredHolder<Fluid, FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", name), () -> new BaseFlowingFluid.Flowing(ref.properties));
+        DeferredHolder<Block, LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(name, () -> new ChemicalLiquidBlock(fluidSource.get(), name));
+        DeferredHolder<Item, Item> bucket = BUCKETS.register(String.format("%s_bucket", name), () -> new BucketItem(fluidSource.get(), new Item.Properties().stacksTo(1)));
 
         ref.properties = new BaseFlowingFluid.Properties(fluidType, fluidSource, fluidFlowing)
-                .slopeFindDistance(pSlopeFindDistance)
-                .levelDecreasePerBlock(pDecreasePerBlock)
+                .slopeFindDistance(slopeFindDistance)
+                .levelDecreasePerBlock(decreasePerBlock)
                 .block(liquidBlock)
                 .bucket(bucket);
     }
@@ -142,20 +142,20 @@ public class FluidRegistry {
         Get a single object by filtering a registry stream.
      */
 
-    public static Optional<FluidType> getFluidTypeByName(String pName) {
-        return getFluidTypesAsStream().filter(fluidType -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(fluidType)).getPath().equals(pName)).findFirst();
+    public static Optional<FluidType> getFluidTypeByName(String name) {
+        return getFluidTypesAsStream().filter(fluidType -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(fluidType)).getPath().equals(name)).findFirst();
     }
 
-    public static Optional<BaseFlowingFluid.Source> getSourceFluidByName(String pName) {
-        return getSourceFluidsAsStream().filter(source -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
+    public static Optional<BaseFlowingFluid.Source> getSourceFluidByName(String name) {
+        return getSourceFluidsAsStream().filter(source -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(source.getFluidType())).getPath().equals(name)).findFirst();
     }
 
-    public static Optional<BaseFlowingFluid.Source> getLiquidSourceFluidByName(String pName) {
-        return getLiquidSourceFluidsAsStream().filter(source -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
+    public static Optional<BaseFlowingFluid.Source> getLiquidSourceFluidByName(String name) {
+        return getLiquidSourceFluidsAsStream().filter(source -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(source.getFluidType())).getPath().equals(name)).findFirst();
     }
 
-    public static Optional<BaseFlowingFluid.Source> getGasSourceFluidByName(String pName) {
-        return getGasSourceFluidsAsStream().filter(source -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(source.getFluidType())).getPath().equals(pName)).findFirst();
+    public static Optional<BaseFlowingFluid.Source> getGasSourceFluidByName(String name) {
+        return getGasSourceFluidsAsStream().filter(source -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(source.getFluidType())).getPath().equals(name)).findFirst();
     }
 
     /*

@@ -16,14 +16,13 @@ import net.minecraft.world.level.material.PushReaction;
 
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Supplier;
 
 public class ChemicalLiquidBlock extends LiquidBlock {
 
     private final String chemicalName;
 
-    public ChemicalLiquidBlock(Supplier<? extends FlowingFluid> pFluid, String pChemicalName) {
-        super(pFluid, BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().pushReaction(PushReaction.DESTROY).liquid());
+    public ChemicalLiquidBlock(FlowingFluid pFluid, String pChemicalName) {
+        super(pFluid, BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().pushReaction(PushReaction.DESTROY).liquid().noLootTable());
         this.chemicalName = pChemicalName;
     }
 
@@ -31,12 +30,11 @@ public class ChemicalLiquidBlock extends LiquidBlock {
         AtomicReference<Chemical> atomicChemical = new AtomicReference<>();
         ItemRegistry.getElementByName(chemicalName).ifPresent(atomicChemical::set);
         ItemRegistry.getCompoundByName(chemicalName).ifPresent(atomicChemical::set);
-        return Optional.of(atomicChemical.get());
+        return Optional.ofNullable(atomicChemical.get());
     }
 
-    @SuppressWarnings("deprecation")
     @Override
-    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+    protected void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
         if (pEntity instanceof LivingEntity livingEntity) {
             getChemical().ifPresent(chemical -> {
                 for (MobEffectInstance effectInstance : chemical.getEffects()) {
@@ -44,7 +42,6 @@ public class ChemicalLiquidBlock extends LiquidBlock {
                     livingEntity.addEffect(copyEffect);
                 }
             });
-
         }
         super.entityInside(pState, pLevel, pPos, pEntity);
     }

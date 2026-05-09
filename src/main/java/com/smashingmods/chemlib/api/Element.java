@@ -12,5 +12,5 @@ public interface Element extends Chemical {
 
     boolean isArtificial();
 
-    String getGroupName();
+    String getGroupKey();
 }

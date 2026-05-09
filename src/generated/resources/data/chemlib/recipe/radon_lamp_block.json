@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "chemlib:radon"
+    },
+    "G": {
+      "tag": "c:glass"
+    }
+  },
+  "pattern": [
+    "GEG",
+    "EEE",
+    "GEG"
+  ],
+  "result": {
+    "id": "chemlib:radon_lamp_block"
+  }
+}

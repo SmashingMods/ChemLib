@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "chemlib:neon"
+    },
+    "G": {
+      "tag": "c:glass"
+    }
+  },
+  "pattern": [
+    "GEG",
+    "EEE",
+    "GEG"
+  ],
+  "result": {
+    "id": "chemlib:neon_lamp_block"
+  }
+}

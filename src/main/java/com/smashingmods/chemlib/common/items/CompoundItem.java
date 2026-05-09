@@ -5,21 +5,17 @@ import com.smashingmods.chemlib.api.Compound;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 
@@ -33,15 +29,6 @@ public class CompoundItem extends Item implements Compound {
     private final int color;
     private final List<MobEffectInstance> effects;
 
-    /**
-     * Default Compound Item constructor
-     * @param pCompoundName
-     * @param pMatterState
-     * @param pComponents
-     * @param pDescription
-     * @param pColor
-     * @param pEffects
-     */
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects) {
         super(new Item.Properties());
         this.compoundName = pCompoundName;
@@ -52,16 +39,6 @@ public class CompoundItem extends Item implements Compound {
         this.effects = pEffects;
     }
 
-    /**
-     * Compound Item constructor with supplied creative mode tab
-     * @param pCompoundName
-     * @param pMatterState
-     * @param pComponents
-     * @param pDescription
-     * @param pColor
-     * @param pEffects
-     * @param pTab
-     */
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects, CreativeModeTab pTab) {
         super(new Item.Properties());
         this.compoundName = pCompoundName;
@@ -73,14 +50,13 @@ public class CompoundItem extends Item implements Compound {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(MutableComponent.create(new LiteralContents(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
-        pTooltipComponents.add(MutableComponent.create(
-                new LiteralContents(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
+    @Override
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.add(Component.literal(getAbbreviation()).withStyle(ChatFormatting.DARK_AQUA));
     }
 
     public String getNamespace() {
-        return ForgeRegistries.ITEMS.getResourceKey(this).get().location().getNamespace();
+        return BuiltInRegistries.ITEM.getResourceKey(this).get().location().getNamespace();
     }
 
     @Override
@@ -125,8 +101,6 @@ public class CompoundItem extends Item implements Compound {
     }
 
     public static String getSubscript(String pString) {
-        //subscriptZeroCodepoint is subscript 0 unicode char, adding 1-9 gives the subscript for that num
-        //i.e. ₀ + 3 = ₃
         final int subscriptZeroCodepoint = 0x2080;
         StringBuilder builder = new StringBuilder();
         for (char character : pString.toCharArray()) {

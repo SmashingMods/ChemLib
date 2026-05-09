@@ -18,7 +18,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-@SuppressWarnings("deprecation")
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class LampBlock extends ChemicalBlock {
@@ -36,7 +35,7 @@ public class LampBlock extends ChemicalBlock {
     }
 
     @Override
-    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
+    protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pNeighborPos, boolean pIsMoving) {
         if (!pLevel.isClientSide()) {
             boolean flag = pState.getValue(LIT);
             if (flag != pLevel.hasNeighborSignal(pPos)) {
@@ -50,7 +49,7 @@ public class LampBlock extends ChemicalBlock {
     }
 
     @Override
-    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRand) {
+    protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRand) {
         if (pState.getValue(LIT) && !pLevel.hasNeighborSignal(pPos)) {
             pLevel.setBlock(pPos, pState.cycle(LIT), 2);
         }

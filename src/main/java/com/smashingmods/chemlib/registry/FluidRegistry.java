@@ -1,17 +1,22 @@
 package com.smashingmods.chemlib.registry;
 
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.client.GaseousLiquidBlockRenderer;
 import com.smashingmods.chemlib.common.blocks.ChemicalLiquidBlock;
+import com.smashingmods.chemlib.common.fluids.GaseousFlowingFluid;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -37,7 +42,7 @@ public class FluidRegistry {
     public static final DeferredRegister<Block> LIQUID_BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, ChemLib.MODID);
     public static final DeferredRegister<Item> BUCKETS = DeferredRegister.create(BuiltInRegistries.ITEM, ChemLib.MODID);
 
-    protected static void registerFluid(String name, FluidType.Properties fluidProperties, int color, int slopeFindDistance, int decreasePerBlock) {
+    protected static void registerFluid(String name, FluidType.Properties fluidProperties, int color, int slopeFindDistance, int decreasePerBlock, boolean isGas) {
 
         var ref = new Object() {
             BaseFlowingFluid.Properties properties = null;
@@ -76,12 +81,21 @@ public class FluidRegistry {
                     public int getTintColor(FluidState state, BlockAndTintGetter getter, BlockPos pos) {
                         return color;
                     }
+
+                    @Override
+                    public boolean renderFluid(FluidState fluidState, BlockAndTintGetter getter, BlockPos pos, VertexConsumer vertexConsumer, BlockState blockState) {
+                        if (isGas) {
+                            GaseousLiquidBlockRenderer.tesselate(getter, pos, vertexConsumer, blockState, fluidState);
+                            return true;
+                        }
+                        return false;
+                    }
                 });
             }
         });
 
-        DeferredHolder<Fluid, FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", name), () -> new BaseFlowingFluid.Source(ref.properties));
-        DeferredHolder<Fluid, FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", name), () -> new BaseFlowingFluid.Flowing(ref.properties));
+        DeferredHolder<Fluid, FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", name), () -> isGas ? new GaseousFlowingFluid.Source(ref.properties) : new BaseFlowingFluid.Source(ref.properties));
+        DeferredHolder<Fluid, FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", name), () -> isGas ? new GaseousFlowingFluid.Flowing(ref.properties) : new BaseFlowingFluid.Flowing(ref.properties));
         DeferredHolder<Block, LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(name, () -> new ChemicalLiquidBlock(fluidSource.get(), name));
         DeferredHolder<Item, Item> bucket = BUCKETS.register(String.format("%s_bucket", name), () -> new BucketItem(fluidSource.get(), new Item.Properties().stacksTo(1)));
 

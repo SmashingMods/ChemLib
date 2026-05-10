@@ -125,7 +125,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         }
 
         MatterState matterState = Objects.requireNonNull(chemical).getMatterState();
-
+        // TODO 1.21: Use DynamicFluidContainerModel https://docs.neoforged.net/docs/1.21.1/resources/client/models/modelloaders#dynamic-fluid-container-model
         switch (matterState) {
             case LIQUID -> withExistingParent(String.format("item/%s", path), mcLoc("item/generated"))
                     .texture("layer0", modLoc("item/bucket_layer_0"))

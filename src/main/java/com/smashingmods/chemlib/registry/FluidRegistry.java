@@ -101,6 +101,11 @@ public class FluidRegistry {
                 .bucket(bucket);
     }
 
+    /*
+        This section defines helper methods for accessing fluids and fluid types from the registry.
+
+        The first set of helper methods provide streams of fluid objects.
+     */
     public static Stream<Fluid> getFluidsAsStream() {
         return FLUIDS.getEntries().stream().map(DeferredHolder::get);
     }
@@ -121,6 +126,9 @@ public class FluidRegistry {
         return getSourceFluidsAsStream().filter(source -> source.getFluidType().isLighterThanAir());
     }
 
+    /*
+        This set of helper methods provide lists of fluid objects.
+     */
     public static List<Fluid> getFluids() {
         return getFluidsAsStream().collect(Collectors.toList());
     }
@@ -137,6 +145,9 @@ public class FluidRegistry {
         return getGasSourceFluidsAsStream().collect(Collectors.toList());
     }
 
+    /*
+        Get a single object by filtering a registry stream.
+     */
     public static Optional<FluidType> getFluidTypeByName(String pName) {
         return getFluidTypesAsStream()
                 .filter(fluidType -> Objects.requireNonNull(NeoForgeRegistries.FLUID_TYPES.getKey(fluidType)).getPath().equals(pName))
@@ -161,6 +172,9 @@ public class FluidRegistry {
                 .findFirst();
     }
 
+    /*
+        This set of helpers define methods to get blocks and items from the fluid registry.
+     */
     public static Stream<LiquidBlock> getLiquidBlocks() {
         return LIQUID_BLOCKS.getEntries().stream().map(DeferredHolder::get).map(block -> (LiquidBlock) block);
     }

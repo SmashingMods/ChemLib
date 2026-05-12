@@ -36,6 +36,9 @@ public class ChemicalRegistry {
     public static final JsonObject ELEMENTS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/elements.json");
     public static final JsonObject COMPOUNDS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/compounds.json");
 
+    /*
+        Elements are built from the Elements json and then everything is registered based on that information.
+     */
     private static void registerElements() {
         for (JsonElement jsonElement : ELEMENTS_JSON.getAsJsonArray("elements")) {
             JsonObject object = jsonElement.getAsJsonObject();
@@ -93,6 +96,9 @@ public class ChemicalRegistry {
         }
     }
 
+    /*
+        Compounds are built from the Compounds json and then everything is registered based on that information.
+     */
     private static void registerCompounds() {
         for (JsonElement jsonElement : COMPOUNDS_JSON.getAsJsonArray("compounds")) {
             JsonObject object = jsonElement.getAsJsonObject();

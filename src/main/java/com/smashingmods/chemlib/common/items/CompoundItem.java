@@ -29,6 +29,15 @@ public class CompoundItem extends Item implements Compound {
     private final int color;
     private final List<MobEffectInstance> effects;
 
+    /**
+     * Default Compound Item constructor
+     * @param pCompoundName
+     * @param pMatterState
+     * @param pComponents
+     * @param pDescription
+     * @param pColor
+     * @param pEffects
+     */
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects) {
         super(new Item.Properties());
         this.compoundName = pCompoundName;
@@ -39,6 +48,16 @@ public class CompoundItem extends Item implements Compound {
         this.effects = pEffects;
     }
 
+    /**
+     * Compound Item constructor with supplied creative mode tab
+     * @param pCompoundName
+     * @param pMatterState
+     * @param pComponents
+     * @param pDescription
+     * @param pColor
+     * @param pEffects
+     * @param pTab
+     */
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects, CreativeModeTab pTab) {
         super(new Item.Properties());
         this.compoundName = pCompoundName;

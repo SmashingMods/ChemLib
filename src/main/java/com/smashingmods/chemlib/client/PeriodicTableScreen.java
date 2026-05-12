@@ -30,10 +30,10 @@ public class PeriodicTableScreen extends Screen {
     @Override
     public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
 
-        int imageWidth = 2000;
-        int imageHeight = 1016;
-        int displayWidth = imageWidth / 4;
-        int displayHeight = imageHeight / 4;
+        int imageWidth = 1512;
+        int imageHeight = 792;
+        int displayWidth = imageWidth / 3;
+        int displayHeight = imageHeight / 3;
         int leftPos = (this.width - displayWidth) / 2;
         int topPos = (this.height - displayHeight) / 2;
 
@@ -94,7 +94,26 @@ public class PeriodicTableScreen extends Screen {
     }
 
     private void drawElementTip(GuiGraphics pGuiGraphics, Element pElement) {
-        pGuiGraphics.blit(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())), ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 274, 80, 0, 0, 40, 40, 40, 40);
+        int srcWidth = 816;
+        int srcHeight = 240;
+        int dstWidth = srcWidth / 3;
+        int dstHeight = srcHeight / 3;
+        int x = ((this.width - dstWidth) / 2) - 55;
+        int y = ((this.height - (7 * 28)) / 2) - 30;
+
+        pGuiGraphics.blit(
+                ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())),
+                x,
+                y,
+                dstWidth,
+                dstHeight,
+                0,
+                0,
+                srcWidth,
+                srcHeight,
+                srcWidth,
+                srcHeight
+        );
     }
 
     @Override

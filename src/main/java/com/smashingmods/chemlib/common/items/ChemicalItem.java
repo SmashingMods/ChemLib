@@ -48,6 +48,7 @@ public class ChemicalItem extends Item implements Chemical {
         } else {
             pTooltipComponents.add(Component.literal(getAbbreviation()).withStyle(ChatFormatting.DARK_AQUA));
         }
+        pTooltipComponents.add(Component.literal(StringUtils.capitalize(getNamespace())).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
     }
 
     public String getNamespace() {

@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Either;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.utility.FluidEffectsTooltipUtility;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.BucketItem;
@@ -11,11 +12,12 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RenderTooltipEvent;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.function.Function;
 
 @EventBusSubscriber(modid = ChemLib.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
-public class ForgeEventHandler {
+public class GameEventHandler {
 
     @SubscribeEvent
     public static void onRenderTooltip(RenderTooltipEvent.GatherComponents event) {
@@ -33,5 +35,9 @@ public class ForgeEventHandler {
         for (FormattedText textElement : FluidEffectsTooltipUtility.getBucketEffectTooltipComponents(event.getItemStack())) {
             event.getTooltipElements().add(formattedTextFunction.apply(textElement));
         }
+
+        String namespace = BuiltInRegistries.ITEM.getKey(bucket).getNamespace();
+        event.getTooltipElements().add(formattedTextFunction.apply(
+                Component.literal(StringUtils.capitalize(namespace)).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
     }
 }

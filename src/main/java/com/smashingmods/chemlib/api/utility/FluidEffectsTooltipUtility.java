@@ -2,14 +2,20 @@ package com.smashingmods.chemlib.api.utility;
 
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +45,8 @@ public class FluidEffectsTooltipUtility {
             return;
         }
 
+        List<Pair<Holder<Attribute>, AttributeModifier>> attributeModifierPairList = new ArrayList<>();
+
         for (MobEffectInstance effectInstance : pEffects) {
             MutableComponent line = Component.translatable(effectInstance.getDescriptionId());
             if (effectInstance.getAmplifier() > 0 && effectInstance.getAmplifier() <= 20) {
@@ -47,6 +55,43 @@ public class FluidEffectsTooltipUtility {
                 line = Component.translatable("potion.withDuration", line, MobEffectUtil.formatDuration(effectInstance, 1.0F, 20));
             }
             pTooltips.add(line.withStyle(effectInstance.getEffect().value().getCategory().getTooltipFormatting()));
+
+            effectInstance.getEffect().value().createModifiers(effectInstance.getAmplifier(),
+                    (attributeHolder, modifier) -> attributeModifierPairList.add(Pair.of(attributeHolder, modifier)));
+        }
+
+        if (!attributeModifierPairList.isEmpty()) {
+            for (Pair<Holder<Attribute>, AttributeModifier> attributeModifierPair : attributeModifierPairList) {
+                Holder<Attribute> attributeHolder = attributeModifierPair.getKey();
+                AttributeModifier modifier = attributeModifierPair.getValue();
+
+                double baseModifierAmount = modifier.amount();
+                double finalModifierAmount;
+
+                if (modifier.operation() == AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        || modifier.operation() == AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL) {
+                    finalModifierAmount = baseModifierAmount * 100.0D;
+                } else if (attributeHolder.is(Attributes.KNOCKBACK_RESISTANCE)) {
+                    finalModifierAmount = baseModifierAmount * 10.0D;
+                } else {
+                    finalModifierAmount = baseModifierAmount;
+                }
+
+                if (baseModifierAmount > 0.0D) {
+                    pTooltips.add(Component.translatable(
+                            String.format("attribute.modifier.plus.%d", modifier.operation().id()),
+                            ItemAttributeModifiers.ATTRIBUTE_MODIFIER_FORMAT.format(finalModifierAmount),
+                            Component.translatable(attributeHolder.value().getDescriptionId()))
+                            .withStyle(ChatFormatting.BLUE));
+                } else if (baseModifierAmount < 0.0D) {
+                    finalModifierAmount *= -1.0D;
+                    pTooltips.add(Component.translatable(
+                            String.format("attribute.modifier.take.%d", modifier.operation().id()),
+                            ItemAttributeModifiers.ATTRIBUTE_MODIFIER_FORMAT.format(finalModifierAmount),
+                            Component.translatable(attributeHolder.value().getDescriptionId()))
+                            .withStyle(ChatFormatting.RED));
+                }
+            }
         }
     }
 }

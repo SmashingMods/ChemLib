@@ -56,6 +56,7 @@ public class ElementItem extends Item implements Element {
         if (!groupKey.isEmpty()) {
             pTooltipComponents.add(Component.translatable(groupKey).withStyle(ChatFormatting.GRAY));
         }
+        pTooltipComponents.add(Component.literal(StringUtils.capitalize(getNamespace())).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
     }
 
     public String getNamespace() {

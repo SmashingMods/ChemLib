@@ -8,7 +8,6 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.common.NeoForge;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +22,6 @@ public class ChemLib {
     public ChemLib(IEventBus modEventBus, ModContainer modContainer) {
         Registry.register(modEventBus);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
-        Config.loadConfig(Config.COMMON_SPEC, FMLPaths.CONFIGDIR.get().resolve("chemlib-common.toml"));
     }
 
     public static String getModDisplayName(String modid) {

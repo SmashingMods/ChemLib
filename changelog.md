@@ -1,6 +1,6 @@
-# ChemLib 1.20.1-2.0.19
+# ChemLib 1.21.1-2.0.20
 
 Changes:
 
-- Fix all calls to toUpperCase() passing in Locale.ROOT. This should fix issues with the Turkish language loading the mod.
-- Upgrade Forge version.
+- Port to 1.21.1 neoforge
+- Gaseous fluids flow upwards

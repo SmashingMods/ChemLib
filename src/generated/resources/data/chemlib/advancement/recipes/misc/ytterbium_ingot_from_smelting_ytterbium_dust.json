@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:ytterbium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:ytterbium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:ytterbium_ingot_from_smelting_ytterbium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:ytterbium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:ytterbium_ingot_from_smelting_ytterbium_dust"
+    ]
+  }
+}

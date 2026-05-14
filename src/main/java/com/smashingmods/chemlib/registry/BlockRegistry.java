@@ -3,15 +3,15 @@ package com.smashingmods.chemlib.registry;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public class BlockRegistry {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ChemLib.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, ChemLib.MODID);
     public static final List<ChemicalBlock> METAL_BLOCKS = new ArrayList<>();
     public static final List<ChemicalBlock> LAMP_BLOCKS = new ArrayList<>();
 
@@ -32,8 +32,8 @@ public class BlockRegistry {
             .sound(SoundType.GLASS)
             .lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0);
 
-    public static Optional<RegistryObject<Block>> getRegistryObjectByName(String pName) {
-        return BLOCKS.getEntries().stream().filter(blockRegistryObject -> blockRegistryObject.getId().getPath().equals(pName)).findFirst();
+    public static Optional<DeferredHolder<Block, ? extends Block>> getRegistryObjectByName(String name) {
+        return BLOCKS.getEntries().stream().filter(blockRegistryObject -> blockRegistryObject.getId().getPath().equals(name)).findFirst();
     }
 
     public static List<ChemicalBlock> getAllChemicalBlocks() {
@@ -43,21 +43,21 @@ public class BlockRegistry {
         return all;
     }
 
-    public static List<ChemicalBlock> getChemicalBlocksByType(ChemicalBlockType pChemicalBlockType) {
-        return switch (pChemicalBlockType) {
+    public static List<ChemicalBlock> getChemicalBlocksByType(ChemicalBlockType chemicalBlockType) {
+        return switch (chemicalBlockType) {
             case METAL -> METAL_BLOCKS;
             case LAMP -> LAMP_BLOCKS;
         };
     }
 
-    public static Stream<ChemicalBlock> getChemicalBlocksStreamByType(ChemicalBlockType pChemicalBlockType) {
-        return getChemicalBlocksByType(pChemicalBlockType)
-                .stream().filter(block -> block.getBlockType().equals(pChemicalBlockType));
+    public static Stream<ChemicalBlock> getChemicalBlocksStreamByType(ChemicalBlockType chemicalBlockType) {
+        return getChemicalBlocksByType(chemicalBlockType)
+                .stream().filter(block -> block.getBlockType().equals(chemicalBlockType));
     }
 
-    public static Optional<ChemicalBlock> getChemicalBlockByNameAndType(String pName, ChemicalBlockType pChemicalBlockType) {
-        return getChemicalBlocksStreamByType(pChemicalBlockType)
-                .filter(block -> block.getChemical().getChemicalName().equals(pName))
+    public static Optional<ChemicalBlock> getChemicalBlockByNameAndType(String name, ChemicalBlockType chemicalBlockType) {
+        return getChemicalBlocksStreamByType(chemicalBlockType)
+                .filter(block -> block.getChemical().getChemicalName().equals(name))
                 .findFirst();
     }
 

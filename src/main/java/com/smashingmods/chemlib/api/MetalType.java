@@ -2,8 +2,6 @@ package com.smashingmods.chemlib.api;
 
 import net.minecraft.util.StringRepresentable;
 
-import javax.annotation.Nonnull;
-
 public enum MetalType implements StringRepresentable {
     METAL("metal"),
     METALLOID("metalloid"),
@@ -11,12 +9,11 @@ public enum MetalType implements StringRepresentable {
 
     private final String state;
 
-    MetalType(String pState) {
-        this.state = pState;
+    MetalType(String state) {
+        this.state = state;
     }
 
     @Override
-    @Nonnull
     public String getSerializedName() {
         return state;
     }

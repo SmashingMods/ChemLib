@@ -6,33 +6,27 @@ import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     private final ChemicalBlock block;
 
-    public ChemicalBlockItem(ChemicalBlock pBlock, Properties pProperties) {
-        super(pBlock, pProperties);
-        this.block = pBlock;
+    public ChemicalBlockItem(ChemicalBlock chemicalBlock, Properties properties) {
+        super(chemicalBlock, properties);
+        this.block = chemicalBlock;
     }
 
-    @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if (getChemical() instanceof Element element) {
-            pTooltipComponents.add(MutableComponent.create(new LiteralContents(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber()))).withStyle(ChatFormatting.DARK_AQUA));
-            pTooltipComponents.add(MutableComponent.create(new LiteralContents(element.getGroupName())).withStyle(ChatFormatting.GRAY));
+            tooltipComponents.add(Component.literal(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber())).withStyle(ChatFormatting.DARK_AQUA));
+            tooltipComponents.add(Component.literal(element.getGroupName()).withStyle(ChatFormatting.GRAY));
         }
     }
 
@@ -71,7 +65,7 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
     }
 
     @SuppressWarnings("unused")
-    public int getColor(ItemStack pItemStack, int pTintIndex) {
+    public int getColor(ItemStack stack, int tintIndex) {
         return getColor();
     }
 }

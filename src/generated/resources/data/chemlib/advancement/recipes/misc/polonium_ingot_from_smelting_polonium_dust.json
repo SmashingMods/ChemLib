@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:polonium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:polonium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:polonium_ingot_from_smelting_polonium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:polonium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:polonium_ingot_from_smelting_polonium_dust"
+    ]
+  }
+}

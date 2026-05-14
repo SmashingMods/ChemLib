@@ -11,10 +11,10 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.apache.commons.lang3.StringUtils;
 
 @EventBusSubscriber(modid = ChemLib.MODID)
-public class ForgeEventHandler {
+public class EventHandler {
 
     @SubscribeEvent
-    public static void onRenderTooltip(ItemTooltipEvent event) {
+    public static void onItemTooltip(ItemTooltipEvent event) {
         if (event.getItemStack().getItem() instanceof BucketItem bucket
                 && BuiltInRegistries.FLUID.getResourceKey(bucket.content).isPresent()
                 && BuiltInRegistries.FLUID.getKey(bucket.content).getNamespace().equals(ChemLib.MODID)) {

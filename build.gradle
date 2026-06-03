@@ -1,13 +1,10 @@
 plugins {
     id 'java'
     id 'idea'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.91'
     id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'maven-publish'
 
 version = "$minecraft_version-$mod_version"
@@ -16,45 +13,39 @@ archivesBaseName = 'chemlib'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-minecraft {
-    mappings channel: mapping_channel, version: "$mapping_version-1.20.1"
-    copyIdeResources = true
+legacyForge {
+    enable {
+        neoForgeVersion = "${minecraft_version}-${forge_version}"
+    }
+
+    parchment {
+        minecraftVersion = mapping_version_minecraft
+        mappingsVersion = mapping_version
+    }
+
     runs {
         client {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                chemlib {
-                    source sourceSets.main
-                }
-            }
+            client()
         }
 
         server {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                chemlib {
-                    source sourceSets.main
-                }
-            }
+            server()
         }
 
         data {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', "$archivesBaseName", '--all', '--output', file('src/generated/resources'), '--existing', file('src/main/resources')
+            data()
+            programArguments.addAll '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
 
-            mods {
-                chemlib {
-                    source sourceSets.main
-                }
-            }
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        chemlib {
+            sourceSet sourceSets.main
         }
     }
 }
@@ -72,9 +63,8 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    modCompileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    modRuntimeOnly "mezz.jei:jei-${minecraft_version}-forge:${jei_version}"
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']
@@ -121,8 +111,6 @@ fileTree("secrets").matching {
             stream -> secrets.load(stream)
         }
 }
-
-jar.finalizedBy('reobfJar')
 
 java {
     withSourcesJar()

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_iridium": {
+    "has_chemlib:iridium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_iridium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:iridium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:iridium_ingot_from_smelting_iridium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

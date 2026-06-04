@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_iron",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_iron"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:iron_ingot_from_blasting_iron_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

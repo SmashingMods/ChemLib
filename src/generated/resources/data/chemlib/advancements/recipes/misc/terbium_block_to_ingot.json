@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_terbium": {
+    "has_chemlib:terbium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_terbium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:terbium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:terbium_block_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

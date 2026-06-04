@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_osmium": {
+    "has_chemlib:osmium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_osmium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:osmium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:osmium_ingot_from_smelting_osmium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dysprosium": {
+    "has_chemlib:dysprosium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_dysprosium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:dysprosium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:dysprosium_block_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

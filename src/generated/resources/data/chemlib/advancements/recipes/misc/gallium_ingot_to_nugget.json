@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gallium": {
+    "has_chemlib:gallium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_gallium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:gallium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:gallium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

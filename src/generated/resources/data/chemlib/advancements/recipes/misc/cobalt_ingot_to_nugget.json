@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cobalt": {
+    "has_chemlib:cobalt": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_cobalt",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:cobalt"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:cobalt_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

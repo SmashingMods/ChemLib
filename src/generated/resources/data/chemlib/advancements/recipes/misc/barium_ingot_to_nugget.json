@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_barium": {
+    "has_chemlib:barium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_barium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:barium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:barium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_helium": {
+    "has_chemlib:helium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_helium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:helium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:helium_lamp_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

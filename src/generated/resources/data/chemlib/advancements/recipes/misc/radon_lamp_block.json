@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_radon": {
+    "has_chemlib:radon": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_radon",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:radon"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:radon_lamp_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

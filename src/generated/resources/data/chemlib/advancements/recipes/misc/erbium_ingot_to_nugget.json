@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_erbium": {
+    "has_chemlib:erbium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_erbium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:erbium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:erbium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

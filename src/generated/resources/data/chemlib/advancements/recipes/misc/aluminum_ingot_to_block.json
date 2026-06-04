@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_aluminum": {
+    "has_chemlib:aluminum": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_aluminum",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:aluminum"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:aluminum_ingot_to_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

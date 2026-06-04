@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lanthanum": {
+    "has_chemlib:lanthanum": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_lanthanum",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:lanthanum"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:lanthanum_ingot_from_blasting_lanthanum_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

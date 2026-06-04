@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_neon": {
+    "has_chemlib:neon": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_neon",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:neon"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:neon_lamp_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cadmium": {
+    "has_chemlib:cadmium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_cadmium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:cadmium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:cadmium_ingot_to_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

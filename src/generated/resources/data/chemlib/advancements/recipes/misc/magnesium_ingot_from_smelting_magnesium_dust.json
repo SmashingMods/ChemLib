@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_magnesium": {
+    "has_chemlib:magnesium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_magnesium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:magnesium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:magnesium_ingot_from_smelting_magnesium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

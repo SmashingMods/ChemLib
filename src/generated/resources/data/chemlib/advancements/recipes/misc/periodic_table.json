@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_hydrogen",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_hydrogen"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:periodic_table"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

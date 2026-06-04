@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_argon": {
+    "has_chemlib:argon": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_argon",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:argon"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:argon_lamp_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

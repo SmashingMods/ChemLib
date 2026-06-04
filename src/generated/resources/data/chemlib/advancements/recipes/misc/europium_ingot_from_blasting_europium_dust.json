@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_europium": {
+    "has_chemlib:europium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_europium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:europium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:europium_ingot_from_blasting_europium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

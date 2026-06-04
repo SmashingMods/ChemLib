@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_nickel": {
+    "has_chemlib:nickel": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_nickel",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:nickel"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:nickel_ingot_to_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

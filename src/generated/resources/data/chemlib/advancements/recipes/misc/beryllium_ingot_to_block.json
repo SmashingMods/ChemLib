@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_beryllium": {
+    "has_chemlib:beryllium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_beryllium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:beryllium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:beryllium_ingot_to_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

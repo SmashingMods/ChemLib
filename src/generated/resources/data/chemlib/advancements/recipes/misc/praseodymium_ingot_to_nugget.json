@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_praseodymium": {
+    "has_chemlib:praseodymium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_praseodymium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:praseodymium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:praseodymium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_manganese": {
+    "has_chemlib:manganese": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_manganese",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:manganese"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:manganese_ingot_to_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

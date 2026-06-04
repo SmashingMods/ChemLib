@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_radium": {
+    "has_chemlib:radium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_radium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:radium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:radium_ingot_from_blasting_radium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

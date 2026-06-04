@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_gold",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_gold"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:gold_ingot_from_blasting_gold_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

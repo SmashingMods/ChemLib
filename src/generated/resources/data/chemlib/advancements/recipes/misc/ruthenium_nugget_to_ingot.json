@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ruthenium": {
+    "has_chemlib:ruthenium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_ruthenium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:ruthenium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:ruthenium_nugget_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

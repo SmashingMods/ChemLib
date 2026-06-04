@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cerium": {
+    "has_chemlib:cerium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_cerium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:cerium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:cerium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

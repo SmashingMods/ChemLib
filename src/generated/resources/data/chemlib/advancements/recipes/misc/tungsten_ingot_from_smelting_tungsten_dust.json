@@ -1,13 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "chemlib:tungsten_ingot_from_smelting_tungsten_dust"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_tungsten": {
+    "has_chemlib:tungsten": {
       "conditions": {
         "items": [
           {
@@ -18,17 +12,24 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:tungsten_ingot_from_smelting_tungsten_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_tungsten",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:tungsten"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:tungsten_ingot_from_smelting_tungsten_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

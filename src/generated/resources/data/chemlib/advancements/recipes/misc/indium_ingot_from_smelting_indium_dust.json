@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_indium": {
+    "has_chemlib:indium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_indium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:indium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:indium_ingot_from_smelting_indium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

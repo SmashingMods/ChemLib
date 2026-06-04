@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_protactinium": {
+    "has_chemlib:protactinium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_protactinium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:protactinium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:protactinium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

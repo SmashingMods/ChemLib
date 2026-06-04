@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_potassium": {
+    "has_chemlib:potassium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_potassium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:potassium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:potassium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bismuth": {
+    "has_chemlib:bismuth": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_bismuth",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:bismuth"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:bismuth_block_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

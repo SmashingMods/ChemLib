@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_actinium": {
+    "has_chemlib:actinium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_actinium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:actinium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:actinium_ingot_from_smelting_actinium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

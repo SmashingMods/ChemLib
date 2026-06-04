@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_holmium": {
+    "has_chemlib:holmium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_holmium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:holmium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:holmium_block_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

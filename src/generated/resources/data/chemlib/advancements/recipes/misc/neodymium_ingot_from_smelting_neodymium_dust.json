@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_neodymium": {
+    "has_chemlib:neodymium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_neodymium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:neodymium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:neodymium_ingot_from_smelting_neodymium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

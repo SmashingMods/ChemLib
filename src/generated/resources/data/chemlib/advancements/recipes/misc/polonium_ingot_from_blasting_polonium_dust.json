@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_polonium": {
+    "has_chemlib:polonium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_polonium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:polonium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:polonium_ingot_from_blasting_polonium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

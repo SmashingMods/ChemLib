@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_calcium": {
+    "has_chemlib:calcium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_calcium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:calcium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:calcium_ingot_from_blasting_calcium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

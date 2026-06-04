@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_niobium": {
+    "has_chemlib:niobium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_niobium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:niobium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:niobium_ingot_to_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

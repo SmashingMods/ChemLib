@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_krypton": {
+    "has_chemlib:krypton": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_krypton",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:krypton"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:krypton_lamp_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

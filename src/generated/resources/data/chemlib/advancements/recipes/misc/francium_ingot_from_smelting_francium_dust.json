@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_francium": {
+    "has_chemlib:francium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_francium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:francium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:francium_ingot_from_smelting_francium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

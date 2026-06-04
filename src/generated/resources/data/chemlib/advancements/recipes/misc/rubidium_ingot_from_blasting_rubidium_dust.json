@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rubidium": {
+    "has_chemlib:rubidium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_rubidium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:rubidium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:rubidium_ingot_from_blasting_rubidium_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

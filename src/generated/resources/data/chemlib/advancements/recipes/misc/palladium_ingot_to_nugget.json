@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_palladium": {
+    "has_chemlib:palladium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_palladium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:palladium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:palladium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

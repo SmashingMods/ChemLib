@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_copper",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_copper"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:copper_ingot_from_smelting_copper_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

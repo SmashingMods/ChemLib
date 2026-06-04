@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lead": {
+    "has_chemlib:lead": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_lead",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:lead"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:lead_ingot_from_blasting_lead_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

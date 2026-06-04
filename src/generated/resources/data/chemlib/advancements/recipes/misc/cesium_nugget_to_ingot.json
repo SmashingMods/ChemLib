@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cesium": {
+    "has_chemlib:cesium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_cesium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:cesium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:cesium_nugget_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

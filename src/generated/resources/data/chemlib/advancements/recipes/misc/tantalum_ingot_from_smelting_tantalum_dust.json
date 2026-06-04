@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_tantalum": {
+    "has_chemlib:tantalum": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_tantalum",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:tantalum"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:tantalum_ingot_from_smelting_tantalum_dust"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

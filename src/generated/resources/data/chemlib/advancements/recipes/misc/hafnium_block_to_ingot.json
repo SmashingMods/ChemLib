@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hafnium": {
+    "has_chemlib:hafnium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_hafnium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:hafnium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:hafnium_block_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rhodium": {
+    "has_chemlib:rhodium": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_rhodium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:rhodium"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:rhodium_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

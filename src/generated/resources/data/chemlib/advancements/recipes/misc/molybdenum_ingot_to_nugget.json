@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_molybdenum": {
+    "has_chemlib:molybdenum": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_molybdenum",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:molybdenum"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:molybdenum_ingot_to_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

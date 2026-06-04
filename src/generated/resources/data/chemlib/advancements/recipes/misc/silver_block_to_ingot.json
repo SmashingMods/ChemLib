@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silver": {
+    "has_chemlib:silver": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_silver",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chemlib:silver"
     ]
   ],
   "rewards": {
     "recipes": [
       "chemlib:silver_block_to_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

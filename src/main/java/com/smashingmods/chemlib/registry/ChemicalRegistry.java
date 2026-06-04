@@ -19,8 +19,8 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraftforge.common.SoundActions;
-import net.minecraftforge.fluids.FluidType;
+import net.neoforged.neoforge.common.SoundActions;
+import net.neoforged.neoforge.fluids.FluidType;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.*;

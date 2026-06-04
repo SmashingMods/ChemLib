@@ -2,8 +2,8 @@ package com.smashingmods.chemlib.registry;
 
 import com.smashingmods.chemlib.ChemLib;
 import net.minecraft.world.entity.decoration.PaintingVariant;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class PaintingsRegistry {

@@ -4,7 +4,7 @@ import com.smashingmods.chemlib.registry.FluidRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.FluidType;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;

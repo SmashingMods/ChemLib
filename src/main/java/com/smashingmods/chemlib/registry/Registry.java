@@ -3,7 +3,7 @@ package com.smashingmods.chemlib.registry;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.smashingmods.chemlib.ChemLib;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.neoforged.bus.api.IEventBus;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

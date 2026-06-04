@@ -51,9 +51,19 @@ runs {
         run.dependsOn acceptEula
     }
 
-    client {
+    client { run ->
         // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
         systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
+
+        // Silent dev client: stamp a sound-off options.txt into the client run's working directory just
+        // before launch so client runs always start with every sound category at 0.0 and never blast audio
+        // while working. Same per-run, write-into-working-directory approach as the EULA task above; the
+        // template is overwritten on purpose each run since these are throwaway dev runs.
+        def silentOptions = project.tasks.register('prepareSilentClientOptions', Copy) {
+            from project.file('run-config/options.txt')
+            into run.workingDirectory
+        }
+        run.dependsOn silentOptions
     }
 
     server {

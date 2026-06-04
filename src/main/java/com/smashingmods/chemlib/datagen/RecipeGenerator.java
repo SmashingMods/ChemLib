@@ -7,6 +7,7 @@ import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.registry.BlockRegistry;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
@@ -15,16 +16,16 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.Tags;
 
 import javax.annotation.Nonnull;
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 
 public class RecipeGenerator extends RecipeProvider {
-    public RecipeGenerator(PackOutput pOutput) {
-        super(pOutput);
+    public RecipeGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries) {
+        super(pOutput, pRegistries);
     }
 
     @Override
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    protected void buildRecipes(@Nonnull Consumer<FinishedRecipe> pConsumer) {
+    protected void buildRecipes(@Nonnull RecipeOutput pConsumer) {
         // Register lamp recipes
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.LAMP).forEach(block -> {
             Chemical chemical = block.getChemical();

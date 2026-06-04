@@ -21,11 +21,11 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.neoforged.neoforge.common.SoundActions;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.*;
 
-import static net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS;
+import static net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT;
 
 public class ChemicalRegistry {
     public static final JsonObject ELEMENTS_JSON = Registry.getStreamAsJsonObject("/data/chemlib/elements.json");
@@ -49,7 +49,7 @@ public class ChemicalRegistry {
             String color = object.get("color").getAsString();
 
             ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, mobEffectsFactory(object)));
-            RegistryObject<Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
+            DeferredHolder<Item, ? extends Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
             if (!artificial) {
                 switch (matterState) {
@@ -145,7 +145,7 @@ public class ChemicalRegistry {
                 String effectLocation = effectObject.get("location").getAsString();
                 int effectDuration = effectObject.get("duration").getAsInt();
                 int effectAmplifier = effectObject.get("amplifier").getAsInt();
-                MobEffect mobEffect = MOB_EFFECTS.getValue(new ResourceLocation(effectLocation));
+                MobEffect mobEffect = MOB_EFFECT.get(new ResourceLocation(effectLocation));
                 if (mobEffect != null) {
                     effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
                 }

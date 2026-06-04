@@ -7,6 +7,7 @@ import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -19,7 +20,6 @@ import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nonnull;
@@ -40,7 +40,7 @@ public class ChemicalItem extends Item implements Chemical {
     }
 
     public ChemicalItem(ResourceLocation pResourceLocation, ChemicalItemType pChemicalItemType, Item.Properties pProperties) {
-        this((Chemical) Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(pResourceLocation)), pChemicalItemType, pProperties);
+        this((Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.get(pResourceLocation)), pChemicalItemType, pProperties);
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -57,7 +57,7 @@ public class ChemicalItem extends Item implements Chemical {
     }
 
     public String getNamespace() {
-        return ForgeRegistries.ITEMS.getResourceKey(this).get().location().getNamespace();
+        return BuiltInRegistries.ITEM.getResourceKey(this).get().location().getNamespace();
     }
 
     public Chemical getChemical() {

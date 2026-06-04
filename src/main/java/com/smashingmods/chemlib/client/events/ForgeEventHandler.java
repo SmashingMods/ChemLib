@@ -3,6 +3,7 @@ package com.smashingmods.chemlib.client.events;
 import com.mojang.datafixers.util.Either;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.utility.FluidEffectsTooltipUtility;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -12,7 +13,6 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.function.Function;
@@ -23,8 +23,8 @@ public class ForgeEventHandler {
     @SubscribeEvent
     public static void onRenderTooltip(RenderTooltipEvent.GatherComponents event) {
         if (event.getItemStack().getItem() instanceof BucketItem bucket
-                && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).isPresent()
-                && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace().equals(ChemLib.MODID)) {
+                && BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).isPresent()
+                && BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).get().location().getNamespace().equals(ChemLib.MODID)) {
 
             gatherTooltipComponents(event, bucket);
         }
@@ -36,7 +36,7 @@ public class ForgeEventHandler {
         for (FormattedText textElement : FluidEffectsTooltipUtility.getBucketEffectTooltipComponents(event.getItemStack())) {
             event.getTooltipElements().add(formattedTextFunction.apply(textElement));
         }
-        String namespace = ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace();
+        String namespace = BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).get().location().getNamespace();
         event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(new LiteralContents(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
     }
 }

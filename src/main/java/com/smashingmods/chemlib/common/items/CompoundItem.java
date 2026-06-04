@@ -5,6 +5,7 @@ import com.smashingmods.chemlib.api.Compound;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -16,7 +17,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nullable;
@@ -80,7 +80,7 @@ public class CompoundItem extends Item implements Compound {
     }
 
     public String getNamespace() {
-        return ForgeRegistries.ITEMS.getResourceKey(this).get().location().getNamespace();
+        return BuiltInRegistries.ITEM.getResourceKey(this).get().location().getNamespace();
     }
 
     @Override

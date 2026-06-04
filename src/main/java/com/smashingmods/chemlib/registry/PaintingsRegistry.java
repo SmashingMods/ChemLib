@@ -1,13 +1,13 @@
 package com.smashingmods.chemlib.registry;
 
 import com.smashingmods.chemlib.ChemLib;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class PaintingsRegistry {
-    private static final DeferredRegister<PaintingVariant> PAINTINGS = DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, ChemLib.MODID);
+    private static final DeferredRegister<PaintingVariant> PAINTINGS = DeferredRegister.create(BuiltInRegistries.PAINTING_VARIANT, ChemLib.MODID);
 
     public static void register(IEventBus eventBus) {
         PAINTINGS.register("periodic_table", () -> new PaintingVariant(80, 48));

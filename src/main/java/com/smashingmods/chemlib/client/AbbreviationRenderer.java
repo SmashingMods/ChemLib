@@ -21,7 +21,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.ForgeHooksClient;
+import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 import java.util.function.Consumer;
@@ -122,7 +122,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 					buffer,
 					isGui ? 0xF000F0 : pPackedLight,
 					isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
-					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pItemDisplayContext, false));
+					ClientHooks.handleCameraTransforms(pPoseStack, bakedModel, pItemDisplayContext, false));
 			if (isGui) {
 				((MultiBufferSource.BufferSource) buffer).endBatch();
 			}

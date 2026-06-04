@@ -13,8 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Comparator;
 
@@ -23,10 +23,10 @@ public class TabsRegistry {
 
     public static final DeferredRegister<CreativeModeTab> REGISTRY_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ChemLib.MODID);
 
-    public static RegistryObject<CreativeModeTab> ELEMENT_TAB;
-    public static RegistryObject<CreativeModeTab> COMPOUND_TAB;
-    public static RegistryObject<CreativeModeTab> METALS_TAB;
-    public static RegistryObject<CreativeModeTab> MISC_TAB;
+    public static DeferredHolder<CreativeModeTab, CreativeModeTab> ELEMENT_TAB;
+    public static DeferredHolder<CreativeModeTab, CreativeModeTab> COMPOUND_TAB;
+    public static DeferredHolder<CreativeModeTab, CreativeModeTab> METALS_TAB;
+    public static DeferredHolder<CreativeModeTab, CreativeModeTab> MISC_TAB;
 
     public static void register(IEventBus pEventBus) {
 
@@ -45,7 +45,7 @@ public class TabsRegistry {
                 .title(Component.translatable("itemGroup.chemlib.compounds"))
                 .displayItems((pParameters, pOutput) -> {
                     ItemRegistry.REGISTRY_COMPOUNDS.getEntries().stream()
-                            .map(RegistryObject::get)
+                            .map(DeferredHolder::get)
                             .map(item -> (CompoundItem) item)
                             .sorted(Comparator.comparing(CompoundItem::getChemicalName))
                             .toList()
@@ -78,8 +78,8 @@ public class TabsRegistry {
                 .icon(() -> ItemRegistry.getChemicalBlockItemByName("radon_lamp_block").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR)))
                 .title(Component.translatable("itemGroup.chemlib.misc"))
                 .displayItems((pParameters, pOutput) -> {
-                    ItemRegistry.REGISTRY_BLOCK_ITEMS.getEntries().stream().map(RegistryObject::get).filter(item -> item.getDescriptionId().contains("lamp_block")).forEach(pOutput::accept);
-                    ItemRegistry.REGISTRY_MISC_ITEMS.getEntries().stream().map(RegistryObject::get).forEach(pOutput::accept);
+                    ItemRegistry.REGISTRY_BLOCK_ITEMS.getEntries().stream().map(DeferredHolder::get).filter(item -> item.getDescriptionId().contains("lamp_block")).forEach(pOutput::accept);
+                    ItemRegistry.REGISTRY_MISC_ITEMS.getEntries().stream().map(DeferredHolder::get).forEach(pOutput::accept);
                     ItemRegistry.getChemicalItemByNameAndType("polyvinyl_chloride", ChemicalItemType.PLATE).ifPresent(pOutput::accept);
                     FluidRegistry.getAllSortedBuckets().stream().map(ItemStack::new).forEach(pOutput::accept);
                 })

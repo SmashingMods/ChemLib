@@ -7,6 +7,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
 import net.minecraft.network.chat.contents.TranslatableContents;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.effect.AttributeModifierTemplate;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
@@ -14,7 +16,6 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -28,7 +29,7 @@ public class FluidEffectsTooltipUtility {
     public static List<Component> getBucketEffectTooltipComponents(ItemStack pStack) {
         List<Component> componentList = new ArrayList<>();
 
-        ForgeRegistries.FLUIDS.getResourceKey(((BucketItem) pStack.getItem()).getFluid()).ifPresent(fluidResourceKey -> {
+        BuiltInRegistries.FLUID.getResourceKey(((BucketItem) pStack.getItem()).getFluid()).ifPresent(fluidResourceKey -> {
             String chemicalName = StringUtils.removeEnd(fluidResourceKey.location().getPath(), "_fluid");
             AtomicReference<List<MobEffectInstance>> effectList = new AtomicReference<>();
             ItemRegistry.getElementByName(chemicalName).ifPresent(element -> effectList.set(element.getEffects()));
@@ -50,12 +51,11 @@ public class FluidEffectsTooltipUtility {
             for (MobEffectInstance effectInstance : pEffects) {
                 MutableComponent mutableComponent = Component.translatable(effectInstance.getDescriptionId());
                 MobEffect effect = effectInstance.getEffect();
-                Map<Attribute, AttributeModifier> attributeModifierMap = effect.getAttributeModifiers();
+                Map<Attribute, AttributeModifierTemplate> attributeModifierMap = effect.getAttributeModifiers();
 
                 if (!attributeModifierMap.isEmpty()) {
-                    for (Map.Entry<Attribute, AttributeModifier> attributeModifierEntry : attributeModifierMap.entrySet()) {
-                        AttributeModifier entryValue = attributeModifierEntry.getValue();
-                        AttributeModifier attributeModifier = new AttributeModifier(entryValue.getName(), effect.getAttributeModifierValue(effectInstance.getAmplifier(), entryValue), entryValue.getOperation());
+                    for (Map.Entry<Attribute, AttributeModifierTemplate> attributeModifierEntry : attributeModifierMap.entrySet()) {
+                        AttributeModifier attributeModifier = attributeModifierEntry.getValue().create(effectInstance.getAmplifier());
                         attributeModifierPairList.add(Pair.of(attributeModifierEntry.getKey(), attributeModifier));
                     }
                 }

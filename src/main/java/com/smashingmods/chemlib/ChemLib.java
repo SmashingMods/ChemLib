@@ -3,7 +3,6 @@ package com.smashingmods.chemlib;
 import com.smashingmods.chemlib.registry.Registry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Style;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
@@ -19,7 +18,6 @@ public class ChemLib {
     public static final Style MOD_ID_TEXT_STYLE = Style.EMPTY.withFont(Style.DEFAULT_FONT).withItalic(true).withColor(ChatFormatting.BLUE);
 
     public ChemLib(IEventBus modEventBus) {
-        NeoForge.EVENT_BUS.register(this);
         Registry.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
         Config.loadConfig(Config.COMMON_SPEC, FMLPaths.CONFIGDIR.get().resolve("chemlib-common.toml"));

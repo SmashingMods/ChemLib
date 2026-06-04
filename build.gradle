@@ -72,9 +72,9 @@ dependencies {
     // Specify the version of Minecraft to use. NeoGradle treats this dependency as if it were a normal library.
     implementation "net.neoforged:neoforge:${neo_version}"
 
-    // JEI: the common API is declared for compile time use, while the full JEI artifact is used at runtime.
+    // JEI: the common API is declared for compile time use.
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-    runtimeOnly "mezz.jei:jei-${minecraft_version}-forge:${jei_version}"
+    // JEI: no NeoForge build for MC 1.20.2 (starts 1.20.4); @JeiPlugin compiles vs common-api but stays dormant at runtime this phase — D6.
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']

@@ -30,6 +30,7 @@ public class CompoundItem extends Item implements Compound {
 
     private final String compoundName;
     private String abbreviation = "";
+    private boolean buildingAbbreviation = false;
     private final MatterState matterState;
     private final Map<String, Integer> components;
     private final String description;
@@ -92,8 +93,15 @@ public class CompoundItem extends Item implements Compound {
     }
 
     public String getAbbreviation() {
-        if (abbreviation.isEmpty()) {
-            abbreviation = buildAbbreviation();
+        if (abbreviation.isEmpty() && !buildingAbbreviation) {
+            // Guard against a cyclic compound definition (A referencing B referencing A): a component lookup
+            // re-entering this compound while it is mid-build returns the empty value-so-far instead of recursing.
+            buildingAbbreviation = true;
+            try {
+                abbreviation = buildAbbreviation();
+            } finally {
+                buildingAbbreviation = false;
+            }
         }
         return abbreviation;
     }

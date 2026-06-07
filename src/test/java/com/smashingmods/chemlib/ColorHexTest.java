@@ -36,12 +36,4 @@ class ColorHexTest {
         // 0xFF000000 overwrites the high byte (0x06 -> 0xFF) and yields 0xFF2af0a7. It does NOT throw.
         assertEquals(0xFF2af0a7, Chemical.parseColorHex("62af0a7"));
     }
-
-    @Test
-    void colorHex_elementConstructorAppliesTheSameRule() {
-        // ElementItem and CompoundItem both route their colour through Chemical.parseColorHex, so the
-        // rule is single-sourced -- this re-asserts the promethium value (which reaches ElementItem in
-        // production via elements.json) to document that the element path shares this exact rule.
-        assertEquals(0xFF2af0a7, Chemical.parseColorHex("62af0a7"));
-    }
 }

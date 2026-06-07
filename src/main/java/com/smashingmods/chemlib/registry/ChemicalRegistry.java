@@ -48,40 +48,31 @@ public class ChemicalRegistry {
             boolean artificial = object.has("artificial") && object.get("artificial").getAsBoolean();
             String color = object.get("color").getAsString();
 
+            boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
+            boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
+
             ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, mobEffectsFactory(object)));
             DeferredHolder<Item, ? extends Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
-            if (!artificial) {
-                switch (matterState) {
-                    case SOLID -> {
-                        boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
+            ContentDerivation.DerivedContent derived = ContentDerivation.forElement(matterState, metalType, artificial, hasItem, hasFluid, group);
 
-                        if (metalType == MetalType.METAL) {
-                            ItemRegistry.registerItemByType(registryObject, ChemicalItemType.PLATE);
-                            if (!hasItem) {
-                                ItemRegistry.registerItemByType(registryObject, ChemicalItemType.NUGGET);
-                                ItemRegistry.registerItemByType(registryObject, ChemicalItemType.INGOT);
-                                BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
-                                BlockRegistry.getRegistryObjectByName(String.format("%s_metal_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
-                            }
-                        }
-                        ItemRegistry.registerItemByType(registryObject, ChemicalItemType.DUST);
-                    }
-                    case LIQUID, GAS -> {
-                        boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
-                        if (!hasFluid) {
-                            JsonObject properties = object.get("fluid_properties").getAsJsonObject();
-                            int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
-                            int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
+            derived.itemTypes().forEach(itemType -> ItemRegistry.registerItemByType(registryObject, itemType));
 
-                            if (group == 18) {
-                                BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
-                                BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
-                            }
-                            FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
-                        }
-                    }
+            if (derived.metalBlock()) {
+                BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
+                BlockRegistry.getRegistryObjectByName(String.format("%s_metal_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
+            }
+
+            if (derived.fluidSet()) {
+                JsonObject properties = object.get("fluid_properties").getAsJsonObject();
+                int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
+                int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
+
+                if (derived.lampBlock()) {
+                    BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
+                    BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                 }
+                FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
             }
         }
     }
@@ -108,30 +99,23 @@ public class ChemicalRegistry {
                 componentMap.put(componentName, count);
             }
 
+            // has_item is read UNGUARDED and only for SOLID compounds (matching the original); has_fluid
+            // is read GUARDED and only for LIQUID/GAS -- so each key is touched exactly where it was before.
+            boolean hasItem = matterState == MatterState.SOLID && object.get("has_item").getAsBoolean();
+            boolean hasFluid = matterState != MatterState.SOLID && object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
+
             ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, mobEffectsFactory(object)));
 
-            switch (matterState) {
-                case SOLID -> {
-                    boolean hasItem = object.get("has_item").getAsBoolean();
-                    if (!hasItem) {
-                        ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.COMPOUND);
-                        if (compoundName.equals("polyvinyl_chloride")) {
-                            ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), ChemicalItemType.PLATE);
-                        }
-                    }
-                }
-                case LIQUID, GAS -> {
-                    boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
-                    if (!hasFluid) {
-                        JsonObject properties = object.get("fluid_properties").getAsJsonObject();
-                        int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
-                        int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
+            ContentDerivation.DerivedContent derived = ContentDerivation.forCompound(matterState, hasItem, hasFluid, compoundName);
 
-                        switch (matterState) {
-                            case LIQUID, GAS -> FluidRegistry.registerFluid(compoundName, fluidTypePropertiesFactory(properties, ChemLib.MODID, compoundName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
-                        }
-                    }
-                }
+            derived.itemTypes().forEach(itemType -> ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), itemType));
+
+            if (derived.fluidSet()) {
+                JsonObject properties = object.get("fluid_properties").getAsJsonObject();
+                int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
+                int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
+
+                FluidRegistry.registerFluid(compoundName, fluidTypePropertiesFactory(properties, ChemLib.MODID, compoundName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
             }
         }
     }

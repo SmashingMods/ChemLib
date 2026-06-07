@@ -11,9 +11,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Tier-2 test: proves the {@code test} source set sees the Minecraft classpath and that
- * {@link Bootstrap#bootStrap()} is reachable and populates the built-in registries.
- * If this compiles and runs green, plain-JUnit tests can exercise registry-backed code.
+ * Pins that the {@code test} source set sees the Minecraft classpath and that
+ * {@link Bootstrap#bootStrap()} populates the built-in registries, so plain-JUnit tests can exercise
+ * registry-backed code.
  */
 class BootstrapGuardTest {
 

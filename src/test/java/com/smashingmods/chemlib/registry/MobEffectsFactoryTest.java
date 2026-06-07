@@ -18,18 +18,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 /**
- * Tier-2 test for {@link ChemicalRegistry#mobEffectsFactory(JsonObject)} -- the public factory that
+ * Test for {@link ChemicalRegistry#mobEffectsFactory(JsonObject)} -- the public factory that
  * turns the {@code effect} JSON array into a list of {@link MobEffectInstance}.
  *
  * <p>It is a {@code public static} method taking a hand-built {@link JsonObject} and returning the
  * list, so it is exercised directly with synthetic JSON -- no {@code Item} construction and no
  * mod-content registration path. It resolves each effect id against {@code BuiltInRegistries.MOB_EFFECT}
- * (vanilla effects only here), so it is Tier-2 ({@code Bootstrap.bootStrap()} populates that registry).
+ * (vanilla effects only here), so {@code Bootstrap.bootStrap()} is needed to populate that registry.
  *
- * <p>This pins the dedup fix: a duplicate effect id (e.g. {@code nitric_oxide} listing
- * {@code minecraft:nausea} twice in the real data) must collapse to a single instance keeping the
- * FIRST occurrence. The pre-fix loop appended an instance per JSON entry, so the dedup row would
- * fail against it.
+ * <p>Pins the dedup invariant: a duplicate effect id (e.g. {@code nitric_oxide} listing
+ * {@code minecraft:nausea} twice in the real data) collapses to a single instance keeping the FIRST
+ * occurrence, while a distinct effect survives -- dedup is per-id, not a global cap.
  */
 class MobEffectsFactoryTest {
 

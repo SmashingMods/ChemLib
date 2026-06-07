@@ -10,14 +10,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tier-0 unit test for {@link Chemical#clampMinColorValue(int, int)}.
+ * Unit test for {@link Chemical#clampMinColorValue(int, int)}.
  *
  * <p>{@code clampMinColorValue} is a pure default method: it ORs each of the three colour bytes
  * with {@code minValue} and reassembles them in place. The {@code green}/{@code red} locals in the
- * implementation are MISLABELED versus their actual RGB positions, but the maths is
- * position-preserving (every byte stays in its own byte slot), so the result is correct -- the only
- * defect is cosmetic naming (ChemLib.md section 10). These tests assert the ACTUAL behaviour and do
- * not "fix" the labelling.
+ * implementation are mislabeled versus their actual RGB positions, but the maths is
+ * position-preserving (every byte stays in its own byte slot), so the result is correct.
  *
  * <p>Exercised through a minimal anonymous {@link Chemical} stub; only {@code clampMinColorValue} is
  * called, so the abstract methods return dummy values.

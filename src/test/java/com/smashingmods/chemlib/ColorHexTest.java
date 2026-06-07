@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tier-0 unit test for {@link Chemical#parseColorHex(String)} -- the shared colour-hex rule
+ * Unit test for {@link Chemical#parseColorHex(String)} -- the shared colour-hex rule
  * {@code Integer.parseInt(color, 16) | 0xFF000000} used by the {@code ElementItem}/{@code CompoundItem}
  * constructors and the fluid-colour argument in {@code ChemicalRegistry}.
  *

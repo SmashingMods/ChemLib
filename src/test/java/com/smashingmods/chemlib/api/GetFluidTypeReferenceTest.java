@@ -15,21 +15,19 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Tier-2 test for {@link Chemical#getFluidTypeReference()} -- the {@code default} method that resolves
+ * Test for {@link Chemical#getFluidTypeReference()} -- the {@code default} method that resolves
  * a chemical's name to a {@link FluidType} across three registries (the {@code chemlib:} fluid-type
  * register, {@code NeoForgeRegistries.FLUID_TYPES}, then {@code BuiltInRegistries.FLUID}).
  *
  * <p>Exercised through an anonymous {@link Chemical} whose {@code getChemicalName()} returns a name
  * that resolves to no registered fluid -- so NO {@code Item} construction and no unfreezing of
- * {@code BuiltInRegistries.ITEM}. The real method runs its three real registry lookups, so this is
- * Tier-2 ({@code Bootstrap.bootStrap()} is needed for the final {@code BuiltInRegistries.FLUID} probe).
+ * {@code BuiltInRegistries.ITEM}. The real method runs its three real registry lookups, so
+ * {@code Bootstrap.bootStrap()} is needed for the final {@code BuiltInRegistries.FLUID} probe.
  *
- * <p>This pins the fix that a true miss yields {@code Optional.empty()}. The final branch reads from
- * {@code BuiltInRegistries.FLUID}, a {@code DefaultedRegistry} whose {@code get(...)} returns the
- * non-null {@code Fluids.EMPTY} on a miss; the earlier implementation wrapped that in a present
- * {@code Optional} (of {@code EMPTY}'s fluid type), so a non-fluid chemical falsely reported present
- * to callers probing {@code isPresent()}. The fix switched to the non-defaulted {@code getOptional},
- * so this assertion fails if that regression returns.
+ * <p>Pins the invariant that a name resolving to no registered fluid yields {@code Optional.empty()}.
+ * The final branch reads from {@code BuiltInRegistries.FLUID} via {@code getOptional}, not the defaulted
+ * {@code get(...)} -- which, being a {@code DefaultedRegistry}, would return the non-null {@code Fluids.EMPTY}
+ * on a miss and so falsely report present to callers probing {@code isPresent()}.
  */
 class GetFluidTypeReferenceTest {
 
@@ -85,7 +83,7 @@ class GetFluidTypeReferenceTest {
 
     @Test
     void getFluidTypeReference_unresolvedChemicalNameIsEmpty() {
-        // A name no register resolves to a fluid -- the BuiltInRegistries.FLUID fallback returns the
+        // A name no registry resolves to a fluid -- the BuiltInRegistries.FLUID fallback returns the
         // defaulted EMPTY fluid, but the method must still report empty rather than EMPTY's fluid type.
         assertTrue(named("definitely_not_a_real_fluid_xyz").getFluidTypeReference().isEmpty());
     }

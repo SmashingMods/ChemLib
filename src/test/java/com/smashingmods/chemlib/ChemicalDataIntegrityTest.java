@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Tier-0/1 data-integrity test over the bundled {@code data/chemlib/elements.json} and
+ * Data-integrity test over the bundled {@code data/chemlib/elements.json} and
  * {@code data/chemlib/compounds.json}.
  *
  * <p>The JSON is parsed through the SAME production path the registry uses --

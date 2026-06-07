@@ -11,7 +11,7 @@ import java.util.EnumSet;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tier-0 unit test for {@link ContentDerivation}, the pure decision layer split out of
+ * Unit test for {@link ContentDerivation}, the pure decision layer split out of
  * {@link ChemicalRegistry}. Both {@code forElement} and {@code forCompound} take only parsed
  * primitives and hold no Minecraft/NeoForge references, so each truth-table row is exercised with
  * synthetic primitive inputs -- no {@code Bootstrap.bootStrap()}, no {@code Item} construction.

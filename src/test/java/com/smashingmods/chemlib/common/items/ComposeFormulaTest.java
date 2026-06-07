@@ -10,9 +10,9 @@ import java.util.function.Function;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tier-0 unit test for {@link CompoundItem#composeFormula(Map, Function, Function)}.
+ * Unit test for {@link CompoundItem#composeFormula(Map, Function, Function)}.
  *
- * <p>{@code composeFormula} is the pure core extracted from {@code buildAbbreviation}: it walks the
+ * <p>{@code composeFormula} is the formula-composition core used by {@code buildAbbreviation}: it walks the
  * component map in iteration order, appending element abbreviations verbatim and compound
  * abbreviations wrapped in {@code (...)}, followed by a subscript (via {@code getSubscript}) when the
  * count exceeds one. The two registry lookups are injected as {@code Function<String,

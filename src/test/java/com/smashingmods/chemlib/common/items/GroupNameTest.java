@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tier-0 unit test for {@link ElementItem#groupName(int)}.
+ * Unit test for {@link ElementItem#groupName(int)}.
  *
  * <p>{@code groupName} is a pure static {@code switch} over the atomic number; it reads no instance
  * state, so it is exercised without constructing an {@code ElementItem} (which extends {@code Item}
@@ -13,8 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * {@code ElementItem}, which is a plain class-load.
  *
  * <p>One assertion per branch uses a boundary/representative atomic number. The Noble Gases case
- * intentionally asserts the misspelled {@code "Noble Gasses"} string: the extraction is
- * behaviour-preserving and this test documents the existing quirk rather than fixing it.
+ * asserts the misspelled {@code "Noble Gasses"} string that the production switch intentionally returns.
  */
 class GroupNameTest {
 

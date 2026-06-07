@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tier-1 unit test for {@link CompoundItem#getSubscript(String)}.
+ * Unit test for {@link CompoundItem#getSubscript(String)}.
  *
  * <p>{@code getSubscript} is a pure static that maps each character to the Unicode subscript digit
  * at {@code U+2080 + numericValue}, i.e. {@code '0'} to {@code U+2080} ('₀') through {@code '9'}

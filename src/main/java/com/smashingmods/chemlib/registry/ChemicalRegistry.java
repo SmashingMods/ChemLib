@@ -100,8 +100,8 @@ public class ChemicalRegistry {
                 componentMap.put(componentName, count);
             }
 
-            // has_item is read only for SOLID compounds and has_fluid only for LIQUID/GAS -- so each key is
-            // touched exactly where it was before, now guarded so a missing key defaults to false rather than NPEing.
+            // has_item applies only to SOLID compounds, has_fluid only to LIQUID/GAS. Both keys are optional;
+            // an absent key means false.
             boolean hasItem = matterState == MatterState.SOLID && object.has("has_item") && object.get("has_item").getAsBoolean();
             boolean hasFluid = matterState != MatterState.SOLID && object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
 

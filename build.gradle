@@ -112,8 +112,8 @@ dependencies {
 
     // JEI: the common API is declared for compile time use.
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-    // JEI: re-enabled at runtime for 1.20.4 (the first MC version with a NeoForge JEI build). The NeoForge
-    // runtime jar is on the classpath for dev runs, so the @JeiPlugin activates rather than staying dormant.
+    // JEI runtime jar: 1.20.4 is the first MC version with a NeoForge JEI build, so the @JeiPlugin
+    // activates in dev runs (the NeoForge runtime jar is on the classpath).
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 
     // JUnit 5 for the plain-JUnit `test` source set. testImplementation extends implementation,
@@ -197,8 +197,8 @@ publishing {
     }
 }
 
-// CurseForge publishing DISABLED for the NeoForge port (2026-06-03). No remote publishing during the port;
-// re-enable at release once credentials/game-versions are updated. cursegradle plugin left applied but dormant. See PORTING_LOG.
+// CurseForge publishing is disabled; artifacts publish to the maven repo configured above. Re-enable at
+// release once credentials and game-versions are set. The cursegradle plugin stays applied but dormant.
 /*
 curseforge {
     apiKey = secrets.getProperty("apiKey")

@@ -65,7 +65,7 @@ public class ChemicalRegistry {
             }
 
             if (derived.fluidSet()) {
-                JsonObject properties = object.get("fluid_properties").getAsJsonObject();
+                JsonObject properties = object.has("fluid_properties") ? object.get("fluid_properties").getAsJsonObject() : new JsonObject();
                 int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
                 int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
@@ -100,9 +100,9 @@ public class ChemicalRegistry {
                 componentMap.put(componentName, count);
             }
 
-            // has_item is read UNGUARDED and only for SOLID compounds (matching the original); has_fluid
-            // is read GUARDED and only for LIQUID/GAS -- so each key is touched exactly where it was before.
-            boolean hasItem = matterState == MatterState.SOLID && object.get("has_item").getAsBoolean();
+            // has_item is read only for SOLID compounds and has_fluid only for LIQUID/GAS -- so each key is
+            // touched exactly where it was before, now guarded so a missing key defaults to false rather than NPEing.
+            boolean hasItem = matterState == MatterState.SOLID && object.has("has_item") && object.get("has_item").getAsBoolean();
             boolean hasFluid = matterState != MatterState.SOLID && object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
 
             ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, mobEffectsFactory(object)));
@@ -112,7 +112,7 @@ public class ChemicalRegistry {
             derived.itemTypes().forEach(itemType -> ItemRegistry.registerItemByType(ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_COMPOUNDS, compoundName), itemType));
 
             if (derived.fluidSet()) {
-                JsonObject properties = object.get("fluid_properties").getAsJsonObject();
+                JsonObject properties = object.has("fluid_properties") ? object.get("fluid_properties").getAsJsonObject() : new JsonObject();
                 int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
                 int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 

@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:sodium_ingot_from_smelting_sodium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

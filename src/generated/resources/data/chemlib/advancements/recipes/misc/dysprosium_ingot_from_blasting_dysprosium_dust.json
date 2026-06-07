@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:dysprosium_ingot_from_blasting_dysprosium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

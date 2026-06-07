@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:lutetium_ingot_from_blasting_lutetium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

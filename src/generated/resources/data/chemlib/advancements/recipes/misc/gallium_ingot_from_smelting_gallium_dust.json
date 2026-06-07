@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:gallium_ingot_from_smelting_gallium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

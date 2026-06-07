@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:polonium_ingot_from_smelting_polonium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

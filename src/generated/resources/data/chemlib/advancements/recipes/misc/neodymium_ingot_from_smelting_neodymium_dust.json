@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:neodymium_ingot_from_smelting_neodymium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

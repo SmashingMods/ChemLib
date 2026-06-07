@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:erbium_ingot_from_blasting_erbium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

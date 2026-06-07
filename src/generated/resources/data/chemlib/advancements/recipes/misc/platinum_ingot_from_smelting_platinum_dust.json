@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:platinum_ingot_from_smelting_platinum_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

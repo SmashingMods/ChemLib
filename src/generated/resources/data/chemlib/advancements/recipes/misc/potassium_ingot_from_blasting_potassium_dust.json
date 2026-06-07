@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:potassium_ingot_from_blasting_potassium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

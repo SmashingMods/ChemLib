@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:chromium_ingot_from_blasting_chromium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

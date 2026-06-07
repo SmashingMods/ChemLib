@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:thulium_ingot_from_smelting_thulium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

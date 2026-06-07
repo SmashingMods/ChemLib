@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:rhenium_ingot_from_blasting_rhenium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

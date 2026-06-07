@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:iridium_ingot_from_smelting_iridium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

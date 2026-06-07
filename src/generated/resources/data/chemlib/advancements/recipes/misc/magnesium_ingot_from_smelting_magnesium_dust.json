@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:magnesium_ingot_from_smelting_magnesium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

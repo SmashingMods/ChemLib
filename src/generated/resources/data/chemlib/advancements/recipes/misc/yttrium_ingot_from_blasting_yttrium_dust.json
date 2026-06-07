@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:yttrium_ingot_from_blasting_yttrium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

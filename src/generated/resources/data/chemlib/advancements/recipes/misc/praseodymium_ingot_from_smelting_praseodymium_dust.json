@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:praseodymium_ingot_from_smelting_praseodymium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

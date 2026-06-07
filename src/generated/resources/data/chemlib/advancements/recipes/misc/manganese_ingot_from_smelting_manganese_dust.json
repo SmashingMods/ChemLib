@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:manganese_ingot_from_smelting_manganese_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

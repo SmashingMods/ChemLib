@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:silver_ingot_from_blasting_silver_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

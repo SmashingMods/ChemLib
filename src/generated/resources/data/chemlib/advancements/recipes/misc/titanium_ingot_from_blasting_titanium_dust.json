@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:titanium_ingot_from_blasting_titanium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

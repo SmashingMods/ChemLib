@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:ytterbium_ingot_from_smelting_ytterbium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

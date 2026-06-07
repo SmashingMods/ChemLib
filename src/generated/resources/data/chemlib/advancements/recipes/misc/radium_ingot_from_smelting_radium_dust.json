@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:radium_ingot_from_smelting_radium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:francium_ingot_from_blasting_francium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

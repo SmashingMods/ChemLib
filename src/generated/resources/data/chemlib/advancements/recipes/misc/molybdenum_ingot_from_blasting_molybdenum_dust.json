@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:molybdenum_ingot_from_blasting_molybdenum_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

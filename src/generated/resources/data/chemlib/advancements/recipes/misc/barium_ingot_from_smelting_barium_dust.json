@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:barium_ingot_from_smelting_barium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

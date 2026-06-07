@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:europium_ingot_from_smelting_europium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

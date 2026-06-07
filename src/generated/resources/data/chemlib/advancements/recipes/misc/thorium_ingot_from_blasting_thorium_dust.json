@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:thorium_ingot_from_blasting_thorium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

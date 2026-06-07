@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:lead_ingot_from_smelting_lead_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

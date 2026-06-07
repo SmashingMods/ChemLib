@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:radon_lamp_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

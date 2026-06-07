@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:uranium_ingot_from_blasting_uranium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:lanthanum_ingot_from_smelting_lanthanum_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

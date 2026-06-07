@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:beryllium_ingot_from_blasting_beryllium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

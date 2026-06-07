@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:lithium_ingot_from_smelting_lithium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

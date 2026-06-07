@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:vanadium_ingot_from_smelting_vanadium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

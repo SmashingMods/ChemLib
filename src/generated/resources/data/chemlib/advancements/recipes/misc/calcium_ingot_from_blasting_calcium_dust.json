@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:calcium_ingot_from_blasting_calcium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:cesium_block_to_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:strontium_ingot_from_smelting_strontium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:cesium_ingot_from_smelting_cesium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

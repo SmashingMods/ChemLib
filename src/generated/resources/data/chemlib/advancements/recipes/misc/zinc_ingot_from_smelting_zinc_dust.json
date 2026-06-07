@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:zinc_ingot_from_smelting_zinc_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

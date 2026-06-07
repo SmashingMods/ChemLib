@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:samarium_ingot_from_blasting_samarium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

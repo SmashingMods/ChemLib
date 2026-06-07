@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:actinium_ingot_from_blasting_actinium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

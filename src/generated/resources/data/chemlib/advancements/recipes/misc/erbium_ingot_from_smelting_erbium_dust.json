@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:erbium_ingot_from_smelting_erbium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

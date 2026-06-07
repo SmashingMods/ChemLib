@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:scandium_ingot_from_blasting_scandium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

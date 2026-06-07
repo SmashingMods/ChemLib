@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:rhodium_ingot_from_blasting_rhodium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

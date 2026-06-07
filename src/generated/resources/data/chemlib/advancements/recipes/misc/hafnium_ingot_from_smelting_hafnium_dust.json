@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:hafnium_ingot_from_smelting_hafnium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

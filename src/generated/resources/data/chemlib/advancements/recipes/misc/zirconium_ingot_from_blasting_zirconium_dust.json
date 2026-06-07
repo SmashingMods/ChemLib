@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:zirconium_ingot_from_blasting_zirconium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

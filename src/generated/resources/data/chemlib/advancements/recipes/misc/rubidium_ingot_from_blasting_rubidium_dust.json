@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:rubidium_ingot_from_blasting_rubidium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

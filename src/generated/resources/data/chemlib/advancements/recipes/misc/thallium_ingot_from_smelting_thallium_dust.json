@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:thallium_ingot_from_smelting_thallium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

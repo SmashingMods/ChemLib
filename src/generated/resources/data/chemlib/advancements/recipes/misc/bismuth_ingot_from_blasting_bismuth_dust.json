@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:bismuth_ingot_from_blasting_bismuth_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

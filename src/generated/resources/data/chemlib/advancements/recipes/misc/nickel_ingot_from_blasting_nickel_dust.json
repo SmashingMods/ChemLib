@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:nickel_ingot_from_blasting_nickel_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

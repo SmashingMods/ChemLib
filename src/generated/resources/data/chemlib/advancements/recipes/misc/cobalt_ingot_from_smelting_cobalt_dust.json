@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:cobalt_ingot_from_smelting_cobalt_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

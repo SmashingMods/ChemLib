@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:beryllium_block_to_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

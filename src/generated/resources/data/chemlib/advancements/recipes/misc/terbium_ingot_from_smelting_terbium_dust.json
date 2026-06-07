@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:terbium_ingot_from_smelting_terbium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

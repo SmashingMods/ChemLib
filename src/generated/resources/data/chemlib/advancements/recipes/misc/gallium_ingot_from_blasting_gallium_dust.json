@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:gallium_ingot_from_blasting_gallium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

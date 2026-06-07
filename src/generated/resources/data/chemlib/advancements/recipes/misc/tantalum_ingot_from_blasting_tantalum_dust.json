@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:tantalum_ingot_from_blasting_tantalum_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

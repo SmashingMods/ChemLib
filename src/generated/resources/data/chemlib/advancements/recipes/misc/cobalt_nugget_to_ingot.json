@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:cobalt_nugget_to_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

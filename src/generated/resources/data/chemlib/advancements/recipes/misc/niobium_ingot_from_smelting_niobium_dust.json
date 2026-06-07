@@ -30,6 +30,5 @@
     "recipes": [
       "chemlib:niobium_ingot_from_smelting_niobium_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

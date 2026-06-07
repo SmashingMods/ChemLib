@@ -95,6 +95,9 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    // JUnit (org.junit.*) is not mirrored by blamejared; settings.gradle has no
+    // dependencyResolutionManagement, so the test deps need Maven Central here.
+    mavenCentral()
 }
 
 dependencies {
@@ -104,6 +107,15 @@ dependencies {
     // JEI: the common API is declared for compile time use.
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     // JEI: no NeoForge build for MC 1.20.2 (starts 1.20.4); @JeiPlugin compiles vs common-api but stays dormant at runtime this phase — D6.
+
+    // JUnit 5 for the plain-JUnit `test` source set. testImplementation extends implementation,
+    // so the Minecraft classpath (net.neoforged:neoforge above) is inherited by the test compile/runtime.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']

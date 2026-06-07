@@ -30,7 +30,8 @@ public interface Chemical extends ItemLike {
             toReturn = Optional.ofNullable(NeoForgeRegistries.FLUID_TYPES.get(ResourceLocation.tryParse(getChemicalName())));
         }
         if (toReturn.isEmpty()) {
-            toReturn = Optional.ofNullable(BuiltInRegistries.FLUID.get(ResourceLocation.tryParse(getChemicalName()))).map(Fluid::getFluidType);
+            ResourceLocation rl = ResourceLocation.tryParse(getChemicalName());
+            toReturn = (rl == null ? Optional.<Fluid>empty() : BuiltInRegistries.FLUID.getOptional(rl)).map(Fluid::getFluidType);
         }
         return toReturn;
     }

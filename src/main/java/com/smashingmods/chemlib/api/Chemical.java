@@ -5,11 +5,11 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public interface Chemical extends ItemLike {
@@ -30,7 +30,7 @@ public interface Chemical extends ItemLike {
             toReturn = Optional.ofNullable(NeoForgeRegistries.FLUID_TYPES.get(ResourceLocation.tryParse(getChemicalName())));
         }
         if (toReturn.isEmpty()) {
-            toReturn = Optional.of(Objects.requireNonNull(BuiltInRegistries.FLUID.get(ResourceLocation.tryParse(getChemicalName()))).getFluidType());
+            toReturn = Optional.ofNullable(BuiltInRegistries.FLUID.get(ResourceLocation.tryParse(getChemicalName()))).map(Fluid::getFluidType);
         }
         return toReturn;
     }

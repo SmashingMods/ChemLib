@@ -72,6 +72,6 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
-        return getColor();
+        return pTintIndex == 0 ? getColor() : -1;
     }
 }

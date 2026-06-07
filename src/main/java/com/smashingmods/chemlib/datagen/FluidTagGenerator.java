@@ -18,7 +18,9 @@ public class FluidTagGenerator extends FluidTagsProvider {
 
     @Override
     public void addTags(HolderLookup.Provider pProvider) {
-        FluidRegistry.getFluidsAsStream().forEach(fluid -> tag(FluidTags.WATER).add(fluid));
+        FluidRegistry.getFluidsAsStream()
+                .filter(fluid -> !fluid.getFluidType().isLighterThanAir())
+                .forEach(fluid -> tag(FluidTags.WATER).add(fluid));
     }
 
     @Override

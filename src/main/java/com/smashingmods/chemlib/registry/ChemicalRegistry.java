@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.MatterState;
@@ -72,7 +73,7 @@ public class ChemicalRegistry {
                     BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
                     BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                 }
-                FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
+                FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Chemical.parseColorHex(color), slopeFindDistance, decreasePerBlock);
             }
         }
     }
@@ -115,7 +116,7 @@ public class ChemicalRegistry {
                 int slopeFindDistance = properties.has("slope_find_distance") ? properties.get("slope_find_distance").getAsInt() : 4;
                 int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
-                FluidRegistry.registerFluid(compoundName, fluidTypePropertiesFactory(properties, ChemLib.MODID, compoundName), Integer.parseInt(color, 16) | 0xFF000000, slopeFindDistance, decreasePerBlock);
+                FluidRegistry.registerFluid(compoundName, fluidTypePropertiesFactory(properties, ChemLib.MODID, compoundName), Chemical.parseColorHex(color), slopeFindDistance, decreasePerBlock);
             }
         }
     }

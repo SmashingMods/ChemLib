@@ -1,6 +1,7 @@
 package com.smashingmods.chemlib.common.items;
 
 import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
@@ -48,7 +49,7 @@ public class ElementItem extends Item implements Element {
         this.matterState = pMatterState;
         this.metalType = pMetalType;
         this.artificial = pArtificial;
-        this.color = Integer.parseInt(pColor, 16) | 0xFF000000;
+        this.color = Chemical.parseColorHex(pColor);
         this.effects = pEffects;
     }
 

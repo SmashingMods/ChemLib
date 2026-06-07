@@ -1,6 +1,7 @@
 package com.smashingmods.chemlib.common.items;
 
 import com.smashingmods.chemlib.ChemLib;
+import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.Compound;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
@@ -48,7 +49,7 @@ public class CompoundItem extends Item implements Compound {
         this.matterState = pMatterState;
         this.components = pComponents;
         this.description = pDescription;
-        this.color = Integer.parseInt(pColor, 16) | 0xFF000000;
+        this.color = Chemical.parseColorHex(pColor);
         this.effects = pEffects;
     }
 

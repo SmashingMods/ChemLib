@@ -41,4 +41,16 @@ public interface Chemical extends ItemLike {
         int blue = (pColor & 0xFF) | minValue;
         return  green << 16 | red << 8 | blue;
     }
+
+    /**
+     * Parses a hex colour string from the chemical JSON into a packed ARGB int with full opacity.
+     * The high byte is force-set to {@code 0xFF} via {@code | 0xFF000000}, so the alpha is always
+     * fully opaque regardless of the parsed value (and overwrites any high byte already present,
+     * e.g. promethium's 7-digit {@code "62af0a7"} -> {@code 0xFF2af0a7}). Shared by the
+     * {@link com.smashingmods.chemlib.common.items.ElementItem}/{@link com.smashingmods.chemlib.common.items.CompoundItem}
+     * constructors and the fluid-colour argument in {@code ChemicalRegistry}.
+     */
+    static int parseColorHex(String pColor) {
+        return Integer.parseInt(pColor, 16) | 0xFF000000;
+    }
 }

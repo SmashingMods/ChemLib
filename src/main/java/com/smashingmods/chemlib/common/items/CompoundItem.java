@@ -11,7 +11,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.PlainTextContents;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -53,26 +52,6 @@ public class CompoundItem extends Item implements Compound {
         this.components = pComponents;
         this.description = pDescription;
         this.color = Chemical.parseColorHex(pColor);
-        this.effects = pEffects;
-    }
-
-    /**
-     * Compound Item constructor with supplied creative mode tab
-     * @param pCompoundName
-     * @param pMatterState
-     * @param pComponents
-     * @param pDescription
-     * @param pColor
-     * @param pEffects
-     * @param pTab
-     */
-    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects, CreativeModeTab pTab) {
-        super(new Item.Properties());
-        this.compoundName = pCompoundName;
-        this.matterState = pMatterState;
-        this.components = pComponents;
-        this.description = pDescription;
-        this.color = (int) Long.parseLong(pColor, 16);
         this.effects = pEffects;
     }
 

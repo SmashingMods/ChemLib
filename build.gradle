@@ -112,7 +112,9 @@ dependencies {
 
     // JEI: the common API is declared for compile time use.
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-    // JEI: no NeoForge build for MC 1.20.2 (starts 1.20.4); @JeiPlugin compiles vs common-api but stays dormant at runtime this phase — D6.
+    // JEI: re-enabled at runtime for 1.20.4 (the first MC version with a NeoForge JEI build). The NeoForge
+    // runtime jar is on the classpath for dev runs, so the @JeiPlugin activates rather than staying dormant.
+    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 
     // JUnit 5 for the plain-JUnit `test` source set. testImplementation extends implementation,
     // so the Minecraft classpath (net.neoforged:neoforge above) is inherited by the test compile/runtime.

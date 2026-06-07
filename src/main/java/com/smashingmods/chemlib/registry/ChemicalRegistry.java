@@ -123,15 +123,18 @@ public class ChemicalRegistry {
 
     public static List<MobEffectInstance> mobEffectsFactory(JsonObject object) {
         List<MobEffectInstance> effectsList = new ArrayList<>();
+        Set<ResourceLocation> seenEffects = new HashSet<>();
         JsonArray effects = object.getAsJsonArray("effect");
         if (effects != null) {
             for (JsonElement effect : effects) {
                 JsonObject effectObject = effect.getAsJsonObject();
-                String effectLocation = effectObject.get("location").getAsString();
+                ResourceLocation effectLocation = new ResourceLocation(effectObject.get("location").getAsString());
                 int effectDuration = effectObject.get("duration").getAsInt();
                 int effectAmplifier = effectObject.get("amplifier").getAsInt();
-                MobEffect mobEffect = MOB_EFFECT.get(new ResourceLocation(effectLocation));
-                if (mobEffect != null) {
+                MobEffect mobEffect = MOB_EFFECT.get(effectLocation);
+                if (mobEffect == null) {
+                    ChemLib.LOGGER.warn("Unable to resolve mob effect '{}' for chemical '{}'; skipping effect.", effectLocation, object.get("name").getAsString());
+                } else if (seenEffects.add(effectLocation)) {
                     effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
                 }
             }

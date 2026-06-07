@@ -31,7 +31,7 @@ public class ChemicalLiquidBlock extends LiquidBlock {
         AtomicReference<Chemical> atomicChemical = new AtomicReference<>();
         ItemRegistry.getElementByName(chemicalName).ifPresent(atomicChemical::set);
         ItemRegistry.getCompoundByName(chemicalName).ifPresent(atomicChemical::set);
-        return Optional.of(atomicChemical.get());
+        return Optional.ofNullable(atomicChemical.get());
     }
 
     @SuppressWarnings("deprecation")

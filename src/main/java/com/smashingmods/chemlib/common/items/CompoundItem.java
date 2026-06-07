@@ -9,7 +9,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
+import net.minecraft.network.chat.contents.PlainTextContents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -77,9 +77,9 @@ public class CompoundItem extends Item implements Compound {
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(MutableComponent.create(new LiteralContents(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
+        pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
         pTooltipComponents.add(MutableComponent.create(
-                new LiteralContents(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
+                PlainTextContents.create(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
     }
 
     public String getNamespace() {

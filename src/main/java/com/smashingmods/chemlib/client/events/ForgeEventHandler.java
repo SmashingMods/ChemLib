@@ -6,7 +6,7 @@ import com.smashingmods.chemlib.api.utility.FluidEffectsTooltipUtility;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
+import net.minecraft.network.chat.contents.PlainTextContents;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.BucketItem;
 import net.neoforged.api.distmarker.Dist;
@@ -37,6 +37,6 @@ public class ForgeEventHandler {
             event.getTooltipElements().add(formattedTextFunction.apply(textElement));
         }
         String namespace = BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).get().location().getNamespace();
-        event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(new LiteralContents(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
+        event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(PlainTextContents.create(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
     }
 }

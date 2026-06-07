@@ -5,7 +5,7 @@ import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
+import net.minecraft.network.chat.contents.PlainTextContents;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.AttributeModifierTemplate;
@@ -42,11 +42,11 @@ public class FluidEffectsTooltipUtility {
     public static void addTooltipEffects(List<MobEffectInstance> pEffects, List<Component> pTooltips) {
         List<Pair<Attribute, AttributeModifier>> attributeModifierPairList = Lists.newArrayList();
         if (pEffects.isEmpty()) {
-            pTooltips.add(MutableComponent.create(new LiteralContents(" ")));
+            pTooltips.add(MutableComponent.create(PlainTextContents.create(" ")));
             pTooltips.add(MutableComponent.create(new TranslatableContents("chemlib.effect.on_hit", null, TranslatableContents.NO_ARGS)).withStyle(ChatFormatting.UNDERLINE).append(":"));
             pTooltips.add(Component.translatable("effect.none").withStyle(ChatFormatting.GRAY));
         } else {
-            pTooltips.add(MutableComponent.create(new LiteralContents(" ")));
+            pTooltips.add(MutableComponent.create(PlainTextContents.create(" ")));
             pTooltips.add(MutableComponent.create(new TranslatableContents("chemlib.effect.on_hit", null, TranslatableContents.NO_ARGS)).withStyle(ChatFormatting.UNDERLINE).append(":"));
             for (MobEffectInstance effectInstance : pEffects) {
                 MutableComponent mutableComponent = Component.translatable(effectInstance.getDescriptionId());
@@ -63,7 +63,7 @@ public class FluidEffectsTooltipUtility {
                 if (effectInstance.getAmplifier() > 0 && effectInstance.getAmplifier() <= 20) {
                     mutableComponent = Component.translatable("potion.withAmplifier", mutableComponent, Component.translatable("potion.potency." + effectInstance.getAmplifier()));
                 } else {
-                    mutableComponent = Component.translatable("potion.withDuration", mutableComponent, MobEffectUtil.formatDuration(effectInstance, 1.0F));
+                    mutableComponent = Component.translatable("potion.withDuration", mutableComponent, MobEffectUtil.formatDuration(effectInstance, 1.0F, 20.0F));
                 }
                 pTooltips.add(mutableComponent.withStyle(effect.getCategory().getTooltipFormatting()));
             }

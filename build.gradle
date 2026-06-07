@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'idea'
-    id 'net.neoforged.gradle.userdev' version '7.0.116'
+    id 'net.neoforged.gradle.userdev' version '7.1.36'
     id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
@@ -48,10 +48,13 @@ runs {
                         "eula=true\n"
             }
         }
-        run.dependsOn acceptEula
+        run.dependsOn acceptEula.get()
     }
 
     client { run ->
+        // NeoGradle 7.1 no longer infers a run's type from the block name; declare it explicitly.
+        runType "client"
+
         // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
         systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
 
@@ -63,10 +66,11 @@ runs {
             from project.file('run-config/options.txt')
             into run.workingDirectory
         }
-        run.dependsOn silentOptions
+        run.dependsOn silentOptions.get()
     }
 
     server {
+        runType "server"
         systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
         programArgument '--nogui'
     }
@@ -75,10 +79,12 @@ runs {
     // By default, the server will crash when no gametests are provided.
     // The gametest system is also enabled by default for other run configs under the /test command.
     gameTestServer {
+        runType "gameTestServer"
         systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
     }
 
     data {
+        runType "data"
         // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
         programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }

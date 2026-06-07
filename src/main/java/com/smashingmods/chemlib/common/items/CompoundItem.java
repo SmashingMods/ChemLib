@@ -23,6 +23,8 @@ import org.apache.commons.lang3.StringUtils;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.Function;
 
 public class CompoundItem extends Item implements Compound {
 
@@ -136,12 +138,12 @@ public class CompoundItem extends Item implements Compound {
         return builder.toString();
     }
 
-    public String buildAbbreviation() {
+    public static String composeFormula(Map<String, Integer> components, Function<String, Optional<String>> elementAbbrev, Function<String, Optional<String>> compoundAbbrev) {
         StringBuilder builder = new StringBuilder();
 
         for (String name : components.keySet()) {
-            ItemRegistry.getElementByName(name).ifPresent(elementItem -> builder.append(elementItem.getAbbreviation()));
-            ItemRegistry.getCompoundByName(name).ifPresent(compoundItem -> builder.append(String.format("(%s)", compoundItem.getAbbreviation())));
+            elementAbbrev.apply(name).ifPresent(builder::append);
+            compoundAbbrev.apply(name).ifPresent(abbreviation -> builder.append(String.format("(%s)", abbreviation)));
 
             Integer count = components.get(name);
             if (count > 1) {
@@ -149,5 +151,11 @@ public class CompoundItem extends Item implements Compound {
             }
         }
         return builder.toString();
+    }
+
+    public String buildAbbreviation() {
+        return composeFormula(components,
+                name -> ItemRegistry.getElementByName(name).map(ElementItem::getAbbreviation),
+                name -> ItemRegistry.getCompoundByName(name).map(CompoundItem::getAbbreviation));
     }
 }

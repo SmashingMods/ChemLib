@@ -93,6 +93,10 @@ public class ElementItem extends Item implements Element {
     }
 
     public String getGroupName() {
+        return groupName(this.atomicNumber);
+    }
+
+    public static String groupName(int atomicNumber) {
         return switch(atomicNumber) {
             case 1, 6, 7, 8, 15, 16, 34 -> "Reactive Non-Metals";
             case 3, 11, 19, 37, 55, 87 -> "Alkali Metals";

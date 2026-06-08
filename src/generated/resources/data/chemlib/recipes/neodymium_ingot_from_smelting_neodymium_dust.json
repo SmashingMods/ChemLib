@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:neodymium_dust"
   },
-  "result": "chemlib:neodymium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:neodymium_ingot"
+  }
 }

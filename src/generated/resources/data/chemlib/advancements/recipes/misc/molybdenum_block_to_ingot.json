@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:molybdenum"
-            ]
+            "items": "chemlib:molybdenum"
           }
         ]
       },

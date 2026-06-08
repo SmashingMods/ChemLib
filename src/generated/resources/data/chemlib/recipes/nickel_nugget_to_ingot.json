@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:nickel_ingot"
+    "count": 1,
+    "id": "chemlib:nickel_ingot"
   }
 }

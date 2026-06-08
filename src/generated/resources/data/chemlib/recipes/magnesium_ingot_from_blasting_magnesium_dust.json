@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:magnesium_dust"
   },
-  "result": "chemlib:magnesium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:magnesium_ingot"
+  }
 }

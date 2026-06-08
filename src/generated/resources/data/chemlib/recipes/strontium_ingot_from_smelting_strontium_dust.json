@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:strontium_dust"
   },
-  "result": "chemlib:strontium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:strontium_ingot"
+  }
 }

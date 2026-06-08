@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:sodium_dust"
   },
-  "result": "chemlib:sodium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:sodium_ingot"
+  }
 }

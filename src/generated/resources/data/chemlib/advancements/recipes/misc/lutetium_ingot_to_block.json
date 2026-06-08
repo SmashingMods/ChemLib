@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:lutetium"
-            ]
+            "items": "chemlib:lutetium"
           }
         ]
       },

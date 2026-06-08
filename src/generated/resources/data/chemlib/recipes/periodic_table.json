@@ -15,6 +15,7 @@
     "HHH"
   ],
   "result": {
-    "item": "chemlib:periodic_table"
+    "count": 1,
+    "id": "chemlib:periodic_table"
   }
 }

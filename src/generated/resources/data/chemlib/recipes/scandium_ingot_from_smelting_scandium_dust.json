@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:scandium_dust"
   },
-  "result": "chemlib:scandium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:scandium_ingot"
+  }
 }

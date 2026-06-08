@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:hydrogen"
-            ]
+            "items": "chemlib:hydrogen"
           }
         ]
       },

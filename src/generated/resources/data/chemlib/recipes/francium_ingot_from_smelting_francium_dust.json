@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:francium_dust"
   },
-  "result": "chemlib:francium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:francium_ingot"
+  }
 }

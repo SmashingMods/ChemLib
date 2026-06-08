@@ -12,6 +12,7 @@
     "III"
   ],
   "result": {
-    "item": "chemlib:cobalt_metal_block"
+    "count": 1,
+    "id": "chemlib:cobalt_metal_block"
   }
 }

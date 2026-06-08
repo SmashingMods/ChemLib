@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:bismuth"
-            ]
+            "items": "chemlib:bismuth"
           }
         ]
       },

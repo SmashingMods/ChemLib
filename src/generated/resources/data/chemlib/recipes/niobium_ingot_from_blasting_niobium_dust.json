@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:niobium_dust"
   },
-  "result": "chemlib:niobium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:niobium_ingot"
+  }
 }

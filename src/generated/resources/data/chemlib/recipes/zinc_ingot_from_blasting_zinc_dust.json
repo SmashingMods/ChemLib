@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:zinc_dust"
   },
-  "result": "chemlib:zinc_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:zinc_ingot"
+  }
 }

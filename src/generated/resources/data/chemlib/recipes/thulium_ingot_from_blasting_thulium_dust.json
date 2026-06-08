@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:thulium_dust"
   },
-  "result": "chemlib:thulium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:thulium_ingot"
+  }
 }

@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:molybdenum_ingot"
+    "count": 1,
+    "id": "chemlib:molybdenum_ingot"
   }
 }

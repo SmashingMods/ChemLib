@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:uranium"
-            ]
+            "items": "chemlib:uranium"
           }
         ]
       },

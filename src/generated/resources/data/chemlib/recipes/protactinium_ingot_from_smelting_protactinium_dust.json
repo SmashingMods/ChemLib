@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:protactinium_dust"
   },
-  "result": "chemlib:protactinium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:protactinium_ingot"
+  }
 }

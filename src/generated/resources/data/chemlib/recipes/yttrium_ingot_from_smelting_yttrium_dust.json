@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:yttrium_dust"
   },
-  "result": "chemlib:yttrium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:yttrium_ingot"
+  }
 }

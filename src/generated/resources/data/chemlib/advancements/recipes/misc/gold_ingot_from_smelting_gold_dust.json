@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:gold_dust"
-            ]
+            "items": "chemlib:gold_dust"
           }
         ]
       },

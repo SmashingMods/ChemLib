@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:beryllium_dust"
   },
-  "result": "chemlib:beryllium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:beryllium_ingot"
+  }
 }

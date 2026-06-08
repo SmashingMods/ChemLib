@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:hafnium"
-            ]
+            "items": "chemlib:hafnium"
           }
         ]
       },

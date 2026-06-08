@@ -12,6 +12,7 @@
     "III"
   ],
   "result": {
-    "item": "chemlib:zirconium_metal_block"
+    "count": 1,
+    "id": "chemlib:zirconium_metal_block"
   }
 }

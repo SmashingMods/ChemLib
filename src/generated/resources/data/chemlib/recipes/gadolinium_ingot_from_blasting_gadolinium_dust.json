@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:gadolinium_dust"
   },
-  "result": "chemlib:gadolinium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:gadolinium_ingot"
+  }
 }

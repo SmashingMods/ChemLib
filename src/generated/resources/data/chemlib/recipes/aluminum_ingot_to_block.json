@@ -12,6 +12,7 @@
     "III"
   ],
   "result": {
-    "item": "chemlib:aluminum_metal_block"
+    "count": 1,
+    "id": "chemlib:aluminum_metal_block"
   }
 }

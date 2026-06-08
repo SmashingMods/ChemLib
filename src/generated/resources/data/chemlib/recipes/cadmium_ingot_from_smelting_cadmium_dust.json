@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:cadmium_dust"
   },
-  "result": "chemlib:cadmium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:cadmium_ingot"
+  }
 }

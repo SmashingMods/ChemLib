@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:aluminum_ingot"
+    "count": 1,
+    "id": "chemlib:aluminum_ingot"
   }
 }

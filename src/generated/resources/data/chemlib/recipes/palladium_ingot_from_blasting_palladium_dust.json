@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:palladium_dust"
   },
-  "result": "chemlib:palladium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:palladium_ingot"
+  }
 }

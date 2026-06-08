@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:dysprosium_dust"
   },
-  "result": "chemlib:dysprosium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:dysprosium_ingot"
+  }
 }

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:uranium_dust"
   },
-  "result": "chemlib:uranium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:uranium_ingot"
+  }
 }

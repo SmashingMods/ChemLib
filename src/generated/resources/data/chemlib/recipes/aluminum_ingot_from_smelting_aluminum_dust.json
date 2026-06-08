@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:aluminum_dust"
   },
-  "result": "chemlib:aluminum_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:aluminum_ingot"
+  }
 }

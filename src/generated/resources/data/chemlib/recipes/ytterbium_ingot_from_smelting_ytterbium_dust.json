@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:ytterbium_dust"
   },
-  "result": "chemlib:ytterbium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:ytterbium_ingot"
+  }
 }

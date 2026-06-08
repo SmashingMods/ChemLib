@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:lithium_dust"
   },
-  "result": "chemlib:lithium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:lithium_ingot"
+  }
 }

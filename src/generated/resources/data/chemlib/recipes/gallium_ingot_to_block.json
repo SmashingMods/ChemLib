@@ -12,6 +12,7 @@
     "III"
   ],
   "result": {
-    "item": "chemlib:gallium_metal_block"
+    "count": 1,
+    "id": "chemlib:gallium_metal_block"
   }
 }

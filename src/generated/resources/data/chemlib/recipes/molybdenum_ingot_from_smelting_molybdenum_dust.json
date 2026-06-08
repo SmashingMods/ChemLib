@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:molybdenum_dust"
   },
-  "result": "chemlib:molybdenum_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:molybdenum_ingot"
+  }
 }

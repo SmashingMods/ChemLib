@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:holmium_dust"
   },
-  "result": "chemlib:holmium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:holmium_ingot"
+  }
 }

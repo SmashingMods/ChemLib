@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:tungsten_dust"
   },
-  "result": "chemlib:tungsten_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:tungsten_ingot"
+  }
 }

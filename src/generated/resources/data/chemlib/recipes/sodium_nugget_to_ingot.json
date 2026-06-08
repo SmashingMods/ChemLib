@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:sodium_ingot"
+    "count": 1,
+    "id": "chemlib:sodium_ingot"
   }
 }

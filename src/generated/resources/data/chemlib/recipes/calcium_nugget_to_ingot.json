@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:calcium_ingot"
+    "count": 1,
+    "id": "chemlib:calcium_ingot"
   }
 }

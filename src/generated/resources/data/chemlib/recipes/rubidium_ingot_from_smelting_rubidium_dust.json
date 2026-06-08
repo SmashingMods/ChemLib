@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:rubidium_dust"
   },
-  "result": "chemlib:rubidium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:rubidium_ingot"
+  }
 }

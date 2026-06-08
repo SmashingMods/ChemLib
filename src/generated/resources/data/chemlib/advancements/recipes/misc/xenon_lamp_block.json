@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:xenon"
-            ]
+            "items": "chemlib:xenon"
           }
         ]
       },

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:lanthanum"
-            ]
+            "items": "chemlib:lanthanum"
           }
         ]
       },

@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:actinium"
-            ]
+            "items": "chemlib:actinium"
           }
         ]
       },

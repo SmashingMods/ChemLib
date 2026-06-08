@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:titanium_dust"
   },
-  "result": "chemlib:titanium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:titanium_ingot"
+  }
 }

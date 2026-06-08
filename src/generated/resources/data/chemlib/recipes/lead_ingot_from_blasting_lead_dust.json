@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:lead_dust"
   },
-  "result": "chemlib:lead_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:lead_ingot"
+  }
 }

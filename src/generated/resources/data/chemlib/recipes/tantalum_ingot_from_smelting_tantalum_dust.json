@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:tantalum_dust"
   },
-  "result": "chemlib:tantalum_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:tantalum_ingot"
+  }
 }

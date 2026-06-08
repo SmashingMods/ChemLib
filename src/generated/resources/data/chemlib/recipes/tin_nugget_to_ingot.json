@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:tin_ingot"
+    "count": 1,
+    "id": "chemlib:tin_ingot"
   }
 }

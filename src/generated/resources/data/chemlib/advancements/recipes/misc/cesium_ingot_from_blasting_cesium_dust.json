@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:cesium"
-            ]
+            "items": "chemlib:cesium"
           }
         ]
       },

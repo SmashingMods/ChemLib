@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:silver_ingot"
+    "count": 1,
+    "id": "chemlib:silver_ingot"
   }
 }

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:barium_dust"
   },
-  "result": "chemlib:barium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:barium_ingot"
+  }
 }

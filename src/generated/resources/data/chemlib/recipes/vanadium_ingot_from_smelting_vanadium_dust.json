@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:vanadium_dust"
   },
-  "result": "chemlib:vanadium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:vanadium_ingot"
+  }
 }

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:ruthenium_dust"
   },
-  "result": "chemlib:ruthenium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:ruthenium_ingot"
+  }
 }

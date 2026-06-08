@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:chromium_dust"
   },
-  "result": "chemlib:chromium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:chromium_ingot"
+  }
 }

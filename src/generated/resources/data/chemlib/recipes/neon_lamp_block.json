@@ -6,7 +6,7 @@
       "item": "chemlib:neon"
     },
     "G": {
-      "tag": "forge:glass"
+      "tag": "c:glass_blocks"
     }
   },
   "pattern": [
@@ -15,6 +15,7 @@
     "GEG"
   ],
   "result": {
-    "item": "chemlib:neon_lamp_block"
+    "count": 1,
+    "id": "chemlib:neon_lamp_block"
   }
 }

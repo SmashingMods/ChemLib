@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:osmium_dust"
   },
-  "result": "chemlib:osmium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:osmium_ingot"
+  }
 }

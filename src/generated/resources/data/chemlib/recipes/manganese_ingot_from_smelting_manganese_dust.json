@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:manganese_dust"
   },
-  "result": "chemlib:manganese_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:manganese_ingot"
+  }
 }

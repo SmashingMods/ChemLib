@@ -12,6 +12,7 @@
     "III"
   ],
   "result": {
-    "item": "chemlib:titanium_metal_block"
+    "count": 1,
+    "id": "chemlib:titanium_metal_block"
   }
 }

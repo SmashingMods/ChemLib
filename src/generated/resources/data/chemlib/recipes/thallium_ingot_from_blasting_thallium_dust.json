@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:thallium_dust"
   },
-  "result": "chemlib:thallium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:thallium_ingot"
+  }
 }

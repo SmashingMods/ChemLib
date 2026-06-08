@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:rubidium"
-            ]
+            "items": "chemlib:rubidium"
           }
         ]
       },

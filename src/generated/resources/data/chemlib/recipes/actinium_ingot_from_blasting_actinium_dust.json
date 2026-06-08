@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:actinium_dust"
   },
-  "result": "chemlib:actinium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:actinium_ingot"
+  }
 }

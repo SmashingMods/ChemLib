@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:praseodymium"
-            ]
+            "items": "chemlib:praseodymium"
           }
         ]
       },

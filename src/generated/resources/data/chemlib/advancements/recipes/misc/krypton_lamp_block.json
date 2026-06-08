@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:krypton"
-            ]
+            "items": "chemlib:krypton"
           }
         ]
       },

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:potassium_dust"
   },
-  "result": "chemlib:potassium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:potassium_ingot"
+  }
 }

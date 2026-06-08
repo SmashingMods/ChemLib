@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:europium_dust"
   },
-  "result": "chemlib:europium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:europium_ingot"
+  }
 }

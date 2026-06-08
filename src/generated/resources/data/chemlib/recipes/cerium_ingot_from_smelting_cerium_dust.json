@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:cerium_dust"
   },
-  "result": "chemlib:cerium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:cerium_ingot"
+  }
 }

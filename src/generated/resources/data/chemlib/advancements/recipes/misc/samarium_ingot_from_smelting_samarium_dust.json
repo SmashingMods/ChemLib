@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:samarium"
-            ]
+            "items": "chemlib:samarium"
           }
         ]
       },

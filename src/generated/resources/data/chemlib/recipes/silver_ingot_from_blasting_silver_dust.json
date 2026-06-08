@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:silver_dust"
   },
-  "result": "chemlib:silver_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:silver_ingot"
+  }
 }

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:indium_dust"
   },
-  "result": "chemlib:indium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:indium_ingot"
+  }
 }

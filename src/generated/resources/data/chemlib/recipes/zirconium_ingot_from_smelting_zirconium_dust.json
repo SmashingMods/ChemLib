@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:zirconium_dust"
   },
-  "result": "chemlib:zirconium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:zirconium_ingot"
+  }
 }

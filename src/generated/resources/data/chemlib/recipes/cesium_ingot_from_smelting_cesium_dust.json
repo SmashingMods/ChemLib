@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:cesium_dust"
   },
-  "result": "chemlib:cesium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:cesium_ingot"
+  }
 }

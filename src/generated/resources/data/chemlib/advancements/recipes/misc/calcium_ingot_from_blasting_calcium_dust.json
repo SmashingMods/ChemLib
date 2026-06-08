@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:calcium"
-            ]
+            "items": "chemlib:calcium"
           }
         ]
       },

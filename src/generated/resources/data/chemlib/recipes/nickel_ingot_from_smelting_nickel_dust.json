@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:nickel_dust"
   },
-  "result": "chemlib:nickel_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:nickel_ingot"
+  }
 }

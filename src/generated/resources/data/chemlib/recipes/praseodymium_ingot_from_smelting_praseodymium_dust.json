@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:praseodymium_dust"
   },
-  "result": "chemlib:praseodymium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:praseodymium_ingot"
+  }
 }

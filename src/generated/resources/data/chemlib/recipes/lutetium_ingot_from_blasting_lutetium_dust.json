@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:lutetium_dust"
   },
-  "result": "chemlib:lutetium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:lutetium_ingot"
+  }
 }

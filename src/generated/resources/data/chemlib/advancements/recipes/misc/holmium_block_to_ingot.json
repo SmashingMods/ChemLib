@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:holmium"
-            ]
+            "items": "chemlib:holmium"
           }
         ]
       },

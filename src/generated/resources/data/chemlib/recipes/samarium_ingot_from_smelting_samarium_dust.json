@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:samarium_dust"
   },
-  "result": "chemlib:samarium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:samarium_ingot"
+  }
 }

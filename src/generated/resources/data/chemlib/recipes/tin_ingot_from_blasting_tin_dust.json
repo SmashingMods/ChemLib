@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:tin_dust"
   },
-  "result": "chemlib:tin_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:tin_ingot"
+  }
 }

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:calcium_dust"
   },
-  "result": "chemlib:calcium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:calcium_ingot"
+  }
 }

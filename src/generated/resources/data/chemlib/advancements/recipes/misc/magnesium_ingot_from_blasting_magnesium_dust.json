@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:magnesium"
-            ]
+            "items": "chemlib:magnesium"
           }
         ]
       },

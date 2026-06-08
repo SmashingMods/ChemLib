@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:chromium"
-            ]
+            "items": "chemlib:chromium"
           }
         ]
       },

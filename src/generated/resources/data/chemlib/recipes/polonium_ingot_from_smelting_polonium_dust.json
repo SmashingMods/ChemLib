@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:polonium_dust"
   },
-  "result": "chemlib:polonium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:polonium_ingot"
+  }
 }

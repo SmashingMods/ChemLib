@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:bismuth_dust"
   },
-  "result": "chemlib:bismuth_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:bismuth_ingot"
+  }
 }

@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:hafnium_dust"
   },
-  "result": "chemlib:hafnium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:hafnium_ingot"
+  }
 }

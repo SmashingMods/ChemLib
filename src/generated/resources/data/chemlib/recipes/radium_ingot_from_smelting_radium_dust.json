@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:radium_dust"
   },
-  "result": "chemlib:radium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:radium_ingot"
+  }
 }

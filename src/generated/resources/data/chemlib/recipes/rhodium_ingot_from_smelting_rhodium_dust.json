@@ -6,5 +6,8 @@
   "ingredient": {
     "item": "chemlib:rhodium_dust"
   },
-  "result": "chemlib:rhodium_ingot"
+  "result": {
+    "count": 1,
+    "id": "chemlib:rhodium_ingot"
+  }
 }

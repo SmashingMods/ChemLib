@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "chemlib:platinum"
-            ]
+            "items": "chemlib:platinum"
           }
         ]
       },

@@ -12,6 +12,7 @@
     "NNN"
   ],
   "result": {
-    "item": "chemlib:magnesium_ingot"
+    "count": 1,
+    "id": "chemlib:magnesium_ingot"
   }
 }

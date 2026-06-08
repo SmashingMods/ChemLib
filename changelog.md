@@ -1,6 +1,5 @@
-# ChemLib 1.20.1-2.0.19
+# ChemLib 1.20.4-2.1.2 RELEASE
 
 Changes:
-
-- Fix all calls to toUpperCase() passing in Locale.ROOT. This should fix issues with the Turkish language loading the mod.
-- Upgrade Forge version.
+- Updated to Minecraft 1.20.4.
+- JEI support is back: ChemLib's elements and compounds show up in the recipe viewer again.

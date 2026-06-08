@@ -55,18 +55,18 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 		if (pStack.getItem() instanceof ElementItem elementItem) {
 			switch (elementItem.getMatterState()) {
 				case LIQUID ->
-						modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_liquid_model"), "inventory");
+						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_liquid_model"));
 				case GAS ->
-						modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_gas_model"), "inventory");
+						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_gas_model"));
 				default ->
-						modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_solid_model"), "inventory");
+						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_solid_model"));
 			}
 		} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
 			switch (chemicalItem.getItemType()) {
-				case DUST -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_dust_model"), "inventory");
-				case NUGGET -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_nugget_model"), "inventory");
-				case INGOT -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_ingot_model"), "inventory");
-				case PLATE -> modelResourceLocation = new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_plate_model"), "inventory");
+				case DUST -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_dust_model"));
+				case NUGGET -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_nugget_model"));
+				case INGOT -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_ingot_model"));
+				case PLATE -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_plate_model"));
 			}
 		}
 

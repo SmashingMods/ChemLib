@@ -124,7 +124,7 @@ dependencies {
 
 tasks.named('test', Test) { useJUnitPlatform() }
 
-def resourceTargets = ['META-INF/mods.toml', 'pack.mcmeta']
+def resourceTargets = ['META-INF/neoforge.mods.toml', 'pack.mcmeta']
 def replaceProperties = [
         minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
         neo_version: neo_version, neo_version_range: neo_version_range,

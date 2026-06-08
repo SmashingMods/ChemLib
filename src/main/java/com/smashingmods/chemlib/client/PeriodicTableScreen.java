@@ -30,6 +30,11 @@ public class PeriodicTableScreen extends Screen {
     @Override
     public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
 
+        // Draw the vanilla background (and its blur, since 1.21) first, then blit the table on top of it.
+        // Calling super.render last would run the blur shader over the already-drawn table and overdraw it
+        // with the menu background, leaving the table looking blurred / hidden under a layer.
+        super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
+
         int imageWidth = 2000;
         int imageHeight = 1016;
         int displayWidth = imageWidth / 4;
@@ -90,7 +95,6 @@ public class PeriodicTableScreen extends Screen {
                 y += boxHeight;
             }
         }
-        super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
     }
 
     private void drawElementTip(GuiGraphics pGuiGraphics, Element pElement) {

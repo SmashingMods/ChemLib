@@ -72,6 +72,10 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     @SuppressWarnings("unused")
     public int getColor(ItemStack pItemStack, int pTintIndex) {
-        return pTintIndex == 0 ? getColor() : -1;
+        // Force full opacity on the tint: clampMinColorValue produces a 24-bit RGB value (high byte 0),
+        // and since 1.21 the item renderer honours the tint's alpha channel (FastColor.ARGB32.alpha),
+        // so a 0 high byte renders the tinted block-item layer fully transparent. ElementItem carries
+        // 0xFF via parseColorHex for the same reason. (Placed blocks use the opaque getBlockColor path.)
+        return pTintIndex == 0 ? getColor() | 0xFF000000 : -1;
     }
 }

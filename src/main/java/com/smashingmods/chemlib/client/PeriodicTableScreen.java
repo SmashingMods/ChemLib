@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @OnlyIn(Dist.CLIENT)
 public class PeriodicTableScreen extends Screen {
 
-    private static final ResourceLocation PERIODIC_TABLE = new ResourceLocation(ChemLib.MODID, "textures/gui/periodic_table.png");
+    private static final ResourceLocation PERIODIC_TABLE = ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "textures/gui/periodic_table.png");
 
     public PeriodicTableScreen() {
         super(MutableComponent.create(new TranslatableContents("item.chemlib.periodic_table", null, TranslatableContents.NO_ARGS)));
@@ -94,7 +94,7 @@ public class PeriodicTableScreen extends Screen {
     }
 
     private void drawElementTip(GuiGraphics pGuiGraphics, Element pElement) {
-        pGuiGraphics.blit(new ResourceLocation(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())), ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 274, 80, 0, 0, 40, 40, 40, 40);
+        pGuiGraphics.blit(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())), ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 274, 80, 0, 0, 40, 40, 40, 40);
     }
 
     @Override

@@ -44,12 +44,12 @@ public class ClientEventHandler {
 
 	@SubscribeEvent
 	public static void onModelRegister(ModelEvent.RegisterAdditional event) {
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_dust_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_nugget_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_ingot_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_plate_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_solid_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_liquid_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "element_gas_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_dust_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_nugget_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_ingot_model"), "inventory"));
+        event.register(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "chemical_plate_model"), "inventory"));
 	}
 }

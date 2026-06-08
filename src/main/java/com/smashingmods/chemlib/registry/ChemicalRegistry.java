@@ -61,7 +61,7 @@ public class ChemicalRegistry {
             derived.itemTypes().forEach(itemType -> ItemRegistry.registerItemByType(registryObject, itemType));
 
             if (derived.metalBlock()) {
-                BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
+                BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
                 BlockRegistry.getRegistryObjectByName(String.format("%s_metal_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
             }
 
@@ -71,7 +71,7 @@ public class ChemicalRegistry {
                 int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
                 if (derived.lampBlock()) {
-                    BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
+                    BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
                     BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                 }
                 FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Chemical.parseColorHex(color), slopeFindDistance, decreasePerBlock);
@@ -129,7 +129,7 @@ public class ChemicalRegistry {
         if (effects != null) {
             for (JsonElement effect : effects) {
                 JsonObject effectObject = effect.getAsJsonObject();
-                ResourceLocation effectLocation = new ResourceLocation(effectObject.get("location").getAsString());
+                ResourceLocation effectLocation = ResourceLocation.parse(effectObject.get("location").getAsString());
                 int effectDuration = effectObject.get("duration").getAsInt();
                 int effectAmplifier = effectObject.get("amplifier").getAsInt();
                 Optional<Holder.Reference<MobEffect>> mobEffect = MOB_EFFECT.getHolder(effectLocation);

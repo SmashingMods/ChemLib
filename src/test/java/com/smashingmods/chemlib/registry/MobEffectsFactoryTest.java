@@ -32,8 +32,8 @@ import static org.junit.jupiter.api.Assertions.assertSame;
  */
 class MobEffectsFactoryTest {
 
-    private static final ResourceLocation POISON = new ResourceLocation("minecraft", "poison");
-    private static final ResourceLocation WEAKNESS = new ResourceLocation("minecraft", "weakness");
+    private static final ResourceLocation POISON = ResourceLocation.fromNamespaceAndPath("minecraft", "poison");
+    private static final ResourceLocation WEAKNESS = ResourceLocation.fromNamespaceAndPath("minecraft", "weakness");
 
     @BeforeAll
     static void boot() {

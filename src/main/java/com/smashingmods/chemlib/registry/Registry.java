@@ -17,7 +17,6 @@ public class Registry {
         FluidRegistry.register(pModEventBus);
         ItemRegistry.register(pModEventBus);
         TabsRegistry.register(pModEventBus);
-        PaintingsRegistry.register(pModEventBus);
     }
 
     public static JsonObject getStreamAsJsonObject(String pPath) {

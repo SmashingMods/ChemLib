@@ -78,12 +78,12 @@ class MobEffectsFactoryTest {
         MobEffect expectedWeakness = BuiltInRegistries.MOB_EFFECT.get(WEAKNESS);
 
         MobEffectInstance poison = result.get(0);
-        assertSame(expectedPoison, poison.getEffect());
+        assertSame(expectedPoison, poison.getEffect().value());
         assertEquals(600, poison.getDuration());
         assertEquals(1, poison.getAmplifier());
 
         MobEffectInstance weakness = result.get(1);
-        assertSame(expectedWeakness, weakness.getEffect());
+        assertSame(expectedWeakness, weakness.getEffect().value());
     }
 
     @Test

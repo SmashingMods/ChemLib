@@ -13,6 +13,7 @@ import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import com.smashingmods.chemlib.common.blocks.LampBlock;
 import com.smashingmods.chemlib.common.items.CompoundItem;
 import com.smashingmods.chemlib.common.items.ElementItem;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffect;
@@ -131,11 +132,11 @@ public class ChemicalRegistry {
                 ResourceLocation effectLocation = new ResourceLocation(effectObject.get("location").getAsString());
                 int effectDuration = effectObject.get("duration").getAsInt();
                 int effectAmplifier = effectObject.get("amplifier").getAsInt();
-                MobEffect mobEffect = MOB_EFFECT.get(effectLocation);
-                if (mobEffect == null) {
+                Optional<Holder.Reference<MobEffect>> mobEffect = MOB_EFFECT.getHolder(effectLocation);
+                if (mobEffect.isEmpty()) {
                     ChemLib.LOGGER.warn("Unable to resolve mob effect '{}' for chemical '{}'; skipping effect.", effectLocation, object.get("name").getAsString());
                 } else if (seenEffects.add(effectLocation)) {
-                    effectsList.add(new MobEffectInstance(mobEffect, effectDuration, effectAmplifier));
+                    effectsList.add(new MobEffectInstance(mobEffect.get(), effectDuration, effectAmplifier));
                 }
             }
         }

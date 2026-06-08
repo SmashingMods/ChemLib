@@ -29,38 +29,38 @@ public class ItemTagGenerator extends ItemTagsProvider {
         ItemRegistry.getChemicalItems().forEach(item -> {
             String type = item.getItemType().getSerializedName();
             String name = item.getChemicalName();
-            TagKey<Item> key = TagKey.create(Registries.ITEM, new ResourceLocation("forge", String.format("%ss/%s", type, name)));
+            TagKey<Item> key = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", String.format("%ss/%s", type, name)));
             tag(key).add(item);
         });
 
         ItemRegistry.getChemicalBlockItems().forEach(item -> {
             if (item.getMatterState().equals(MatterState.SOLID)) {
                 String name = item.getChemicalName();
-                TagKey<Item> key = TagKey.create(Registries.ITEM, new ResourceLocation("forge", String.format("storage_blocks/%s", name)));
+                TagKey<Item> key = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", String.format("storage_blocks/%s", name)));
                 tag(key).add(item);
             }
         });
 
         ItemRegistry.getChemicalItemByNameAndType("potassium_nitrate", ChemicalItemType.COMPOUND).ifPresent(compound -> {
-            ResourceLocation niter = new ResourceLocation("forge", "dusts/niter");
+            ResourceLocation niter = ResourceLocation.fromNamespaceAndPath("c", "dusts/niter");
             TagKey<Item> key = TagKey.create(Registries.ITEM, niter);
             tag(key).add(compound);
         });
 
         ItemRegistry.getChemicalItemByNameAndType("hydroxylapatite", ChemicalItemType.COMPOUND).ifPresent(compound -> {
-            ResourceLocation niter = new ResourceLocation("forge", "dusts/apatite");
+            ResourceLocation niter = ResourceLocation.fromNamespaceAndPath("c", "dusts/apatite");
             TagKey<Item> key = TagKey.create(Registries.ITEM, niter);
             tag(key).add(compound);
         });
 
         ItemRegistry.getChemicalItemByNameAndType("cellulose", ChemicalItemType.COMPOUND).ifPresent(compound -> {
-            ResourceLocation sawdust = new ResourceLocation("forge", "sawdust");
+            ResourceLocation sawdust = ResourceLocation.fromNamespaceAndPath("c", "sawdust");
             TagKey<Item> key = TagKey.create(Registries.ITEM, sawdust);
             tag(key).add(compound);
         });
 
         ItemRegistry.getChemicalItemByNameAndType("mercury_sulfide", ChemicalItemType.COMPOUND).ifPresent(compound -> {
-            ResourceLocation sawdust = new ResourceLocation("forge", "dusts/cinnabar");
+            ResourceLocation sawdust = ResourceLocation.fromNamespaceAndPath("c", "dusts/cinnabar");
             TagKey<Item> key = TagKey.create(Registries.ITEM, sawdust);
             tag(key).add(compound);
         });

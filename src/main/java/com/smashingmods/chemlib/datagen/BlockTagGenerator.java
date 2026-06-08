@@ -32,7 +32,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
         ItemRegistry.getChemicalBlockItems().forEach(item -> {
             if (item.getMatterState().equals(MatterState.SOLID)) {
                 String name = item.getChemicalName();
-                TagKey<Block> key = TagKey.create(Registries.BLOCK, new ResourceLocation("forge", String.format("storage_blocks/%s", name)));
+                TagKey<Block> key = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", String.format("storage_blocks/%s", name)));
                 tag(key).add(item.getBlock());
             }
         });

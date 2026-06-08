@@ -16,13 +16,12 @@ import net.minecraft.world.level.material.PushReaction;
 
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Supplier;
 
 public class ChemicalLiquidBlock extends LiquidBlock {
 
     private final String chemicalName;
 
-    public ChemicalLiquidBlock(Supplier<? extends FlowingFluid> pFluid, String pChemicalName) {
+    public ChemicalLiquidBlock(FlowingFluid pFluid, String pChemicalName) {
         super(pFluid, BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().pushReaction(PushReaction.DESTROY).liquid());
         this.chemicalName = pChemicalName;
     }

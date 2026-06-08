@@ -30,7 +30,7 @@ public class RecipeGenerator extends RecipeProvider {
         BlockRegistry.getChemicalBlocksByType(ChemicalBlockType.LAMP).forEach(block -> {
             Chemical chemical = block.getChemical();
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, block)
-                    .define('G', Tags.Items.GLASS)
+                    .define('G', Tags.Items.GLASS_BLOCKS)
                     .define('E', chemical)
                     .pattern("GEG")
                     .pattern("EEE")

@@ -12,19 +12,18 @@ import net.minecraft.world.item.BucketItem;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.function.Function;
 
-@Mod.EventBusSubscriber(modid = ChemLib.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ChemLib.MODID, value = Dist.CLIENT)
 public class ForgeEventHandler {
 
     @SubscribeEvent
     public static void onRenderTooltip(RenderTooltipEvent.GatherComponents event) {
         if (event.getItemStack().getItem() instanceof BucketItem bucket
-                && BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).isPresent()
-                && BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).get().location().getNamespace().equals(ChemLib.MODID)) {
+                && BuiltInRegistries.ITEM.getKey(bucket).getNamespace().equals(ChemLib.MODID)) {
 
             gatherTooltipComponents(event, bucket);
         }
@@ -36,7 +35,7 @@ public class ForgeEventHandler {
         for (FormattedText textElement : FluidEffectsTooltipUtility.getBucketEffectTooltipComponents(event.getItemStack())) {
             event.getTooltipElements().add(formattedTextFunction.apply(textElement));
         }
-        String namespace = BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).get().location().getNamespace();
+        String namespace = BuiltInRegistries.ITEM.getKey(bucket).getNamespace();
         event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(PlainTextContents.create(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
     }
 }

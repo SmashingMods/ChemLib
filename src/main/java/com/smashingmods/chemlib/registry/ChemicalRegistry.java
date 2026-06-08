@@ -20,7 +20,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.neoforged.neoforge.common.SoundActions;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -150,7 +150,7 @@ public class ChemicalRegistry {
         int temperature = pObject.has("temperature") ? pObject.get("temperature").getAsInt() : 300;
         float motionScale = pObject.has("motion_scale") ? pObject.get("motion_scale").getAsFloat() : 0.014f;
         int fallDistanceModifier = pObject.has("fall_distance_modifier") ? pObject.get("fall_distance_modifier").getAsInt() : 0;
-        BlockPathTypes pathType = pObject.has("path_type") ? BlockPathTypes.valueOf(pObject.get("path_type").getAsString().toUpperCase(Locale.ROOT)) : BlockPathTypes.WATER;
+        PathType pathType = pObject.has("path_type") ? PathType.valueOf(pObject.get("path_type").getAsString().toUpperCase(Locale.ROOT)) : PathType.WATER;
         boolean pushEntity = !pObject.has("push_entity") || pObject.get("push_entity").getAsBoolean();
         boolean canSwim = !pObject.has("can_swim") || pObject.get("can_swim").getAsBoolean();
         boolean canDrown = pObject.has("can_drown") && pObject.get("can_drown").getAsBoolean();

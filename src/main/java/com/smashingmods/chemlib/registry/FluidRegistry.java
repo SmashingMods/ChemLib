@@ -79,8 +79,8 @@ public class FluidRegistry {
 
         DeferredHolder<Fluid, FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", pName), () -> new BaseFlowingFluid.Source(ref.properties));
         DeferredHolder<Fluid, FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", pName), () -> new BaseFlowingFluid.Flowing(ref.properties));
-        DeferredHolder<Block, LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(pName, () -> new ChemicalLiquidBlock(fluidSource, pName));
-        DeferredHolder<Item, Item> bucket = BUCKETS.register(String.format("%s_bucket", pName), () -> new BucketItem(fluidSource, new Item.Properties().stacksTo(1)));
+        DeferredHolder<Block, LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(pName, () -> new ChemicalLiquidBlock(fluidSource.get(), pName));
+        DeferredHolder<Item, Item> bucket = BUCKETS.register(String.format("%s_bucket", pName), () -> new BucketItem(fluidSource.get(), new Item.Properties().stacksTo(1)));
 
         ref.properties = new BaseFlowingFluid.Properties(fluidType, fluidSource, fluidFlowing)
                 .slopeFindDistance(pSlopeFindDistance)
@@ -176,8 +176,7 @@ public class FluidRegistry {
     public static List<BucketItem> getElementBuckets() {
         Map<Integer, BucketItem> bucketMap = new TreeMap<>();
         for(BucketItem bucket : BUCKETS.getEntries().stream().map(DeferredHolder::get).map(item -> (BucketItem) item).toList()) {
-            String path = StringUtils.removeEnd(BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).get().location().getPath(), "_fluid");
-            ItemRegistry.getElementByName(path).ifPresent(elementItem -> bucketMap.put(elementItem.getAtomicNumber(), bucket));
+            ItemRegistry.getElementByName(getBucketChemicalName(bucket)).ifPresent(elementItem -> bucketMap.put(elementItem.getAtomicNumber(), bucket));
         }
         return bucketMap.values().stream().toList();
     }
@@ -185,16 +184,22 @@ public class FluidRegistry {
     public static List<BucketItem> getCompoundBuckets() {
         ArrayList<BucketItem> buckets = new ArrayList<>();
         for(BucketItem bucket : BUCKETS.getEntries().stream().map(DeferredHolder::get).map(item -> (BucketItem) item).toList()) {
-            String path = StringUtils.removeEnd(BuiltInRegistries.FLUID.getResourceKey(bucket.getFluid()).get().location().getPath(), "_fluid");
-            ItemRegistry.getCompoundByName(path).ifPresent(compoundItem -> buckets.add(bucket));
+            ItemRegistry.getCompoundByName(getBucketChemicalName(bucket)).ifPresent(compoundItem -> buckets.add(bucket));
         }
         return buckets;
     }
 
     public static List<BucketItem> getSortedCompoundBuckets() {
         List<BucketItem> buckets = getCompoundBuckets();
-        buckets.sort((BucketItem b1, BucketItem b2) -> b1.getFluid().getFluidType().toString().compareToIgnoreCase(b2.getFluid().getFluidType().toString()));
+        buckets.sort((BucketItem b1, BucketItem b2) -> getBucketChemicalName(b1).compareToIgnoreCase(getBucketChemicalName(b2)));
         return buckets;
+    }
+
+    // BucketItem#getFluid was removed in 1.20.6 and the fluid is no longer reachable from the item, so the
+    // chemical name is recovered from the bucket's own registry id instead: each bucket is registered as
+    // "<chemical>_bucket" alongside its "<chemical>_fluid", so stripping the suffix yields the same name.
+    private static String getBucketChemicalName(BucketItem pBucket) {
+        return StringUtils.removeEnd(BuiltInRegistries.ITEM.getKey(pBucket).getPath(), "_bucket");
     }
 
     public static void register(IEventBus eventBus) {

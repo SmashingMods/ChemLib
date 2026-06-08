@@ -1,12 +1,9 @@
 package com.smashingmods.chemlib.api;
 
-import net.minecraft.DetectedVersion;
-import net.minecraft.SharedConstants;
-import net.minecraft.server.Bootstrap;
+import com.smashingmods.chemlib.testsupport.BootstrappedTest;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.fluids.FluidType;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -29,13 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * {@code get(...)} -- which, being a {@code DefaultedRegistry}, would return the non-null {@code Fluids.EMPTY}
  * on a miss and so falsely report present to callers probing {@code isPresent()}.
  */
-class GetFluidTypeReferenceTest {
-
-    @BeforeAll
-    static void boot() {
-        SharedConstants.setVersion(DetectedVersion.BUILT_IN);
-        Bootstrap.bootStrap();
-    }
+class GetFluidTypeReferenceTest extends BootstrappedTest {
 
     /**
      * Minimal {@link Chemical} reporting {@code name} as its chemical name; only

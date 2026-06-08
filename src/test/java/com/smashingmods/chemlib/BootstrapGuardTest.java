@@ -1,11 +1,9 @@
 package com.smashingmods.chemlib;
 
-import net.minecraft.DetectedVersion;
-import net.minecraft.SharedConstants;
+import com.smashingmods.chemlib.testsupport.BootstrappedTest;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.Bootstrap;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,13 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * {@link Bootstrap#bootStrap()} populates the built-in registries, so plain-JUnit tests can exercise
  * registry-backed code.
  */
-class BootstrapGuardTest {
-
-    @BeforeAll
-    static void boot() {
-        SharedConstants.setVersion(DetectedVersion.BUILT_IN);
-        Bootstrap.bootStrap();
-    }
+class BootstrapGuardTest extends BootstrappedTest {
 
     @Test
     void bootstrapPopulatesItemRegistry() {

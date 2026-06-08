@@ -2,14 +2,11 @@ package com.smashingmods.chemlib.registry;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.DetectedVersion;
-import net.minecraft.SharedConstants;
+import com.smashingmods.chemlib.testsupport.BootstrappedTest;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.Bootstrap;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -30,16 +27,10 @@ import static org.junit.jupiter.api.Assertions.assertSame;
  * {@code minecraft:nausea} twice in the real data) collapses to a single instance keeping the FIRST
  * occurrence, while a distinct effect survives -- dedup is per-id, not a global cap.
  */
-class MobEffectsFactoryTest {
+class MobEffectsFactoryTest extends BootstrappedTest {
 
     private static final ResourceLocation POISON = ResourceLocation.fromNamespaceAndPath("minecraft", "poison");
     private static final ResourceLocation WEAKNESS = ResourceLocation.fromNamespaceAndPath("minecraft", "weakness");
-
-    @BeforeAll
-    static void boot() {
-        SharedConstants.setVersion(DetectedVersion.BUILT_IN);
-        Bootstrap.bootStrap();
-    }
 
     /** Builds a single {@code effect} JSON entry in the production shape. */
     private static JsonObject effect(ResourceLocation location, int duration, int amplifier) {

@@ -1,6 +1,5 @@
-# ChemLib 1.20.1-2.0.19
+# ChemLib 1.20.6-2.1.3 RELEASE
 
 Changes:
-
-- Fix all calls to toUpperCase() passing in Locale.ROOT. This should fix issues with the Turkish language loading the mod.
-- Upgrade Forge version.
+- Updated to Minecraft 1.20.6.
+- Now requires Java 21 (this comes with Minecraft 1.20.6 — make sure your launcher is using it).

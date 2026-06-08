@@ -1,6 +1,7 @@
-# ChemLib 1.20.1-2.0.19
+# ChemLib 1.20.2-2.1.1 RELEASE
+
+ChemLib is now on NeoForge! This is the first NeoForge release, for Minecraft 1.20.2. Note that old 1.20.1 (Forge) worlds are not compatible.
 
 Changes:
-
-- Fix all calls to toUpperCase() passing in Locale.ROOT. This should fix issues with the Turkish language loading the mod.
-- Upgrade Forge version.
+- Ported from Forge to NeoForge for Minecraft 1.20.2.
+- All elements, compounds, and items carry over from the previous version.

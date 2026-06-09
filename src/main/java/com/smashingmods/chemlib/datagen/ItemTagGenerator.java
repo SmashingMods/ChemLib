@@ -13,15 +13,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTagGenerator extends ItemTagsProvider {
 
-    public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, TagsProvider<Block> pBlockTagProvider, ExistingFileHelper pFileHelper) {
-        super(pOutput, pLookupProvider, pBlockTagProvider.contentsGetter(), ChemLib.MODID, pFileHelper);
+    public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, TagsProvider<Block> pBlockTagProvider) {
+        super(pOutput, pLookupProvider, pBlockTagProvider.contentsGetter(), ChemLib.MODID);
     }
 
     @Override

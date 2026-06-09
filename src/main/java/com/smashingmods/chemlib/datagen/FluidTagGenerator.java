@@ -6,14 +6,13 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.tags.FluidTags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
 public class FluidTagGenerator extends FluidTagsProvider {
 
-    public FluidTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, ExistingFileHelper existingFileHelper) {
-        super(pOutput, pLookupProvider, ChemLib.MODID, existingFileHelper);
+    public FluidTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider) {
+        super(pOutput, pLookupProvider, ChemLib.MODID);
     }
 
     @Override

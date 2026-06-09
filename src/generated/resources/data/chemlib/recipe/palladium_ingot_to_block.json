@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:palladium_ingot"
-    }
+    "I": "chemlib:palladium_ingot"
   },
   "pattern": [
     "III",

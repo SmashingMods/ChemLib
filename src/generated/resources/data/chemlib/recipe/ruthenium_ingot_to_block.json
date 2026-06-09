@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:ruthenium_ingot"
-    }
+    "I": "chemlib:ruthenium_ingot"
   },
   "pattern": [
     "III",

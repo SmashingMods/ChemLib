@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:rhenium_dust"
-  },
+  "ingredient": "chemlib:rhenium_dust",
   "result": {
     "count": 1,
     "id": "chemlib:rhenium_ingot"

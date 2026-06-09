@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:lutetium_nugget"
-    }
+    "N": "chemlib:lutetium_nugget"
   },
   "pattern": [
     "NNN",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "chemlib:cobalt_ingot"
-    }
+    "chemlib:cobalt_ingot"
   ],
   "result": {
     "count": 9,

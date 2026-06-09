@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:rhenium_ingot"
-    }
+    "I": "chemlib:rhenium_ingot"
   },
   "pattern": [
     "III",

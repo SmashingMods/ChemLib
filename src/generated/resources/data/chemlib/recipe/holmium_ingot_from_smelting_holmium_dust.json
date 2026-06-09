@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:holmium_dust"
-  },
+  "ingredient": "chemlib:holmium_dust",
   "result": {
     "count": 1,
     "id": "chemlib:holmium_ingot"

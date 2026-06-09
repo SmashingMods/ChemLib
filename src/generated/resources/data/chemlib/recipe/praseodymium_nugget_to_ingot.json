@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:praseodymium_nugget"
-    }
+    "N": "chemlib:praseodymium_nugget"
   },
   "pattern": [
     "NNN",

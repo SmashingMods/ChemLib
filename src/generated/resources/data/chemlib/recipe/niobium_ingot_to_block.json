@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:niobium_ingot"
-    }
+    "I": "chemlib:niobium_ingot"
   },
   "pattern": [
     "III",

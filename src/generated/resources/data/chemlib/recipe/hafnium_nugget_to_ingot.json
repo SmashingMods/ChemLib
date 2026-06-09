@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:hafnium_nugget"
-    }
+    "N": "chemlib:hafnium_nugget"
   },
   "pattern": [
     "NNN",

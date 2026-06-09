@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:barium_ingot"
-    }
+    "I": "chemlib:barium_ingot"
   },
   "pattern": [
     "III",

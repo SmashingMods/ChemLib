@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:yttrium_ingot"
-    }
+    "I": "chemlib:yttrium_ingot"
   },
   "pattern": [
     "III",

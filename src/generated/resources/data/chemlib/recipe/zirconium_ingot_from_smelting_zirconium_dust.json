@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:zirconium_dust"
-  },
+  "ingredient": "chemlib:zirconium_dust",
   "result": {
     "count": 1,
     "id": "chemlib:zirconium_ingot"

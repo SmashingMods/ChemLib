@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:titanium_dust"
-  },
+  "ingredient": "chemlib:titanium_dust",
   "result": {
     "count": 1,
     "id": "chemlib:titanium_ingot"

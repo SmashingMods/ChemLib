@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:sodium_ingot"
-    }
+    "I": "chemlib:sodium_ingot"
   },
   "pattern": [
     "III",

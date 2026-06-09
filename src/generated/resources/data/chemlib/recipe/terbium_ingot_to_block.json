@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:terbium_ingot"
-    }
+    "I": "chemlib:terbium_ingot"
   },
   "pattern": [
     "III",

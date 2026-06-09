@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:samarium_nugget"
-    }
+    "N": "chemlib:samarium_nugget"
   },
   "pattern": [
     "NNN",

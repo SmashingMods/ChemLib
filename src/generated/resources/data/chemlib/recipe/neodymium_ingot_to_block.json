@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:neodymium_ingot"
-    }
+    "I": "chemlib:neodymium_ingot"
   },
   "pattern": [
     "III",

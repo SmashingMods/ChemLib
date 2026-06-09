@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:thorium_nugget"
-    }
+    "N": "chemlib:thorium_nugget"
   },
   "pattern": [
     "NNN",

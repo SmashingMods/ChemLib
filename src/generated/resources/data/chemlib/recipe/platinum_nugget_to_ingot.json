@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:platinum_nugget"
-    }
+    "N": "chemlib:platinum_nugget"
   },
   "pattern": [
     "NNN",

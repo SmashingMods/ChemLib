@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:calcium_ingot"
-    }
+    "I": "chemlib:calcium_ingot"
   },
   "pattern": [
     "III",

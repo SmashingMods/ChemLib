@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:magnesium_nugget"
-    }
+    "N": "chemlib:magnesium_nugget"
   },
   "pattern": [
     "NNN",

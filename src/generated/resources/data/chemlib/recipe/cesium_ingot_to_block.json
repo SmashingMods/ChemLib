@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:cesium_ingot"
-    }
+    "I": "chemlib:cesium_ingot"
   },
   "pattern": [
     "III",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:gadolinium_ingot"
-    }
+    "I": "chemlib:gadolinium_ingot"
   },
   "pattern": [
     "III",

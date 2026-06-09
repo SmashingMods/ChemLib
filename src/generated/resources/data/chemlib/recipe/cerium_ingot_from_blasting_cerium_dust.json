@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:cerium_dust"
-  },
+  "ingredient": "chemlib:cerium_dust",
   "result": {
     "count": 1,
     "id": "chemlib:cerium_ingot"

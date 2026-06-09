@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "chemlib:rhenium_ingot"
-    }
+    "chemlib:rhenium_ingot"
   ],
   "result": {
     "count": 9,

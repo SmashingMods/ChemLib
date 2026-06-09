@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:sodium_nugget"
-    }
+    "N": "chemlib:sodium_nugget"
   },
   "pattern": [
     "NNN",

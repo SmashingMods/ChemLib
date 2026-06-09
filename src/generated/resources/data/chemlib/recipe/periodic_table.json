@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "H": {
-      "item": "chemlib:hydrogen"
-    },
-    "P": {
-      "item": "minecraft:paper"
-    }
+    "H": "chemlib:hydrogen",
+    "P": "minecraft:paper"
   },
   "pattern": [
     "HHH",

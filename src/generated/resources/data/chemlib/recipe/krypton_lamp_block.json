@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "E": {
-      "item": "chemlib:krypton"
-    },
-    "G": {
-      "tag": "c:glass_blocks"
-    }
+    "E": "chemlib:krypton",
+    "G": "#c:glass_blocks"
   },
   "pattern": [
     "GEG",

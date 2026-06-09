@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:tantalum_nugget"
-    }
+    "N": "chemlib:tantalum_nugget"
   },
   "pattern": [
     "NNN",

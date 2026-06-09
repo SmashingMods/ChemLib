@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:iridium_nugget"
-    }
+    "N": "chemlib:iridium_nugget"
   },
   "pattern": [
     "NNN",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:samarium_ingot"
-    }
+    "I": "chemlib:samarium_ingot"
   },
   "pattern": [
     "III",

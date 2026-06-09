@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:tin_ingot"
-    }
+    "I": "chemlib:tin_ingot"
   },
   "pattern": [
     "III",

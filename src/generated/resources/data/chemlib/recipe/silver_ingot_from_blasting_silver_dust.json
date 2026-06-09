@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:silver_dust"
-  },
+  "ingredient": "chemlib:silver_dust",
   "result": {
     "count": 1,
     "id": "chemlib:silver_ingot"

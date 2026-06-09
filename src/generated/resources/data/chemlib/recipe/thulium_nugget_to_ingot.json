@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:thulium_nugget"
-    }
+    "N": "chemlib:thulium_nugget"
   },
   "pattern": [
     "NNN",

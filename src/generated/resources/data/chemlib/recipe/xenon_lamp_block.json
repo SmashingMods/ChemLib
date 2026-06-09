@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "E": {
-      "item": "chemlib:xenon"
-    },
-    "G": {
-      "tag": "c:glass_blocks"
-    }
+    "E": "chemlib:xenon",
+    "G": "#c:glass_blocks"
   },
   "pattern": [
     "GEG",

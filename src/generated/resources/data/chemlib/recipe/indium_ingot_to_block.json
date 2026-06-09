@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:indium_ingot"
-    }
+    "I": "chemlib:indium_ingot"
   },
   "pattern": [
     "III",

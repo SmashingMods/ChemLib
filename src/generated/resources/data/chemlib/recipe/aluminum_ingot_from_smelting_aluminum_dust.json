@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:aluminum_dust"
-  },
+  "ingredient": "chemlib:aluminum_dust",
   "result": {
     "count": 1,
     "id": "chemlib:aluminum_ingot"

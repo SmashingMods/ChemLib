@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:tantalum_ingot"
-    }
+    "I": "chemlib:tantalum_ingot"
   },
   "pattern": [
     "III",

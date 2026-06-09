@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:erbium_nugget"
-    }
+    "N": "chemlib:erbium_nugget"
   },
   "pattern": [
     "NNN",

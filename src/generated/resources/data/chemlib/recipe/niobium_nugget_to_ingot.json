@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:niobium_nugget"
-    }
+    "N": "chemlib:niobium_nugget"
   },
   "pattern": [
     "NNN",

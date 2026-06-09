@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "chemlib:magnesium_ingot"
-    }
+    "chemlib:magnesium_ingot"
   ],
   "result": {
     "count": 9,

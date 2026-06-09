@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "chemlib:molybdenum_ingot"
-    }
+    "chemlib:molybdenum_ingot"
   ],
   "result": {
     "count": 9,

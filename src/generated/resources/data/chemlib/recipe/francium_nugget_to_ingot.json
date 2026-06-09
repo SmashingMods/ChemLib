@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:francium_nugget"
-    }
+    "N": "chemlib:francium_nugget"
   },
   "pattern": [
     "NNN",

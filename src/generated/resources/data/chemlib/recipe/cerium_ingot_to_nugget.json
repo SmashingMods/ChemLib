@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "chemlib:cerium_ingot"
-    }
+    "chemlib:cerium_ingot"
   ],
   "result": {
     "count": 9,

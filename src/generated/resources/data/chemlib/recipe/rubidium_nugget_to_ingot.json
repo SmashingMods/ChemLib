@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:rubidium_nugget"
-    }
+    "N": "chemlib:rubidium_nugget"
   },
   "pattern": [
     "NNN",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:tin_nugget"
-    }
+    "N": "chemlib:tin_nugget"
   },
   "pattern": [
     "NNN",

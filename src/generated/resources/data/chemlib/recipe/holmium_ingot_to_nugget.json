@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "chemlib:holmium_ingot"
-    }
+    "chemlib:holmium_ingot"
   ],
   "result": {
     "count": 9,

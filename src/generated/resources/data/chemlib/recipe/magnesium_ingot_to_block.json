@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:magnesium_ingot"
-    }
+    "I": "chemlib:magnesium_ingot"
   },
   "pattern": [
     "III",

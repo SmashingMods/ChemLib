@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:chromium_nugget"
-    }
+    "N": "chemlib:chromium_nugget"
   },
   "pattern": [
     "NNN",

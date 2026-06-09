@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:terbium_nugget"
-    }
+    "N": "chemlib:terbium_nugget"
   },
   "pattern": [
     "NNN",

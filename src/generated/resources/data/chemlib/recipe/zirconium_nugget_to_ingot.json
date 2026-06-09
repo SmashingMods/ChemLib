@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:zirconium_nugget"
-    }
+    "N": "chemlib:zirconium_nugget"
   },
   "pattern": [
     "NNN",

@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:zinc_dust"
-  },
+  "ingredient": "chemlib:zinc_dust",
   "result": {
     "count": 1,
     "id": "chemlib:zinc_ingot"

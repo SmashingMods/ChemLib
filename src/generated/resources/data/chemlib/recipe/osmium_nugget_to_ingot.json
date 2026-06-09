@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:osmium_nugget"
-    }
+    "N": "chemlib:osmium_nugget"
   },
   "pattern": [
     "NNN",

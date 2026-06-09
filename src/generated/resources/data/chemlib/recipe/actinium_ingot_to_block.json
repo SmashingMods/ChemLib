@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "chemlib:actinium_ingot"
-    }
+    "I": "chemlib:actinium_ingot"
   },
   "pattern": [
     "III",

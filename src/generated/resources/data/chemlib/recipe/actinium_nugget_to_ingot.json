@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "chemlib:actinium_nugget"
-    }
+    "N": "chemlib:actinium_nugget"
   },
   "pattern": [
     "NNN",

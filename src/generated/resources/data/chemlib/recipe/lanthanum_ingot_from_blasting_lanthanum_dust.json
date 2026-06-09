@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.7,
-  "ingredient": {
-    "item": "chemlib:lanthanum_dust"
-  },
+  "ingredient": "chemlib:lanthanum_dust",
   "result": {
     "count": 1,
     "id": "chemlib:lanthanum_ingot"

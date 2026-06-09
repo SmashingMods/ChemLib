@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "chemlib:zinc_metal_block"
-    }
+    "chemlib:zinc_metal_block"
   ],
   "result": {
     "count": 9,

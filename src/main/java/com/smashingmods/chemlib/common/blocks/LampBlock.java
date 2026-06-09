@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.redstone.Orientation;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -36,7 +37,7 @@ public class LampBlock extends ChemicalBlock {
     }
 
     @Override
-    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
+    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, Orientation pOrientation, boolean pIsMoving) {
         if (!pLevel.isClientSide()) {
             boolean flag = pState.getValue(LIT);
             if (flag != pLevel.hasNeighborSignal(pPos)) {

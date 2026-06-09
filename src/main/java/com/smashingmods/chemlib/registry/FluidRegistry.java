@@ -2,19 +2,13 @@ package com.smashingmods.chemlib.registry;
 
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.common.blocks.ChemicalLiquidBlock;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.FluidState;
-import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -24,7 +18,6 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -35,47 +28,21 @@ public class FluidRegistry {
     public static final DeferredRegister<Block> LIQUID_BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, ChemLib.MODID);
     public static final DeferredRegister<Item> BUCKETS = DeferredRegister.create(BuiltInRegistries.ITEM, ChemLib.MODID);
 
+    // FluidType#initializeClient was removed in 1.21.3; the per-fluid client extension (tint colour over the
+    // shared water textures) is now registered through RegisterClientExtensionsEvent instead. Each fluid type's
+    // colour is recorded here at registration time so the client handler can build the extension with the same
+    // colour the inline override used to carry. See ClientEventHandler#onRegisterClientExtensions.
+    public record FluidTypeColor(DeferredHolder<FluidType, FluidType> fluidType, int color) {}
+    private static final List<FluidTypeColor> FLUID_TYPE_COLORS = new ArrayList<>();
+
     protected static void registerFluid(String pName, FluidType.Properties pFluidProperties, int pColor, int pSlopeFindDistance, int pDecreasePerBlock) {
 
         var ref = new Object() {
             BaseFlowingFluid.Properties properties = null;
         };
 
-        DeferredHolder<FluidType, FluidType> fluidType = FLUID_TYPES.register(pName, () -> new FluidType(pFluidProperties) {
-            @Override
-            public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
-                consumer.accept(new IClientFluidTypeExtensions() {
-                    @Override
-                    public ResourceLocation getStillTexture() {
-                        return ResourceLocation.parse("block/water_still");
-                    }
-
-                    @Override
-                    public ResourceLocation getFlowingTexture() {
-                        return ResourceLocation.parse("block/water_flow");
-                    }
-
-                    @Override
-                    public ResourceLocation getOverlayTexture() {
-                        return ResourceLocation.parse("block/water_overlay");
-                    }
-
-                    @Override
-                    public ResourceLocation getRenderOverlayTexture(Minecraft mc) {
-                        return ResourceLocation.fromNamespaceAndPath("minecraft", "textures/misc/underwater.png");
-                    }
-                    @Override
-                    public int getTintColor() {
-                        return pColor;
-                    }
-
-                    @Override
-                    public int getTintColor(FluidState state, BlockAndTintGetter getter, BlockPos pos) {
-                        return pColor;
-                    }
-                });
-            }
-        });
+        DeferredHolder<FluidType, FluidType> fluidType = FLUID_TYPES.register(pName, () -> new FluidType(pFluidProperties));
+        FLUID_TYPE_COLORS.add(new FluidTypeColor(fluidType, pColor));
 
         DeferredHolder<Fluid, FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", pName), () -> new BaseFlowingFluid.Source(ref.properties));
         DeferredHolder<Fluid, FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", pName), () -> new BaseFlowingFluid.Flowing(ref.properties));
@@ -200,6 +167,10 @@ public class FluidRegistry {
     // "<chemical>_bucket" alongside its "<chemical>_fluid", so stripping the suffix yields the same name.
     private static String getBucketChemicalName(BucketItem pBucket) {
         return StringUtils.removeEnd(BuiltInRegistries.ITEM.getKey(pBucket).getPath(), "_bucket");
+    }
+
+    public static List<FluidTypeColor> getFluidTypeColors() {
+        return FLUID_TYPE_COLORS;
     }
 
     public static void register(IEventBus eventBus) {

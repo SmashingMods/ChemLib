@@ -16,7 +16,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.*;
-import java.util.function.Supplier;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -129,14 +129,14 @@ public class ItemRegistry {
     public static void registerItemByType(DeferredHolder<Item, ? extends Item> pRegistryObject, ChemicalItemType pChemicalItemType) {
 
         String registryName = String.format("%s_%s", pRegistryObject.getId().getPath(), pChemicalItemType.getSerializedName());
-        Supplier<ChemicalItem> supplier = () -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, new Item.Properties());
+        Function<Item.Properties, ChemicalItem> factory = properties -> new ChemicalItem(pRegistryObject.getId(), pChemicalItemType, properties);
 
         switch (pChemicalItemType) {
-            case COMPOUND -> REGISTRY_COMPOUND_DUSTS.register(registryName, supplier);
-            case DUST -> REGISTRY_METAL_DUSTS.register(registryName, supplier);
-            case NUGGET -> REGISTRY_NUGGETS.register(registryName, supplier);
-            case INGOT -> REGISTRY_INGOTS.register(registryName, supplier);
-            case PLATE -> REGISTRY_PLATES.register(registryName, supplier);
+            case COMPOUND -> REGISTRY_COMPOUND_DUSTS.registerItem(registryName, factory, new Item.Properties());
+            case DUST -> REGISTRY_METAL_DUSTS.registerItem(registryName, factory, new Item.Properties());
+            case NUGGET -> REGISTRY_NUGGETS.registerItem(registryName, factory, new Item.Properties());
+            case INGOT -> REGISTRY_INGOTS.registerItem(registryName, factory, new Item.Properties());
+            case PLATE -> REGISTRY_PLATES.registerItem(registryName, factory, new Item.Properties());
         }
     }
 
@@ -146,15 +146,15 @@ public class ItemRegistry {
     }
 
     public static void fromChemicalBlock(DeferredHolder<Block, ? extends Block> pBlock, Item.Properties pProperties) {
-        REGISTRY_BLOCK_ITEMS.register(pBlock.getId().getPath(), () -> new ChemicalBlockItem((ChemicalBlock) pBlock.get(), pProperties));
+        REGISTRY_BLOCK_ITEMS.registerItem(pBlock.getId().getPath(), properties -> new ChemicalBlockItem((ChemicalBlock) pBlock.get(), properties), pProperties);
     }
 
     public static void fromBlock(DeferredHolder<Block, ? extends Block> pBlock, Item.Properties pProperties) {
-        REGISTRY_BLOCK_ITEMS.register(pBlock.getId().getPath(), () -> new BlockItem(pBlock.get(), pProperties));
+        REGISTRY_BLOCK_ITEMS.registerItem(pBlock.getId().getPath(), properties -> new BlockItem(pBlock.get(), properties), pProperties);
     }
 
     public static void register(IEventBus eventBus) {
-        REGISTRY_MISC_ITEMS.register("periodic_table", PeriodicTableItem::new);
+        REGISTRY_MISC_ITEMS.registerItem("periodic_table", PeriodicTableItem::new, new Item.Properties().stacksTo(1));
 
         REGISTRY_ELEMENTS.register(eventBus);
         REGISTRY_COMPOUNDS.register(eventBus);

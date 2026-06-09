@@ -5,14 +5,18 @@ import com.smashingmods.chemlib.common.blocks.ChemicalLiquidBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.apache.commons.lang3.StringUtils;
@@ -25,8 +29,8 @@ public class FluidRegistry {
 
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, ChemLib.MODID);
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, ChemLib.MODID);
-    public static final DeferredRegister<Block> LIQUID_BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, ChemLib.MODID);
-    public static final DeferredRegister<Item> BUCKETS = DeferredRegister.create(BuiltInRegistries.ITEM, ChemLib.MODID);
+    public static final DeferredRegister.Blocks LIQUID_BLOCKS = DeferredRegister.createBlocks(ChemLib.MODID);
+    public static final DeferredRegister.Items BUCKETS = DeferredRegister.createItems(ChemLib.MODID);
 
     // FluidType#initializeClient was removed in 1.21.3; the per-fluid client extension (tint colour over the
     // shared water textures) is now registered through RegisterClientExtensionsEvent instead. Each fluid type's
@@ -46,8 +50,8 @@ public class FluidRegistry {
 
         DeferredHolder<Fluid, FlowingFluid> fluidSource = FLUIDS.register(String.format("%s_fluid", pName), () -> new BaseFlowingFluid.Source(ref.properties));
         DeferredHolder<Fluid, FlowingFluid> fluidFlowing = FLUIDS.register(String.format("%s_flowing", pName), () -> new BaseFlowingFluid.Flowing(ref.properties));
-        DeferredHolder<Block, LiquidBlock> liquidBlock = LIQUID_BLOCKS.register(pName, () -> new ChemicalLiquidBlock(fluidSource.get(), pName));
-        DeferredHolder<Item, Item> bucket = BUCKETS.register(String.format("%s_bucket", pName), () -> new BucketItem(fluidSource.get(), new Item.Properties().stacksTo(1)));
+        DeferredBlock<ChemicalLiquidBlock> liquidBlock = LIQUID_BLOCKS.registerBlock(pName, properties -> new ChemicalLiquidBlock(fluidSource.get(), pName, properties), BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().pushReaction(PushReaction.DESTROY).liquid());
+        DeferredItem<BucketItem> bucket = BUCKETS.registerItem(String.format("%s_bucket", pName), properties -> new BucketItem(fluidSource.get(), properties), new Item.Properties().stacksTo(1));
 
         ref.properties = new BaseFlowingFluid.Properties(fluidType, fluidSource, fluidFlowing)
                 .slopeFindDistance(pSlopeFindDistance)

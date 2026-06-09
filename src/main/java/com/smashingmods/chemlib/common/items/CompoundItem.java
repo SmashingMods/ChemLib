@@ -40,9 +40,10 @@ public class CompoundItem extends Item implements Compound {
      * @param pDescription
      * @param pColor
      * @param pEffects
+     * @param pProperties
      */
-    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects) {
-        super(new Item.Properties());
+    public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor, List<MobEffectInstance> pEffects, Item.Properties pProperties) {
+        super(pProperties);
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;

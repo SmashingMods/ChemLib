@@ -53,7 +53,7 @@ public class ChemicalRegistry {
             boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
             boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
 
-            ItemRegistry.REGISTRY_ELEMENTS.register(elementName, () -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, mobEffectsFactory(object)));
+            ItemRegistry.REGISTRY_ELEMENTS.registerItem(elementName, itemProperties -> new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color, mobEffectsFactory(object), itemProperties), new Item.Properties());
             DeferredHolder<Item, ? extends Item> registryObject = ItemRegistry.getRegistryObject(ItemRegistry.REGISTRY_ELEMENTS, elementName);
 
             ContentDerivation.DerivedContent derived = ContentDerivation.forElement(matterState, metalType, artificial, hasItem, hasFluid, group);
@@ -61,7 +61,7 @@ public class ChemicalRegistry {
             derived.itemTypes().forEach(itemType -> ItemRegistry.registerItemByType(registryObject, itemType));
 
             if (derived.metalBlock()) {
-                BlockRegistry.BLOCKS.register(String.format("%s_metal_block", elementName), () -> new ChemicalBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, BlockRegistry.METAL_PROPERTIES));
+                BlockRegistry.BLOCKS.registerBlock(String.format("%s_metal_block", elementName), blockProperties -> new ChemicalBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.METAL, BlockRegistry.METAL_BLOCKS, blockProperties), BlockRegistry.METAL_PROPERTIES);
                 BlockRegistry.getRegistryObjectByName(String.format("%s_metal_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
             }
 
@@ -71,7 +71,7 @@ public class ChemicalRegistry {
                 int decreasePerBlock = properties.has("decrease_per_block") ? properties.get("decrease_per_block").getAsInt() : 1;
 
                 if (derived.lampBlock()) {
-                    BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
+                    BlockRegistry.BLOCKS.registerBlock(String.format("%s_lamp_block", elementName), blockProperties -> new LampBlock(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, blockProperties), BlockRegistry.LAMP_PROPERTIES);
                     BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).ifPresent(block -> ItemRegistry.fromChemicalBlock(block, new Item.Properties()));
                 }
                 FluidRegistry.registerFluid(elementName, fluidTypePropertiesFactory(properties, ChemLib.MODID, elementName), Chemical.parseColorHex(color), slopeFindDistance, decreasePerBlock);
@@ -106,7 +106,7 @@ public class ChemicalRegistry {
             boolean hasItem = matterState == MatterState.SOLID && object.has("has_item") && object.get("has_item").getAsBoolean();
             boolean hasFluid = matterState != MatterState.SOLID && object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
 
-            ItemRegistry.REGISTRY_COMPOUNDS.register(compoundName, () -> new CompoundItem(compoundName, matterState, componentMap, description, color, mobEffectsFactory(object)));
+            ItemRegistry.REGISTRY_COMPOUNDS.registerItem(compoundName, itemProperties -> new CompoundItem(compoundName, matterState, componentMap, description, color, mobEffectsFactory(object), itemProperties), new Item.Properties());
 
             ContentDerivation.DerivedContent derived = ContentDerivation.forCompound(matterState, hasItem, hasFluid, compoundName);
 

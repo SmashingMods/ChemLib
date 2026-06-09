@@ -31,8 +31,8 @@ public class ElementItem extends Item implements Element {
     private final int color;
     private final List<MobEffectInstance> effects;
 
-    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pColor, List<MobEffectInstance> pEffects) {
-        super(new Item.Properties());
+    public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pColor, List<MobEffectInstance> pEffects, Item.Properties pProperties) {
+        super(pProperties);
         this.elementName = pChemicalName;
         this.atomicNumber = pAtomicNumber;
         this.abbreviation = pAbbreviation;

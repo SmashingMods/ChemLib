@@ -11,8 +11,6 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
@@ -21,8 +19,8 @@ public class ChemicalLiquidBlock extends LiquidBlock {
 
     private final String chemicalName;
 
-    public ChemicalLiquidBlock(FlowingFluid pFluid, String pChemicalName) {
-        super(pFluid, BlockBehaviour.Properties.of().mapColor(MapColor.WATER).replaceable().pushReaction(PushReaction.DESTROY).liquid());
+    public ChemicalLiquidBlock(FlowingFluid pFluid, String pChemicalName, BlockBehaviour.Properties pProperties) {
+        super(pFluid, pProperties);
         this.chemicalName = pChemicalName;
     }
 

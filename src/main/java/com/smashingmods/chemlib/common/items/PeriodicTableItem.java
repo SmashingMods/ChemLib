@@ -22,8 +22,8 @@ import java.util.List;
 
 public class PeriodicTableItem extends Item {
 
-    public PeriodicTableItem() {
-        super(new Item.Properties().stacksTo(1));
+    public PeriodicTableItem(Item.Properties pProperties) {
+        super(pProperties);
     }
 
     @Override

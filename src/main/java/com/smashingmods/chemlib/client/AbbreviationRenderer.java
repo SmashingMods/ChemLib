@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 
 /**
  * Draws the element/chemical abbreviation (e.g. {@code Fe}, {@code Au}) over the item model in inventory and
- * item-frame views. 1.21.4 removed the {@link net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer}
+ * item-frame views. 1.21.4 removed the {@code BlockEntityWithoutLevelRenderer}
  * stack this used to extend; the abbreviation is now an item-model overlay registered as a
  * {@link SpecialModelRenderer}. The flat element/chemical texture and its per-chemical tint are supplied by the
  * model layer of the item-model definition (a {@code neoforge:composite} of the flat model and this renderer),

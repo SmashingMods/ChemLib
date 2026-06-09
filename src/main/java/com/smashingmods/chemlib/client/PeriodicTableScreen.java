@@ -8,6 +8,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.resources.ResourceLocation;
@@ -42,7 +43,7 @@ public class PeriodicTableScreen extends Screen {
         int leftPos = (this.width - displayWidth) / 2;
         int topPos = (this.height - displayHeight) / 2;
 
-        pGuiGraphics.blit(PERIODIC_TABLE, leftPos, topPos, displayWidth, displayHeight, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
+        pGuiGraphics.blit(RenderType::guiTextured, PERIODIC_TABLE, leftPos, topPos, 0, 0, displayWidth, displayHeight, imageWidth, imageHeight, imageWidth, imageHeight);
         pGuiGraphics.drawCenteredString(Minecraft.getInstance().font, MutableComponent.create(new TranslatableContents("chemlib.screen.periodic_table", null, TranslatableContents.NO_ARGS)).withStyle(ChatFormatting.BOLD), width / 2, 24, 0xFFFFFF);
 
         double boxWidth = 27.75f;
@@ -98,7 +99,7 @@ public class PeriodicTableScreen extends Screen {
     }
 
     private void drawElementTip(GuiGraphics pGuiGraphics, Element pElement) {
-        pGuiGraphics.blit(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())), ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 274, 80, 0, 0, 40, 40, 40, 40);
+        pGuiGraphics.blit(RenderType::guiTextured, ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, String.format("textures/gui/elements/%s_tooltip.png", pElement.getChemicalName())), ((this.width - 276) / 2) - 55, ((this.height - (7 * 28)) / 2) - 30, 0, 0, 274, 80, 40, 40, 40, 40);
     }
 
     @Override

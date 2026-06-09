@@ -1,203 +1,124 @@
 package com.smashingmods.chemlib.client;
 
-import com.google.common.base.Suppliers;
-import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import com.mojang.serialization.MapCodec;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.Config;
-import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.common.items.ChemicalItem;
 import com.smashingmods.chemlib.common.items.ElementItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.client.ClientHooks;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import javax.annotation.Nullable;
 
-public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
+/**
+ * Draws the element/chemical abbreviation (e.g. {@code Fe}, {@code Au}) over the item model in inventory and
+ * item-frame views. 1.21.4 removed the {@link net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer}
+ * stack this used to extend; the abbreviation is now an item-model overlay registered as a
+ * {@link SpecialModelRenderer}. The flat element/chemical texture and its per-chemical tint are supplied by the
+ * model layer of the item-model definition (a {@code neoforge:composite} of the flat model and this renderer),
+ * so the per-display-context and per-tint-index transforms the engine applies before {@link #render} are already
+ * in effect here; this renderer only adds the abbreviation glyphs on top.
+ */
+public class AbbreviationRenderer implements SpecialModelRenderer<AbbreviationRenderer.Abbreviation> {
 
-	public static final Supplier<BlockEntityWithoutLevelRenderer> INSTANCE = Suppliers.memoize(
-			() -> new AbbreviationRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels())
-	);
-	public static final IClientItemExtensions RENDERER = new IClientItemExtensions() {
-		@Override
-		public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-			return INSTANCE.get();
+	public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "abbreviation");
+
+	/**
+	 * The per-stack data the overlay needs, resolved once per frame by {@link #extractArgument(ItemStack)}: the
+	 * abbreviation text and whether the matching {@code Config.render*Abbreviations} toggle is enabled for the
+	 * stack's item type. The text is still drawn unconditionally when enabled, matching the previous behaviour.
+	 */
+	public record Abbreviation(String text, boolean enabled) {}
+
+	@Nullable
+	@Override
+	public Abbreviation extractArgument(ItemStack pStack) {
+		if (pStack.getItem() instanceof ElementItem elementItem) {
+			return new Abbreviation(elementItem.getAbbreviation(), Config.Common.renderElementAbbreviations.get());
+		} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
+			boolean enabled = switch (chemicalItem.getItemType()) {
+				case DUST -> Config.Common.renderDustAbbreviations.get();
+				case NUGGET -> Config.Common.renderNuggetAbbreviations.get();
+				case INGOT -> Config.Common.renderIngotAbbreviations.get();
+				case PLATE -> Config.Common.renderPlateAbbreviations.get();
+				default -> false;
+			};
+			return new Abbreviation(chemicalItem.getAbbreviation(), enabled);
 		}
-	};
-
-	public AbbreviationRenderer(BlockEntityRenderDispatcher pBlockEntityRenderDispatcher, EntityModelSet pEntityModelSet) {
-		super(pBlockEntityRenderDispatcher, pEntityModelSet);
+		return null;
 	}
 
 	@Override
-	public void renderByItem(ItemStack pStack, ItemDisplayContext pItemDisplayContext, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+	public void render(@Nullable Abbreviation pAbbreviation, ItemDisplayContext pItemDisplayContext, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay, boolean pHasFoil) {
+		if (pAbbreviation == null || !pAbbreviation.enabled()) {
+			return;
+		}
 
 		boolean isGui = pItemDisplayContext == ItemDisplayContext.GUI;
 		boolean isFrame = pItemDisplayContext == ItemDisplayContext.FIXED;
 
-		ModelResourceLocation modelResourceLocation = null;
-		MultiBufferSource buffer = pBuffer;
-
-		if (pStack.getItem() instanceof ElementItem elementItem) {
-			switch (elementItem.getMatterState()) {
-				case LIQUID ->
-						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_liquid_model"));
-				case GAS ->
-						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_gas_model"));
-				default ->
-						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_solid_model"));
-			}
-		} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
-			switch (chemicalItem.getItemType()) {
-				case DUST -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_dust_model"));
-				case NUGGET -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_nugget_model"));
-				case INGOT -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_ingot_model"));
-				case PLATE -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_plate_model"));
-			}
+		// The abbreviation is only legible head-on, so it is drawn in inventory (GUI) and item-frame (FIXED) views.
+		if (!isGui && !isFrame) {
+			return;
 		}
 
-		if (modelResourceLocation != null) {
+		pPoseStack.pushPose();
+		pPoseStack.mulPose(Axis.XN.rotation(180));
+		pPoseStack.translate(-0.16D, 0, -0.55D);
+		pPoseStack.scale(0.05F, 0.08F, 0.08F);
 
-			BakedModel bakedModel = Minecraft.getInstance().getModelManager().getModel(modelResourceLocation);
+		if (isFrame) {
+			pPoseStack.mulPose(Axis.YN.rotationDegrees(180));
+			pPoseStack.mulPose(Axis.XN.rotationDegrees(53));
+			pPoseStack.translate(-8D, -1D, 1.7D);
+			pPoseStack.scale(1F, 0.65F, 1F);
+		}
 
-			pPoseStack.pushPose();
-			pPoseStack.translate(0.5D, 0.5D, 0D);
-			if (isGui) {
-				Lighting.setupForFlatItems();
-				buffer = Minecraft.getInstance().renderBuffers().bufferSource();
-			}
-			pPoseStack.pushPose();
+		Font font = Minecraft.getInstance().font;
+		font.drawInBatch(pAbbreviation.text(),
+				-4,
+				0,
+				0x333333,
+				false,
+				pPoseStack.last().pose(),
+				pBuffer,
+				Font.DisplayMode.NORMAL,
+				0,
+				pPackedLight);
+		font.drawInBatch(pAbbreviation.text(),
+				-5,
+				0,
+				0xFFFFFF,
+				false,
+				pPoseStack.last().pose(),
+				pBuffer,
+				Font.DisplayMode.NORMAL,
+				0,
+				pPackedLight);
 
-			switch (pItemDisplayContext) {
-				case THIRD_PERSON_LEFT_HAND, THIRD_PERSON_RIGHT_HAND -> {
-					pPoseStack.translate(0, -0.2D, 0.45D);
-				}
-				case FIRST_PERSON_LEFT_HAND -> {
-					pPoseStack.translate(-0.025D, -0.025D, 0.75D);
-					pPoseStack.mulPose(Axis.ZP.rotationDegrees(25));
-					pPoseStack.mulPose(Axis.XN.rotationDegrees(45));
-					pPoseStack.mulPose(Axis.YN.rotationDegrees(80));
-				}
-				case FIRST_PERSON_RIGHT_HAND -> {
-					pPoseStack.translate(-0.20D, -0.05D, 0.75D);
-					pPoseStack.mulPose(Axis.ZN.rotationDegrees(25));
-					pPoseStack.mulPose(Axis.XP.rotationDegrees(45));
-					pPoseStack.mulPose(Axis.YP.rotationDegrees(100));
-					pPoseStack.mulPose(Axis.ZN.rotationDegrees(45));
-				}
-				case HEAD -> {
-					pPoseStack.mulPose(Axis.YP.rotationDegrees(180));
-					pPoseStack.translate(0, -0.75D, -0.75D);
-				}
-				case GROUND -> {
-					pPoseStack.translate(0, -0.25D, 0.5D);
-					pPoseStack.scale(1.5F, 1.5F, 1.5F);
-				}
-				case FIXED -> {
-					pPoseStack.mulPose(Axis.YN.rotationDegrees(180));
-					pPoseStack.translate(0, 0, -0.5D);
-				}
-			}
+		pPoseStack.popPose();
+	}
 
-			//noinspection UnstableApiUsage
-			Minecraft.getInstance().getItemRenderer().render(
-					pStack,
-					pItemDisplayContext,
-					false,
-					pPoseStack,
-					buffer,
-					isGui ? 0xF000F0 : pPackedLight,
-					isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
-					ClientHooks.handleCameraTransforms(pPoseStack, bakedModel, pItemDisplayContext, false));
-			if (isGui) {
-				((MultiBufferSource.BufferSource) buffer).endBatch();
-			}
-			pPoseStack.popPose();
+	public record Unbaked() implements SpecialModelRenderer.Unbaked {
 
-			if (isGui || isFrame) {
-				pPoseStack.pushPose();
-				pPoseStack.mulPose(Axis.XN.rotation(180));
-				pPoseStack.translate(-0.16D, 0, -0.55D);
-				pPoseStack.scale(0.05F, 0.08F, 0.08F);
+		public static final MapCodec<Unbaked> MAP_CODEC = MapCodec.unit(new Unbaked());
 
-				if (isFrame) {
-					pPoseStack.mulPose(Axis.YN.rotationDegrees(180));
-					pPoseStack.mulPose(Axis.XN.rotationDegrees(53));
-					pPoseStack.translate(-8D, -1D, 1.7D);
-					pPoseStack.scale(1F, 0.65F, 1F);
-				}
+		@Override
+		public MapCodec<Unbaked> type() {
+			return MAP_CODEC;
+		}
 
-				Consumer<Chemical> renderAbbreviation = (chemical) -> {
-					Minecraft.getInstance().font.drawInBatch(chemical.getAbbreviation(),
-							-4,
-							0,
-							0x333333,
-							false,
-							pPoseStack.last().pose(),
-							Minecraft.getInstance().renderBuffers().bufferSource(),
-							Font.DisplayMode.NORMAL,
-							0,
-							pPackedLight);
-					Minecraft.getInstance().font.drawInBatch(chemical.getAbbreviation(),
-							-5,
-							0,
-							0xFFFFFF,
-							false,
-							pPoseStack.last().pose(),
-							Minecraft.getInstance().renderBuffers().bufferSource(),
-							Font.DisplayMode.NORMAL,
-							0,
-							pPackedLight);
-				};
-
-				if (pStack.getItem() instanceof ElementItem elementItem) {
-					if (Config.Common.renderElementAbbreviations.get()) {
-						renderAbbreviation.accept(elementItem);
-					}
-				} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
-					switch (chemicalItem.getItemType()) {
-						case DUST -> {
-							if (Config.Common.renderDustAbbreviations.get()) {
-								renderAbbreviation.accept(chemicalItem);
-							}
-						}
-						case NUGGET -> {
-							if (Config.Common.renderNuggetAbbreviations.get()) {
-								renderAbbreviation.accept(chemicalItem);
-							}
-						}
-						case INGOT -> {
-							if (Config.Common.renderIngotAbbreviations.get()) {
-								renderAbbreviation.accept(chemicalItem);
-							}
-						}
-						case PLATE -> {
-							if (Config.Common.renderPlateAbbreviations.get()) {
-								renderAbbreviation.accept(chemicalItem);
-							}
-						}
-					}
-				}
-				if (isGui) {
-					Lighting.setupFor3DItems();
-				}
-				pPoseStack.popPose();
-			}
-			pPoseStack.popPose();
+		@Override
+		public SpecialModelRenderer<?> bake(EntityModelSet pEntityModelSet) {
+			return new AbbreviationRenderer();
 		}
 	}
 }

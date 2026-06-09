@@ -106,8 +106,11 @@ public class ItemModelGenerator extends ModelProvider {
     }
 
     private void generateChemicalItemModels(BiConsumer<ResourceLocation, ModelInstance> pModelOutput) {
+        // COMPOUND and DUST share the "dust" serialized name, so the flat model is emitted once per
+        // distinct name (the vanilla model collector rejects duplicate model definitions).
         Arrays.stream(ChemicalItemType.values())
                 .map(ChemicalItemType::getSerializedName)
+                .distinct()
                 .forEach(type -> new ModelTemplate(Optional.of(GENERATED), Optional.empty(), TextureSlot.LAYER0)
                         .create(modLocation(String.format("item/chemical_%s_model", type)),
                                 new TextureMapping().put(TextureSlot.LAYER0, modLocation(String.format("item/%s", type))), pModelOutput));

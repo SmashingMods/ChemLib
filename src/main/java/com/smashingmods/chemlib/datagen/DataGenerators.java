@@ -13,10 +13,11 @@ import java.util.concurrent.CompletableFuture;
 public class DataGenerators {
 
     // 1.21.4 dropped GatherDataEvent#includeServer/#includeClient/#getExistingFileHelper: providers are now
-    // added unconditionally via the event and the client/server split is driven by the run type (this mod's
-    // single "clientData --all" run fires GatherDataEvent.Client and runs every provider registered here).
+    // added unconditionally via the event and the client/server split is driven by the run type. The event is
+    // abstract and the NeoForge bus rejects listeners on it, so we subscribe to the concrete Client subclass
+    // fired by this mod's single "clientData --all" run, which runs every provider registered here.
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
+    public static void gatherData(GatherDataEvent.Client event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();

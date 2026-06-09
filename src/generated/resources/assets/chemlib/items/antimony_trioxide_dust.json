@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/compound_dust_model",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -65588
+      }
+    ]
+  }
+}

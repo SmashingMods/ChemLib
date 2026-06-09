@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/compound_solid_model",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -12814116
+      }
+    ]
+  }
+}

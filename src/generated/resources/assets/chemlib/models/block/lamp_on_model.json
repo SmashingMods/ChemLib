@@ -48,6 +48,6 @@
   ],
   "textures": {
     "all": "chemlib:block/lamp_on",
-    "particle": "#all"
+    "particle": "chemlib:block/lamp_on"
   }
 }

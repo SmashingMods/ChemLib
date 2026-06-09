@@ -48,6 +48,6 @@
   ],
   "textures": {
     "all": "chemlib:block/metal_block",
-    "particle": "#all"
+    "particle": "chemlib:block/metal_block"
   }
 }

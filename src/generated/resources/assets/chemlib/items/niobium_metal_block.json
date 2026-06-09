@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/niobium_metal_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -8958636
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:model",
+        "model": "chemlib:item/chemical_nugget_model",
+        "tints": [
+          {
+            "type": "minecraft:constant",
+            "value": -8530491
+          }
+        ]
+      },
+      {
+        "type": "minecraft:special",
+        "base": "chemlib:item/chemical_nugget_model",
+        "model": {
+          "type": "chemlib:abbreviation"
+        }
+      }
+    ]
+  }
+}

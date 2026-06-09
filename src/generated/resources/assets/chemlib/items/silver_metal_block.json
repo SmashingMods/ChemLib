@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/silver_metal_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -3815481
+      }
+    ]
+  }
+}

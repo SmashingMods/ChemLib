@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/cobalt_metal_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -10066177
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/actinium_metal_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -8927747
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/platinum_metal_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -2697257
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/argon_lamp_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -10005017
+      }
+    ]
+  }
+}

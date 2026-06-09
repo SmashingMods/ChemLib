@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/periodic_table"
+  }
+}

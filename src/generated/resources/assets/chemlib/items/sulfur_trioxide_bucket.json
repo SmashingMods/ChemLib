@@ -1,0 +1,11 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/sulfur_trioxide_bucket",
+    "tints": [
+      {
+        "type": "neoforge:fluid_contents_tint"
+      }
+    ]
+  }
+}

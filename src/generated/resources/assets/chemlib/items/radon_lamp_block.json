@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/radon_lamp_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -10496658
+      }
+    ]
+  }
+}

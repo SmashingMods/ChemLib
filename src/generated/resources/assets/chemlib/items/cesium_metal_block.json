@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/cesium_metal_block",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -3150738
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      {
+        "type": "minecraft:model",
+        "model": "chemlib:item/element_solid_model",
+        "tints": [
+          {
+            "type": "minecraft:constant",
+            "value": -9601382
+          }
+        ]
+      },
+      {
+        "type": "minecraft:special",
+        "base": "chemlib:item/element_solid_model",
+        "model": {
+          "type": "chemlib:abbreviation"
+        }
+      }
+    ]
+  }
+}

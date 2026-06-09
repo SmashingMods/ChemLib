@@ -65,8 +65,8 @@ class MobEffectsFactoryTest extends BootstrappedTest {
 
         assertEquals(2, result.size());
 
-        MobEffect expectedPoison = BuiltInRegistries.MOB_EFFECT.get(POISON);
-        MobEffect expectedWeakness = BuiltInRegistries.MOB_EFFECT.get(WEAKNESS);
+        MobEffect expectedPoison = BuiltInRegistries.MOB_EFFECT.getValue(POISON);
+        MobEffect expectedWeakness = BuiltInRegistries.MOB_EFFECT.getValue(WEAKNESS);
 
         MobEffectInstance poison = result.get(0);
         assertSame(expectedPoison, poison.getEffect().value());

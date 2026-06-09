@@ -27,7 +27,7 @@ public class ChemicalBlock extends Block implements Chemical {
     }
 
     public Chemical getChemical() {
-        return (Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.get(chemical));
+        return (Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(chemical));
     }
 
     public ChemicalBlockType getBlockType() {

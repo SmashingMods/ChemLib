@@ -27,7 +27,7 @@ public interface Chemical extends ItemLike {
     default Optional<FluidType> getFluidTypeReference() {
         Optional<FluidType> toReturn = FluidRegistry.getFluidTypeByName(getChemicalName());
         if (toReturn.isEmpty()) {
-            toReturn = Optional.ofNullable(NeoForgeRegistries.FLUID_TYPES.get(ResourceLocation.tryParse(getChemicalName())));
+            toReturn = Optional.ofNullable(NeoForgeRegistries.FLUID_TYPES.getValue(ResourceLocation.tryParse(getChemicalName())));
         }
         if (toReturn.isEmpty()) {
             ResourceLocation rl = ResourceLocation.tryParse(getChemicalName());

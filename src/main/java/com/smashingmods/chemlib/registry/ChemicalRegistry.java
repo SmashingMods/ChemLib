@@ -132,7 +132,7 @@ public class ChemicalRegistry {
                 ResourceLocation effectLocation = ResourceLocation.parse(effectObject.get("location").getAsString());
                 int effectDuration = effectObject.get("duration").getAsInt();
                 int effectAmplifier = effectObject.get("amplifier").getAsInt();
-                Optional<Holder.Reference<MobEffect>> mobEffect = MOB_EFFECT.getHolder(effectLocation);
+                Optional<Holder.Reference<MobEffect>> mobEffect = MOB_EFFECT.get(effectLocation);
                 if (mobEffect.isEmpty()) {
                     ChemLib.LOGGER.warn("Unable to resolve mob effect '{}' for chemical '{}'; skipping effect.", effectLocation, object.get("name").getAsString());
                 } else if (seenEffects.add(effectLocation)) {

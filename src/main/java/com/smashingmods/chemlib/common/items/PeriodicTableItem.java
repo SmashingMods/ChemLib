@@ -8,7 +8,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -30,11 +29,11 @@ public class PeriodicTableItem extends Item {
     @Override
     @Nonnull
     @OnlyIn(Dist.CLIENT)
-    public InteractionResultHolder<ItemStack> use(Level pLevel, @Nonnull Player pPlayer, @Nonnull InteractionHand pUsedHand) {
+    public InteractionResult use(Level pLevel, @Nonnull Player pPlayer, @Nonnull InteractionHand pUsedHand) {
         if (pLevel.isClientSide()) {
             Minecraft.getInstance().setScreen(new PeriodicTableScreen());
         }
-        return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
+        return InteractionResult.SUCCESS;
     }
 
     @Override

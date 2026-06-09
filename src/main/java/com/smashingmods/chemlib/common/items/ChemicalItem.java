@@ -5,7 +5,6 @@ import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalItemType;
 import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
-import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -16,13 +15,10 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 public class ChemicalItem extends Item implements Chemical {
 
@@ -36,7 +32,7 @@ public class ChemicalItem extends Item implements Chemical {
     }
 
     public ChemicalItem(ResourceLocation pResourceLocation, ChemicalItemType pChemicalItemType, Item.Properties pProperties) {
-        this((Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.get(pResourceLocation)), pChemicalItemType, pProperties);
+        this((Chemical) Objects.requireNonNull(BuiltInRegistries.ITEM.getValue(pResourceLocation)), pChemicalItemType, pProperties);
     }
 
     @Override
@@ -101,11 +97,5 @@ public class ChemicalItem extends Item implements Chemical {
         // so a 0 high byte renders the tinted layer fully transparent. ElementItem carries 0xFF via
         // parseColorHex for the same reason.
         return pTintIndex == 0 ? getColor() | 0xFF000000 : -1;
-    }
-
-    @Override
-    public void initializeClient(@Nonnull Consumer<IClientItemExtensions> consumer) {
-        super.initializeClient(consumer);
-        consumer.accept(AbbreviationRenderer.RENDERER);
     }
 }

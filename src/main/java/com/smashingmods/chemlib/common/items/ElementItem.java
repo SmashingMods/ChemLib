@@ -5,7 +5,6 @@ import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
-import com.smashingmods.chemlib.client.AbbreviationRenderer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -15,12 +14,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class ElementItem extends Item implements Element {
 
@@ -143,10 +139,4 @@ public class ElementItem extends Item implements Element {
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex > 0 ? -1 : color;
     }
-
-	@Override
-	public void initializeClient(@Nonnull Consumer<IClientItemExtensions> consumer) {
-		super.initializeClient(consumer);
-		consumer.accept(AbbreviationRenderer.RENDERER);
-	}
 }

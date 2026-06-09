@@ -72,7 +72,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 
 		if (modelResourceLocation != null) {
 
-			BakedModel bakedModel = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getModelManager().getModel(modelResourceLocation);
+			BakedModel bakedModel = Minecraft.getInstance().getModelManager().getModel(modelResourceLocation);
 
 			pPoseStack.pushPose();
 			pPoseStack.translate(0.5D, 0.5D, 0D);

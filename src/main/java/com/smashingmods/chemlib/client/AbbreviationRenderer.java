@@ -78,7 +78,11 @@ public class AbbreviationRenderer implements SpecialModelRenderer<AbbreviationRe
 		// renderer then translated by (0.5, 0.5, 0). The hand-tuned constants below are calibrated to that
 		// 1.21.1 base pose, so restore it first: C(ctx) = T(0.5, 0.5, 0.5) * D(ctx)^-1 * T(0, 0, -0.5), where
 		// D is item/generated's display transform - identity in GUI, rotation [0, 180, 0] (self-inverse,
-		// scale 1) in FIXED.
+		// scale 1) in FIXED. First, though, bias the glyphs toward the viewer (+Z here in both contexts): the
+		// legacy 180-radian X-rotation tilts the GUI glyph plane across z -0.17..+0.34 vs the base quad's front
+		// face at +0.03125, sinking the upper ink behind the item texture's depth, and FIXED (viewer at -Z)
+		// sits only ~0.003 proud of its face (-0.035 vs -0.03125), inside z-fighting range.
+		pPoseStack.translate(0.0F, 0.0F, isGui ? 0.25F : 0.03F);
 		if (isGui) {
 			pPoseStack.translate(0.5F, 0.5F, 0.0F);
 		} else {

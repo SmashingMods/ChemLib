@@ -15,10 +15,12 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class ChemicalItem extends Item implements Chemical {
 
@@ -36,14 +38,14 @@ public class ChemicalItem extends Item implements Chemical {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, TooltipDisplay pTooltipDisplay, Consumer<Component> pTooltipAdder, TooltipFlag pIsAdvanced) {
 
         if (getChemical() instanceof Element element) {
-            pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber()))).withStyle(ChatFormatting.DARK_AQUA));
-            pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(element.getGroupName())).withStyle(ChatFormatting.GRAY));
+            pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber()))).withStyle(ChatFormatting.DARK_AQUA));
+            pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(element.getGroupName())).withStyle(ChatFormatting.GRAY));
         } else {
-            pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
-            pTooltipComponents.add(MutableComponent.create(
+            pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
+            pTooltipAdder.accept(MutableComponent.create(
                     PlainTextContents.create(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
         }
     }

@@ -8,10 +8,8 @@ import com.smashingmods.chemlib.registry.FluidRegistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.blockstates.Variant;
-import net.minecraft.client.data.models.blockstates.VariantProperties;
 import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureMapping;
@@ -45,7 +43,7 @@ public class BlockStateGenerator extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators pBlockModels, ItemModelGenerators pItemModels) {
-        Consumer<net.minecraft.client.data.models.blockstates.BlockStateGenerator> blockStateOutput = pBlockModels.blockStateOutput;
+        Consumer<BlockModelDefinitionGenerator> blockStateOutput = pBlockModels.blockStateOutput;
         BiConsumer<ResourceLocation, ModelInstance> modelOutput = pBlockModels.modelOutput;
 
         generateBlockModel("metal", "metal_block", modelOutput);
@@ -72,16 +70,16 @@ public class BlockStateGenerator extends ModelProvider {
                 .create(modLocation(String.format("block/%s_model", pName)), textures, pModelOutput);
     }
 
-    private void registerMetalBlock(ChemicalBlock pBlock, Consumer<net.minecraft.client.data.models.blockstates.BlockStateGenerator> pBlockStateOutput, BiConsumer<ResourceLocation, ModelInstance> pModelOutput) {
+    private void registerMetalBlock(ChemicalBlock pBlock, Consumer<BlockModelDefinitionGenerator> pBlockStateOutput, BiConsumer<ResourceLocation, ModelInstance> pModelOutput) {
         ResourceLocation parent = modLocation("block/metal_model");
         new ModelTemplate(Optional.of(parent), Optional.empty(), TextureSlot.ALL)
                 .create(modLocation(String.format("block/%s_metal_block", pBlock.getChemicalName())),
                         new TextureMapping().put(TextureSlot.ALL, modLocation("block/metal_block")), pModelOutput);
 
-        pBlockStateOutput.accept(MultiVariantGenerator.multiVariant(pBlock, Variant.variant().with(VariantProperties.MODEL, parent)));
+        pBlockStateOutput.accept(MultiVariantGenerator.dispatch(pBlock, BlockModelGenerators.plainVariant(parent)));
     }
 
-    private void registerLampBlock(ChemicalBlock pBlock, Consumer<net.minecraft.client.data.models.blockstates.BlockStateGenerator> pBlockStateOutput, BiConsumer<ResourceLocation, ModelInstance> pModelOutput) {
+    private void registerLampBlock(ChemicalBlock pBlock, Consumer<BlockModelDefinitionGenerator> pBlockStateOutput, BiConsumer<ResourceLocation, ModelInstance> pModelOutput) {
         ResourceLocation off = modLocation("block/lamp_off_model");
         ResourceLocation on = modLocation("block/lamp_on_model");
         new ModelTemplate(Optional.of(off), Optional.empty())
@@ -89,14 +87,14 @@ public class BlockStateGenerator extends ModelProvider {
         new ModelTemplate(Optional.of(on), Optional.empty())
                 .create(modLocation(String.format("block/%s_lamp_block_on", pBlock.getChemicalName())), new TextureMapping(), pModelOutput);
 
-        pBlockStateOutput.accept(MultiVariantGenerator.multiVariant(pBlock).with(
-                PropertyDispatch.property(BlockStateProperties.LIT)
-                        .select(false, Variant.variant().with(VariantProperties.MODEL, off))
-                        .select(true, Variant.variant().with(VariantProperties.MODEL, on))));
+        pBlockStateOutput.accept(MultiVariantGenerator.dispatch(pBlock).with(BlockModelGenerators.createBooleanModelDispatch(
+                BlockStateProperties.LIT,
+                BlockModelGenerators.plainVariant(on),
+                BlockModelGenerators.plainVariant(off))));
     }
 
-    private void registerLiquidBlock(LiquidBlock pBlock, Consumer<net.minecraft.client.data.models.blockstates.BlockStateGenerator> pBlockStateOutput) {
-        pBlockStateOutput.accept(MultiVariantGenerator.multiVariant(pBlock, Variant.variant().with(VariantProperties.MODEL, mcLocation("block/water"))));
+    private void registerLiquidBlock(LiquidBlock pBlock, Consumer<BlockModelDefinitionGenerator> pBlockStateOutput) {
+        pBlockStateOutput.accept(MultiVariantGenerator.dispatch(pBlock, BlockModelGenerators.plainVariant(mcLocation("block/water"))));
     }
 
     @Override

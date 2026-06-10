@@ -14,9 +14,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ElementItem extends Item implements Element {
 
@@ -46,12 +48,12 @@ public class ElementItem extends Item implements Element {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(String.format("%s (%d)", getAbbreviation(), atomicNumber))).withStyle(ChatFormatting.DARK_AQUA));
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, TooltipDisplay pTooltipDisplay, Consumer<Component> pTooltipAdder, TooltipFlag pIsAdvanced) {
+        pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(String.format("%s (%d)", getAbbreviation(), atomicNumber))).withStyle(ChatFormatting.DARK_AQUA));
         if (!getGroupName().isEmpty()) {
-            pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(getGroupName())).withStyle(ChatFormatting.GRAY));
+            pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(getGroupName())).withStyle(ChatFormatting.GRAY));
         }
-        pTooltipComponents.add(MutableComponent.create(
+        pTooltipAdder.accept(MutableComponent.create(
                 PlainTextContents.create(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
     }
 

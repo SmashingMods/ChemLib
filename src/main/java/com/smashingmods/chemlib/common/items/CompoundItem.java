@@ -14,11 +14,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class CompoundItem extends Item implements Compound {
@@ -53,9 +55,9 @@ public class CompoundItem extends Item implements Compound {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
-        pTooltipComponents.add(MutableComponent.create(
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, TooltipDisplay pTooltipDisplay, Consumer<Component> pTooltipAdder, TooltipFlag pIsAdvanced) {
+        pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
+        pTooltipAdder.accept(MutableComponent.create(
                 PlainTextContents.create(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
     }
 

@@ -5,6 +5,7 @@ import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -33,7 +34,7 @@ public class ChemicalLiquidBlock extends LiquidBlock {
 
     @SuppressWarnings("deprecation")
     @Override
-    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity, InsideBlockEffectApplier pEffectApplier) {
         if (pEntity instanceof LivingEntity livingEntity) {
             getChemical().ifPresent(chemical -> {
                 for (MobEffectInstance effectInstance : chemical.getEffects()) {
@@ -43,6 +44,6 @@ public class ChemicalLiquidBlock extends LiquidBlock {
             });
 
         }
-        super.entityInside(pState, pLevel, pPos, pEntity);
+        super.entityInside(pState, pLevel, pPos, pEntity, pEffectApplier);
     }
 }

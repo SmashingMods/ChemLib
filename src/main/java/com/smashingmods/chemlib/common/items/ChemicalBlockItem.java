@@ -1,10 +1,12 @@
 package com.smashingmods.chemlib.common.items;
 
+import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.common.blocks.ChemicalBlock;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.contents.PlainTextContents;
@@ -13,6 +15,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -31,6 +34,12 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
             pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber()))).withStyle(ChatFormatting.DARK_AQUA));
             pTooltipComponents.add(MutableComponent.create(PlainTextContents.create(element.getGroupName())).withStyle(ChatFormatting.GRAY));
         }
+        pTooltipComponents.add(MutableComponent.create(
+                PlainTextContents.create(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
+    }
+
+    public String getNamespace() {
+        return BuiltInRegistries.ITEM.getResourceKey(this).get().location().getNamespace();
     }
 
     public Chemical getChemical() {

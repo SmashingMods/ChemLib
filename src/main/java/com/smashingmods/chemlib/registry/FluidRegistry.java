@@ -174,7 +174,7 @@ public class FluidRegistry {
     }
 
     public static List<FluidTypeColor> getFluidTypeColors() {
-        return FLUID_TYPE_COLORS;
+        return Collections.unmodifiableList(FLUID_TYPE_COLORS);
     }
 
     public static void register(IEventBus eventBus) {

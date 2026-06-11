@@ -1,8 +1,4 @@
-# ChemLib 1.21.1-2.1.4 RELEASE
+# ChemLib 1.21.1-2.1.5 RELEASE
 
 Changes:
-- Updated to Minecraft 1.21.1.
-- Fixed element and compound item icons that could show up black or missing.
-- Fixed metal items appearing invisible in some cases.
-- Fixed item tooltips so they once again show an element/compound's composition and the mod name.
-- Fixed the periodic table screen rendering blurry.
+- Fixed the ChemLib mod-name line missing from the tooltips of metals (ingots, nuggets, dusts, plates), metal blocks, lamps, and the periodic table item. All chemical items now show it consistently.

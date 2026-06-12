@@ -4,6 +4,10 @@
     "model": "chemlib:item/argon_bucket",
     "tints": [
       {
+        "type": "minecraft:constant",
+        "value": -1
+      },
+      {
         "type": "neoforge:fluid_contents_tint"
       }
     ]

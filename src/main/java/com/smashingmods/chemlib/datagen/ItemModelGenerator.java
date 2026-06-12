@@ -171,7 +171,10 @@ public class ItemModelGenerator extends ModelProvider {
             default -> { /* solid chemicals have no bucket */ }
         }
 
-        pItemOutput.accept(pBucket, ItemModelUtils.tintedModel(model, FluidContentsTint.INSTANCE));
+        // The tints array maps by index onto the model's tintindex layers, so layer0 (the bucket itself)
+        // needs an explicit no-op white before the fluid tint can land on layer1 (the contents overlay) -
+        // the same idiom vanilla uses for filled_map's untinted base + tinted markings.
+        pItemOutput.accept(pBucket, ItemModelUtils.tintedModel(model, ItemModelUtils.constantTint(-1), FluidContentsTint.INSTANCE));
     }
 
     private void registerMiscItem(Item pItem, ItemModelOutput pItemOutput) {

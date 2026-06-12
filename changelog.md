@@ -1,8 +1,7 @@
-# ChemLib 1.21.1-2.1.4 RELEASE
+# ChemLib 1.21.3-2.1.6 RELEASE
 
 Changes:
-- Updated to Minecraft 1.21.1.
-- Fixed element and compound item icons that could show up black or missing.
-- Fixed metal items appearing invisible in some cases.
-- Fixed item tooltips so they once again show an element/compound's composition and the mod name.
-- Fixed the periodic table screen rendering blurry.
+- Updated to Minecraft 1.21.3 / NeoForge. First ChemLib release for 1.21.3.
+- Fixed metal blocks and lamps showing raw translation keys instead of their names.
+- All chemical items, including metals, metal blocks, lamps, and the periodic table, consistently show the ChemLib mod-name line in their tooltips.
+- JEI has no 1.21.3 build, so ChemLib's JEI integration is not included in this version; it returns with the 1.21.4 release.

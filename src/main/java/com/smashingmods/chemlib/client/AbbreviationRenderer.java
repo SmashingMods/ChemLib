@@ -71,6 +71,22 @@ public class AbbreviationRenderer implements SpecialModelRenderer<AbbreviationRe
 		}
 
 		pPoseStack.pushPose();
+
+		// At 1.21.4 the engine pre-applies the base layer's display transform plus the (-0.5, -0.5, -0.5)
+		// centering before invoking a special renderer, while the 1.21.1 BEWLR stack handed renderByItem the
+		// centered but display-untransformed pose (the old item model was a bare builtin/entity) and the
+		// renderer then translated by (0.5, 0.5, 0). The hand-tuned constants below are calibrated to that
+		// 1.21.1 base pose, so restore it first: C(ctx) = T(0.5, 0.5, 0.5) * D(ctx)^-1 * T(0, 0, -0.5), where
+		// D is item/generated's display transform - identity in GUI, rotation [0, 180, 0] (self-inverse,
+		// scale 1) in FIXED.
+		if (isGui) {
+			pPoseStack.translate(0.5F, 0.5F, 0.0F);
+		} else {
+			pPoseStack.translate(0.5F, 0.5F, 0.5F);
+			pPoseStack.mulPose(Axis.YN.rotationDegrees(180));
+			pPoseStack.translate(0.0F, 0.0F, -0.5F);
+		}
+
 		pPoseStack.mulPose(Axis.XN.rotation(180));
 		pPoseStack.translate(-0.16D, 0, -0.55D);
 		pPoseStack.scale(0.05F, 0.08F, 0.08F);

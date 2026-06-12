@@ -145,12 +145,18 @@ public class ItemRegistry {
         return pRegister.getEntries().stream().filter(item -> item.getId().getPath().equals(pName)).findFirst().get();
     }
 
+    /*
+        Since 1.21.2 an item's description id is baked from its Item.Properties at construction, so a
+        BlockItem defaults to "item.<namespace>.<path>" unless the properties opt into the "block." prefix.
+        The generated lang defines "block.chemlib.*" for these, hence useBlockDescriptionPrefix() here.
+     */
+
     public static void fromChemicalBlock(DeferredHolder<Block, ? extends Block> pBlock, Item.Properties pProperties) {
-        REGISTRY_BLOCK_ITEMS.registerItem(pBlock.getId().getPath(), properties -> new ChemicalBlockItem((ChemicalBlock) pBlock.get(), properties), pProperties);
+        REGISTRY_BLOCK_ITEMS.registerItem(pBlock.getId().getPath(), properties -> new ChemicalBlockItem((ChemicalBlock) pBlock.get(), properties), pProperties.useBlockDescriptionPrefix());
     }
 
     public static void fromBlock(DeferredHolder<Block, ? extends Block> pBlock, Item.Properties pProperties) {
-        REGISTRY_BLOCK_ITEMS.registerItem(pBlock.getId().getPath(), properties -> new BlockItem(pBlock.get(), properties), pProperties);
+        REGISTRY_BLOCK_ITEMS.registerItem(pBlock.getId().getPath(), properties -> new BlockItem(pBlock.get(), properties), pProperties.useBlockDescriptionPrefix());
     }
 
     public static void register(IEventBus eventBus) {

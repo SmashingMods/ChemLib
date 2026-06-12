@@ -45,9 +45,9 @@ public class ChemicalItem extends Item implements Chemical {
             pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(element.getGroupName())).withStyle(ChatFormatting.GRAY));
         } else {
             pTooltipAdder.accept(MutableComponent.create(PlainTextContents.create(getAbbreviation())).withStyle(ChatFormatting.DARK_AQUA));
-            pTooltipAdder.accept(MutableComponent.create(
-                    PlainTextContents.create(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
         }
+        pTooltipAdder.accept(MutableComponent.create(
+                PlainTextContents.create(StringUtils.capitalize(getNamespace()))).withStyle(ChemLib.MOD_ID_TEXT_STYLE));
     }
 
     public String getNamespace() {

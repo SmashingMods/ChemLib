@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:radium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:radium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:radium_ingot_from_blasting_radium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:radium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:radium_ingot_from_blasting_radium_dust"
+    ]
+  }
+}

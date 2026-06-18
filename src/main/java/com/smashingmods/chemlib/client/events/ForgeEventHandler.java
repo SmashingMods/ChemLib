@@ -3,28 +3,28 @@ package com.smashingmods.chemlib.client.events;
 import com.mojang.datafixers.util.Either;
 import com.smashingmods.chemlib.ChemLib;
 import com.smashingmods.chemlib.api.utility.FluidEffectsTooltipUtility;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.contents.LiteralContents;
+import net.minecraft.network.chat.contents.PlainTextContents;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.BucketItem;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderTooltipEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.function.Function;
 
-@Mod.EventBusSubscriber(modid = ChemLib.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ChemLib.MODID, value = Dist.CLIENT)
 public class ForgeEventHandler {
 
     @SubscribeEvent
     public static void onRenderTooltip(RenderTooltipEvent.GatherComponents event) {
         if (event.getItemStack().getItem() instanceof BucketItem bucket
-                && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).isPresent()
-                && ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace().equals(ChemLib.MODID)) {
+                && BuiltInRegistries.FLUID.getResourceKey(bucket.content).isPresent()
+                && BuiltInRegistries.FLUID.getResourceKey(bucket.content).get().location().getNamespace().equals(ChemLib.MODID)) {
 
             gatherTooltipComponents(event, bucket);
         }
@@ -36,7 +36,7 @@ public class ForgeEventHandler {
         for (FormattedText textElement : FluidEffectsTooltipUtility.getBucketEffectTooltipComponents(event.getItemStack())) {
             event.getTooltipElements().add(formattedTextFunction.apply(textElement));
         }
-        String namespace = ForgeRegistries.FLUIDS.getResourceKey(bucket.getFluid()).get().location().getNamespace();
-        event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(new LiteralContents(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
+        String namespace = BuiltInRegistries.FLUID.getResourceKey(bucket.content).get().location().getNamespace();
+        event.getTooltipElements().add(formattedTextFunction.apply(MutableComponent.create(new PlainTextContents.LiteralContents(StringUtils.capitalize(namespace))).withStyle(ChemLib.MOD_ID_TEXT_STYLE)));
     }
 }

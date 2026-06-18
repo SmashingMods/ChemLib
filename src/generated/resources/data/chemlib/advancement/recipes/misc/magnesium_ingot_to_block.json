@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:magnesium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:magnesium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:magnesium_ingot_to_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:magnesium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:magnesium_ingot_to_block"
+    ]
+  }
+}

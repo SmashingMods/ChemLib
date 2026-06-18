@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "chemlib:helium"
+    },
+    "G": {
+      "tag": "c:glass_blocks/cheap"
+    }
+  },
+  "pattern": [
+    "GEG",
+    "EEE",
+    "GEG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "chemlib:helium_lamp_block"
+  }
+}

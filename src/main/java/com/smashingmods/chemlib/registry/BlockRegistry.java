@@ -8,10 +8,9 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 public class BlockRegistry {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ChemLib.MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ChemLib.MODID);
     public static final List<ChemicalBlock> METAL_BLOCKS = new ArrayList<>();
     public static final List<ChemicalBlock> LAMP_BLOCKS = new ArrayList<>();
 
@@ -32,7 +31,7 @@ public class BlockRegistry {
             .sound(SoundType.GLASS)
             .lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0);
 
-    public static Optional<RegistryObject<Block>> getRegistryObjectByName(String pName) {
+    public static Optional<DeferredHolder<Block, ? extends Block>> getRegistryObjectByName(String pName) {
         return BLOCKS.getEntries().stream().filter(blockRegistryObject -> blockRegistryObject.getId().getPath().equals(pName)).findFirst();
     }
 

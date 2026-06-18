@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:gallium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:gallium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:gallium_nugget_to_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:gallium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:gallium_nugget_to_ingot"
+    ]
+  }
+}

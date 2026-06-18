@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:osmium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:osmium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:osmium_ingot_from_smelting_osmium_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:osmium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:osmium_ingot_from_smelting_osmium_dust"
+    ]
+  }
+}

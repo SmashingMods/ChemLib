@@ -9,15 +9,15 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ModelEvent;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.client.model.DynamicFluidContainerModel;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.model.DynamicFluidContainerModel;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = ChemLib.MODID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = ChemLib.MODID)
 public class ClientEventHandler {
 
     @SubscribeEvent
@@ -44,12 +44,12 @@ public class ClientEventHandler {
 
 	@SubscribeEvent
 	public static void onModelRegister(ModelEvent.RegisterAdditional event) {
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_dust_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_nugget_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_ingot_model"), "inventory"));
-        event.register(new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_plate_model"), "inventory"));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_solid_model")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_liquid_model")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_gas_model")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_dust_model")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_nugget_model")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_ingot_model")));
+        event.register(ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_plate_model")));
 	}
 }

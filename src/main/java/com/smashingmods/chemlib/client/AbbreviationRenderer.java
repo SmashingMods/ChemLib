@@ -21,8 +21,8 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.ClientHooks;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -55,23 +55,23 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 		if (pStack.getItem() instanceof ElementItem elementItem) {
 			switch (elementItem.getMatterState()) {
 				case LIQUID ->
-						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_liquid_model"), "inventory");
+						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_liquid_model"));
 				case GAS ->
-						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_gas_model"), "inventory");
+						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_gas_model"));
 				default ->
-						modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "element_solid_model"), "inventory");
+						modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/element_solid_model"));
 			}
 		} else if (pStack.getItem() instanceof ChemicalItem chemicalItem) {
 			switch (chemicalItem.getItemType()) {
-				case DUST -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_dust_model"), "inventory");
-				case NUGGET -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_nugget_model"), "inventory");
-				case INGOT -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_ingot_model"), "inventory");
-				case PLATE -> modelResourceLocation = new ModelResourceLocation(new ResourceLocation(ChemLib.MODID, "chemical_plate_model"), "inventory");
+				case DUST -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_dust_model"));
+				case NUGGET -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_nugget_model"));
+				case INGOT -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_ingot_model"));
+				case PLATE -> modelResourceLocation = ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(ChemLib.MODID, "item/chemical_plate_model"));
+			
 			}
 		}
 
 		if (modelResourceLocation != null) {
-
 			BakedModel bakedModel = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getModelManager().getModel(modelResourceLocation);
 
 			pPoseStack.pushPose();
@@ -122,7 +122,7 @@ public class AbbreviationRenderer extends BlockEntityWithoutLevelRenderer {
 					buffer,
 					isGui ? 0xF000F0 : pPackedLight,
 					isGui ? OverlayTexture.NO_OVERLAY : pPackedOverlay,
-					ForgeHooksClient.handleCameraTransforms(pPoseStack, bakedModel, pItemDisplayContext, false));
+					ClientHooks.handleCameraTransforms(pPoseStack, bakedModel, pItemDisplayContext, false));
 			if (isGui) {
 				((MultiBufferSource.BufferSource) buffer).endBatch();
 			}

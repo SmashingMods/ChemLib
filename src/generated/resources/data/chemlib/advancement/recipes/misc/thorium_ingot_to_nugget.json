@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chemlib:thorium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "chemlib:thorium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "chemlib:thorium_ingot_to_nugget"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chemlib:thorium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "chemlib:thorium_ingot_to_nugget"
+    ]
+  }
+}
